@@ -31,7 +31,7 @@ export async function run(sock, msg) {
     return;
   }
 
-  const candidatos = personajes.filter(p => ['épico', 'mítico', 'legendario', 'Ultra-Legendario'].includes(p.calidad));
+  const candidatos = personajes.filter(p => ['Ultra-Legendario', 'Secret'].includes(p.calidad));
   
   if (candidatos.length === 0) {
     await sock.sendMessage(from, { text: '❌ No hay personajes épicos o superiores disponibles para el drop.' });

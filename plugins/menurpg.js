@@ -68,6 +68,9 @@ export async function run(sock, msg) {
  🛡 .verps <Nombre del personaje>
 > El bot muestra toda la información del personaje.
 
+ 🛡 .favorito <Nombre del personaje>
+> Estableces tu personaje favorito (solo si lo tienes).
+
 ┣━━━━━━━━━━━━━━━━━━━┫`;
   try {
     await sock.sendMessage(from, {

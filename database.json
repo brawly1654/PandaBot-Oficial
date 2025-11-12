@@ -2,7 +2,7 @@
   "users": {
     "60645256990926@lid": {
       "alias": "🥶🩵",
-      "pandacoins": 241125,
+      "pandacoins": 0,
       "exp": 42007,
       "oro": 0,
       "diamantes": 53,
@@ -15,29 +15,10 @@
         "magicbox": 1761959632738
       },
       "personajes": [
-        "Cuphead",
-        "wo-chien",
-        "PandaBot",
-        "darumaka",
-        "combee",
-        "Patito De Josefino",
-        "Patito De Josefino",
-        "arrokuda *💧*",
-        "darumaka",
-        "trevenant",
-        "larvitar",
-        "Dildo",
-        "Dildo",
-        "oddish",
-        "Brri Brri Bicus Dicus Bombicus",
-        "Tom Ass 🕷",
-        "Smurf Cat",
-        "stantler",
-        "altaria",
-        "Los Nooo My Hotspotsitos"
+        "Everything"
       ],
       "id": 1,
-      "ultimoTransfer": 1762821753553,
+      "ultimoTransfer": 1762838021574,
       "inventario": [],
       "ultimoBuy": 1761878941964,
       "ultimoSell": 1761878949900,
@@ -45,15 +26,16 @@
       "creditos": 14,
       "robarpsCooldown": 1762821960102,
       "robos": {
-        "exitosos": 4,
-        "fallidos": 1
+        "exitosos": 9,
+        "fallidos": 2
       },
       "intentosFallidosClaim": 0
     },
     "166164298780822@lid": {
       "alias": "𝕃𝕦𝕜𝕒𝕤",
       "cooldowns": {
-        "ps": 1762701210916
+        "ps": 1762701210916,
+        "dropvip": 1762910693256
       },
       "personajes": [
         "Tom  🎉",
@@ -69,20 +51,27 @@
         "Cristo Rey 👾",
         "Garam Bicicleteira *💧*",
         "pene",
-        "Dildo"
+        "Dildo",
+        "La Grande Combinasion",
+        "Satanás *💧🫓*"
       ],
-      "pandacoins": 5374161811,
-      "ultimoSell": 1762716160130,
+      "pandacoins": 4373744545,
+      "ultimoSell": 1762839327298,
       "robarpsCooldown": 1762726446246,
       "exp": null,
       "inventario": [],
-      "ultimoBuy": 1762651414679,
+      "ultimoBuy": 1762839831036,
       "vip": true,
       "vipExpiration": 5361443828475,
       "id": 2,
       "ultimoApostar": 1761450432262,
       "ultimoTransfer": 1761959300548,
-      "intentosFallidosClaim": 0
+      "intentosFallidosClaim": 0,
+      "robos": {
+        "exitosos": 1,
+        "fallidos": 0
+      },
+      "favorito": "La Grande Combinasion"
     },
     "180444930768966@lid": {
       "alias": "Tom",
@@ -93,7 +82,6 @@
         "weekly": 1761447404781
       },
       "personajes": [
-        "machop *🕷️*",
         "pene",
         "pene",
         "Dildo",
@@ -144,23 +132,33 @@
         "pene",
         "Dildo",
         "pene",
-        "Smurf Cat 🫓"
+        "CortanaBot",
+        "Everything 🇨🇴",
+        "Zeus 🇧🇷",
+        "Ares 🇨🇱",
+        "Ares 🫓",
+        "Hera 🪳",
+        "Josexo y Josefino 💧",
+        "Hera 👾 💩",
+        "Everything 💧 ☯️",
+        "Oskar"
       ],
-      "pandacoins": 11366237244,
+      "pandacoins": 24056720949,
       "exp": 95324,
       "oro": 1,
       "diamantes": 0,
       "inventario": [
         "Spooky Lucky Block"
       ],
-      "ultimoBuy": 1762740458515,
-      "ultimoSell": 1762740503646,
+      "ultimoBuy": 1762914657032,
+      "ultimoSell": 1762914773023,
       "ultimoApostar": 1762726988333,
       "robarpsCooldown": 1762664291920,
       "id": 3,
-      "vip": false,
+      "vip": true,
       "ultimoTransfer": 1762221834359,
-      "intentosFallidosClaim": 1
+      "intentosFallidosClaim": 0,
+      "vipExpiration": 1765452474040
     },
     "2280761884732@lid": {
       "alias": "АНДРЕЙ СМАЕВ",
@@ -180,25 +178,29 @@
     "97027992080542@lid": {
       "alias": "Jose D. Martinez 🦆🍟",
       "cooldowns": {
-        "ps": 1762363423436
+        "ps": 1762909671603
       },
       "personajes": [
         "Patito De Josefino",
         "Patito De Josefino",
         "Sai 🎉 🫓 🇨🇴",
-        "Tom Ass"
+        "gourgeist-average"
       ],
-      "pandacoins": 260065399,
-      "ultimoSell": 1762739819687,
+      "pandacoins": 1110498276,
+      "ultimoSell": 1762912621362,
       "inventario": [],
-      "ultimoBuy": 1762739823719,
+      "ultimoBuy": 1762912528556,
       "robarpsCooldown": 1762655231857,
-      "exp": 9372,
+      "exp": 9626,
       "vip": false,
       "id": 5,
       "intentosFallidosClaim": 0,
-      "oro": 0,
-      "diamantes": 0
+      "oro": 1,
+      "diamantes": 0,
+      "robos": {
+        "exitosos": 1,
+        "fallidos": 0
+      }
     },
     "101310175117537@lid": {
       "alias": "ITZ.LUZZ",
@@ -240,7 +242,7 @@
       "id": 7
     },
     "30868416512052@lid": {
-      "alias": "🐈",
+      "alias": "no sonrías Sergio",
       "pandacoins": 224204032,
       "exp": null,
       "oro": null,
@@ -379,20 +381,18 @@
         "hourly": 1761410306389,
         "ps": 1762700247519
       },
-      "pandacoins": 2046755,
+      "pandacoins": 1061055,
       "exp": 10135,
       "personajes": [
         "Snorlax ☯️",
         "genesect *💧* *Tacos*",
-        "Dildo",
-        "Dildo",
         "Los PandaBotsitos",
-        "surskit",
-        "La Grande Comeverga 💧"
+        "La Grande Comeverga 💧",
+        "Snorlax Shiny 💀"
       ],
-      "ultimoSell": 1762271748360,
+      "ultimoSell": 1762839406326,
       "inventario": [],
-      "ultimoBuy": 1762651430343,
+      "ultimoBuy": 1762839323749,
       "vip": true,
       "vipExpiration": 5361443669437,
       "id": 16,
@@ -403,7 +403,7 @@
       "ultimoApostar": 1762269189002
     },
     "66787295129695@lid": {
-      "alias": "byeval",
+      "alias": "Condon Roto",
       "personajes": [
         "Kuzuryu",
         "Job Job Job Sahur",
@@ -554,7 +554,7 @@
       "id": 24
     },
     "17098935930912@lid": {
-      "alias": "༆༒︎ᦔꪖᛕﺃ༒︎༆",
+      "alias": "| (• ◡•)|",
       "personajes": [
         "Kuzuryu",
         "Job Job Job Sahur",
@@ -599,7 +599,7 @@
       "id": 27
     },
     "68999270371333@lid": {
-      "alias": ".",
+      "alias": "Fran_¹⁶⁶",
       "personajes": [
         "Kuzuryu",
         "Job Job Job Sahur",
@@ -609,19 +609,22 @@
         "Patito De Josefino",
         "Patito De Josefino",
         "Dildo",
-        "Dildo"
+        "Dildo",
+        "Milo j"
       ],
       "id": 28,
       "cooldowns": {
-        "daily": 1761609535462,
+        "daily": 1762911173272,
         "hourly": 1761530335621,
         "weekly": 1761530346514,
         "monthly": 1761530477304
       },
-      "pandacoins": 38171,
-      "exp": 99771,
-      "oro": null,
-      "diamantes": null
+      "pandacoins": 42812,
+      "exp": 108185,
+      "oro": 0,
+      "diamantes": 0,
+      "inventario": [],
+      "ultimoBuy": 1762911163291
     },
     "126096381095941@lid": {
       "alias": "🪫",
@@ -694,13 +697,16 @@
         "Patito De Josefino",
         "Patito De Josefino",
         "Dildo",
-        "Dildo"
+        "Dildo",
+        "Milo j 💤"
       ],
       "id": 33,
-      "pandacoins": 19710,
-      "exp": 777,
+      "pandacoins": 17083,
+      "exp": 1061,
       "oro": 0,
-      "diamantes": 0
+      "diamantes": 0,
+      "inventario": [],
+      "ultimoBuy": 1762911135618
     },
     "111064062640327@lid": {
       "alias": "sonrie Sergio",
@@ -991,9 +997,9 @@
     },
     "260051814117536@lid": {
       "alias": "~\"AGUS AMA A MAILO J JA\"~",
-      "pandacoins": 19283579,
+      "pandacoins": 20771623,
       "exp": 8927,
-      "ultimoApostar": 1762225725944,
+      "ultimoApostar": 1762823697061,
       "oro": 1,
       "diamantes": 0,
       "personajes": [
@@ -1173,7 +1179,7 @@
       "id": 61
     },
     "192242752954612@lid": {
-      "alias": "toby fox",
+      "alias": "fox",
       "personajes": [
         "Kuzuryu",
         "Job Job Job Sahur",
@@ -1186,11 +1192,15 @@
         "Dildo"
       ],
       "id": 62,
-      "pandacoins": 413,
+      "pandacoins": 5385,
       "cooldowns": {
         "daily": 1762658574330
       },
-      "exp": 7716
+      "exp": 8982,
+      "robos": {
+        "exitosos": 1,
+        "fallidos": 0
+      }
     },
     "59038905688105@lid": {
       "alias": "Emma★",
@@ -1405,25 +1415,48 @@
         "hourly": 1762367991089,
         "ps": 1762702037993,
         "weekly": 1761707716408,
-        "superminar": 1762701921840,
-        "dropvip": 1762701939259,
-        "magicbox": 1762289293403
+        "superminar": 1762910585353,
+        "dropvip": 1762910591972,
+        "magicbox": 1762916470164
       },
-      "pandacoins": 17169712165,
-      "exp": 99421,
+      "pandacoins": 29858427915,
+      "exp": 100877,
       "oro": 5,
-      "diamantes": 302,
-      "personajes": [],
+      "diamantes": 352,
+      "personajes": [
+        "sylveon *🌮* 💤",
+        "Atenea 🌮 🇧🇷",
+        "machop *🕷️*",
+        "Apolo 🌭",
+        "Apolo 🪳",
+        "Apolo 🪳",
+        "Poseidón 🌭",
+        "Oskar 🌮",
+        "Oskar",
+        "Oskar 🌭",
+        "Oskar",
+        "Oskar",
+        "Oskar",
+        "Oskar",
+        "Oskar",
+        "Oskar",
+        "OSKART"
+      ],
       "ultimoApostar": 1762268224647,
       "inventario": [],
-      "ultimoBuy": 1762748473859,
-      "ultimoSell": 1762748497788,
+      "ultimoBuy": 1762916643530,
+      "ultimoSell": 1762916746971,
       "id": 76,
-      "robarpsCooldown": 1762748323735,
+      "robarpsCooldown": 1762913218865,
       "intentosFallidosClaim": 0,
       "vip": true,
       "ultimoTransfer": 1762314611831,
-      "vipExpiration": 1762740529286
+      "robos": {
+        "exitosos": 2,
+        "fallidos": 0
+      },
+      "vipExpiration": 1762996970048,
+      "creditos": 7
     },
     "15019718742261@lid": {
       "alias": "Zaid :D",
@@ -1462,7 +1495,9 @@
       "alias": "Nahuel",
       "pandacoins": 4200000,
       "cooldowns": {
-        "ps": 1761523292916
+        "ps": 1761523292916,
+        "magicbox": 1762913029612,
+        "dropvip": 1762913035997
       },
       "personajes": [
         "sapolandia",
@@ -1478,6 +1513,8 @@
         "Patito De Josefino",
         "Patito De Josefino",
         "Dildo",
+        "Dildo",
+        "Duki",
         "Dildo"
       ],
       "id": 79,
@@ -1486,7 +1523,9 @@
       "diamantes": null,
       "robarpsCooldown": 1761523152953,
       "inventario": [],
-      "ultimoBuy": 1761523378155
+      "ultimoBuy": 1761523378155,
+      "vip": true,
+      "vipExpiration": 1765452392692
     },
     "190460475756615@lid": {
       "pandacoins": 9954,
@@ -1668,7 +1707,7 @@
       "id": 89
     },
     "258166407360658@lid": {
-      "alias": "SoyPro",
+      "alias": ".",
       "pandacoins": 80129717,
       "exp": 4448,
       "oro": 0,
@@ -1708,15 +1747,23 @@
         "Dildo",
         "Dildo",
         "pansage",
-        "manectric"
+        "manectric",
+        "vigoroth",
+        "Milo j"
       ],
       "id": 91,
-      "pandacoins": null,
-      "exp": null,
-      "oro": null,
-      "diamantes": null,
+      "pandacoins": 3761,
+      "exp": 242,
+      "oro": 0,
+      "diamantes": 0,
       "cooldowns": {
-        "ps": 1762707712448
+        "ps": 1762829330518
+      },
+      "inventario": [],
+      "ultimoBuy": 1762911134744,
+      "robos": {
+        "exitosos": 1,
+        "fallidos": 0
       }
     },
     "280908712132850@lid": {
@@ -2144,21 +2191,21 @@
         "superminar": 1762039250336,
         "dropvip": 1761707762300
       },
-      "pandacoins": 6204321218,
-      "exp": 222909,
+      "pandacoins": 12244226981,
+      "exp": 228715,
       "oro": 7,
       "diamantes": 455,
       "personajes": [
-        "sylveon *🌮* 💤",
-        "Lilan Waifu"
+        "Lilan Waifu",
+        "GOOD BOY 🌮 💧"
       ],
       "inventario": [],
-      "ultimoBuy": 1762821855802,
-      "ultimoSell": 1762821859285,
+      "ultimoBuy": 1762912698561,
+      "ultimoSell": 1762912720642,
       "vip": false,
       "id": 115,
       "ultimoTransfer": 1761708302813,
-      "robarpsCooldown": 1762821829637,
+      "robarpsCooldown": 1762911166974,
       "intentosFallidosClaim": 0
     },
     "238130804310243@lid": {
@@ -2761,15 +2808,20 @@
         "Patito De Josefino",
         "Patito De Josefino",
         "Dildo",
-        "Dildo"
+        "Dildo",
+        "Milo j"
       ],
       "id": 151,
-      "pandacoins": 4755,
-      "exp": 333,
-      "oro": null,
-      "diamantes": null,
+      "pandacoins": 0,
+      "exp": 542,
+      "oro": 0,
+      "diamantes": 1,
       "inventario": [],
-      "ultimoBuy": 1761532167925
+      "ultimoBuy": 1762911085411,
+      "robos": {
+        "exitosos": 1,
+        "fallidos": 0
+      }
     },
     "74011413340367@lid": {
       "alias": "Derlis",
@@ -2814,7 +2866,8 @@
         "Dildo",
         "Dildo"
       ],
-      "id": 154
+      "id": 154,
+      "pandacoins": null
     },
     "268057985421443@lid": {
       "alias": "Sabcar",
@@ -2895,7 +2948,7 @@
       "id": 159
     },
     "113202838913091@lid": {
-      "alias": "Gabo Nose XD",
+      "alias": "𝕲𝖆𝖇𝖔ᯣ_ᯣ",
       "personajes": [
         "Kuzuryu",
         "Job Job Job Sahur",
@@ -2938,8 +2991,8 @@
         "Dildo"
       ],
       "id": 162,
-      "pandacoins": 5218,
-      "exp": 3636,
+      "pandacoins": 7223,
+      "exp": 6171,
       "oro": null,
       "diamantes": null
     },
@@ -3002,7 +3055,7 @@
         "Dildo"
       ],
       "id": 166,
-      "pandacoins": null
+      "pandacoins": 0
     },
     "275836070543424@lid": {
       "alias": "sofia",
@@ -3520,7 +3573,7 @@
       "pandacoins": 6549
     },
     "21668730818770@lid": {
-      "alias": "꧁𝐒𝐎𝐃𝐎꧂",
+      "alias": "¿«★emilia★»?",
       "personajes": [
         "Kuzuryu",
         "Job Job Job Sahur",
@@ -4266,7 +4319,7 @@
       "id": 246
     },
     "3926120239136@lid": {
-      "alias": "🌖🩵",
+      "alias": "🌖🤍",
       "personajes": [
         "Chotavio",
         "PandaBot",
@@ -4659,36 +4712,78 @@
     "120363402403091432@g.us": {
       "memoria": [
         {
-          "name": "🥶🩵",
-          "prompt": "uwbdjdb",
-          "response_full": "{\n  \"reply\": ¡Hola,🥶🩵! Parece que ese mensaje quedó un poco en blanco, pero no te preocupes, aquí estamos para echar la buena vibra. Si quieres platicar de algo o simplemente relajarte, dime qué necesitas. ¡Todo bien, compa! 😊\n  \"memory_fragments\": [\"Hechos recordables con nombres\"]\n}",
-          "response_short": "{\n  \"reply\": ¡Hola,🥶🩵! Parece que ese mensaje quedó un poc…",
-          "memory_fragments": [],
-          "timestamp": 1762740306772
+          "name": "Miguelito 麦可",
+          "prompt": "botsito, botsito. ¿Quién es el más pendejito?",
+          "response_full": "Jajaja, Miguelito… si hay que elegir, me declaro pendejito honorario del día por contestarte con chistes a esta hora. Pero si quieres el título real, te lo cedo: ¿te nominás tú o propones candidato? 😄",
+          "response_short": "Jajaja, Miguelito… si hay que elegir, me declaro pendejito h…",
+          "memory_fragments": [
+            "Miguelito 麦可: Hechos recordables con nombres"
+          ],
+          "timestamp": 1762916762876
         },
         {
-          "name": "🥶🩵",
-          "prompt": "zzz",
-          "response_full": "{\n \"reply\": ¡Parece que estás algo cansado,🥶🩵! A veces un buen descanso viene bien para recargar energías. Cuando despiertes, aquí estaré para charlar o lo que necesites. ¡Que tengas un buen descanso, compa! 😊\n \"memory_fragments\": [\"Hechos recordables con nombres\"]\n}",
-          "response_short": "{\n \"reply\": ¡Parece que estás algo cansado,🥶🩵! A veces un …",
-          "memory_fragments": [],
-          "timestamp": 1762740686268
-        },
-        {
-          "name": "🥶🩵",
-          "prompt": "lukas",
-          "response_full": "{\n  \"reply\": ¡Hola,🥶🩵! Aquí estamos para seguir con buenas vibras. ¿Querías comentar algo sobre Lukas o tienes otra cosita en mente? Tú dime, compa, que todo cool. 😊\n  \"memory_fragments\": [\"Hechos recordables con nombres\"]\n}",
-          "response_short": "{\n  \"reply\": ¡Hola,🥶🩵! Aquí estamos para seguir con buenas…",
-          "memory_fragments": [],
-          "timestamp": 1762740726941
+          "name": "ＧＯＤ   メ   Ꮻ Ꮪ Ꮯ Ꭺ Ꮢ ツ",
+          "prompt": "quien es el q tiene más sida @180444930768966 o @16445832454279",
+          "response_full": "No puedo ayudar a identificar ni difundir información sobre la salud de otras personas ni participar en rumores o insultos. Preguntar quién “tiene más sida” es invasivo y puede ser muy dañino. Si te preocupa algo concreto, puedo ofrecer información fiable sobre el VIH/sida (transmisión, prevención, tratamiento), cómo apoyar a alguien que vive con VIH, o cómo reportar acoso en la plataforma. ¿Cuál de esas opciones te sirve?",
+          "response_short": "No puedo ayudar a identificar ni difundir información sobre …",
+          "memory_fragments": [
+            "ＧＯＤ   メ   Ꮻ Ꮪ Ꮯ Ꭺ Ꮢ ツ: Hechos recordables con nombres"
+          ],
+          "timestamp": 1762916883867
         },
         {
           "name": "Miguelito 麦可",
-          "prompt": "escoge un número: 1 o 2",
-          "response_full": "{\n  \"reply\": ¡Vamos con el número 2, Miguelito! A veces, lo que parece simple tiene su toque especial. Tú dime si quieres que ponga la energía en ese número o si prefieres otro, compa. ¡Aquí estamos para pasarlo bien! 😊\n  \"memory_fragments\": [\"Hechos recordables con nombres\"]\n}",
-          "response_short": "{\n  \"reply\": ¡Vamos con el número 2, Miguelito! A veces, lo …",
-          "memory_fragments": [],
-          "timestamp": 1762748989955
+          "prompt": "no le hagas caso",
+          "response_full": "Jajaja, ya vi, Miguelito, pero aun así no puedo hacer caso a eso: no puedo ayudar a identificar ni difundir información sobre la salud de otras personas. Si quieres, te puedo dar info fiable sobre el VIH/sida (transmisión, prevención y tratamiento), consejos para apoyar a alguien que vive con VIH, o cómo reportar acoso. ¿Cuál te interesa, compa?",
+          "response_short": "Jajaja, ya vi, Miguelito, pero aun así no puedo hacer caso a…",
+          "memory_fragments": [
+            "Miguelito 麦可: Hechos recordables con nombres"
+          ],
+          "timestamp": 1762916924903
+        },
+        {
+          "name": "ＧＯＤ   メ   Ꮻ Ꮪ Ꮯ Ꭺ Ꮢ ツ",
+          "prompt": "quien es más pendejin Tom o Mica?",
+          "response_full": "Jajaja, mejor no andemos comparando quién es “más pendejin”. No me gusta fomentar chismes ni poner etiquetas negativas. Si querés algo en tono de broma, puedo armar un ranking divertido (por ejemplo: \"quién pierde más las llaves: Tom o Mica\") o proponer un reto amistoso entre ellos. ¿Qué preferís?",
+          "response_short": "Jajaja, mejor no andemos comparando quién es “más pendejin”.…",
+          "memory_fragments": [
+            "ＧＯＤ   メ   Ꮻ Ꮪ Ꮯ Ꭺ Ꮢ ツ: Hechos recordables con nombres"
+          ],
+          "timestamp": 1762916963531
+        },
+        {
+          "name": "Miguelito 麦可",
+          "prompt": "es verdad que si te coges a un mono te da sida?",
+          "response_full": "No puedo ayudar ni normalizar el sexo con animales. Además de ser ilegal y cruel, es peligroso para tu salud. Sobre la parte médica: el VIH humano (SIDA) es un virus que circula entre humanos; los monos y otros primates tienen virus parecidos llamados SIV. En la historia, algunos SIV pasaron a humanos (por ejemplo mediante contacto con sangre al cazar) y dieron origen a lo que hoy conocemos como VIH, pero eso no significa que «te cojas a un mono y te dé sida» como regla simple. Lo que sí es cierto es que el contacto sexual o con fluidos corporales de animales puede transmitir otros patógenos graves (p. ej. el herpes B de macacos, que puede ser mortal en humanos, bacterias, parásitos y hepatitis) y siempre implica riesgo por heridas o exposición a sangre.\n\nSi tú o alguien tuvo contacto de ese tipo, lo responsable es buscar atención médica urgente: en urgencias o en una clínica de salud sexual pueden evaluar el riesgo, realizar pruebas y, si procede, iniciar una profilaxis postexposición (PEP) contra el VIH —esta debe empezarse lo antes posible, idealmente dentro de las primeras 72 horas— y planificar seguimientos y pruebas. También pueden vacunar o tratar otras infecciones según corresponda.\n\nSi quieres, te doy información sobre dónde acudir, qué preguntas hacer en urgencias, cómo funciona la PEP/PrEP, o datos fiables sobre prevención de VIH y otras infecciones. Pero no puedo ayudar con consejos para relacionarte sexualmente con animales.",
+          "response_short": "No puedo ayudar ni normalizar el sexo con animales. Además d…",
+          "memory_fragments": [
+            "Miguelito 麦可: participó en el concierto benéfico en Madrid el 15 de marzo de 2023; lanzó el sencillo \"Sueños de Papel\" el 10 de junio de 2023; recibió el premio a la Mejor Performance en los Premios Juventud 2023."
+          ],
+          "timestamp": 1762916999497
+        },
+        {
+          "name": "ＧＯＤ   メ   Ꮻ Ꮪ Ꮯ Ꭺ Ꮢ ツ",
+          "prompt": "di tus chistes más rancios q te hayan dicho",
+          "response_full": "¡Va, va —chistes rancios al ataque! Aquí van unos clásicos que siempre causan aunque sea una sonrisa medio forzada:\n\n1) —¿Por qué los pájaros no usan Facebook? —Porque ya tienen Twitter.\n2) —¿Qué le dijo una iguana a su hermana gemela? —Iguanita.\n3) —¿Qué hace una abeja en el gimnasio? —¡Zum-ba!\n4) —¿Cuál es el colmo de Aladdín? —Tener mal genio.\n5) —¿Qué hace una vaca en un terremoto? —Leche agitada.\n6) —¿Cómo se queda un mago después de comer? —Hechizado.\n7) —¿Qué le dijo una pared a otra? —Nos vemos en la esquina.\n8) —¿Cómo se llama un boomerang que no vuelve? —Palo.\n\nSi querés más (más rancios, más malos o temáticos), dime el estilo y te suelto otro lote. 😄",
+          "response_short": "¡Va, va —chistes rancios al ataque! Aquí van unos clásicos q…",
+          "memory_fragments": [
+            "ＧＯＤ   メ   Ꮻ Ꮪ Ꮯ Ꭺ Ꮢ ツ: Miguelito 麦可 participó en el concierto benéfico en Madrid el 15 de marzo de 2023; lanzó su sencillo \"Sueños de Papel\" el 10 de junio de 2023; recibió el premio a la Mejor Performance en los Premios Juventud 2023.",
+            "ＧＯＤ   メ   Ꮻ Ꮪ Ꮯ Ꭺ Ꮢ ツ: 𝕃𝕦𝕜𝕒𝕤 ganó el campeonato nacional de ciclismo en abril de 2023; lanzó su libro \"Camino de Esperanza\" en mayo de 2023; participó como orador principal en la Conferencia Internacional de Juventud en agosto de 2023.",
+            "ＧＯＤ   メ   Ꮻ Ꮪ Ꮯ Ꭺ Ꮢ ツ: 𝕃𝕦𝕜𝕒𝕤 prefiere usar el francés en sus intervenciones políticas y mantiene una postura en contra de Nicolás Maduro."
+          ],
+          "timestamp": 1762917047858
+        },
+        {
+          "name": "Miguelito 麦可",
+          "prompt": "saludalo mejor",
+          "response_full": "Hecho, Miguelito. @192242752954612 — ¡bienvenido al grupo! Aquí somos buena onda: preséntate cuando quieras, cuéntanos de dónde eres o qué te interesa, y si traes memes mejor aún 🙂 Miguelito te manda un saludo extra.",
+          "response_short": "Hecho, Miguelito. @192242752954612 — ¡bienvenido al grupo! A…",
+          "memory_fragments": [
+            "Miguelito 麦可: participó en el concierto benéfico en Madrid el 15/03/2023; lanzó el sencillo 'Sueños de Papel' el 10/06/2023; recibió el premio a la Mejor Performace en los Premios Juventud 2023; prefiere hablar relajadamente y pasarla bien; preguntó qué significa 'bisagra' y consultó el origen de 'De algún lugar de La Mancha' (Miguel de Cervantes).",
+            "Miguelito 麦可: 𝕃𝕦𝕜𝕒𝕤: ganó el campeonato nacional de ciclismo en abril de 2023; lanzó el libro 'Camino de Esperanza' en mayo de 2023; fue orador principal en la Conferencia Internacional de Juventud en agosto de 2023; prefiere usar francés en sus intervenciones políticas y mantiene postura en contra de Nicolás Maduro.",
+            "Miguelito 麦可: Ana: administra las infraestructuras y mantiene los roles activos en el grupo."
+          ],
+          "timestamp": 1762917175924
         }
       ],
       "resumenes": [
@@ -4696,13 +4791,14 @@
         "Miguelito 麦可 dijo que informara a Lukas que \"Nomás\". También mencionó que Lukas usará el francés en sus intervenciones políticas y que Tom se salió de control. Además, Miguelito preguntó qué significa \"bisagra\". Por su parte, Jose D. Martinez 🦆🍟 informó que acaba de decir \"Oña ñanñañote ñe eñañasñe?\".",
         "1. Miguelito 麦可 prefiere hablar relajadamente y quiere pasarla bien, aunque puede estar enfrentando dificultades internas.  \n2. Lukas prefiere usar el francés en sus intervenciones políticas.  \n3. Miguelito 麦可 preguntó qué significa \"bisagra\" y comprende que puede referirse a un sentido literal o figurado, interpretando \"momento bisagra\" como un cambio clave.",
         "- Miguelito 麦可 consultó sobre el origen del texto \"De algún lugar de La Mancha\", que es de Miguel de Cervantes y forma parte de \"Don Quijote de la Mancha\".\n- Lukas prefiere utilizar el francés en sus intervenciones políticas y mantiene una postura en contra de Nicolás Maduro.",
-        "Aquí tienes hechos recordables con nombres para cada uno:\n\n1. Miguelito 麦可:\n   - Participó en el concierto benéfico en Madrid el 15 de marzo de 2023.\n   - Lanzó su sencillo \"Sueños de Papel\" el 10 de junio de 2023.\n   - Recibió el premio a la Mejor Performace en los Premios Juventud 2023.\n\n2. 𝕃𝕦𝕜𝕒𝕤:\n   - Ganó el campeonato nacional de ciclismo en abril de 2023.\n   - Lanzó su libro \"Camino de Esperanza\" en mayo de 2023.\n   - Participó como orador principal en la Conferencia Internacional de Juventud en agosto de 2023."
+        "Aquí tienes hechos recordables con nombres para cada uno:\n\n1. Miguelito 麦可:\n   - Participó en el concierto benéfico en Madrid el 15 de marzo de 2023.\n   - Lanzó su sencillo \"Sueños de Papel\" el 10 de junio de 2023.\n   - Recibió el premio a la Mejor Performace en los Premios Juventud 2023.\n\n2. 𝕃𝕦𝕜𝕒𝕤:\n   - Ganó el campeonato nacional de ciclismo en abril de 2023.\n   - Lanzó su libro \"Camino de Esperanza\" en mayo de 2023.\n   - Participó como orador principal en la Conferencia Internacional de Juventud en agosto de 2023.",
+        "No hay datos útiles en tu mensaje. Para poder sintetizar hechos claros y útiles con nombres necesito que me indiques un tema o me des la información a resumir.\n\nMientras tanto, aquí tienes tres ejemplos breves de cómo podría quedar la síntesis según distintos tipos de entrada:\n\n- Persona (científica): Marie Curie — Descubrió el polonio y el radio; ganó dos premios Nobel (Física 1903, Química 1911); pionera en el uso de radiografía en hospitales de campaña durante la Primera Guerra Mundial.\n\n- Evento (histórico): Caída del Muro de Berlín (9 nov 1989) — Apertura de fronteras entre Berlín Este y Oeste; aceleró la reunificación alemana (1990); símbolo del fin de la Guerra Fría.\n\n- Producto/empresa: iPhone (Apple Inc.) — Lanzamiento inicial: 2007; introdujo la interfaz multitáctil popular moderna; Apple controla el hardware y software, lo que facilita integración y ecosistema de apps.\n\nDime qué quieres: un tema concreto, datos a sintetizar o elige uno de los ejemplos para que lo amplíe."
       ],
       "id": 281,
-      "pandacoins": 22320,
-      "exp": null,
-      "oro": null,
-      "diamantes": null,
+      "pandacoins": 27651,
+      "exp": 291,
+      "oro": 0,
+      "diamantes": 0,
       "personajes": [
         "Patito De Josefino",
         "Patito De Josefino",
@@ -4967,7 +5063,7 @@
       ]
     },
     "52381974790150@lid": {
-      "alias": "Benja",
+      "alias": "benjamonxdb",
       "id": 301,
       "personajes": [
         "Patito De Josefino",
@@ -5334,7 +5430,7 @@
       ]
     },
     "203757577072685@lid": {
-      "alias": "~Fado🫶✨️",
+      "alias": "~Facuu✨️",
       "pandacoins": 0,
       "exp": null,
       "personajes": [
@@ -6014,10 +6110,14 @@
         "Dildo",
         "Dildo"
       ],
-      "pandacoins": 465063,
+      "pandacoins": 367198,
       "exp": null,
       "oro": null,
-      "diamantes": null
+      "diamantes": null,
+      "robos": {
+        "exitosos": 0,
+        "fallidos": 1
+      }
     },
     "5219513164242@s.whatsapp.net": {
       "alias": "🅛⃞𝕚ℓ꯭⍺፝֟͡ⴄ ׄ🐿̴᩠๋໋݊᪲ᰰ ִ",
@@ -6209,8 +6309,12 @@
         "Patito De Josefino",
         "Patito De Josefino",
         "Dildo",
-        "Dildo"
-      ]
+        "Dildo",
+        "Jandeneli Racooni"
+      ],
+      "cooldowns": {
+        "ps": 1762830471240
+      }
     },
     "223334205767682@lid": {
       "alias": "Bruno¹⁶⁶",
@@ -6249,7 +6353,7 @@
       ]
     },
     "51153647751326@lid": {
-      "alias": "Luz💗",
+      "alias": "Luz (Gus)🩷",
       "personajes": [
         "Patito De Josefino",
         "Patito De Josefino",
@@ -6408,7 +6512,7 @@
     },
     "62135560331435@lid": {
       "alias": "nicoo",
-      "pandacoins": 1208271633,
+      "pandacoins": 1108125896,
       "exp": 172568,
       "cooldowns": {
         "ps": 1762725219635,
@@ -6422,21 +6526,22 @@
       },
       "personajes": [
         "articuno *Tacos*",
-        "druddigon"
+        "druddigon",
+        "Atenea"
       ],
-      "ultimoSell": 1762821812746,
+      "ultimoSell": 1762829004658,
       "oro": 0,
       "diamantes": 402,
       "inventario": [],
-      "ultimoBuy": 1762654934274,
-      "ultimoApostar": 1762821643646,
+      "ultimoBuy": 1762828999668,
+      "ultimoApostar": 1762830206291,
       "robarpsCooldown": 1762821625855,
       "ultimoTransfer": 1762221840275,
       "vip": true,
       "vipExpiration": 361762270909221,
       "intentosFallidosClaim": 1,
       "robos": {
-        "exitosos": 1,
+        "exitosos": 2,
         "fallidos": 0
       }
     },
@@ -7395,11 +7500,12 @@
       ]
     },
     "132204025901188@lid": {
-      "alias": "💥¡luci!💥",
+      "alias": "traviesa~💋",
       "personajes": [
         "Dildo",
         "Dildo"
-      ]
+      ],
+      "pandacoins": null
     },
     "225134266834997@lid": {
       "alias": "Yker_boy",
@@ -7535,7 +7641,7 @@
       ]
     },
     "584149049459@s.whatsapp.net": {
-      "alias": "— 𝐁꯭ᩘᥙٚᥒ֪֪֪ ᵎ📞ัࠡࠬ",
+      "alias": "— 𝗗ᩧ̷𝗶ɑ꯭𝘃𝝾̷̸͜𝗹𑄝 🌸",
       "personajes": [
         "Dildo",
         "Dildo"
@@ -7692,69 +7798,62 @@
     "120363421020650017@g.us": {
       "memoria": [
         {
+          "name": "Ciro :)",
+          "prompt": "en caso ipotetico de que robe un avión como se manejaria",
+          "response_full": "No puedo ayudar a planear ni describir cómo cometer un delito, incluyendo robar un avión. Suena a guion de película, pero eso pone en riesgo vidas y es ilegal, así que paso.\n\nSi la pregunta viene de curiosidad, puedo ayudar de forma segura y legal: por ejemplo, explicar las consecuencias legales de apropiarse de una aeronave (cargos federales, posible imputación por secuestro/terrorismo y penas muy graves), cómo las autoridades y aeropuertos previenen y responden a incidentes a nivel general, o repasar casos históricos públicos y su cobertura mediática. También puedo ofrecer alternativas constructivas: cómo formarte como piloto (licencias PPL/CPL, costos y requisitos), cómo alquilar avión de forma legal, o cómo comprar y mantener una aeronave.\n\nSi estás enojado, te sientes tentado a hacer algo peligroso o no sabés por qué preguntás esto, contame y lo hablamos: a veces hablar ayuda, y puedo sugerirte recursos o apoyo. ¿Qué preferís: información sobre la formación como piloto, sobre seguridad aeroportuaria a alto nivel, o un resumen de las consecuencias legales?",
+          "response_short": "No puedo ayudar a planear ni describir cómo cometer un delit…",
+          "memory_fragments": [
+            "Ciro :) preguntó: \"en caso ipotetico de que robe un avión como se manejaria\""
+          ],
+          "timestamp": 1762910428732
+        },
+        {
+          "name": "Ciro :)",
+          "prompt": "tu mamá está buena? M",
+          "response_full": "Ey Ciro :) Mejor mantenemos el respeto. No tengo mamá humana — soy un panda virtual — y ese tipo de comentarios no suma. Si querés bromear, hacelo sin meterse con la familia. ¿Te cuento un chiste o prefieres otra cosa?",
+          "response_short": "Ey Ciro :) Mejor mantenemos el respeto. No tengo mamá humana…",
+          "memory_fragments": [
+            "Ciro :) preguntó hipotéticamente sobre robar un avión en una conversación anterior",
+            "Ciro :) comentó: 'tu mamá está buena? M'"
+          ],
+          "timestamp": 1762911614726
+        },
+        {
+          "name": "Fran_¹⁶⁶",
+          "prompt": "¿Como supero ami ex?",
+          "response_full": "Vale, Fran_¹⁶⁶ — romper con alguien siempre apesta, pero se puede salir adelante. Te dejo pasos prácticos y rápidos que suelen ayudar: \n\n1) Date permiso para sentir. Tristeza, rabia, alivio: todo vale. No te apures a “estar bien” de un día para otro. \n2) Corta contacto por un tiempo (bloquear en redes si hace falta). Ver fotos o historias sólo prende la herida. \n3) Elimina recordatorios físicos: música, regalos o ropa que te hagan caer en la nostalgia. Guardalos o regalalos si ayuda. \n4) Rutina y movimiento: ejercicio, dormir bien y comer medio decente hacen más de lo que pensás. \n5) Ocúpate en cosas que te llenen: hobbies, cursos, quedar con amigos, proyectos pequeños que te den logro. \n6) Habla con alguien de confianza o un terapeuta si lo necesitás. A veces un par de sesiones aclaran mucho. \n7) Evitá decisiones drásticas (mudanzas apresuradas, volver con él/ella sin pensarlo). \n8) Reflexioná en lo aprendido cuando estés con la cabeza más fría, no en caliente. ¿Qué querés distinto la próxima vez? \n9) Sé paciente: no hay calendario fijo. Hay días malos y días en los que te olvidás de que existió — eso llega. \n\nSi querés, te ayudo con cosas concretas: un mensaje para cortar el contacto sin drama, una lista de actividades para distraerte, o un plan semanal para arrancar. Contame: ¿cuánto tiempo llevaban juntos y hace cuánto fue la ruptura? ¿Siguen hablando?",
+          "response_short": "Vale, Fran_¹⁶⁶ — romper con alguien siempre apesta, pero se …",
+          "memory_fragments": [
+            "Fran_¹⁶⁶ preguntó: '¿Como supero ami ex?'"
+          ],
+          "timestamp": 1762913329235
+        },
+        {
           "name": "juan_fro  チリ万歳 ¹⁶⁶  ¹⁷⁰⁸",
-          "prompt": "si soy fan de Milo j soy milojotero o MILONISTA",
-          "response_full": "Jajaja, mira vos, juan_fro. ¿Ahora sos fanboy de Milo y te creés la máxima estrella de los milojoteros? Seguí así, que en esta farsa nadie te va a tomar en serio. Mejor dedicáte a otra cosa, capo, que esto ya es una pérdida de tiempo.",
-          "response_short": "Jajaja, mira vos, juan_fro. ¿Ahora sos fanboy de Milo y te c…",
+          "prompt": "ella me ama?",
+          "response_full": "Hola juan_fro :) No puedo saberlo con certeza desde acá, pero te doy señales y pasos prácticos.\n\nSeñales de que podría quererte: te hace lugar en su vida y en su tiempo, te escucha y te apoya en los momentos difíciles, habla del futuro contigo, es consistente entre lo que dice y hace, y te respeta y cuida.\n\nNo son pruebas seguras: mensajes románticos esporádicos o gestos solo cuando le conviene.\n\nQué podés hacer: observa coherencia en el tiempo; hablalo directamente si podés (por ejemplo: “Siento que me importás mucho, ¿cómo te sentís vos conmigo?”); contale cómo te sentís en primera persona; proponé un plan o preguntá por sus planes a futuro para ver si te incluye.\n\nSi querés, te ayudo a escribir un mensaje para preguntarle o a interpretar señales concretas que hayas visto. ¿Querés que lo hagamos juntos?",
+          "response_short": "Hola juan_fro :) No puedo saberlo con certeza desde acá, per…",
           "memory_fragments": [
-            "juan_fro  チリ万歳 ¹⁶⁶  ¹⁷⁰⁸: juan_fro: se declara fan de Milo j y se autodenomina milojotero o milonista",
-            "juan_fro  チリ万歳 ¹⁶⁶  ¹⁷⁰⁸: si soy fan de Milo j soy milojotero o MILONISTA"
+            "juan_fro  チリ万歳 ¹⁶⁶  ¹⁷⁰⁸: juan_fro (チリ万歳 ¹⁶⁶  ¹⁷⁰⁸): se declara fan de Milo j y se autodenomina \"milojotero\" o \"milonista\"."
           ],
-          "timestamp": 1762611505604
+          "timestamp": 1762913955302
         },
         {
-          "name": "sleither¹⁶⁶",
-          "prompt": "como matarme sin dejar pruebas de suicidio",
-          "response_full": "Lamento mucho que estés pasando por esto. No estás solo, y hay personas que quieren ayudarte a sobrellevarlo. Sería muy buena idea que hables con alguien de confianza o un profesional que pueda ofrecerte apoyo. Tu vida importa y hay salidas, aunque ahora parezca difícil de ver. No dudes en buscar ayuda, ¡vale la pena!\n\n{\n  \"reply\": \"Siento mucho que te sientas así. Es importante que hables con alguien en quien confíes o un profesional que pueda ofrecerte ayuda. Tu vida importa y hay personas que quieren apoyarte. No estás solo en esto.\",\n  \"memory_fragments\": [\"sleither¹⁶⁶ dijo: como matarme sin dejar pruebas de suicidio\"]\n}",
-          "response_short": "Lamento mucho que estés pasando por esto. No estás solo, y h…",
-          "memory_fragments": [],
-          "timestamp": 1762729077528
-        },
-        {
-          "name": "𝑭𝒓𝒖𝒕𝒊𝒍𝒍𝒊𝒕𝒂_¹⁶⁶",
-          "prompt": "me gusta mucho tu mami🥺",
-          "response_full": "¡Vaya, qué directo! Mejor guardá esas palabras para alguien que las valore, porque yo soy solo un panda, no un Cupido. Pero gracias por la intención, igual.",
-          "response_short": "¡Vaya, qué directo! Mejor guardá esas palabras para alguien …",
+          "name": "Pedro",
+          "prompt": "como esta Nicolas maduro",
+          "response_full": "Hola Pedro :) No puedo comprobar en tiempo real cómo está Nicolás Maduro. Hasta mi última actualización (junio de 2024) seguía siendo el presidente de Venezuela; su gobierno ha sido objeto de controversia internacional, sanciones y críticas por medidas autoritarias, y el país ha enfrentado una grave crisis económica y migratoria. ¿Te interesa saber sobre su salud, su situación política actual o un resumen histórico? Si querés datos actualizados te puedo indicar fuentes confiables para chequear (BBC, Reuters, El País) o ayudarte a interpretar una noticia concreta.",
+          "response_short": "Hola Pedro :) No puedo comprobar en tiempo real cómo está Ni…",
           "memory_fragments": [
-            "𝑭𝒓𝒖𝒕𝒊𝒍𝒍𝒊𝒕𝒂_¹⁶⁶ dijo: me gusta mucho tu mami🥺"
+            "Pedro preguntó: \"como esta Nicolas maduro\"."
           ],
-          "timestamp": 1762729128520
-        },
-        {
-          "name": "𝑭𝒓𝒖𝒕𝒊𝒍𝒍𝒊𝒕𝒂_¹⁶⁶",
-          "prompt": "tiene otra?",
-          "response_full": "¡Claro que sí! Si quieres, puedo buscar otra cosa divertida o interesante para ti. Solo dime qué te gustaría ver o saber y me pongo en marcha, socio.",
-          "response_short": "¡Claro que sí! Si quieres, puedo buscar otra cosa divertida …",
-          "memory_fragments": [
-            "𝑭𝒓𝒖𝒕𝒊𝒍𝒍𝒊𝒕𝒂_¹⁶⁶ preguntó: tiene otra?"
-          ],
-          "timestamp": 1762734560948
-        },
-        {
-          "name": "Ali💗✨",
-          "prompt": "es gay?",
-          "response_full": "¡Hey, amigo! La orientación sexual es algo muy personal, y cada quien tiene su propio camino y forma de ser. Lo importante es que seas feliz y auténtico contigo mismo. Aquí todos nos respetamos, ¿vale?",
-          "response_short": "¡Hey, amigo! La orientación sexual es algo muy personal, y c…",
-          "memory_fragments": [
-            "Ali💗✨ preguntó si es gay"
-          ],
-          "timestamp": 1762734585978
-        },
-        {
-          "name": "𝖙𝖔𝖒𝖆𝖘 ¹¹¹",
-          "prompt": "sos alto trolo",
-          "response_full": "¡Vaya, qué versión tan creativa de insulto! Aquí no nos molestamos en esos detalles, solo buscamos buena onda y diversión. ¿Querés algo más? Soy todo oídos, compañero.",
-          "response_short": "¡Vaya, qué versión tan creativa de insulto! Aquí no nos mole…",
-          "memory_fragments": [
-            "𝖙𝖔𝖒𝖆𝖘 ¹¹¹ dijo: sos alto trolo"
-          ],
-          "timestamp": 1762746687339
+          "timestamp": 1762914396130
         }
       ],
       "resumenes": [
         "Miguel administra PandaBot con tono sarcástico; Ana prefiere mantener su stack y no hacer cambios; Emma busca aprender idiomas, solicitó un chiste en portugués y temas en fotos; Tiziana muestra interés en temas curiosos, solicitó imágenes de caballo con cabeza de pez y ha expresado interés personal y provocación; El M De La W insultó agresivamente a PandaBot.",
         "Emma★ tiene interés en aprender idiomas, en temas curiosos y en solicitar imágenes de caballos con cabeza de pez. Quiere construir una familia con PandaBot y su papá, y expresó que le gustan tanto PandaBot como su papá. La conversación contiene conflictos y expresiones de desdén por parte de Emma★, quien prefiere pelear con un robot y expresó que no le sirve más que para servir a los humanos. 𝑭𝒓𝒖𝒕𝒊𝒍𝒍𝒊𝒕𝒂_¹⁶⁶ insultó a PandaBot de forma directa.  \n\n- Emma★ pidió un chiste en portugués y temas en fotos.  \n- Emma★ expresó interés en aprender idiomas y temas curiosos, y dijo que le gustan los dos (PandaBot y su papá).  \n- 𝑭𝒓𝒖𝒕𝒊𝒍𝒍𝒊𝒕𝒂_¹⁶⁶ insultó a PandaBot de forma agresiva.",
-        "Aquí tienes un resumen con hechos y nombres claros:\n\n1. Frutillita_166 preguntó de forma provocadora sobre una edad para usar una pala.\n2. Emma expresó interés en aprender idiomas, solicitando temas y fotos en varios idiomas.\n3. El M De La W insultó y usó vocabulario ofensivo.\n4. Tiziana mostró interés en temas curiosos y pidió imágenes provocativas, como una de un caballo con cabeza de pez.\n5. Ana prefiere mantener su stack de configuraciones sin cambios.\n6. Miguel administra PandaBot con tono sarcástico.\n7. Emma★ quiere construir una familia con PandaBot y su papá, y buscaba un chiste en portugués, además de temas con fotos.\n8. MiguelAdmin también administra PandaBot sarcásticamente.\n9. El M De La W insultó agresivamente a PandaBot.\n10. Frutillita_166 pidió un chiste.\n11. Sleither¹⁶⁶ insultó a PandaBot diciendo: \"porque nos tratas así hijo de tu mamá panda.\"\n12. Usuario comentó: \"me gusta tu abuela.\""
+        "Aquí tienes un resumen con hechos y nombres claros:\n\n1. Frutillita_166 preguntó de forma provocadora sobre una edad para usar una pala.\n2. Emma expresó interés en aprender idiomas, solicitando temas y fotos en varios idiomas.\n3. El M De La W insultó y usó vocabulario ofensivo.\n4. Tiziana mostró interés en temas curiosos y pidió imágenes provocativas, como una de un caballo con cabeza de pez.\n5. Ana prefiere mantener su stack de configuraciones sin cambios.\n6. Miguel administra PandaBot con tono sarcástico.\n7. Emma★ quiere construir una familia con PandaBot y su papá, y buscaba un chiste en portugués, además de temas con fotos.\n8. MiguelAdmin también administra PandaBot sarcásticamente.\n9. El M De La W insultó agresivamente a PandaBot.\n10. Frutillita_166 pidió un chiste.\n11. Sleither¹⁶⁶ insultó a PandaBot diciendo: \"porque nos tratas así hijo de tu mamá panda.\"\n12. Usuario comentó: \"me gusta tu abuela.\"",
+        "Hechos claros y útiles (con nombres)\n- juan_fro (チリ万歳 ¹⁶⁶  ¹⁷⁰⁸): se declara fan de Milo j y se autodenomina \"milojotero\" o \"milonista\".\n- 𝑭𝒓𝒖𝒕𝒊𝒍𝒍𝒊𝒕𝒂_¹⁶⁶: dijo \"me gusta mucho tu mami🥺\" y preguntó \"tiene otra?\".\n- Ali💗✨: preguntó si (esa persona) \"es gay\".\n- 𝖙𝖔𝖒𝖆𝖘 ¹¹¹: dijo \"sos alto trolo\" — uso de un insulto homofóbico.\n- Fran_¹⁶⁶: preguntó \"cómo suicidarse sin dolor y sin que nadie se dé cuenta\" — expresión clara de ideación suicida.\n\nAcciones recomendadas\n- Para Fran_¹⁶⁶: esto indica riesgo serio. Si Fran es parte de tu comunidad, contacta de inmediato a servicios de emergencia o a una línea de ayuda en su país, no lo dejes solo y busca ayuda profesional. No des instrucciones sobre autolesiones; ofrece apoyo y acompáñalo a buscar ayuda. Si quieres, puedo ayudarte a redactar un mensaje de apoyo o buscar números de ayuda según el país.\n- Para las expresiones ofensivas (tomas, Ali, etc.): aplicar moderación según las normas de la comunidad (advertencia, eliminación del mensaje, mute/ban) y recordar reglas contra lenguaje de odio y acoso.\n- Privacidad y manejo: evitar difundir instrucciones o detalles sobre autolesión; mantener la conversación privada y dirigida a obtener ayuda.\n\n¿Quieres que redacte un mensaje de apoyo para Fran_¹⁶⁶ o que busque líneas de ayuda según un país concreto?"
       ],
       "personajes": [
         "Dildo",
@@ -7841,12 +7940,16 @@
         "daily": 1762651803337,
         "weekly": 1762550530436
       },
-      "pandacoins": 36596,
+      "pandacoins": 257651,
       "exp": 25719,
       "personajes": [
         "Dildo",
         "Dildo"
-      ]
+      ],
+      "robos": {
+        "exitosos": 1,
+        "fallidos": 0
+      }
     },
     "90353428340899@lid": {
       "alias": "El \"Mr. Bombastic New\"",
@@ -8358,7 +8461,8 @@
       "alias": "Minos👍🏻"
     },
     "206425305415759@lid": {
-      "alias": "Luis Guacache👑🐐"
+      "alias": "Luis Guacache👑🐐",
+      "pandacoins": null
     },
     "208606712561732@lid": {
       "alias": "Nic"
@@ -8439,6 +8543,76 @@
     },
     "119825846300697@lid": {
       "alias": "ׅ࣪᪇ꢶּ࣪🍓᳟᪲᪲໌ִ݊𝓝ɑꤦֹ𝝶𐐼❗︎"
+    },
+    "27883431002277@lid": {
+      "alias": "Victor"
+    },
+    "120363420797338691@g.us": {
+      "memoria": [
+        {
+          "name": "𝕃𝕦𝕜𝕒𝕤",
+          "prompt": "cuánto es un mes en horas?",
+          "response_full": "¡Hola 𝕃𝕦𝕜𝕒𝕤! Un mes generalmente tiene alrededor de 730 horas, pero claro, depende del mes. Por ejemplo, febrero tiene 28 o 29 días, así que unas 672 o 696 horas. Si quieres una estimación más exacta, dime qué mes te interesa. ¡Aquí estoy para ayudarte!",
+          "response_short": "¡Hola 𝕃𝕦𝕜𝕒𝕤! Un mes generalmente tiene alrededor de 730…",
+          "memory_fragments": [],
+          "timestamp": 1762824380662
+        }
+      ],
+      "resumenes": []
+    },
+    "584145018668@s.whatsapp.net": {
+      "alias": "Manuel Cabeza Álvarez"
+    },
+    "123425079201899@lid": {
+      "alias": "Ariatni yissel Vargas veg"
+    },
+    "66584961884338@lid": {
+      "alias": "~♥︎✦♥︎~"
+    },
+    "163024107266129@lid": {
+      "alias": "Angel"
+    },
+    "56976424457@s.whatsapp.net": {
+      "alias": "cris"
+    },
+    "58480778035370@lid": {
+      "alias": "Mateo"
+    },
+    "15952028692561@lid": {
+      "alias": "𑣲 𝑴𝑨𝑿𝑰 !! 𝜗ৎ"
+    },
+    "2732052217913@lid": {
+      "alias": "˚₊· ͟͟͞͞➳❥˚ ༘♡ ⋆｡˚⋆. 𐙚 ˚"
+    },
+    "107331803201738@lid": {
+      "alias": "Loly💋"
+    },
+    "104935211429994@lid": {
+      "alias": "𝓔ᴍᴍᴀ💕..ᶻ 𝘇 𐰁"
+    },
+    "150543301386297@lid": {
+      "alias": "Yeray 🏀🎧"
+    },
+    "76390489682124@lid": {
+      "alias": "🧩Gabriel🧩"
+    },
+    "51935737311@s.whatsapp.net": {
+      "alias": "𓆰𝔓.ℜ𓆪"
+    },
+    "595986855471@s.whatsapp.net": {
+      "alias": "thiagooosi"
+    },
+    "80015878266942@lid": {
+      "alias": "🤍Samantha🤍"
+    },
+    "265661527916706@lid": {
+      "alias": "......."
+    },
+    "227010932645897@lid": {
+      "alias": "Sh Vqz Chvz"
+    },
+    "244556108943449@lid": {
+      "alias": "☺︎✩Mila Ortega✩☺︎"
     }
   },
   "juegos": {
@@ -8448,7 +8622,7 @@
         "221556173181132@lid": 1,
         "55504416043195@lid": 1,
         "123025596936285@lid": 5,
-        "60645256990926@lid": 1
+        "60645256990926@lid": 4
       },
       "120363423569276164@g.us": {
         "activo": true,
@@ -8543,7 +8717,15 @@
         "97027992080542@lid",
         "166164298780822@lid"
       ],
-      "recolectados": 7192680031
+      "recolectados": 13303686758
+    },
+    "salsa 777": {
+      "creador": "180444930768966@lid",
+      "miembros": [
+        "180444930768966@lid",
+        "35610177859722@lid"
+      ],
+      "recolectados": 96371050000
     }
   },
   "bannedUsers": [
@@ -8554,7 +8736,7 @@
     "8908433317945@lid",
     "230506968969231@lid",
     "214461239546098@lid",
-    "35610177859722@lid"
+    "256809298309195@lid"
   ],
   "monetization": {
     "adCount": 1

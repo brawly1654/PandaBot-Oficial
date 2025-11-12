@@ -76,10 +76,13 @@ function generarBloqueRPG(user, users) {
   const promedio = totalCoins / allUsers.length;
   const robos = user.robos || { exitosos: 0, fallidos: 0 };
 
+  const tieneFavorito = user.favorito && user.personajes?.includes(user.favorito);
+  const favoritoTexto = tieneFavorito ? user.favorito : 'No definido';
+
   return `│💰 *Pandacoins:* ${Number(user.pandacoins).toFixed(2)}
 │🌟 *Experiencia:* ${user.exp}
 │🛡️ *Personajes:* ${user.personajes?.length || 0}
-│🎭 *Destacados:*\n${destacados}
+│❤️ *Personaje Favorito:* ${favoritoTexto}
 │📊 *Promedio global:* ${promedio.toFixed(2)}
 │👀 *Anuncios Vistos:* ${user.adCount || 0}
 │🕵️ *Robos exitosos:* ${robos.exitosos}

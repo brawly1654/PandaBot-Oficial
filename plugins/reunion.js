@@ -1,3 +1,4 @@
+// codigo por miangeldev
 // reunion.js
 import { ownerNumber } from '../config.js';
 export const command = 'reunion';

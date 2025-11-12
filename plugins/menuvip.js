@@ -34,6 +34,9 @@ export async function run(sock, msg) {
   • *.imagen <busqueda>*
     > Busca imagenes sobre algo en PandaBot (busquedas limitadas, no explotar el comando).
 
+  • *.qc <texto>*
+    > Crea un sticker que tendrá el texto que tú especifiques.
+
 💎 *Recompensas VIP*
   • *.dropvip*
     > Obtén un personaje épico o superior.

@@ -1,3 +1,4 @@
+// Código por miangeldev
 // impostor.js (actualizado)
 // - 30s por turno
 // - Mensaje claro para FALSO IMPOSTOR

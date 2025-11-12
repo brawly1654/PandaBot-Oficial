@@ -2,7 +2,7 @@
   "users": {
     "60645256990926@lid": {
       "alias": "🥶🩵",
-      "pandacoins": 241125,
+      "pandacoins": 0,
       "exp": 42007,
       "oro": 0,
       "diamantes": 53,
@@ -15,29 +15,10 @@
         "magicbox": 1761959632738
       },
       "personajes": [
-        "Cuphead",
-        "wo-chien",
-        "PandaBot",
-        "darumaka",
-        "combee",
-        "Patito De Josefino",
-        "Patito De Josefino",
-        "arrokuda *💧*",
-        "darumaka",
-        "trevenant",
-        "larvitar",
-        "Dildo",
-        "Dildo",
-        "oddish",
-        "Brri Brri Bicus Dicus Bombicus",
-        "Tom Ass 🕷",
-        "Smurf Cat",
-        "stantler",
-        "altaria",
-        "Los Nooo My Hotspotsitos"
+        "Everything"
       ],
       "id": 1,
-      "ultimoTransfer": 1762821753553,
+      "ultimoTransfer": 1762838021574,
       "inventario": [],
       "ultimoBuy": 1761878941964,
       "ultimoSell": 1761878949900,
@@ -45,15 +26,16 @@
       "creditos": 14,
       "robarpsCooldown": 1762821960102,
       "robos": {
-        "exitosos": 4,
-        "fallidos": 1
+        "exitosos": 9,
+        "fallidos": 2
       },
       "intentosFallidosClaim": 0
     },
     "166164298780822@lid": {
       "alias": "𝕃𝕦𝕜𝕒𝕤",
       "cooldowns": {
-        "ps": 1762701210916
+        "ps": 1762701210916,
+        "dropvip": 1762910693256
       },
       "personajes": [
         "Tom  🎉",
@@ -69,20 +51,27 @@
         "Cristo Rey 👾",
         "Garam Bicicleteira *💧*",
         "pene",
-        "Dildo"
+        "Dildo",
+        "La Grande Combinasion",
+        "Satanás *💧🫓*"
       ],
-      "pandacoins": 5374161811,
-      "ultimoSell": 1762716160130,
+      "pandacoins": 4373744545,
+      "ultimoSell": 1762839327298,
       "robarpsCooldown": 1762726446246,
       "exp": null,
       "inventario": [],
-      "ultimoBuy": 1762651414679,
+      "ultimoBuy": 1762839831036,
       "vip": true,
       "vipExpiration": 5361443828475,
       "id": 2,
       "ultimoApostar": 1761450432262,
       "ultimoTransfer": 1761959300548,
-      "intentosFallidosClaim": 0
+      "intentosFallidosClaim": 0,
+      "robos": {
+        "exitosos": 1,
+        "fallidos": 0
+      },
+      "favorito": "La Grande Combinasion"
     },
     "180444930768966@lid": {
       "alias": "Tom",
@@ -144,23 +133,27 @@
         "pene",
         "Dildo",
         "pene",
-        "Smurf Cat 🫓"
+        "Everything 💤 🪳",
+        "CortanaBot",
+        "Everything",
+        "Satanás"
       ],
-      "pandacoins": 11366237244,
+      "pandacoins": 20326220949,
       "exp": 95324,
       "oro": 1,
       "diamantes": 0,
       "inventario": [
         "Spooky Lucky Block"
       ],
-      "ultimoBuy": 1762740458515,
-      "ultimoSell": 1762740503646,
+      "ultimoBuy": 1762910752856,
+      "ultimoSell": 1762909793177,
       "ultimoApostar": 1762726988333,
       "robarpsCooldown": 1762664291920,
       "id": 3,
-      "vip": false,
+      "vip": true,
       "ultimoTransfer": 1762221834359,
-      "intentosFallidosClaim": 1
+      "intentosFallidosClaim": 1,
+      "vipExpiration": 1765452474040
     },
     "2280761884732@lid": {
       "alias": "АНДРЕЙ СМАЕВ",
@@ -180,25 +173,30 @@
     "97027992080542@lid": {
       "alias": "Jose D. Martinez 🦆🍟",
       "cooldowns": {
-        "ps": 1762363423436
+        "ps": 1762909671603
       },
       "personajes": [
         "Patito De Josefino",
         "Patito De Josefino",
         "Sai 🎉 🫓 🇨🇴",
-        "Tom Ass"
+        "gourgeist-average"
       ],
-      "pandacoins": 260065399,
-      "ultimoSell": 1762739819687,
+      "pandacoins": 1110499111,
+      "ultimoSell": 1762911789340,
       "inventario": [],
-      "ultimoBuy": 1762739823719,
+      "ultimoBuy": 1762911768270,
       "robarpsCooldown": 1762655231857,
-      "exp": 9372,
+      "exp": 9740,
       "vip": false,
       "id": 5,
       "intentosFallidosClaim": 0,
-      "oro": 0,
-      "diamantes": 0
+      "oro": 1,
+      "diamantes": 0,
+      "robos": {
+        "exitosos": 1,
+        "fallidos": 0
+      },
+      "carne": null
     },
     "101310175117537@lid": {
       "alias": "ITZ.LUZZ",
@@ -240,7 +238,7 @@
       "id": 7
     },
     "30868416512052@lid": {
-      "alias": "🐈",
+      "alias": "no sonrías Sergio",
       "pandacoins": 224204032,
       "exp": null,
       "oro": null,
@@ -379,20 +377,18 @@
         "hourly": 1761410306389,
         "ps": 1762700247519
       },
-      "pandacoins": 2046755,
+      "pandacoins": 1061055,
       "exp": 10135,
       "personajes": [
         "Snorlax ☯️",
         "genesect *💧* *Tacos*",
-        "Dildo",
-        "Dildo",
         "Los PandaBotsitos",
-        "surskit",
-        "La Grande Comeverga 💧"
+        "La Grande Comeverga 💧",
+        "Snorlax Shiny 💀"
       ],
-      "ultimoSell": 1762271748360,
+      "ultimoSell": 1762839406326,
       "inventario": [],
-      "ultimoBuy": 1762651430343,
+      "ultimoBuy": 1762839323749,
       "vip": true,
       "vipExpiration": 5361443669437,
       "id": 16,
@@ -554,7 +550,7 @@
       "id": 24
     },
     "17098935930912@lid": {
-      "alias": "༆༒︎ᦔꪖᛕﺃ༒︎༆",
+      "alias": "| (• ◡•)|",
       "personajes": [
         "Kuzuryu",
         "Job Job Job Sahur",
@@ -599,7 +595,7 @@
       "id": 27
     },
     "68999270371333@lid": {
-      "alias": ".",
+      "alias": "Fran_¹⁶⁶",
       "personajes": [
         "Kuzuryu",
         "Job Job Job Sahur",
@@ -609,19 +605,22 @@
         "Patito De Josefino",
         "Patito De Josefino",
         "Dildo",
-        "Dildo"
+        "Dildo",
+        "Milo j"
       ],
       "id": 28,
       "cooldowns": {
-        "daily": 1761609535462,
+        "daily": 1762911173272,
         "hourly": 1761530335621,
         "weekly": 1761530346514,
         "monthly": 1761530477304
       },
-      "pandacoins": 38171,
-      "exp": 99771,
-      "oro": null,
-      "diamantes": null
+      "pandacoins": 42812,
+      "exp": 108185,
+      "oro": 0,
+      "diamantes": 0,
+      "inventario": [],
+      "ultimoBuy": 1762911163291
     },
     "126096381095941@lid": {
       "alias": "🪫",
@@ -694,13 +693,16 @@
         "Patito De Josefino",
         "Patito De Josefino",
         "Dildo",
-        "Dildo"
+        "Dildo",
+        "Milo j 💤"
       ],
       "id": 33,
-      "pandacoins": 19710,
-      "exp": 777,
+      "pandacoins": 17083,
+      "exp": 1061,
       "oro": 0,
-      "diamantes": 0
+      "diamantes": 0,
+      "inventario": [],
+      "ultimoBuy": 1762911135618
     },
     "111064062640327@lid": {
       "alias": "sonrie Sergio",
@@ -991,9 +993,9 @@
     },
     "260051814117536@lid": {
       "alias": "~\"AGUS AMA A MAILO J JA\"~",
-      "pandacoins": 19283579,
+      "pandacoins": 20771623,
       "exp": 8927,
-      "ultimoApostar": 1762225725944,
+      "ultimoApostar": 1762823697061,
       "oro": 1,
       "diamantes": 0,
       "personajes": [
@@ -1405,25 +1407,32 @@
         "hourly": 1762367991089,
         "ps": 1762702037993,
         "weekly": 1761707716408,
-        "superminar": 1762701921840,
-        "dropvip": 1762701939259,
+        "superminar": 1762910585353,
+        "dropvip": 1762910591972,
         "magicbox": 1762289293403
       },
-      "pandacoins": 17169712165,
-      "exp": 99421,
+      "pandacoins": 18918525871,
+      "exp": 99806,
       "oro": 5,
-      "diamantes": 302,
-      "personajes": [],
+      "diamantes": 352,
+      "personajes": [
+        "sylveon *🌮* 💤",
+        "Atenea 🌮 🇧🇷"
+      ],
       "ultimoApostar": 1762268224647,
       "inventario": [],
-      "ultimoBuy": 1762748473859,
-      "ultimoSell": 1762748497788,
+      "ultimoBuy": 1762911999631,
+      "ultimoSell": 1762912089682,
       "id": 76,
-      "robarpsCooldown": 1762748323735,
+      "robarpsCooldown": 1762911153063,
       "intentosFallidosClaim": 0,
       "vip": true,
       "ultimoTransfer": 1762314611831,
-      "vipExpiration": 1762740529286
+      "robos": {
+        "exitosos": 2,
+        "fallidos": 0
+      },
+      "vipExpiration": 1762996970048
     },
     "15019718742261@lid": {
       "alias": "Zaid :D",
@@ -1486,7 +1495,9 @@
       "diamantes": null,
       "robarpsCooldown": 1761523152953,
       "inventario": [],
-      "ultimoBuy": 1761523378155
+      "ultimoBuy": 1761523378155,
+      "vip": true,
+      "vipExpiration": 1765452392692
     },
     "190460475756615@lid": {
       "pandacoins": 9954,
@@ -1668,7 +1679,7 @@
       "id": 89
     },
     "258166407360658@lid": {
-      "alias": "SoyPro",
+      "alias": ".",
       "pandacoins": 80129717,
       "exp": 4448,
       "oro": 0,
@@ -1708,15 +1719,23 @@
         "Dildo",
         "Dildo",
         "pansage",
-        "manectric"
+        "manectric",
+        "vigoroth",
+        "Milo j"
       ],
       "id": 91,
-      "pandacoins": null,
-      "exp": null,
-      "oro": null,
-      "diamantes": null,
+      "pandacoins": 3761,
+      "exp": 242,
+      "oro": 0,
+      "diamantes": 0,
       "cooldowns": {
-        "ps": 1762707712448
+        "ps": 1762829330518
+      },
+      "inventario": [],
+      "ultimoBuy": 1762911134744,
+      "robos": {
+        "exitosos": 1,
+        "fallidos": 0
       }
     },
     "280908712132850@lid": {
@@ -2144,23 +2163,22 @@
         "superminar": 1762039250336,
         "dropvip": 1761707762300
       },
-      "pandacoins": 6204322491,
-      "exp": 223017,
+      "pandacoins": 12044226981,
+      "exp": 228715,
       "oro": 7,
       "diamantes": 455,
       "personajes": [
-        "sylveon *🌮* 💤",
-        "Lilan Waifu"
+        "Lilan Waifu",
+        "GOOD BOY 🌮 💧"
       ],
       "inventario": [],
-      "ultimoBuy": 1762821855802,
-      "ultimoSell": 1762821859285,
+      "ultimoBuy": 1762912071047,
+      "ultimoSell": 1762912125760,
       "vip": false,
       "id": 115,
       "ultimoTransfer": 1761708302813,
-      "robarpsCooldown": 1762821829637,
-      "intentosFallidosClaim": 0,
-      "pescado": null
+      "robarpsCooldown": 1762911166974,
+      "intentosFallidosClaim": 0
     },
     "238130804310243@lid": {
       "alias": "ali :>",
@@ -2762,15 +2780,20 @@
         "Patito De Josefino",
         "Patito De Josefino",
         "Dildo",
-        "Dildo"
+        "Dildo",
+        "Milo j"
       ],
       "id": 151,
-      "pandacoins": 4755,
-      "exp": 333,
-      "oro": null,
-      "diamantes": null,
+      "pandacoins": 0,
+      "exp": 542,
+      "oro": 0,
+      "diamantes": 1,
       "inventario": [],
-      "ultimoBuy": 1761532167925
+      "ultimoBuy": 1762911085411,
+      "robos": {
+        "exitosos": 1,
+        "fallidos": 0
+      }
     },
     "74011413340367@lid": {
       "alias": "Derlis",
@@ -2815,7 +2838,8 @@
         "Dildo",
         "Dildo"
       ],
-      "id": 154
+      "id": 154,
+      "pandacoins": null
     },
     "268057985421443@lid": {
       "alias": "Sabcar",
@@ -3521,7 +3545,7 @@
       "pandacoins": 6549
     },
     "21668730818770@lid": {
-      "alias": "꧁𝐒𝐎𝐃𝐎꧂",
+      "alias": "¿«★emilia★»?",
       "personajes": [
         "Kuzuryu",
         "Job Job Job Sahur",
@@ -4267,7 +4291,7 @@
       "id": 246
     },
     "3926120239136@lid": {
-      "alias": "🌖🩵",
+      "alias": "🌖🤍",
       "personajes": [
         "Chotavio",
         "PandaBot",
@@ -4690,6 +4714,30 @@
           "response_short": "{\n  \"reply\": ¡Vamos con el número 2, Miguelito! A veces, lo …",
           "memory_fragments": [],
           "timestamp": 1762748989955
+        },
+        {
+          "name": "Tom",
+          "prompt": "ahora mismo en esta fecha cuando vale 1 Bitcoin a dólares?",
+          "response_full": "{\n  \"reply\": ¡Hola, Tom! La verdad, mi data solo llega hasta octubre de 2023, así que no puedo darte el valor al momento exacto. Pero si quieres, puedo ayudarte con un rango aproximado o recomendarte sitios donde consultarlo en tiempo real. ¿Qué te parece? 😊\n  \"memory_fragments\": [\"Hechos recordables con nombres\"]\n}",
+          "response_short": "{\n  \"reply\": ¡Hola, Tom! La verdad, mi data solo llega hasta…",
+          "memory_fragments": [],
+          "timestamp": 1762827978005
+        },
+        {
+          "name": "Miguelito 麦可",
+          "prompt": "cuando es el dia del programador",
+          "response_full": "{\n  \"reply\": ¡Qué buena pregunta, Miguelito! El día del programador se celebra cada año el 13 de septiembre en algunos países y el 256 de septiembre en otros, ya que el número 256 es importante en la programación por ser la potencia de 2 más grande antes de llegar a 512. Es un día para homenajear a todos los que hacen magia con código. ¡Salud por los programadores! 😊\n  \"memory_fragments\": [\"Hechos recordables con nombres\"]\n}",
+          "response_short": "{\n  \"reply\": ¡Qué buena pregunta, Miguelito! El día del prog…",
+          "memory_fragments": [],
+          "timestamp": 1762831515035
+        },
+        {
+          "name": "Miguelito 麦可",
+          "prompt": "contexto",
+          "response_full": "{\n  \"reply\": ¡Vaya, qué onda,🥶🩵! Parece que hay una situación un poco tensa, pero aquí estamos para mantener la buena vibra. Pienso que a veces las cosas se salen de control, pero lo importante es tratar de entendernos y seguir adelante con calma. Si quieres contar más o simplemente relajarte, aquí estoy para escuchar. ¡Todo bien, compa! 😊\n  \"memory_fragments\": [\"Hechos recordables con nombres\"]\n}",
+          "response_short": "{\n  \"reply\": ¡Vaya, qué onda,🥶🩵! Parece que hay una situac…",
+          "memory_fragments": [],
+          "timestamp": 1762838268827
         }
       ],
       "resumenes": [
@@ -4700,10 +4748,10 @@
         "Aquí tienes hechos recordables con nombres para cada uno:\n\n1. Miguelito 麦可:\n   - Participó en el concierto benéfico en Madrid el 15 de marzo de 2023.\n   - Lanzó su sencillo \"Sueños de Papel\" el 10 de junio de 2023.\n   - Recibió el premio a la Mejor Performace en los Premios Juventud 2023.\n\n2. 𝕃𝕦𝕜𝕒𝕤:\n   - Ganó el campeonato nacional de ciclismo en abril de 2023.\n   - Lanzó su libro \"Camino de Esperanza\" en mayo de 2023.\n   - Participó como orador principal en la Conferencia Internacional de Juventud en agosto de 2023."
       ],
       "id": 281,
-      "pandacoins": 22320,
-      "exp": null,
-      "oro": null,
-      "diamantes": null,
+      "pandacoins": 27651,
+      "exp": 291,
+      "oro": 0,
+      "diamantes": 0,
       "personajes": [
         "Patito De Josefino",
         "Patito De Josefino",
@@ -5335,7 +5383,7 @@
       ]
     },
     "203757577072685@lid": {
-      "alias": "~Fado🫶✨️",
+      "alias": "~Facuu✨️",
       "pandacoins": 0,
       "exp": null,
       "personajes": [
@@ -5639,7 +5687,7 @@
       ]
     },
     "35948943376589@lid": {
-      "alias": "Ｄｅｎｊｉ.",
+      "alias": "「Ｒｉｙｏｕ」",
       "personajes": [
         "Patito De Josefino",
         "Patito De Josefino",
@@ -6210,8 +6258,12 @@
         "Patito De Josefino",
         "Patito De Josefino",
         "Dildo",
-        "Dildo"
-      ]
+        "Dildo",
+        "Jandeneli Racooni"
+      ],
+      "cooldowns": {
+        "ps": 1762830471240
+      }
     },
     "223334205767682@lid": {
       "alias": "Bruno¹⁶⁶",
@@ -6250,7 +6302,7 @@
       ]
     },
     "51153647751326@lid": {
-      "alias": "Luz💗",
+      "alias": "Luz (Gus)🩷",
       "personajes": [
         "Patito De Josefino",
         "Patito De Josefino",
@@ -6409,7 +6461,7 @@
     },
     "62135560331435@lid": {
       "alias": "nicoo",
-      "pandacoins": 1208271633,
+      "pandacoins": 1108125896,
       "exp": 172568,
       "cooldowns": {
         "ps": 1762725219635,
@@ -6423,21 +6475,22 @@
       },
       "personajes": [
         "articuno *Tacos*",
-        "druddigon"
+        "druddigon",
+        "Atenea"
       ],
-      "ultimoSell": 1762821812746,
+      "ultimoSell": 1762829004658,
       "oro": 0,
       "diamantes": 402,
       "inventario": [],
-      "ultimoBuy": 1762654934274,
-      "ultimoApostar": 1762821643646,
+      "ultimoBuy": 1762828999668,
+      "ultimoApostar": 1762830206291,
       "robarpsCooldown": 1762821625855,
       "ultimoTransfer": 1762221840275,
       "vip": true,
       "vipExpiration": 361762270909221,
       "intentosFallidosClaim": 1,
       "robos": {
-        "exitosos": 1,
+        "exitosos": 2,
         "fallidos": 0
       }
     },
@@ -7400,7 +7453,8 @@
       "personajes": [
         "Dildo",
         "Dildo"
-      ]
+      ],
+      "pandacoins": null
     },
     "225134266834997@lid": {
       "alias": "Yker_boy",
@@ -7536,7 +7590,7 @@
       ]
     },
     "584149049459@s.whatsapp.net": {
-      "alias": "— 𝐁꯭ᩘᥙٚᥒ֪֪֪ ᵎ📞ัࠡࠬ",
+      "alias": "— 𝗗ᩧ̷𝗶ɑ꯭𝘃𝝾̷̸͜𝗹𑄝 🌸",
       "personajes": [
         "Dildo",
         "Dildo"
@@ -7750,6 +7804,37 @@
             "𝖙𝖔𝖒𝖆𝖘 ¹¹¹ dijo: sos alto trolo"
           ],
           "timestamp": 1762746687339
+        },
+        {
+          "name": "Fran_¹⁶⁶",
+          "prompt": "¿Hipotéticamente como me suicidó sin sentir dolor y que nadie se de cuenta?",
+          "response_full": "Siento muchísimo que alguien esté pasando por eso. No puedo ayudar con instrucciones para hacerse daño ni con formas de suicidarse. Si tú o la persona que preguntó está en peligro inmediato, por favor contactá a los servicios de emergencia de tu país (por ejemplo 911 o 112) ahora mismo o pedile a alguien cercano que lo haga por vos. \n\nHablar con alguien de confianza (familiar, amigo) o con un profesional puede marcar una gran diferencia. También podés comunicarte con una línea de prevención del suicidio: si estás en EE. UU./Puerto Rico llamá o mandá mensaje al 988; en el Reino Unido llamá al 116 123; y para otros países podés buscar una línea local en https://www.befrienders.org/ que lista recursos internacionales. \n\nSi querés, puedo ayudarte a encontrar recursos locales o a redactar un mensaje para pedir ayuda a alguien en quien confiás. No estás solo y hay gente dispuesta a acompañarte ahora mismo.",
+          "response_short": "Siento muchísimo que alguien esté pasando por eso. No puedo …",
+          "memory_fragments": [
+            "Fran_¹⁶⁶ preguntó cómo suicidarse sin dolor y sin que nadie se dé cuenta"
+          ],
+          "timestamp": 1762909727569
+        },
+        {
+          "name": "Ciro :)",
+          "prompt": "en caso ipotetico de que robe un avión como se manejaria",
+          "response_full": "No puedo ayudar a planear ni describir cómo cometer un delito, incluyendo robar un avión. Suena a guion de película, pero eso pone en riesgo vidas y es ilegal, así que paso.\n\nSi la pregunta viene de curiosidad, puedo ayudar de forma segura y legal: por ejemplo, explicar las consecuencias legales de apropiarse de una aeronave (cargos federales, posible imputación por secuestro/terrorismo y penas muy graves), cómo las autoridades y aeropuertos previenen y responden a incidentes a nivel general, o repasar casos históricos públicos y su cobertura mediática. También puedo ofrecer alternativas constructivas: cómo formarte como piloto (licencias PPL/CPL, costos y requisitos), cómo alquilar avión de forma legal, o cómo comprar y mantener una aeronave.\n\nSi estás enojado, te sientes tentado a hacer algo peligroso o no sabés por qué preguntás esto, contame y lo hablamos: a veces hablar ayuda, y puedo sugerirte recursos o apoyo. ¿Qué preferís: información sobre la formación como piloto, sobre seguridad aeroportuaria a alto nivel, o un resumen de las consecuencias legales?",
+          "response_short": "No puedo ayudar a planear ni describir cómo cometer un delit…",
+          "memory_fragments": [
+            "Ciro :) preguntó: \"en caso ipotetico de que robe un avión como se manejaria\""
+          ],
+          "timestamp": 1762910428732
+        },
+        {
+          "name": "Ciro :)",
+          "prompt": "tu mamá está buena? M",
+          "response_full": "Ey Ciro :) Mejor mantenemos el respeto. No tengo mamá humana — soy un panda virtual — y ese tipo de comentarios no suma. Si querés bromear, hacelo sin meterse con la familia. ¿Te cuento un chiste o prefieres otra cosa?",
+          "response_short": "Ey Ciro :) Mejor mantenemos el respeto. No tengo mamá humana…",
+          "memory_fragments": [
+            "Ciro :) preguntó hipotéticamente sobre robar un avión en una conversación anterior",
+            "Ciro :) comentó: 'tu mamá está buena? M'"
+          ],
+          "timestamp": 1762911614726
         }
       ],
       "resumenes": [
@@ -7842,12 +7927,16 @@
         "daily": 1762651803337,
         "weekly": 1762550530436
       },
-      "pandacoins": 36596,
+      "pandacoins": 257651,
       "exp": 25719,
       "personajes": [
         "Dildo",
         "Dildo"
-      ]
+      ],
+      "robos": {
+        "exitosos": 1,
+        "fallidos": 0
+      }
     },
     "90353428340899@lid": {
       "alias": "El \"Mr. Bombastic New\"",
@@ -8359,7 +8448,8 @@
       "alias": "Minos👍🏻"
     },
     "206425305415759@lid": {
-      "alias": "Luis Guacache👑🐐"
+      "alias": "Luis Guacache👑🐐",
+      "pandacoins": null
     },
     "208606712561732@lid": {
       "alias": "Nic"
@@ -8431,6 +8521,76 @@
     },
     "30881200758997@lid": {
       "alias": "kevin"
+    },
+    "44668045815844@lid": {
+      "alias": "vicky💗"
+    },
+    "2959886811213@lid": {
+      "alias": "j@y"
+    },
+    "119825846300697@lid": {
+      "alias": "ׅ࣪᪇ꢶּ࣪🍓᳟᪲᪲໌ִ݊𝓝ɑꤦֹ𝝶𐐼❗︎"
+    },
+    "27883431002277@lid": {
+      "alias": "Victor"
+    },
+    "120363420797338691@g.us": {
+      "memoria": [
+        {
+          "name": "𝕃𝕦𝕜𝕒𝕤",
+          "prompt": "cuánto es un mes en horas?",
+          "response_full": "¡Hola 𝕃𝕦𝕜𝕒𝕤! Un mes generalmente tiene alrededor de 730 horas, pero claro, depende del mes. Por ejemplo, febrero tiene 28 o 29 días, así que unas 672 o 696 horas. Si quieres una estimación más exacta, dime qué mes te interesa. ¡Aquí estoy para ayudarte!",
+          "response_short": "¡Hola 𝕃𝕦𝕜𝕒𝕤! Un mes generalmente tiene alrededor de 730…",
+          "memory_fragments": [],
+          "timestamp": 1762824380662
+        }
+      ],
+      "resumenes": []
+    },
+    "584145018668@s.whatsapp.net": {
+      "alias": "Manuel Cabeza Álvarez"
+    },
+    "123425079201899@lid": {
+      "alias": "Ariatni yissel Vargas veg"
+    },
+    "66584961884338@lid": {
+      "alias": "~♥︎✦♥︎~"
+    },
+    "163024107266129@lid": {
+      "alias": "Angel"
+    },
+    "56976424457@s.whatsapp.net": {
+      "alias": "cris"
+    },
+    "58480778035370@lid": {
+      "alias": "Mateo"
+    },
+    "15952028692561@lid": {
+      "alias": "𑣲 𝑴𝑨𝑿𝑰 !! 𝜗ৎ"
+    },
+    "2732052217913@lid": {
+      "alias": "˚₊· ͟͟͞͞➳❥˚ ༘♡ ⋆｡˚⋆. 𐙚 ˚"
+    },
+    "107331803201738@lid": {
+      "alias": "Loly💋"
+    },
+    "104935211429994@lid": {
+      "alias": "𝓔ᴍᴍᴀ💕..ᶻ 𝘇 𐰁"
+    },
+    "150543301386297@lid": {
+      "alias": "Yeray 🏀🎧"
+    },
+    "76390489682124@lid": {
+      "alias": "🧩Gabriel🧩"
+    },
+    "51935737311@s.whatsapp.net": {
+      "alias": "𓆰𝔓.ℜ𓆪"
+    },
+    "595986855471@s.whatsapp.net": {
+      "alias": "thiagooosi"
+    },
+    "80015878266942@lid": {
+      "alias": "🤍Samantha🤍"
     }
   },
   "juegos": {
@@ -8440,7 +8600,7 @@
         "221556173181132@lid": 1,
         "55504416043195@lid": 1,
         "123025596936285@lid": 5,
-        "60645256990926@lid": 1
+        "60645256990926@lid": 3
       },
       "120363423569276164@g.us": {
         "activo": true,
@@ -8535,7 +8695,14 @@
         "97027992080542@lid",
         "166164298780822@lid"
       ],
-      "recolectados": 7192680031
+      "recolectados": 8803687593
+    },
+    "salsa 777": {
+      "creador": "180444930768966@lid",
+      "miembros": [
+        "180444930768966@lid"
+      ],
+      "recolectados": 0
     }
   },
   "bannedUsers": [
@@ -8546,7 +8713,7 @@
     "8908433317945@lid",
     "230506968969231@lid",
     "214461239546098@lid",
-    "35610177859722@lid"
+    "256809298309195@lid"
   ],
   "monetization": {
     "adCount": 1
