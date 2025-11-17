@@ -2,21 +2,16 @@ import fs from 'fs';
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 import { obtenerPizzeria } from '../PandaLove/pizzeria.js';
 import { isVip } from '../utils/vip.js';
+import { getUserAchievementStats, initializeAchievements } from '../data/achievementsDB.js';
 
 const parejasFile = './data/parejas.json';
-const hermandadFile = './data/hermandad.json';
 
 function cargarParejas() {
   if (!fs.existsSync(parejasFile)) fs.writeFileSync(parejasFile, '{}');
   return JSON.parse(fs.readFileSync(parejasFile));
 }
 
-function cargarHermandad() {
-  if (!fs.existsSync(hermandadFile)) fs.writeFileSync(hermandadFile, '{}');
-  return JSON.parse(fs.readFileSync(hermandadFile));
-}
-
-function generarBloqueIdentidad(user, targetUserJid, pareja, hermanos, userRank, totalUsers) {
+function generarBloqueIdentidad(user, targetUserJid, pareja, userRank, totalUsers, achievementStats) {
   let estadoPareja = '💔 *Soltero/a*';
   let mentions = [targetUserJid];
 
@@ -25,21 +20,19 @@ function generarBloqueIdentidad(user, targetUserJid, pareja, hermanos, userRank,
     mentions.push(pareja);
   }
 
-  let estadoHermandad = '👤 *Hermanos:* Ninguno';
-  if (hermanos.length > 0) {
-    const hermanosMentions = hermanos.map(jid => `@${jid.split('@')[0]}`).join(', ');
-    estadoHermandad = `🫂 *Hermanos (${hermanos.length}):* ${hermanosMentions}`;
-    mentions.push(...hermanos);
-  }
-
   mentions = [...new Set(mentions)];
 
+  // Añadir título si existe
+  let tituloTexto = '';
+  if (achievementStats.selectedTitle) {
+    tituloTexto = `\n│👑 *Título:* ${achievementStats.selectedTitle}`;
+  }
+
   return {
-    texto: `│✨ *Usuario:* @${targetUserJid.split('@')[0]}
+    texto: `│✨ *Usuario:* @${targetUserJid.split('@')[0]}${tituloTexto}
 │🆔 *ID de Usuario:* ${user.id || 'N/A'}
 │🗓️ *Antigüedad:* Usuario #${userRank} de ${totalUsers}
-│💍 *Estado Civil:* ${estadoPareja}
-│${estadoHermandad}`,
+│💍 *Estado Civil:* ${estadoPareja}`,
     mentions
   };
 }
@@ -70,7 +63,6 @@ function generarBloqueVIP(user, now) {
 }
 
 function generarBloqueRPG(user, users) {
-  const destacados = user.personajes?.slice(0, 3).map(p => `- ${p}`).join('\n') || '- Ninguno';
   const allUsers = Object.keys(users);
   const totalCoins = allUsers.reduce((acc, jid) => acc + (users[jid]?.pandacoins || 0), 0);
   const promedio = totalCoins / allUsers.length;
@@ -79,8 +71,8 @@ function generarBloqueRPG(user, users) {
   const tieneFavorito = user.favorito && user.personajes?.includes(user.favorito);
   const favoritoTexto = tieneFavorito ? user.favorito : 'No definido';
 
-  return `│💰 *Pandacoins:* ${Number(user.pandacoins).toFixed(2)}
-│🌟 *Experiencia:* ${user.exp}
+  return `│💰 *Pandacoins:* ${Number(user.pandacoins).toLocaleString()}
+│🌟 *Experiencia:* ${user.exp || 0}
 │🛡️ *Personajes:* ${user.personajes?.length || 0}
 │❤️ *Personaje Favorito:* ${favoritoTexto}
 │📊 *Promedio global:* ${promedio.toFixed(2)}
@@ -105,6 +97,17 @@ function generarBloquePizzeria(pizzeriaData, pizzeriaError) {
   }
 }
 
+function generarBloqueLogros(achievementStats) {
+  const barLength = 15;
+  const filled = Math.floor((achievementStats.percentage / 100) * barLength);
+  const bar = '█'.repeat(filled) + '░'.repeat(barLength - filled);
+
+  return `│🏆 *Logros:* ${achievementStats.unlocked}/${achievementStats.total} (${achievementStats.percentage}%)
+│📊 [${bar}]
+│⭐ *Puntos:* ${achievementStats.points}
+│👑 *Títulos:* ${achievementStats.titles.length}`;
+}
+
 export const command = 'perfil';
 
 export async function run(sock, msg, args) {
@@ -122,13 +125,13 @@ export async function run(sock, msg, args) {
     return;
   }
 
+  // Inicializar logros si no existen
+  initializeAchievements(targetUserJid);
+
   const parejas = cargarParejas();
-  const hermandad = cargarHermandad();
   const pareja = parejas[targetUserJid];
-  const hermanos = hermandad[targetUserJid] || [];
 
   const targetUserId = targetUserJid.split('@')[0];
-
   global.cmDB = global.cmDB || {};
   global.cmDB[targetUserId] = global.cmDB[targetUserId] || { spins: 0, coins: 0, creditos: 0 };
   const cmData = global.cmDB[targetUserId];
@@ -151,13 +154,17 @@ export async function run(sock, msg, args) {
     pizzeriaError = 'Error de conexión con la API.';
   }
 
-  const identidad = generarBloqueIdentidad(user, targetUserJid, pareja, hermanos, userRank, totalUsers);
+  // Obtener stats de logros
+  const achievementStats = getUserAchievementStats(targetUserJid);
+
+  const identidad = generarBloqueIdentidad(user, targetUserJid, pareja, userRank, totalUsers, achievementStats);
   const vip = generarBloqueVIP(user, now);
   const rpg = generarBloqueRPG(user, db.users);
   const cm = generarBloqueCoinMaster(cmData);
   const pizzeria = generarBloquePizzeria(pizzeriaData, pizzeriaError);
+  const logros = generarBloqueLogros(achievementStats);
 
-  const header = `╭───${isVip(sender) || isVip(targetUserJid) ? '👑 Perfil VIP' : '👤 Tu Perfil'} ───`;
+  const header = `╭───${isVip(sender) || isVip(targetUserJid) ? ' 👑 Perfil VIP' : '👤 Tu Perfil'} ───`;
   const footer = '╰───────────────────';
 
   const mensaje = `${header}
@@ -169,13 +176,19 @@ ${footer}
 ${rpg}
 ╰───────────────────
 
+╭───🏆 *Logros* ───
+${logros}
+╰───────────────────
+
 ╭───🎲 *Coin Master Stats* ───
 ${cm}
 ╰───────────────────────
 
 ╭───🍕 *Pizzería PandaLove* ───
 ${pizzeria}
-╰───────────────────────`;
+╰───────────────────────
+
+💡 Usa \`.logros\` para ver tus logros detallados`;
 
   await sock.sendMessage(from, {
     text: mensaje.trim(),

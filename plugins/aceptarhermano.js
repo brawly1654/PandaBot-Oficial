@@ -1,4 +1,6 @@
 import fs from 'fs';
+import { checkAchievements, initializeAchievements } from '../data/achievementsDB.js';
+import { cargarDatabase } from '../data/database.js';
 
 const file = './data/hermandad.json';
 
@@ -26,8 +28,13 @@ export async function run(sock, msg) {
   const from = msg.key.remoteJid;
   const user = msg.key.participant || msg.key.remoteJid;
   
+  // ✅ Inicializar achievements si no existen
+  const db = cargarDatabase();
+  if (!db.users[user]?.achievements) {
+    initializeAchievements(user);
+  }
+
   const hermandad = cargarHermandad();
-  
   const solicitudesKey = `solicitud_${user}`;
   const solicitudes = hermandad[solicitudesKey];
 
@@ -40,6 +47,11 @@ export async function run(sock, msg) {
   let hermanosAdquiridos = [];
 
   for (const solicitante of solicitudes) {
+    // ✅ Inicializar achievements del solicitante también
+    if (!db.users[solicitante]?.achievements) {
+      initializeAchievements(solicitante);
+    }
+
     if (hermandad[user]?.includes(solicitante) || hermandad[solicitante]?.includes(user)) {
       continue;
     }
@@ -50,44 +62,44 @@ export async function run(sock, msg) {
 
     const hermanosDelSolicitante = hermandad[solicitante].filter(id => id !== user);
     const hermanosDelAceptante = hermandad[user].filter(id => id !== solicitante);
-    
+
     for (const hermanoAntiguo of hermanosDelSolicitante) {
-        if (!hermandad[user].includes(hermanoAntiguo)) {
-            agregarHermano(hermandad, user, hermanoAntiguo);
-            agregarHermano(hermandad, hermanoAntiguo, user);
-            hermanosAdquiridos.push(hermanoAntiguo);
-        }
+      if (!hermandad[user].includes(hermanoAntiguo)) {
+        agregarHermano(hermandad, user, hermanoAntiguo);
+        agregarHermano(hermandad, hermanoAntiguo, user);
+        hermanosAdquiridos.push(hermanoAntiguo);
+      }
     }
 
     const listaParaPropagar = [solicitante, ...hermanosDelSolicitante];
 
     for (const personaPropagar of listaParaPropagar) {
-        for (const hermanoNuevo of hermanosDelAceptante) {
-            if (!hermandad[personaPropagar].includes(hermanoNuevo)) {
-                agregarHermano(hermandad, personaPropagar, hermanoNuevo);
-                agregarHermano(hermandad, hermanoNuevo, personaPropagar);
-                hermanosAdquiridos.push(hermanoNuevo);
-            }
+      for (const hermanoNuevo of hermanosDelAceptante) {
+        if (!hermandad[personaPropagar].includes(hermanoNuevo)) {
+          agregarHermano(hermandad, personaPropagar, hermanoNuevo);
+          agregarHermano(hermandad, hermanoNuevo, personaPropagar);
+          hermanosAdquiridos.push(hermanoNuevo);
         }
+      }
     }
   }
 
   delete hermandad[solicitudesKey];
   guardarHermandad(hermandad);
-  
+
   if (nuevosHermanos.length === 0) {
-      await sock.sendMessage(from, { text: '❌ No tenías solicitudes válidas pendientes (o ya eran hermanos).' });
-      return;
+    await sock.sendMessage(from, { text: '❌ No tenías solicitudes válidas pendientes (o ya eran hermanos).' });
+    return;
   }
-  
+
   const nuevosHermanosText = nuevosHermanos.map(id => `<@${id.split('@')[0]}>`).join(', ');
   let mensajeAdicional = '';
 
   const hermanosAdquiridosUnicos = [...new Set(hermanosAdquiridos.filter(id => ![...nuevosHermanos, user].includes(id)))];
-  
+
   if (hermanosAdquiridosUnicos.length > 0) {
-      const adquiridosText = hermanosAdquiridosUnicos.map(id => `<@${id.split('@')[0]}>`).join(', ');
-      mensajeAdicional = `\n\n🎉 ¡Además, todos habéis adquirido nuevos hermanos/as por extensión!: ${adquiridosText}`;
+    const adquiridosText = hermanosAdquiridosUnicos.map(id => `<@${id.split('@')[0]}>`).join(', ');
+    mensajeAdicional = `\n\n🎉 ¡Además, todos habéis adquirido nuevos hermanos/as por extensión!: ${adquiridosText}`;
   }
 
   const allMentions = [...nuevosHermanos, user, ...hermanosAdquiridosUnicos];
@@ -96,5 +108,10 @@ export async function run(sock, msg) {
     text: `🫂 ¡Ahora sois hermanos/as!\n\n**Tú** (<@${user.split('@')[0]}>) y **${nuevosHermanos.length > 1 ? 'los siguientes' : 'el siguiente'}**: ${nuevosHermanosText}.` + mensajeAdicional,
     mentions: allMentions
   });
-}
 
+  // ✅ Verificar logros de hermandad para TODOS los usuarios involucrados
+  const todosLosUsuarios = [user, ...nuevosHermanos, ...hermanosAdquiridosUnicos];
+  for (const usuario of todosLosUsuarios) {
+    checkAchievements(usuario, sock, from);
+  }
+}

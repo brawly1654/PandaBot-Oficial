@@ -12,7 +12,7 @@ export async function run(sock, msg, args) {
     const menu = `
 ┏━━━━🐼 *『 𝙋𝙖𝙣𝙙𝙖𝘽𝙤𝙩 』* 🐼━━━━┓
 ✨ *Canal Oficial:* ${pandaChannel}
-🌸 *Versión:* 2.2
+🌸 *Versión:* 2.4
 👥️ *Grupo Oficial:* https://chat.whatsapp.com/IrHQqHBP47Y4cINAzAhFWh?mode=ac_t
 📦 *Página Web:* https://bio.site/PandaBot
 📎 *Gmail:* pandabotcl@gmail.com
@@ -25,6 +25,17 @@ Contactos de soporte de PandaBot:
 +56 9 5350 8566
 +52 55 3883 0665
 +57 302 3181375
+
+┣━━━━━━━━━━━━━━━━━━━┫
+
+sigueme en ig bro es totalmente gratis :)
+@lukas.sec_._
+
+┣━━━━━━━━━━━━━━━━━━━┫
+*¿QUIERES SER VIP?*🔝
+
+.buyvip
+
 ┣━━━━━━━━━━━━━━━━━━━┫
 *AÑADE AL BOT A TU GRUPO🙌*
 
@@ -47,15 +58,25 @@ Contactos de soporte de PandaBot:
 ┣━━━━━━━━━━━━━━━━━━━┫
  ✅️ *MENÚS DINÁMICOS*
 
-.clan
-.menuaudios
-.menupizzeria
-.menuvip (VIP💸)
-.menujuegos
-.menulove
-.menurpg
-.menucm
-.menubrainrots
+- .clan
+
+- .menuaudios
+
+- .menupizzeria
+
+- .menuvip (VIP💸)
+
+- .menujuegos
+
+- .menulove
+
+- .menurpg
+
+- .menucm
+
+- .menubrainrots
+
+- .menufutbol
 
 ┣━━━━━━━━━━━━━━━━━━━┫
 *QUEREMOS QUE EXPRESES TUS IDEAS✨️*
@@ -181,15 +202,6 @@ Contactos de soporte de PandaBot:
 
  🚹 .unmute @user
 > Cancelas el efecto .mute.
-
-┣━━━━━━━━━━━━━━━━━━━┫
- * 💀🚫         *
-
-💀.ruletarusa
-> Úsalo bajo tu propio riesgo.
-
-💀.nuke
-> Solo personal autorizado.
 
 ┣━━━━━━━━━━━━━━━━━━━┫
 `;

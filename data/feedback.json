@@ -972,5 +972,89 @@
     "status": "replied",
     "reply": "voy a añadir al 1x1x1x1 y al Guest 666",
     "replyTimestamp": 1762769925345
+  },
+  {
+    "id": 106,
+    "type": "sugerencia",
+    "senderJid": "180444930768966@lid",
+    "content": "Añadan .bomboclat y un video",
+    "timestamp": 1763075554732,
+    "status": "pending"
+  },
+  {
+    "id": 107,
+    "type": "sugerencia",
+    "senderJid": "180444930768966@lid",
+    "content": "añadan .Mbappe y un edit de mbappe",
+    "timestamp": 1763075578693,
+    "status": "pending"
+  },
+  {
+    "id": 108,
+    "type": "sugerencia",
+    "senderJid": "54164235231390@lid",
+    "content": "añadan .lamineyamal y pongan un edit de el",
+    "timestamp": 1763077179801,
+    "status": "pending"
+  },
+  {
+    "id": 109,
+    "type": "sugerencia",
+    "senderJid": "248726488645797@lid",
+    "content": ".tirar100",
+    "timestamp": 1763255977840,
+    "status": "pending"
+  },
+  {
+    "id": 110,
+    "type": "sugerencia",
+    "senderJid": "68999270371333@lid",
+    "content": "Pueden crear un comando para descargar videos de YouTube shorts con el URL?",
+    "timestamp": 1763256010789,
+    "status": "replied",
+    "reply": "se pueden descargar shorts con .ytmp4 al igual que con videos normales, recuerda no exceder el tamaño del video, lo normal sería de 0-3 minutos por video",
+    "replyTimestamp": 1763256223434
+  },
+  {
+    "id": 111,
+    "type": "sugerencia",
+    "senderJid": "248726488645797@lid",
+    "content": "pongan un tirar100",
+    "timestamp": 1763265288392,
+    "status": "replied",
+    "reply": "va a romper el bot eso bro",
+    "replyTimestamp": 1763265313377
+  },
+  {
+    "id": 112,
+    "type": "sugerencia",
+    "senderJid": "248726488645797@lid",
+    "content": "que pongan un .tirar40",
+    "timestamp": 1763265422572,
+    "status": "pending"
+  },
+  {
+    "id": 113,
+    "type": "sugerencia",
+    "senderJid": "77597643935891@lid",
+    "content": "que el tirar pueda dar panda coins",
+    "timestamp": 1763265424236,
+    "status": "pending"
+  },
+  {
+    "id": 114,
+    "type": "sugerencia",
+    "senderJid": "99561821479092@lid",
+    "content": "que tu ps favorito no se venda al usar .sellall",
+    "timestamp": 1763296142024,
+    "status": "pending"
+  },
+  {
+    "id": 115,
+    "type": "sugerencia",
+    "senderJid": "180444930768966@lid",
+    "content": "que puedas comprar más de 1 ps en una compra por ejemplo .buy everything 12 Has comprado 12 everythings y a uno le cayó 💧 a 3 🪳 y los demás nada",
+    "timestamp": 1763297839036,
+    "status": "pending"
   }
 ]

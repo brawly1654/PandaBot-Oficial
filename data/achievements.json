@@ -1,0 +1,677 @@
+{
+  "categories": {
+    "economia": {
+      "name": "💰 Economía",
+      "icon": "💰"
+    },
+    "personajes": {
+      "name": "🎴 Coleccionista",
+      "icon": "🎴"
+    },
+    "social": {
+      "name": "👥 Social",
+      "icon": "👥"
+    },
+    "juegos": {
+      "name": "🎮 Jugador",
+      "icon": "🎮"
+    },
+    "pizzeria": {
+      "name": "🍕 Pizzero",
+      "icon": "🍕"
+    },
+    "coinmaster": {
+      "name": "🎰 Coin Master",
+      "icon": "🎰"
+    },
+    "especial": {
+      "name": "⭐ Especial",
+      "icon": "⭐"
+    },
+    "musica": {
+      "name": "🎵 Música",
+      "icon": "🎵"
+    }
+  },
+  "achievements": [
+    {
+      "id": "first_steps",
+      "name": "Primeros Pasos",
+      "description": "Regístrate en el bot",
+      "category": "especial",
+      "icon": "👣",
+      "requirement": {
+        "type": "register",
+        "value": 1
+      },
+      "reward": {
+        "coins": 1000,
+        "title": "Novato"
+      },
+      "points": 5
+    },
+    {
+      "id": "coin_collector_1",
+      "name": "Recolector Novato",
+      "description": "Acumula 10,000 pandacoins",
+      "category": "economia",
+      "icon": "🪙",
+      "requirement": {
+        "type": "total_coins",
+        "value": 10000
+      },
+      "reward": {
+        "coins": 2000
+      },
+      "points": 10
+    },
+    {
+      "id": "coin_collector_2",
+      "name": "Ahorrador",
+      "description": "Acumula 100,000 pandacoins",
+      "category": "economia",
+      "icon": "💵",
+      "requirement": {
+        "type": "total_coins",
+        "value": 100000
+      },
+      "reward": {
+        "coins": 10000
+      },
+      "points": 20
+    },
+    {
+      "id": "coin_collector_3",
+      "name": "Millonario",
+      "description": "Acumula 1,000,000 pandacoins",
+      "category": "economia",
+      "icon": "💎",
+      "requirement": {
+        "type": "total_coins",
+        "value": 1000000
+      },
+      "reward": {
+        "coins": 50000,
+        "title": "Millonario"
+      },
+      "points": 50
+    },
+    {
+      "id": "coin_collector_4",
+      "name": "Magnate",
+      "description": "Acumula 10,000,000 pandacoins",
+      "category": "economia",
+      "icon": "👑",
+      "requirement": {
+        "type": "total_coins",
+        "value": 10000000
+      },
+      "reward": {
+        "coins": 200000,
+        "title": "Magnate"
+      },
+      "points": 100,
+      "hidden": true
+    },
+    {
+      "id": "miner_1",
+      "name": "Minero Principiante",
+      "description": "Mina 10 veces",
+      "category": "economia",
+      "icon": "⛏️",
+      "requirement": {
+        "type": "minar_count",
+        "value": 10
+      },
+      "reward": {
+        "coins": 1500
+      },
+      "points": 10
+    },
+    {
+      "id": "miner_2",
+      "name": "Minero Experimentado",
+      "description": "Mina 100 veces",
+      "category": "economia",
+      "icon": "⚒️",
+      "requirement": {
+        "type": "minar_count",
+        "value": 100
+      },
+      "reward": {
+        "coins": 10000
+      },
+      "points": 25
+    },
+    {
+      "id": "miner_3",
+      "name": "Rey de las Minas",
+      "description": "Mina 1,000 veces",
+      "category": "economia",
+      "icon": "💠",
+      "requirement": {
+        "type": "minar_count",
+        "value": 1000
+      },
+      "reward": {
+        "coins": 50000,
+        "title": "Rey Minero"
+      },
+      "points": 75
+    },
+    {
+      "id": "worker_1",
+      "name": "Trabajador",
+      "description": "Trabaja 25 veces",
+      "category": "economia",
+      "icon": "👷",
+      "requirement": {
+        "type": "trabajar_count",
+        "value": 25
+      },
+      "reward": {
+        "coins": 3000
+      },
+      "points": 15
+    },
+    {
+      "id": "worker_2",
+      "name": "Empleado del Mes",
+      "description": "Trabaja 100 veces",
+      "category": "economia",
+      "icon": "🏆",
+      "requirement": {
+        "type": "trabajar_count",
+        "value": 100
+      },
+      "reward": {
+        "coins": 15000,
+        "title": "Empleado del Mes"
+      },
+      "points": 30
+    },
+    {
+      "id": "buyer_1",
+      "name": "Primera Compra",
+      "description": "Compra tu primer personaje",
+      "category": "personajes",
+      "icon": "🛒",
+      "requirement": {
+        "type": "buy_count",
+        "value": 1
+      },
+      "reward": {
+        "coins": 2000
+      },
+      "points": 10
+    },
+    {
+      "id": "buyer_2",
+      "name": "Comprador Frecuente",
+      "description": "Compra 50 personajes",
+      "category": "personajes",
+      "icon": "🛍️",
+      "requirement": {
+        "type": "buy_count",
+        "value": 50
+      },
+      "reward": {
+        "coins": 20000
+      },
+      "points": 30
+    },
+    {
+      "id": "buyer_3",
+      "name": "Adicto a las Compras",
+      "description": "Compra 200 personajes",
+      "category": "personajes",
+      "icon": "💳",
+      "requirement": {
+        "type": "buy_count",
+        "value": 200
+      },
+      "reward": {
+        "coins": 100000,
+        "title": "Comprador Compulsivo"
+      },
+      "points": 60
+    },
+    {
+      "id": "collector_1",
+      "name": "Coleccionista Novato",
+      "description": "Posee 10 personajes",
+      "category": "personajes",
+      "icon": "📦",
+      "requirement": {
+        "type": "personajes_count",
+        "value": 10
+      },
+      "reward": {
+        "coins": 5000
+      },
+      "points": 15
+    },
+    {
+      "id": "collector_2",
+      "name": "Coleccionista",
+      "description": "Posee 50 personajes",
+      "category": "personajes",
+      "icon": "📚",
+      "requirement": {
+        "type": "personajes_count",
+        "value": 50
+      },
+      "reward": {
+        "coins": 25000
+      },
+      "points": 35
+    },
+    {
+      "id": "collector_3",
+      "name": "Maestro Coleccionista",
+      "description": "Posee 150 personajes",
+      "category": "personajes",
+      "icon": "🏛️",
+      "requirement": {
+        "type": "personajes_count",
+        "value": 150
+      },
+      "reward": {
+        "coins": 100000,
+        "title": "Maestro Coleccionista"
+      },
+      "points": 75
+    },
+    {
+      "id": "thief_1",
+      "name": "Primer Robo",
+      "description": "Roba exitosamente por primera vez",
+      "category": "juegos",
+      "icon": "🥷",
+      "requirement": {
+        "type": "robos_exitosos",
+        "value": 1
+      },
+      "reward": {
+        "coins": 3000
+      },
+      "points": 10
+    },
+    {
+      "id": "thief_2",
+      "name": "Ladrón Profesional",
+      "description": "Completa 25 robos exitosos",
+      "category": "juegos",
+      "icon": "🦹",
+      "requirement": {
+        "type": "robos_exitosos",
+        "value": 25
+      },
+      "reward": {
+        "coins": 15000,
+        "title": "Ladrón Profesional"
+      },
+      "points": 35
+    },
+    {
+      "id": "thief_3",
+      "name": "El Padrino",
+      "description": "Completa 100 robos exitosos",
+      "category": "juegos",
+      "icon": "🎩",
+      "requirement": {
+        "type": "robos_exitosos",
+        "value": 100
+      },
+      "reward": {
+        "coins": 100000,
+        "title": "El Padrino"
+      },
+      "points": 100,
+      "hidden": true
+    },
+    {
+      "id": "gambler_1",
+      "name": "Primera Apuesta",
+      "description": "Apuesta por primera vez",
+      "category": "juegos",
+      "icon": "🎲",
+      "requirement": {
+        "type": "apostar_count",
+        "value": 1
+      },
+      "reward": {
+        "coins": 2000
+      },
+      "points": 10
+    },
+    {
+      "id": "gambler_2",
+      "name": "Apostador",
+      "description": "Apuesta 50 veces",
+      "category": "juegos",
+      "icon": "🎰",
+      "requirement": {
+        "type": "apostar_count",
+        "value": 50
+      },
+      "reward": {
+        "coins": 15000
+      },
+      "points": 30
+    },
+    {
+      "id": "gambler_3",
+      "name": "Ludópata",
+      "description": "Apuesta 200 veces",
+      "category": "juegos",
+      "icon": "🃏",
+      "requirement": {
+        "type": "apostar_count",
+        "value": 200
+      },
+      "reward": {
+        "coins": 50000,
+        "title": "Ludópata"
+      },
+      "points": 60
+    },
+    {
+      "id": "married",
+      "name": "Recién Casado",
+      "description": "Cásate con alguien",
+      "category": "social",
+      "icon": "💍",
+      "requirement": {
+        "type": "married",
+        "value": 1
+      },
+      "reward": {
+        "coins": 10000,
+        "title": "Casado"
+      },
+      "points": 25
+    },
+    {
+      "id": "social_butterfly",
+      "name": "Mariposa Social",
+      "description": "Ten 3 hermanos",
+      "category": "social",
+      "icon": "🦋",
+      "requirement": {
+        "type": "hermanos_count",
+        "value": 3
+      },
+      "reward": {
+        "coins": 8000
+      },
+      "points": 20
+    },
+    {
+      "id": "pizzero_1",
+      "name": "Primer Pizzero",
+      "description": "Registra tu pizzería",
+      "category": "pizzeria",
+      "icon": "🍕",
+      "requirement": {
+        "type": "pizzeria_registered",
+        "value": 1
+      },
+      "reward": {
+        "coins": 5000
+      },
+      "points": 15
+    },
+    {
+      "id": "pizzero_2",
+      "name": "Pizzero Experimentado",
+      "description": "Sube tu pizzería a nivel 5",
+      "category": "pizzeria",
+      "icon": "👨‍🍳",
+      "requirement": {
+        "type": "pizzeria_level",
+        "value": 5
+      },
+      "reward": {
+        "coins": 20000
+      },
+      "points": 30
+    },
+    {
+      "id": "pizzero_3",
+      "name": "Maestro Pizzero",
+      "description": "Sube tu pizzería a nivel 10",
+      "category": "pizzeria",
+      "icon": "🏆",
+      "requirement": {
+        "type": "pizzeria_level",
+        "value": 10
+      },
+      "reward": {
+        "coins": 100000,
+        "title": "Maestro Pizzero"
+      },
+      "points": 75
+    },
+    {
+      "id": "cm_spinner_1",
+      "name": "Primera Tirada",
+      "description": "Tira por primera vez en Coin Master",
+      "category": "coinmaster",
+      "icon": "🎡",
+      "requirement": {
+        "type": "cm_tiradas",
+        "value": 1
+      },
+      "reward": {
+        "coins": 2000
+      },
+      "points": 10
+    },
+    {
+      "id": "cm_spinner_2",
+      "name": "Tirador Frecuente",
+      "description": "Tira 100 veces",
+      "category": "coinmaster",
+      "icon": "🎪",
+      "requirement": {
+        "type": "cm_tiradas",
+        "value": 100
+      },
+      "reward": {
+        "coins": 20000
+      },
+      "points": 35
+    },
+    {
+      "id": "cm_spinner_3",
+      "name": "Maestro del Spin",
+      "description": "Tira 500 veces",
+      "category": "coinmaster",
+      "icon": "🌀",
+      "requirement": {
+        "type": "cm_tiradas",
+        "value": 500
+      },
+      "reward": {
+        "coins": 100000,
+        "title": "Maestro del Spin"
+      },
+      "points": 80
+    },
+    {
+      "id": "cm_attacker",
+      "name": "Atacante",
+      "description": "Ataca 50 veces",
+      "category": "coinmaster",
+      "icon": "⚔️",
+      "requirement": {
+        "type": "cm_ataques",
+        "value": 50
+      },
+      "reward": {
+        "coins": 15000
+      },
+      "points": 30
+    },
+    {
+      "id": "veteran",
+      "name": "Veterano",
+      "description": "Lleva 30 días registrado",
+      "category": "especial",
+      "icon": "🎖️",
+      "requirement": {
+        "type": "days_registered",
+        "value": 30
+      },
+      "reward": {
+        "coins": 50000,
+        "title": "Veterano"
+      },
+      "points": 50
+    },
+    {
+      "id": "legend",
+      "name": "Leyenda",
+      "description": "Lleva 100 días registrado",
+      "category": "especial",
+      "icon": "👑",
+      "requirement": {
+        "type": "days_registered",
+        "value": 100
+      },
+      "reward": {
+        "coins": 200000,
+        "title": "Leyenda"
+      },
+      "points": 100,
+      "hidden": true
+    },
+    {
+      "id": "command_master",
+      "name": "Maestro de Comandos",
+      "description": "Usa 500 comandos",
+      "category": "especial",
+      "icon": "⌨️",
+      "requirement": {
+        "type": "commands_used",
+        "value": 500
+      },
+      "reward": {
+        "coins": 30000
+      },
+      "points": 40
+    },
+    {
+      "id": "lucky_one",
+      "name": "El Afortunado",
+      "description": "Obtén un personaje con efecto 🌈",
+      "category": "personajes",
+      "icon": "🌈",
+      "requirement": {
+        "type": "has_rainbow_effect",
+        "value": 1
+      },
+      "reward": {
+        "coins": 100000,
+        "title": "El Afortunado"
+      },
+      "points": 100,
+      "hidden": true
+    },
+    {
+      "id": "toilet_master",
+      "name": "Maestro del Inodoro",
+      "description": "Obtén un personaje con efecto 🚽",
+      "category": "personajes",
+      "icon": "🚽",
+      "requirement": {
+        "type": "has_toilet_effect",
+        "value": 1
+      },
+      "reward": {
+        "coins": 150000,
+        "title": "Maestro del Inodoro"
+      },
+      "points": 150,
+      "hidden": true
+    },
+    {
+      "id": "broke",
+      "name": "En Bancarrota",
+      "description": "Llega a tener 0 pandacoins",
+      "category": "especial",
+      "icon": "💸",
+      "requirement": {
+        "type": "broke",
+        "value": 1
+      },
+      "reward": {
+        "coins": 5000
+      },
+      "points": 5
+    },
+    {
+      "id": "comeback_kid",
+      "name": "La Gran Remontada",
+      "description": "Llega a 1M después de estar en bancarrota",
+      "category": "especial",
+      "icon": "📈",
+      "requirement": {
+        "type": "comeback",
+        "value": 1
+      },
+      "reward": {
+        "coins": 100000,
+        "title": "Fenix"
+      },
+      "points": 50
+    },
+    {
+      "id": "music_starter",
+      "name": "Primera Canción",
+      "description": "Usa .spotify por primera vez",
+      "category": "musica",
+      "icon": "🎧",
+      "requirement": {
+        "type": "spotify_count",
+        "value": 1
+      },
+      "reward": {
+        "coins": 2000
+      },
+      "points": 10
+    },
+    {
+      "id": "music_lover",
+      "name": "Amante de la Música",
+      "description": "Usa .spotify 50 veces",
+      "category": "musica",
+      "icon": "🎶",
+      "requirement": {
+        "type": "spotify_count",
+        "value": 50
+      },
+      "reward": {
+        "coins": 15000
+      },
+      "points": 25
+    },
+    {
+      "id": "music_master",
+      "name": "Maestro Musical",
+      "description": "Usa .spotify 200 veces",
+      "category": "musica",
+      "icon": "🎼",
+      "requirement": {
+        "type": "spotify_count",
+        "value": 200
+      },
+      "reward": {
+        "coins": 50000,
+        "title": "DJ Master"
+      },
+      "points": 50
+    }
+  ]
+}

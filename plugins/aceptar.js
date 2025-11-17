@@ -1,4 +1,6 @@
 import fs from 'fs';
+import { checkAchievements, initializeAchievements } from '../data/achievementsDB.js';
+import { cargarDatabase } from '../data/database.js';
 
 const file = './data/parejas.json';
 
@@ -16,9 +18,14 @@ export const command = 'aceptar';
 export async function run(sock, msg) {
   const from = msg.key.remoteJid;
   const user = msg.key.participant || msg.key.remoteJid;
+  
+  // ✅ Inicializar achievements si no existen
+  const db = cargarDatabase();
+  if (!db.users[user]?.achievements) {
+    initializeAchievements(user);
+  }
 
   const parejas = cargarParejas();
-
   const solicitud = parejas[`solicitud_${user}`];
 
   if (!solicitud) {
@@ -35,4 +42,8 @@ export async function run(sock, msg) {
     text: `💖 <@${user.split('@')[0]}> y <@${solicitud.split('@')[0]}> ahora están casados! 🎉`,
     mentions: [user, solicitud]
   });
+
+  // ✅ Verificar logros de matrimonio para AMBOS usuarios
+  checkAchievements(user, sock, from);
+  checkAchievements(solicitud, sock, from);
 }

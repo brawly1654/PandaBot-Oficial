@@ -1,4 +1,6 @@
 import fs from 'fs';
+import { checkAchievements, initializeAchievements } from '../data/achievementsDB.js';
+import { cargarDatabase } from '../data/database.js';
 
 const file = './data/parejas.json';
 
@@ -20,9 +22,15 @@ export async function run(sock, msg, args) {
   const mencionados = msg.message?.extendedTextMessage?.contextInfo?.mentionedJid || [];
 
   const parejas = cargarParejas();
+  
+  // ✅ Inicializar achievements si no existen
+  const db = cargarDatabase();
+  if (!db.users[sender]?.achievements) {
+    initializeAchievements(sender);
+  }
 
   const target = mencionados[0] || quoted;
-
+  
   if (!target) {
     await sock.sendMessage(from, { text: '💍 Menciona a alguien para proponerle matrimonio.' });
     return;

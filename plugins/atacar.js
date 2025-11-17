@@ -1,5 +1,8 @@
-export const command = 'atacar';
+import { trackCMAtaque, checkSpecialAchievements } from '../middleware/trackAchievements.js';
+import { initializeAchievements } from '../data/achievementsDB.js';
+import { cargarDatabase } from '../data/database.js';
 
+export const command = 'atacar';
 const cooldown = 15 * 60 * 1000; // 15 minutos en milisegundos
 let attackCooldown = {};
 
@@ -7,14 +10,20 @@ export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
   const user = sender.split('@')[0];
+  
+  // ✅ Inicializar achievements si no existen
+  const db = cargarDatabase();
+  if (!db.users[sender]?.achievements) {
+    initializeAchievements(sender);
+  }
 
   if (!global.cmDB[user]) {
     global.cmDB[user] = { spins: 5, coins: 0, shields: 2, villageLevel: 1 };
   }
-
+  
   const data = global.cmDB[user];
   const now = Date.now();
-
+  
   if (attackCooldown[user] && now - attackCooldown[user] < cooldown) {
     const timeLeft = Math.ceil((cooldown - (now - attackCooldown[user])) / 60000);
     return sock.sendMessage(from, {
@@ -33,6 +42,7 @@ export async function run(sock, msg, args) {
   }
 
   const targetData = global.cmDB[target];
+  
   if (targetData.shields > 0) {
     targetData.shields--;
     attackCooldown[user] = now;
@@ -50,4 +60,8 @@ export async function run(sock, msg, args) {
   await sock.sendMessage(from, {
     text: `💣 Atacaste la aldea de *@+${target}* y le robaste *${coinsTaken.toLocaleString()} monedas*.`
   }, { quoted: msg });
+
+  // ✅ Trackear ataque de Coin Master
+  trackCMAtaque(sender, sock, from);
+  checkSpecialAchievements(sender, sock, from);
 }

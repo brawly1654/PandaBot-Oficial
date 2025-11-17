@@ -1,12 +1,14 @@
 import fs from 'fs';
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
+import { trackApostar, checkSpecialAchievements } from '../middleware/trackAchievements.js';
+import { initializeAchievements } from '../data/achievementsDB.js';
 
 export const command = 'apostar';
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
-  const COOLDOWN_MS = 30 * 60 * 1000; // 10 minutos
+  const COOLDOWN_MS = 30 * 60 * 1000;
 
   // Validación
   if (args.length < 2) {
@@ -14,20 +16,20 @@ export async function run(sock, msg, args) {
     return;
   }
 
-let monto = parseInt(args[0]);
-let nivel = args[1].toLowerCase();
+  let monto = parseInt(args[0]);
+  let nivel = args[1].toLowerCase();
 
-if (isNaN(monto) || monto <= 0) {
-  await sock.sendMessage(from, { text: '❌ El monto debe ser un número positivo.' }, { quoted: msg });
-  return;
-}
+  if (isNaN(monto) || monto <= 0) {
+    await sock.sendMessage(from, { text: '❌ El monto debe ser un número positivo.' }, { quoted: msg });
+    return;
+  }
 
-if (monto > 25000000) {
-  await sock.sendMessage(from, {
-    text: '❌ El monto máximo permitido para apostar es *25 millones* de Pandacoins.'
-  }, { quoted: msg });
-  return;
-}
+  if (monto > 25000000) {
+    await sock.sendMessage(from, {
+      text: '❌ El monto máximo permitido para apostar es *25 millones* de Pandacoins.'
+    }, { quoted: msg });
+    return;
+  }
 
   const niveles = {
     bajo: { multiplicador: 1.5, prob: 0.6 },
@@ -43,6 +45,11 @@ if (monto > 25000000) {
   const db = cargarDatabase();
   db.users = db.users || {};
   db.users[sender] = db.users[sender] || { pandacoins: 0, exp: 0, personajes: [] };
+  
+  // ✅ Inicializar achievements si no existen
+  if (!db.users[sender].achievements) {
+    initializeAchievements(sender);
+  }
 
   const ultimo = db.users[sender].ultimoApostar || 0;
   const ahora = Date.now();
@@ -80,4 +87,8 @@ if (monto > 25000000) {
   guardarDatabase(db);
 
   await sock.sendMessage(from, { text: texto }, { quoted: msg });
+
+  // ✅ Trackear apuesta
+  trackApostar(sender, sock, from);
+  checkSpecialAchievements(sender, sock, from);
 }

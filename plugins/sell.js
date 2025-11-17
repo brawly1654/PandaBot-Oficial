@@ -38,15 +38,15 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  const nombre = args.join(' ').toLowerCase();
-  const personaje = personajes.find(p => p.nombre.toLowerCase() === nombre);
+  const nombre = args.join(' ').trim();
+  const nombreLower = nombre.toLowerCase();
+  const personaje = personajes.find(p => p.nombre.toLowerCase() === nombreLower);
 
   if (!personaje) {
     await sock.sendMessage(from, { text: `❌ Personaje no encontrado. Usa .misps para ver tus personajes.` });
     return;
   }
 
-  // 🚫 BLOQUEO DE VENTA DEL LUCKY BLOCK
   if (personaje.nombre.toLowerCase() === "spooky lucky block") {
     await sock.sendMessage(from, { text: `🎃 ❌ No puedes vender el *Spooky Lucky Block*.` });
     return;
@@ -54,8 +54,17 @@ export async function run(sock, msg, args) {
 
   user.personajes = user.personajes || [];
 
-  if (!user.personajes.includes(personaje.nombre)) {
+  const cantidadInventario = user.personajes.filter(p => p === personaje.nombre).length;
+  if (cantidadInventario === 0) {
     await sock.sendMessage(from, { text: `❌ No tienes a *${personaje.nombre}* en tu colección.` });
+    return;
+  }
+
+  const alineados = Object.values(user.alineacion?.posiciones || {}).filter(p => p === personaje.nombre).length;
+  if (alineados > 0) {
+    await sock.sendMessage(from, {
+      text: `⚽️ No puedes vender a *${personaje.nombre}* porque está alineado en tu equipo de fútbol (${alineados} posición(es)). Usa *.remover <posición>* primero.`
+    });
     return;
   }
 
@@ -64,10 +73,8 @@ export async function run(sock, msg, args) {
 
   user.pandacoins = user.pandacoins || 0;
   user.pandacoins += personaje.precio;
-
   user.ultimoSell = ahora;
 
-  // Si pertenece a un clan, sumar puntos
   if (db.clanes) {
     const clanName = Object.keys(db.clanes).find(nombre =>
       db.clanes[nombre].miembros.includes(sender)

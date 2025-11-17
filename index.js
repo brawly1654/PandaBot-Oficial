@@ -8,6 +8,7 @@ global.psSpawn = {
   grupo: '120363402403091432@g.us',
   reclamadoPor: null
 };
+
 import { limpiarPersonajes } from "./limpiarPersonajes.js";
 import baileys from "@whiskeysockets/baileys";
 import { Boom } from "@hapi/boom";
@@ -31,28 +32,30 @@ global.cmDB = JSON.parse(fs.readFileSync('./coinmaster.json'));
 global.guardarCM = () => fs.writeFileSync('./coinmaster.json', JSON.stringify(global.cmDB, null, 2));
 global.recolectarCooldown = {};
 
-//logs pandabot
+// Logs pandabot
 global.terminalLogs = [];
 const logLimit = 20;
-
 const originalConsoleLog = console.log;
 console.log = (...args) => {
-    const message = args.join(' ');
-    originalConsoleLog.apply(console, args);
-    if (message.includes('.buy')) {
-        global.terminalLogs.push(message);
-        if (global.terminalLogs.length > logLimit) {
-            global.terminalLogs.shift();
-        }
+  const message = args.join(' ');
+  originalConsoleLog.apply(console, args);
+  if (message.includes('.buy')) {
+    global.terminalLogs.push(message);
+    if (global.terminalLogs.length > logLimit) {
+      global.terminalLogs.shift();
     }
+  }
 };
 
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 const question = (texto) => new Promise((resolver) => rl.question(texto, resolver));
-//limpieza
+
+// Limpieza
+import fs from 'fs';
 const resultado = limpiarPersonajes("./data/personajes.json");
-console.log("Personajes únicos:", resultado.length);import fs from 'fs';
-//fin limpieza
+console.log("Personajes únicos:", resultado.length);
+
+// Configuración
 const msgRetryCounterCache = new NodeCache();
 const sessions = 'auth_info';
 const nameqr = 'PandaBot';
@@ -62,12 +65,17 @@ const methodCode = process.argv.includes("code");
 async function startBot() {
   const { version } = await fetchLatestBaileysVersion();
   const { state, saveCreds } = await useMultiFileAuthState(sessions);
+
   const auth = {
     creds: state.creds,
     keys: makeCacheableSignalKeyStore(state.keys, pino({ level: 'fatal' }).child({ level: 'fatal' })),
   };
 
+  // ============================================
+  // DETERMINAR MÉTODO DE CONEXIÓN
+  // ============================================
   let connectionMethod = 'qr';
+  
   if (methodCode) {
     connectionMethod = 'code';
   } else if (!fs.existsSync(`./${sessions}/creds.json`)) {
@@ -78,27 +86,39 @@ async function startBot() {
     connectionMethod = choice === '2' ? 'code' : 'qr';
   }
 
-const sock = makeWASocket({
-  version,
-  auth,
-  printQRInTerminal: connectionMethod === 'qr',
-  browser: connectionMethod === 'qr' ? [nameqr, 'Chrome', '20.0.04'] : ['Ubuntu', 'Edge', '110.0.1587.56'],
-  msgRetryCounterCache,
-  getMessage: async (clave) => {
-    let jid = jidNormalizedUser(clave.remoteJid);
-    let msg = await store.loadMessage(jid, clave.id);
-    return msg?.message || "";
-  },
-});
+  // ============================================
+  // CREAR SOCKET
+  // ============================================
+  const sock = makeWASocket({
+    version,
+    auth,
+    printQRInTerminal: connectionMethod === 'qr',
+    browser: connectionMethod === 'qr' 
+      ? [nameqr, 'Chrome', '20.0.04'] 
+      : ['Ubuntu', 'Edge', '110.0.1587.56'],
+    msgRetryCounterCache,
+    getMessage: async (clave) => {
+      let jid = jidNormalizedUser(clave.remoteJid);
+      let msg = await store.loadMessage(jid, clave.id);
+      return msg?.message || "";
+    },
+  });
 
   sock.ev.on('creds.update', saveCreds);
 
+  // ============================================
+  // EVENTOS DE GRUPO
+  // ============================================
   sock.ev.on('group-participants.update', async (update) => {
-    const { id, participants, action, author } = update;
+    const { id, participants, action } = update;
     let texto = '';
 
     if (action === 'add') {
-      texto = `👋 Bienvenido @${participants[0].split('@')[0]} al grupo!`;
+      texto = `
+👋 Bienvenido @${participants[0].split('@')[0]} al grupo!
+
+Recuerda leer la descripción del grupo, si quieres usar al bot envía *.menu* o *.help* para ver los comandos totales.
+`;
     } else if (action === 'remove') {
       texto = `@${participants[0].split('@')[0]} Salió del grupo.👎`;
     } else if (action === 'promote') {
@@ -112,90 +132,122 @@ const sock = makeWASocket({
     }
   });
 
-sock.ev.on('messages.upsert', async ({ messages, type }) => {
-  if (type !== 'notify') return;
+  // ============================================
+  // MANEJO DE MENSAJES
+  // ============================================
+  sock.ev.on('messages.upsert', async ({ messages, type }) => {
+    if (type !== 'notify') return;
 
-  for (const msg of messages) {
-    if (!msg.message) continue;
+    for (const msg of messages) {
+      if (!msg.message) continue;
 
-    const sender = msg.key.participant || msg.key.remoteJid;
-    const nombre = msg.pushName;
-    if (nombre) {
-      const db = cargarDatabase();
-      db.users = db.users || {};
-      db.users[sender] = db.users[sender] || {};
-      db.users[sender].alias = nombre;
-      guardarDatabase(db);
+      try {
+        await handleMessage(sock, msg);
+      } catch (e) {
+        console.error('❌ Error en handleMessage:', e);
+      }
+    }
+  });
+
+  // ============================================
+  // CONEXIÓN - AQUÍ ESTÁ EL FIX 🔥
+  // ============================================
+  sock.ev.on('connection.update', async (update) => {
+    const { connection, lastDisconnect, qr } = update;
+
+    // ✅ Mostrar QR si es necesario
+    if (qr && connectionMethod === 'qr') {
+      console.log(chalk.bold.yellowBright('\n📱 Escanea este QR para vincular el bot:\n'));
+      qrcode.generate(qr, { small: true });
     }
 
-    try {
-      await handleMessage(sock, msg);
-    } catch (e) {
-      console.error('❌ Error en handleMessage:', e);
+    // ✅ PEDIR PAIRING CODE AQUÍ (antes de conectarse completamente)
+    if (connection === 'connecting' && connectionMethod === 'code') {
+      // Esperar un momento para que el socket esté listo
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      if (!sock.authState.creds.registered) {
+        console.log(chalk.bold.cyanBright('\n🔐 Modo de emparejamiento con código'));
+        const phoneNumber = await question(chalk.bold.magentaBright(`\n📱 Ingresa tu número (ej: 56912345678)\n--> `));
+        
+        if (phoneNumber && phoneNumber.replace(/\D/g, '').length >= 10) {
+          try {
+            const code = await sock.requestPairingCode(phoneNumber.replace(/\D/g, ''));
+            console.log(chalk.bold.white(chalk.bgMagenta(`\n✞ CÓDIGO DE VINCULACIÓN ✞ `)), chalk.bold.white(code));
+            console.log(chalk.bold.yellowBright(`\n📲 Ingresa este código en WhatsApp -> Dispositivos vinculados -> Vincular dispositivo`));
+          } catch (error) {
+            console.log(chalk.bold.redBright(`❌ Error al solicitar código: ${error.message}`));
+          }
+        } else {
+          console.log(chalk.bold.redBright(`❌ Número de teléfono inválido.`));
+          rl.close();
+        }
+      }
     }
-  }
-});
 
-sock.ev.on('connection.update', async (update) => {
-  const { connection, lastDisconnect, qr } = update;
+    // ✅ Conexión establecida
+    if (connection === 'open') {
+      console.log(chalk.bold.greenBright('\n✅ Bot conectado correctamente!'));
+      console.log(chalk.bold.cyanBright(`📱 Dispositivo: ${sock.user.id}`));
+      console.log(chalk.bold.yellowBright(`🤖 Bot listo para recibir comandos\n`));
 
-  if (qr && connectionMethod === 'qr') {
-    console.log('📱 Escanea este QR para vincular el bot:');
-    qrcode.generate(qr, { small: true });
-  }
+      // 🌀 Spawneo automático de PS secreto cada 10 minutos con 5% de probabilidad
+      setInterval(() => {
+        const prob = Math.random();
+        if (prob < 0.05 && !global.psSpawn?.activo) {
+          const data = JSON.parse(fs.readFileSync('./data/personajes.json', 'utf8'));
+          const secretos = data.characters.filter(p => p.calidad === 'Secret');
+          
+          if (secretos.length === 0) return;
+          
+          const personaje = secretos[Math.floor(Math.random() * secretos.length)];
+          global.psSpawn = {
+            activo: true,
+            personaje,
+            grupo: '120363402403091432@g.us',
+            reclamadoPor: null
+          };
 
-if (connection === 'open') {
-  console.log('✅ Bot conectado correctamente!');
+          sock.sendMessage(global.psSpawn.grupo, {
+            text: `🌀 A SECRET PS HAS SPAWNED IN THIS GROUP!\nUse *.claim* to get *${personaje.nombre}* before anyone else!`
+          });
+        }
+      }, 10 * 60 * 1000);
 
-  // ✅ Solo pedir pairing code cuando ya está conectado
-  if (connectionMethod === 'code' && !sock.authState.creds.registered) {
-    const phoneNumber = await question(chalk.bold.magentaBright(`\nIngresa tu número (ej: 56912345678)\n--> `));
-    if (phoneNumber) {
-      const code = await sock.requestPairingCode(phoneNumber.replace(/\D/g, ''));
-      console.log(chalk.bold.white(chalk.bgMagenta(`✞ CÓDIGO DE VINCULACIÓN ✞`)), chalk.bold.white(chalk.white(code)));
-    } else {
-      console.log(chalk.bold.redBright(`❌ Número de teléfono inválido.`));
-      rl.close();
+      // 🔄 Reiniciar stock cada minuto
+      setInterval(() => {
+        reiniciarStock();
+      }, 60 * 1000);
     }
-  }
 
-  // 🌀 Spawneo automático de PS secreto cada 30 minutos con 1% de probabilidad
-  setInterval(() => {
-    const prob = Math.random();
-    if (prob < 0.05 && !global.psSpawn?.activo) {
-      const data = JSON.parse(fs.readFileSync('./data/personajes.json', 'utf8'));
-      const secretos = data.characters.filter(p => p.calidad === 'Secret');
-      if (secretos.length === 0) return;
+    // ⚠️ Conexión cerrada
+    if (connection === 'close') {
+      const statusCode = new Boom(lastDisconnect?.error)?.output?.statusCode;
+      const shouldReconnect = statusCode !== DisconnectReason.loggedOut;
+      
+      console.log(chalk.bold.yellowBright('⚠️ Conexión cerrada'));
+      console.log(chalk.bold.cyanBright(`Código: ${statusCode}`));
+      console.log(chalk.bold.magentaBright(`Reconectar: ${shouldReconnect}`));
 
-      const personaje = secretos[Math.floor(Math.random() * secretos.length)];
-      global.psSpawn = {
-        activo: true,
-        personaje,
-        grupo: '120363402403091432@g.us',
-        reclamadoPor: null
-      };
-
-      sock.sendMessage(global.psSpawn.grupo, {
-        text: `🌀 A SECRET PS HAS SPAWNED IN THIS GROUP!\nUse *.claim* to get *${personaje.nombre}* before anyone else!`
-      });
+      if (shouldReconnect) {
+        console.log(chalk.bold.greenBright('🔄 Reconectando en 5 segundos...'));
+        setTimeout(() => startBot(), 5000);
+      } else {
+        console.log(chalk.bold.redBright('❌ Bot deslogueado. Borra la carpeta auth_info y vuelve a iniciar.'));
+      }
     }
-  }, 10 * 60 * 1000);
-
-setInterval(() => {
-    reiniciarStock();
-  }, 60 * 1000);
+  });
 }
 
-  if (connection === 'close') {
-    const statusCode = new Boom(lastDisconnect?.error)?.output?.statusCode;
-    const shouldReconnect = statusCode !== DisconnectReason.loggedOut;
-    console.log('⚠️ Conexión cerrada, reconectando:', shouldReconnect);
-    if (shouldReconnect) {
-      startBot();
-    } else {
-      console.log('❌ Bot deslogueado, borra auth_info y vuelve a iniciar.');
-    }
-  }
-});
-}
+// ============================================
+// INICIAR BOT
+// ============================================
+console.log(chalk.bold.magentaBright(`
+╔═══════════════════════════════════════╗
+║                                       ║
+║         🐼 PANDABOT INICIANDO 🐼      ║
+║                                       ║
+╚═══════════════════════════════════════╝
+`));
+
 startBot();

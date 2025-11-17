@@ -1,13 +1,23 @@
+import { trackCMTirada, checkSpecialAchievements } from '../middleware/trackAchievements.js';
+import { initializeAchievements } from '../data/achievementsDB.js';
+import { cargarDatabase } from '../data/database.js';
+
 export const command = 'tirar';
 
-const cooldowns = {}; // Estructura para controlar cooldowns por usuario
+const cooldowns = {};
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
   const user = sender.split('@')[0];
-
   const now = Date.now();
+  
+  // ✅ Inicializar achievements si no existen
+  const db = cargarDatabase();
+  if (!db.users[sender]?.achievements) {
+    initializeAchievements(sender);
+  }
+
   if (cooldowns[user] && now - cooldowns[user] < 7000) {
     const timeLeft = ((7000 - (now - cooldowns[user])) / 1000).toFixed(1);
     await sock.sendMessage(from, { text: `⏳ Espera *${timeLeft}s* para usar este comando de nuevo, *@${user}*.` }, { quoted: msg, mentions: [sender] });
@@ -56,12 +66,12 @@ export async function run(sock, msg, args) {
       }
     },
     {
-     emoji: '🎫',
-     action: () => {
-       data.creditos +=15;
-       return '¡+15 Créditos! 🎫';
-     }
-   },
+      emoji: '🎫',
+      action: () => {
+        data.creditos +=15;
+        return '¡+15 Créditos! 🎫';
+      }
+    },
     {
       emoji: '⚡️',
       action: () => {
@@ -99,4 +109,8 @@ ${rewardMessages}
 `.trim();
 
   await sock.sendMessage(from, { text: reply }, { quoted: msg });
+
+  // ✅ Trackear tirada de Coin Master
+  trackCMTirada(sender, sock, from);
+  checkSpecialAchievements(sender, sock, from);
 }

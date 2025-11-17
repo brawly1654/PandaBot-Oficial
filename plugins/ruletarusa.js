@@ -6,7 +6,7 @@ import { addCoins } from "../PandaLove/pizzeria.js";
 const personajesData = JSON.parse(fs.readFileSync('./data/personajes.json', 'utf8'));
 const personajes = personajesData.characters;
 
-export const command = 'ruletarusa';
+export const command = '............';
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;

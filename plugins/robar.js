@@ -1,5 +1,7 @@
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 import { isVip } from '../utils/vip.js';
+import { trackRoboExitoso, trackRoboFallido, checkSpecialAchievements } from '../middleware/trackAchievements.js';
+import { initializeAchievements } from '../data/achievementsDB.js';
 
 const cooldowns = {};
 
@@ -35,6 +37,11 @@ export async function run(sock, msg, args) {
   db.users = db.users || {};
   db.users[sender] = db.users[sender] || { pandacoins: 0 };
   db.users[mencionado] = db.users[mencionado] || { pandacoins: 0 };
+  
+  // ✅ Inicializar achievements si no existen
+  if (!db.users[sender].achievements) {
+    initializeAchievements(sender);
+  }
 
   const atacante = db.users[sender];
   const victima = db.users[mencionado];
@@ -45,28 +52,31 @@ export async function run(sock, msg, args) {
   const vip = isVip(sender);
   const probabilidadExito = vip ? 0.7 : 0.5;
   const resultado = Math.random() < probabilidadExito;
-
-  const cantidad = Math.floor(Math.random() * 500000) + 1;
+  const cantidad = Math.floor(Math.random() * 50000000) + 1;
 
   let texto = '';
   if (resultado) {
     const robado = Math.min(cantidad, victima.pandacoins);
     atacante.pandacoins += robado;
     victima.pandacoins -= robado;
-
     atacante.robos.exitosos += 1;
-
+    
     texto = `🕵️‍♂️ *Robo exitoso*\n\n@${sender.split('@')[0]} robó *${robado} pandacoins* a @${mencionado.split('@')[0]}.\n`;
     texto += vip ? '👑 El ladrón era VIP, tenía ventaja.\n' : '🎲 Fue suerte pura.';
+    
+    // ✅ Trackear robo exitoso
+    trackRoboExitoso(sender, sock, from);
   } else {
     const perdido = Math.min(cantidad, atacante.pandacoins);
     atacante.pandacoins -= perdido;
-
     atacante.robos.fallidos += 1;
-
+    
     texto = `🚨 *Fallaste el robo*\n\nLa policía atrapó a @${sender.split('@')[0]} intentando robar a @${mencionado.split('@')[0]}.\n`;
     texto += `💸 Multa: *${perdido} pandacoins*\n`;
     texto += vip ? '👑 A pesar de ser VIP, no se salvó.\n' : '👮 Mala suerte, no eres VIP.';
+    
+    // ✅ Trackear robo fallido
+    trackRoboFallido(sender, sock, from);
   }
 
   guardarDatabase(db);
@@ -76,4 +86,7 @@ export async function run(sock, msg, args) {
     text: texto.trim(),
     mentions: [sender, mencionado],
   }, { quoted: msg });
+
+  // ✅ Verificar logros especiales
+  checkSpecialAchievements(sender, sock, from);
 }

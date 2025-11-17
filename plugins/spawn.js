@@ -1,47 +1,78 @@
 import fs from 'fs';
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 import { ownerNumber } from '../config.js';
+import { multiplicadores } from './buy.js';
+
 export const command = 'spawn';
 
 export async function run(sock, msg, args) {
-  const from = msg.key.remoteJid;
-  const sender = msg.key.participant || msg.key.remoteJid;
-  const data = JSON.parse(fs.readFileSync('./data/personajes.json', 'utf8'));
-  const personajes = data.characters;
-  const db = cargarDatabase();
-  db.users = db.users || {};
-  const user = db.users[sender] = db.users[sender] || {};
-  const senderNumber = sender.split('@')[0];
-  const isOwner = ownerNumber.includes(`+${senderNumber}`);
+    const from = msg.key.remoteJid;
+    const sender = msg.key.participant || msg.key.remoteJid;
+    const db = cargarDatabase();
+    db.users = db.users || {};
+    const user = db.users[sender] || {};
+    const senderNumber = sender.split('@')[0];
+    const isOwner = ownerNumber.includes(`+${senderNumber}`);
 
-  if (!isOwner) {
-    await sock.sendMessage(from, { text: '❌ Solo los Owners pueden usar este comando.' });
-    return;
-  }
+    if (!isOwner) {
+        await sock.sendMessage(from, { text: '❌ Solo los Owners pueden usar este comando.' });
+        return;
+    }
 
-  if (args.length === 0) {
-    await sock.sendMessage(from, { text: '❌ Usa .spawn <nombre del personaje>' });
-    return;
-  }
+    const input = args.join(' ').trim();
 
-  const nombre = args.join(' ').toLowerCase();
-  const personaje = personajes.find(p => p.nombre.toLowerCase() === nombre);
+    if (!input) {
+        const efectosList = Object.entries(multiplicadores)
+            .map(([emoji, mult]) => `- ${emoji} → x${mult}`)
+            .join('\n');
+        await sock.sendMessage(from, {
+            text: `🎭 *Efectos disponibles para .spawn:*\n\n${efectosList}\n\nUsa:\n.spawn <nombre> | efecto1 | efecto2...`,
+        });
+        return;
+    }
 
-  if (!personaje) {
-    await sock.sendMessage(from, { text: '❌ No se encontró ese personaje.' });
-    return;
-  }
+    const partes = input.split('|').map(p => p.trim()).filter(p => p.length > 0);
+    const nombreBase = partes[0].toLowerCase();
+    const efectos = partes.slice(1).filter(e => multiplicadores[e]);
+    const data = JSON.parse(fs.readFileSync('./data/personajes.json', 'utf8'));
+    const personajes = data.characters;
+    const personaje = personajes.find(p => p.nombre.toLowerCase() === nombreBase);
 
-global.psSpawn = {
-  activo: true,
-  personaje,
-  grupo: '120363402403091432@g.us',
-  reclamadoPor: null,
-  timestamp: Date.now(),
-  forzadoPorOwner: isOwner
-};
+    if (!personaje) {
+        await sock.sendMessage(from, { text: '❌ No se encontró ese personaje.' });
+        return;
+    }
 
-  await sock.sendMessage(global.psSpawn.grupo, {
-    text: `> Este personaje está protegido durante 30 segundos por el Creador\n🌀 A SECRET PS HAS SPAWNED IN THIS GROUP!\nUse *.claim* to get *${personaje.nombre}* before anyone else!`
-  });
+    const nombreConEfectos = `${personaje.nombre} ${efectos.join(' ')}`.trim();
+    const precioBase = personaje.precio || 1000;
+    const multiplicadorFinal = efectos.reduce((acc, e) => acc * multiplicadores[e], 1);
+    const precioFinal = Math.floor(precioBase * multiplicadorFinal);
+
+    const personajeModificado = {
+        ...personaje,
+        nombre: nombreConEfectos,
+        precio: precioFinal,
+        calidad: personaje.calidad || 'custom',
+        efectos,
+        base: personaje.nombre
+    };
+
+    const yaExiste = personajes.some(p => p.nombre === nombreConEfectos);
+    if (!yaExiste) {
+        personajes.push(personajeModificado);
+        fs.writeFileSync('./data/personajes.json', JSON.stringify({ characters: personajes }, null, 2));
+    }
+
+    global.psSpawn = {
+        activo: true,
+        personaje: personajeModificado,
+        grupo: '120363402403091432@g.us',
+        reclamadoPor: null,
+        timestamp: Date.now(),
+        forzadoPorOwner: isOwner
+    };
+
+    await sock.sendMessage(global.psSpawn.grupo, {
+        text: `> Este personaje está protegido durante 30 segundos por el Creador\n🌀 A SECRET PS HAS SPAWNED IN THIS GROUP!\nUse *.claim* to get *${nombreConEfectos}* before anyone else!\n> Si el personaje tiene efectos lo obtendrás cuando el bot sea reiniciado.`
+    });
 }

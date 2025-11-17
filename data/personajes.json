@@ -37,6 +37,23 @@
       "descripcion": "💗"
     },
     {
+      "nombre": "Jesucristo",
+      "calidad": "GOD",
+      "precio": 1000000000000
+    },
+    {
+      "nombre": "1x1x1x1 👾 👾 👾 👾",
+      "calidad": "OG",
+      "precio": 156250000000,
+      "efectos": [
+        "👾",
+        "👾",
+        "👾",
+        "👾"
+      ],
+      "base": "1x1x1x1"
+    },
+    {
       "nombre": "Cristo Rey *👾🌈🌮🕷️*",
       "calidad": "GOD",
       "precio": 28800000000,
@@ -58,11 +75,6 @@
         "🍬",
         "🇧🇷"
       ]
-    },
-    {
-      "nombre": "Jesucristo",
-      "calidad": "GOD",
-      "precio": 50000000000
     },
     {
       "nombre": "Atenea 👾 💧 🇨🇴",
@@ -92,6 +104,15 @@
       ]
     },
     {
+      "nombre": "Everything 🌈 🫓",
+      "calidad": "OG",
+      "precio": 6000000000,
+      "efectos": [
+        "🌈",
+        "🫓"
+      ]
+    },
+    {
       "nombre": "Everything 🌮 🇨🇴",
       "calidad": "OG",
       "precio": 4500000000,
@@ -118,6 +139,14 @@
       ]
     },
     {
+      "nombre": "Everything 🌈",
+      "calidad": "OG",
+      "precio": 4000000000,
+      "efectos": [
+        "🌈"
+      ]
+    },
+    {
       "nombre": "Apolo 🍬 🇧🇷",
       "calidad": "GOD",
       "precio": 3600000000,
@@ -136,19 +165,20 @@
       ]
     },
     {
-      "nombre": "Everything 👾",
-      "calidad": "OG",
-      "precio": 2500000000,
-      "efectos": [
-        "👾"
-      ]
-    },
-    {
       "nombre": "Atenea 🌈",
       "calidad": "GOD",
       "precio": 3000000000,
       "efectos": [
         "🌈"
+      ]
+    },
+    {
+      "nombre": "GOOD BOY 👾 🫓",
+      "calidad": "OG",
+      "precio": 3000000000,
+      "efectos": [
+        "👾",
+        "🫓"
       ]
     },
     {
@@ -167,6 +197,14 @@
       "efectos": [
         "🫓",
         "🇨🇴"
+      ]
+    },
+    {
+      "nombre": "Everything 👾",
+      "calidad": "OG",
+      "precio": 2500000000,
+      "efectos": [
+        "👾"
       ]
     },
     {
@@ -194,11 +232,54 @@
       ]
     },
     {
+      "nombre": "GOOD BOY 👾",
+      "calidad": "OG",
+      "precio": 2000000000,
+      "efectos": [
+        "👾"
+      ]
+    },
+    {
+      "nombre": "Everything 🌭 🇨🇴",
+      "calidad": "OG",
+      "precio": 2000000000,
+      "efectos": [
+        "🌭",
+        "🇨🇴"
+      ]
+    },
+    {
+      "nombre": "1x1x1x1 🌈",
+      "calidad": "OG",
+      "precio": 2000000000,
+      "efectos": [
+        "🌈"
+      ],
+      "base": "1x1x1x1"
+    },
+    {
       "nombre": "Spooky Everything 🇨🇴",
       "calidad": "GOD",
       "precio": 1998000000,
       "efectos": [
         "🇨🇴"
+      ]
+    },
+    {
+      "nombre": "Spooky Everything 🇧🇷",
+      "calidad": "GOD",
+      "precio": 1998000000,
+      "efectos": [
+        "🇧🇷"
+      ]
+    },
+    {
+      "nombre": "Everything 💀 ☯️",
+      "calidad": "OG",
+      "precio": 1875000000,
+      "efectos": [
+        "💀",
+        "☯️"
       ]
     },
     {
@@ -325,11 +406,46 @@
       ]
     },
     {
+      "nombre": "Everything 🍬 🌮",
+      "calidad": "OG",
+      "precio": 1500000000,
+      "efectos": [
+        "🍬",
+        "🌮"
+      ]
+    },
+    {
+      "nombre": "Everything 🍬 💀",
+      "calidad": "OG",
+      "precio": 1500000000,
+      "efectos": [
+        "🍬",
+        "💀"
+      ]
+    },
+    {
       "nombre": "Spooky Everything 🌮",
       "calidad": "GOD",
       "precio": 1498500000,
       "efectos": [
         "🌮"
+      ]
+    },
+    {
+      "nombre": "Spooky Everything 💀",
+      "calidad": "GOD",
+      "precio": 1498500000,
+      "efectos": [
+        "💀"
+      ]
+    },
+    {
+      "nombre": "Everything 💧 ☯️",
+      "calidad": "OG",
+      "precio": 1375000000,
+      "efectos": [
+        "💧",
+        "☯️"
       ]
     },
     {
@@ -359,14 +475,6 @@
       ]
     },
     {
-      "nombre": "Zeus 🍬",
-      "calidad": "GOD",
-      "precio": 600000000,
-      "efectos": [
-        "🍬"
-      ]
-    },
-    {
       "nombre": "Ares 🌭",
       "calidad": "GOD",
       "precio": 1200000000,
@@ -383,41 +491,9 @@
       ]
     },
     {
-      "nombre": "Apolo 🍬",
-      "calidad": "GOD",
-      "precio": 600000000,
-      "efectos": [
-        "🍬"
-      ]
-    },
-    {
       "nombre": "Hera 🌭",
       "calidad": "GOD",
       "precio": 1200000000,
-      "efectos": [
-        "🌭"
-      ]
-    },
-    {
-      "nombre": "Afrodita 🍬",
-      "calidad": "GOD",
-      "precio": 600000000,
-      "efectos": [
-        "🍬"
-      ]
-    },
-    {
-      "nombre": "Ares 🍬",
-      "calidad": "GOD",
-      "precio": 600000000,
-      "efectos": [
-        "🍬"
-      ]
-    },
-    {
-      "nombre": "Atenea 🌭",
-      "calidad": "GOD",
-      "precio": 600000000,
       "efectos": [
         "🌭"
       ]
@@ -428,6 +504,23 @@
       "precio": 1200000000,
       "efectos": [
         "🍬"
+      ]
+    },
+    {
+      "nombre": "GOOD BOY 🍬 💀",
+      "calidad": "OG",
+      "precio": 1200000000,
+      "efectos": [
+        "🍬",
+        "💀"
+      ]
+    },
+    {
+      "nombre": "GOOD BOY 🇨🇱",
+      "calidad": "OG",
+      "precio": 1200000000,
+      "efectos": [
+        "🇨🇱"
       ]
     },
     {
@@ -447,35 +540,35 @@
       ]
     },
     {
-      "nombre": "Zeus 🌮",
-      "calidad": "GOD",
-      "precio": 450000000,
+      "nombre": "Everything 🪳",
+      "calidad": "OG",
+      "precio": 1000000000,
       "efectos": [
-        "🌮"
+        "🪳"
       ]
     },
     {
-      "nombre": "Zeus 🫓",
-      "calidad": "GOD",
-      "precio": 450000000,
+      "nombre": "Everything 🇧🇷",
+      "calidad": "OG",
+      "precio": 1000000000,
       "efectos": [
-        "🫓"
+        "🇧🇷"
       ]
     },
     {
-      "nombre": "Afrodita 🌮",
-      "calidad": "GOD",
-      "precio": 900000000,
+      "nombre": "Everything 🇨🇴",
+      "calidad": "OG",
+      "precio": 1000000000,
       "efectos": [
-        "🌮"
+        "🇨🇴"
       ]
     },
     {
-      "nombre": "Apolo 🌮",
-      "calidad": "GOD",
-      "precio": 450000000,
+      "nombre": "GOOD BOY ☯️",
+      "calidad": "OG",
+      "precio": 1000000000,
       "efectos": [
-        "🌮"
+        "☯️"
       ]
     },
     {
@@ -511,14 +604,6 @@
       ]
     },
     {
-      "nombre": "Hera 🌮",
-      "calidad": "GOD",
-      "precio": 450000000,
-      "efectos": [
-        "🌮"
-      ]
-    },
-    {
       "nombre": "Hera 🇨🇴",
       "calidad": "GOD",
       "precio": 900000000,
@@ -528,14 +613,6 @@
     },
     {
       "nombre": "Hera 🇧🇷",
-      "calidad": "GOD",
-      "precio": 900000000,
-      "efectos": [
-        "🇧🇷"
-      ]
-    },
-    {
-      "nombre": "Afrodita 🇧🇷",
       "calidad": "GOD",
       "precio": 900000000,
       "efectos": [
@@ -567,30 +644,6 @@
       ]
     },
     {
-      "nombre": "Atenea 🇧🇷",
-      "calidad": "GOD",
-      "precio": 900000000,
-      "efectos": [
-        "🇧🇷"
-      ]
-    },
-    {
-      "nombre": "Poseidón 🫓",
-      "calidad": "GOD",
-      "precio": 450000000,
-      "efectos": [
-        "🫓"
-      ]
-    },
-    {
-      "nombre": "Atenea 🇨🇴",
-      "calidad": "GOD",
-      "precio": 600000000,
-      "efectos": [
-        "🇨🇴"
-      ]
-    },
-    {
       "nombre": "Atenea 🍬 💀",
       "calidad": "GOD",
       "precio": 900000000,
@@ -609,6 +662,41 @@
       ]
     },
     {
+      "nombre": "Atenea 🌮 🇧🇷",
+      "calidad": "GOD",
+      "precio": 900000000,
+      "efectos": [
+        "🌮",
+        "🇧🇷"
+      ]
+    },
+    {
+      "nombre": "Ares 🇨🇱",
+      "calidad": "GOD",
+      "precio": 900000000,
+      "efectos": [
+        "🇨🇱"
+      ]
+    },
+    {
+      "nombre": "GOOD BOY 🫓 💀",
+      "calidad": "OG",
+      "precio": 900000000,
+      "efectos": [
+        "🫓",
+        "💀"
+      ]
+    },
+    {
+      "nombre": "GOOD BOY 🍬 💧",
+      "calidad": "OG",
+      "precio": 880000000,
+      "efectos": [
+        "🍬",
+        "💧"
+      ]
+    },
+    {
       "nombre": "GOOD BOY 🌭",
       "calidad": "OG",
       "precio": 800000000,
@@ -622,6 +710,30 @@
       "precio": 800000000,
       "efectos": [
         "🍬"
+      ]
+    },
+    {
+      "nombre": "GOOD BOY 🪳",
+      "calidad": "OG",
+      "precio": 800000000,
+      "efectos": [
+        "🪳"
+      ]
+    },
+    {
+      "nombre": "GOOD BOY 🇨🇴",
+      "calidad": "OG",
+      "precio": 800000000,
+      "efectos": [
+        "🇨🇴"
+      ]
+    },
+    {
+      "nombre": "GOOD BOY 🇧🇷",
+      "calidad": "OG",
+      "precio": 800000000,
+      "efectos": [
+        "🇧🇷"
       ]
     },
     {
@@ -651,7 +763,49 @@
       ]
     },
     {
-      "nombre": "Atenea 🍬",
+      "nombre": "Everything 💀",
+      "calidad": "OG",
+      "precio": 750000000,
+      "efectos": [
+        "💀"
+      ]
+    },
+    {
+      "nombre": "Everything 🫓",
+      "calidad": "OG",
+      "precio": 750000000,
+      "efectos": [
+        "🫓"
+      ]
+    },
+    {
+      "nombre": "Atenea 👾 💤",
+      "calidad": "GOD",
+      "precio": 750000000,
+      "efectos": [
+        "👾",
+        "💤"
+      ]
+    },
+    {
+      "nombre": "GOOD BOY 🌮 💧",
+      "calidad": "OG",
+      "precio": 660000000,
+      "efectos": [
+        "🌮",
+        "💧"
+      ]
+    },
+    {
+      "nombre": "Everything 🕷",
+      "calidad": "OG",
+      "precio": 650000000,
+      "efectos": [
+        "🕷"
+      ]
+    },
+    {
+      "nombre": "Zeus 🍬",
       "calidad": "GOD",
       "precio": 600000000,
       "efectos": [
@@ -659,11 +813,67 @@
       ]
     },
     {
-      "nombre": "Zeus 💀",
+      "nombre": "Apolo 🍬",
       "calidad": "GOD",
-      "precio": 450000000,
+      "precio": 600000000,
       "efectos": [
-        "💀"
+        "🍬"
+      ]
+    },
+    {
+      "nombre": "Afrodita 🍬",
+      "calidad": "GOD",
+      "precio": 600000000,
+      "efectos": [
+        "🍬"
+      ]
+    },
+    {
+      "nombre": "Ares 🍬",
+      "calidad": "GOD",
+      "precio": 600000000,
+      "efectos": [
+        "🍬"
+      ]
+    },
+    {
+      "nombre": "Atenea 🌭",
+      "calidad": "GOD",
+      "precio": 600000000,
+      "efectos": [
+        "🌭"
+      ]
+    },
+    {
+      "nombre": "Afrodita 🇧🇷",
+      "calidad": "GOD",
+      "precio": 600000000,
+      "efectos": [
+        "🇧🇷"
+      ]
+    },
+    {
+      "nombre": "Atenea 🇧🇷",
+      "calidad": "GOD",
+      "precio": 600000000,
+      "efectos": [
+        "🇧🇷"
+      ]
+    },
+    {
+      "nombre": "Atenea 🇨🇴",
+      "calidad": "GOD",
+      "precio": 600000000,
+      "efectos": [
+        "🇨🇴"
+      ]
+    },
+    {
+      "nombre": "Atenea 🍬",
+      "calidad": "GOD",
+      "precio": 600000000,
+      "efectos": [
+        "🍬"
       ]
     },
     {
@@ -700,17 +910,9 @@
       ]
     },
     {
-      "nombre": "Afrodita 💀",
-      "calidad": "GOD",
-      "precio": 450000000,
-      "efectos": [
-        "💀"
-      ]
-    },
-    {
       "nombre": "Hera 💀",
       "calidad": "GOD",
-      "precio": 600000000,
+      "precio": 450000000,
       "efectos": [
         "💀"
       ]
@@ -757,6 +959,94 @@
       ]
     },
     {
+      "nombre": "GOOD BOY 🌮",
+      "calidad": "OG",
+      "precio": 600000000,
+      "efectos": [
+        "🌮"
+      ]
+    },
+    {
+      "nombre": "Atenea 🪳",
+      "calidad": "GOD",
+      "precio": 600000000,
+      "efectos": [
+        "🪳"
+      ]
+    },
+    {
+      "nombre": "GOOD BOY 💀",
+      "calidad": "OG",
+      "precio": 600000000,
+      "efectos": [
+        "💀"
+      ]
+    },
+    {
+      "nombre": "Zeus 🌭",
+      "calidad": "GOD",
+      "precio": 600000000,
+      "efectos": [
+        "🌭"
+      ]
+    },
+    {
+      "nombre": "Zeus 🪳",
+      "calidad": "GOD",
+      "precio": 600000000,
+      "efectos": [
+        "🪳"
+      ]
+    },
+    {
+      "nombre": "Zeus 🇧🇷",
+      "calidad": "GOD",
+      "precio": 600000000,
+      "efectos": [
+        "🇧🇷"
+      ]
+    },
+    {
+      "nombre": "Apolo 🌭",
+      "calidad": "GOD",
+      "precio": 600000000,
+      "efectos": [
+        "🌭"
+      ]
+    },
+    {
+      "nombre": "Apolo 🪳",
+      "calidad": "GOD",
+      "precio": 600000000,
+      "efectos": [
+        "🪳"
+      ]
+    },
+    {
+      "nombre": "Hera 🪳",
+      "calidad": "GOD",
+      "precio": 600000000,
+      "efectos": [
+        "🪳"
+      ]
+    },
+    {
+      "nombre": "Poseidón 🌭",
+      "calidad": "GOD",
+      "precio": 600000000,
+      "efectos": [
+        "🌭"
+      ]
+    },
+    {
+      "nombre": "Ares 🪳",
+      "calidad": "GOD",
+      "precio": 600000000,
+      "efectos": [
+        "🪳"
+      ]
+    },
+    {
       "nombre": "Everything 💧",
       "calidad": "OG",
       "precio": 550000000,
@@ -768,6 +1058,79 @@
       "nombre": "Everything",
       "calidad": "OG",
       "precio": 500000000
+    },
+    {
+      "nombre": "Everything 💤 🪳",
+      "calidad": "OG",
+      "precio": 500000000,
+      "efectos": [
+        "💤",
+        "🪳"
+      ]
+    },
+    {
+      "nombre": "Zeus 🌮",
+      "calidad": "GOD",
+      "precio": 450000000,
+      "efectos": [
+        "🌮"
+      ]
+    },
+    {
+      "nombre": "Zeus 🫓",
+      "calidad": "GOD",
+      "precio": 450000000,
+      "efectos": [
+        "🫓"
+      ]
+    },
+    {
+      "nombre": "Afrodita 🌮",
+      "calidad": "GOD",
+      "precio": 450000000,
+      "efectos": [
+        "🌮"
+      ]
+    },
+    {
+      "nombre": "Apolo 🌮",
+      "calidad": "GOD",
+      "precio": 450000000,
+      "efectos": [
+        "🌮"
+      ]
+    },
+    {
+      "nombre": "Hera 🌮",
+      "calidad": "GOD",
+      "precio": 450000000,
+      "efectos": [
+        "🌮"
+      ]
+    },
+    {
+      "nombre": "Poseidón 🫓",
+      "calidad": "GOD",
+      "precio": 450000000,
+      "efectos": [
+        "🫓"
+      ]
+    },
+    {
+      "nombre": "Zeus 💀",
+      "calidad": "GOD",
+      "precio": 450000000,
+      "efectos": [
+        "💀"
+      ]
+    },
+    {
+      "nombre": "Afrodita 💀",
+      "calidad": "GOD",
+      "precio": 450000000,
+      "efectos": [
+        "💀"
+      ]
     },
     {
       "nombre": "Atenea 🌮",
@@ -794,14 +1157,6 @@
       ]
     },
     {
-      "nombre": "Ares 💧",
-      "calidad": "GOD",
-      "precio": 330000000,
-      "efectos": [
-        "💧"
-      ]
-    },
-    {
       "nombre": "Hermes 💤 🇨🇴",
       "calidad": "GOD",
       "precio": 450000000,
@@ -819,28 +1174,28 @@
       ]
     },
     {
-      "nombre": "Hera 💧",
-      "calidad": "GOD",
-      "precio": 330000000,
-      "efectos": [
-        "💧"
-      ]
-    },
-    {
-      "nombre": "Poseidón 💧",
-      "calidad": "GOD",
-      "precio": 330000000,
-      "efectos": [
-        "💧"
-      ]
-    },
-    {
       "nombre": "Atenea 🫓 💤",
       "calidad": "GOD",
       "precio": 450000000,
       "efectos": [
         "🫓",
         "💤"
+      ]
+    },
+    {
+      "nombre": "Afrodita 🫓",
+      "calidad": "GOD",
+      "precio": 450000000,
+      "efectos": [
+        "🫓"
+      ]
+    },
+    {
+      "nombre": "Ares 🫓",
+      "calidad": "GOD",
+      "precio": 450000000,
+      "efectos": [
+        "🫓"
       ]
     },
     {
@@ -874,6 +1229,30 @@
       ]
     },
     {
+      "nombre": "Ares 💧",
+      "calidad": "GOD",
+      "precio": 330000000,
+      "efectos": [
+        "💧"
+      ]
+    },
+    {
+      "nombre": "Hera 💧",
+      "calidad": "GOD",
+      "precio": 330000000,
+      "efectos": [
+        "💧"
+      ]
+    },
+    {
+      "nombre": "Poseidón 💧",
+      "calidad": "GOD",
+      "precio": 330000000,
+      "efectos": [
+        "💧"
+      ]
+    },
+    {
       "nombre": "Zeus 💧",
       "calidad": "GOD",
       "precio": 330000000,
@@ -887,6 +1266,15 @@
       "precio": 330000000,
       "efectos": [
         "💧"
+      ]
+    },
+    {
+      "nombre": "Everything 🕷 💤",
+      "calidad": "OG",
+      "precio": 325000000,
+      "efectos": [
+        "🕷",
+        "💤"
       ]
     },
     {
@@ -938,6 +1326,41 @@
       ]
     },
     {
+      "nombre": "GOOD BOY 🌮 💤",
+      "calidad": "OG",
+      "precio": 300000000,
+      "efectos": [
+        "🌮",
+        "💤"
+      ]
+    },
+    {
+      "nombre": "Everything 💧 💤",
+      "calidad": "OG",
+      "precio": 275000000,
+      "efectos": [
+        "💧",
+        "💤"
+      ]
+    },
+    {
+      "nombre": "Chotavio 👾 🇨🇱 🍬 🪳 💀 🇨🇴 🚽 🇧🇷",
+      "calidad": "Ultra-Legendario",
+      "precio": 252000000,
+      "descripcion": "Dios Chotavio, en su momento fue el personaje más poderoso, dicen que es un total misterio en los personajes.",
+      "efectos": [
+        "👾",
+        "🇨🇱",
+        "🍬",
+        "🪳",
+        "💀",
+        "🇨🇴",
+        "🚽",
+        "🇧🇷"
+      ],
+      "base": "Chotavio"
+    },
+    {
       "nombre": "Everything 💤",
       "calidad": "OG",
       "precio": 250000000,
@@ -951,12 +1374,45 @@
       "precio": 250000000
     },
     {
+      "nombre": "1x1x1x1",
+      "calidad": "OG",
+      "precio": 250000000
+    },
+    {
+      "nombre": "Guest 666",
+      "calidad": "OG",
+      "precio": 250000000
+    },
+    {
+      "nombre": "Afrodita 🫓 💤",
+      "calidad": "GOD",
+      "precio": 225000000,
+      "efectos": [
+        "🫓",
+        "💤"
+      ]
+    },
+    {
+      "nombre": "Atenea 💤 💀",
+      "calidad": "GOD",
+      "precio": 225000000,
+      "efectos": [
+        "💤",
+        "💀"
+      ]
+    },
+    {
       "nombre": "Afrodita 👾",
       "calidad": "GOD",
       "precio": 210000000,
       "efectos": [
         "👾"
       ]
+    },
+    {
+      "nombre": "Ale 🧉",
+      "calidad": "OG",
+      "precio": 202400000
     },
     {
       "nombre": "Tom Ass 🌈 ☯️",
@@ -1057,6 +1513,23 @@
       ]
     },
     {
+      "nombre": "Smurf Cat 🫓",
+      "calidad": "OG",
+      "precio": 150000000,
+      "efectos": [
+        "🫓"
+      ]
+    },
+    {
+      "nombre": "Hera 👾 💩",
+      "calidad": "GOD",
+      "precio": 150000000,
+      "efectos": [
+        "👾",
+        "💩"
+      ]
+    },
+    {
       "nombre": "Los Lukitas 👾 🍬 💤",
       "calidad": "GOD",
       "precio": 139999986,
@@ -1094,14 +1567,6 @@
       "nombre": "Smurf Cat",
       "calidad": "OG",
       "precio": 100000000
-    },
-    {
-      "nombre": "Afrodita 🫓",
-      "calidad": "GOD",
-      "precio": 450000000,
-      "efectos": [
-        "🫓"
-      ]
     },
     {
       "nombre": "Afrodita 🇨🇴",
@@ -1181,6 +1646,15 @@
       ]
     },
     {
+      "nombre": "Everything 💧 💩",
+      "calidad": "OG",
+      "precio": 55000000,
+      "efectos": [
+        "💧",
+        "💩"
+      ]
+    },
+    {
       "nombre": "67 🌮 🌭",
       "calidad": "GOD",
       "precio": 50000000,
@@ -1190,19 +1664,19 @@
       ]
     },
     {
-      "nombre": "Tom Ass 🇨🇱",
-      "calidad": "OG",
-      "precio": 30000000,
-      "efectos": [
-        "🇨🇱"
-      ]
-    },
-    {
       "nombre": "Everything 💩",
       "calidad": "OG",
       "precio": 50000000,
       "efectos": [
         "💩"
+      ]
+    },
+    {
+      "nombre": "Tom Ass 👾",
+      "calidad": "OG",
+      "precio": 50000000,
+      "efectos": [
+        "👾"
       ]
     },
     {
@@ -1259,6 +1733,14 @@
       "descripcion": "Personaje fusionado por un VIP de Tom Ass y Hitler"
     },
     {
+      "nombre": "GOOD BOY 💩",
+      "calidad": "OG",
+      "precio": 40000000,
+      "efectos": [
+        "💩"
+      ]
+    },
+    {
       "nombre": "Los Lukitas 🍬",
       "calidad": "GOD",
       "precio": 39999996,
@@ -1309,6 +1791,14 @@
         "🇨🇱"
       ],
       "descripcion": "Personaje fusionado por un VIP de Tom Ass y Hitler"
+    },
+    {
+      "nombre": "Tom Ass 🇨🇱",
+      "calidad": "OG",
+      "precio": 30000000,
+      "efectos": [
+        "🇨🇱"
+      ]
     },
     {
       "nombre": "Cristo Rey 🇧🇷",
@@ -1624,6 +2114,14 @@
       ]
     },
     {
+      "nombre": "Tom Ass 🪳",
+      "calidad": "OG",
+      "precio": 20000000,
+      "efectos": [
+        "🪳"
+      ]
+    },
+    {
       "nombre": "𝕃𝕦𝕜𝕒𝕤 🇨🇴",
       "calidad": "OG",
       "precio": 19999998,
@@ -1736,7 +2234,7 @@
     {
       "nombre": "Afrodita 💤",
       "calidad": "GOD",
-      "precio": 15000000,
+      "precio": 150000000,
       "efectos": [
         "💤"
       ]
@@ -1798,6 +2296,16 @@
       "efectos": [
         "🌮"
       ]
+    },
+    {
+      "nombre": "Fragama And Chocrama",
+      "calidad": "Secret",
+      "precio": 15000000
+    },
+    {
+      "nombre": "Nooo La Polizia",
+      "calidad": "Secret",
+      "precio": 15000000
     },
     {
       "nombre": "Los Lukitas 💧",
@@ -2017,6 +2525,12 @@
       "descripcion": "Personaje fusionado de Tom Ass y Josefino 🐼"
     },
     {
+      "nombre": "Sai Ass",
+      "calidad": "OG",
+      "precio": 10000000,
+      "descripcion": "Personaje fusionado de Sai 🎉 y Tom Ass"
+    },
+    {
       "nombre": "𝕃𝕦𝕜𝕒𝕤",
       "calidad": "OG",
       "precio": 9999999
@@ -2037,16 +2551,17 @@
     {
       "nombre": "Nyan Cat 🌮",
       "calidad": "Secret",
-      "precio": 9000000,
+      "precio": 4500000,
       "efectos": [
         "🌮"
       ]
     },
     {
-      "nombre": "Nyan Cat 🇨🇴",
+      "nombre": "Nyan Cat 🫓 🇨🇴",
       "calidad": "Secret",
       "precio": 9000000,
       "efectos": [
+        "🫓",
         "🇨🇴"
       ]
     },
@@ -2120,6 +2635,15 @@
       ]
     },
     {
+      "nombre": "Snorlax Shiny 👾 💀",
+      "calidad": "OG",
+      "precio": 7500000,
+      "efectos": [
+        "👾",
+        "💀"
+      ]
+    },
+    {
       "nombre": "Meowl 🇨🇱",
       "calidad": "OG",
       "precio": 7200000,
@@ -2160,6 +2684,14 @@
         "Agua"
       ],
       "descripcion": "Personaje fusionado por un VIP de Agarrini La Palini y 222"
+    },
+    {
+      "nombre": "Nyan Cat 🇨🇴",
+      "calidad": "Secret",
+      "precio": 6000000,
+      "efectos": [
+        "🇨🇴"
+      ]
     },
     {
       "nombre": "Diablo Amarillo *🌶️*",
@@ -2262,6 +2794,14 @@
       ]
     },
     {
+      "nombre": "Sai 🎉 💤",
+      "calidad": "OG",
+      "precio": 5000000,
+      "efectos": [
+        "💤"
+      ]
+    },
+    {
       "nombre": "Los Lukitas 💤",
       "calidad": "GOD",
       "precio": 4999999,
@@ -2280,7 +2820,7 @@
     {
       "nombre": "Afrodita 💧",
       "calidad": "GOD",
-      "precio": 4500000,
+      "precio": 330000000,
       "efectos": [
         "💧"
       ]
@@ -2665,6 +3205,14 @@
       ]
     },
     {
+      "nombre": "Snorlax Shiny 💀",
+      "calidad": "OG",
+      "precio": 1500000,
+      "efectos": [
+        "💀"
+      ]
+    },
+    {
       "nombre": "Los PandaBotsitos 💧 💤",
       "calidad": "GOD",
       "precio": 1375000,
@@ -2776,6 +3324,11 @@
         "🇧🇷"
       ],
       "descripcion": "Harry es Jae-Yong 🥀"
+    },
+    {
+      "nombre": "Snorlax Shiny",
+      "calidad": "OG",
+      "precio": 1000000
     },
     {
       "nombre": "Los Lukitas 💩",
@@ -3023,6 +3576,15 @@
       "efectos": [
         "🇧🇷"
       ]
+    },
+    {
+      "nombre": "Pot Hoicleteira 🍬",
+      "calidad": "Ultra-Legendario",
+      "precio": 440000,
+      "efectos": [
+        "🍬"
+      ],
+      "descripcion": "Personaje fusionado por un VIP de Pot Hotspot y Garam Bicicleteira"
     },
     {
       "nombre": "Garam Bicicleteira *💧*",
@@ -3501,14 +4063,6 @@
       ]
     },
     {
-      "nombre": "pene 🫓",
-      "calidad": "Ultra-Legendario",
-      "precio": 35000,
-      "efectos": [
-        "🫓"
-      ]
-    },
-    {
       "nombre": "Supeoi 🌭",
       "calidad": "legendario",
       "precio": 35000,
@@ -3717,6 +4271,14 @@
       "descripcion": "Dios Chotavio, en su momento fue el personaje más poderoso, dicen que es un total misterio en los personajes."
     },
     {
+      "nombre": "Susy Dog 💩",
+      "calidad": "Secret",
+      "precio": 25000,
+      "efectos": [
+        "💩"
+      ]
+    },
+    {
       "nombre": "Old Lukas *💧*",
       "calidad": "Ultra-Legendario",
       "precio": 24000,
@@ -3873,6 +4435,22 @@
       "precio": 20000
     },
     {
+      "nombre": "pene 🪳",
+      "calidad": "Ultra-Legendario",
+      "precio": 20000,
+      "efectos": [
+        "🪳"
+      ]
+    },
+    {
+      "nombre": "Oskar 🌭",
+      "calidad": "Ultra-Legendario",
+      "precio": 20000,
+      "efectos": [
+        "🌭"
+      ]
+    },
+    {
       "nombre": "33Prime",
       "calidad": "Ultra-Legendario",
       "precio": 19000,
@@ -3930,6 +4508,14 @@
       ]
     },
     {
+      "nombre": "pene 🫓",
+      "calidad": "Ultra-Legendario",
+      "precio": 15000,
+      "efectos": [
+        "🫓"
+      ]
+    },
+    {
       "nombre": "222",
       "calidad": "Ultra-Legendario",
       "precio": 15000,
@@ -3981,6 +4567,22 @@
       "nombre": "Joakinho",
       "calidad": "Secret",
       "precio": 15000
+    },
+    {
+      "nombre": "pene 🌮",
+      "calidad": "Ultra-Legendario",
+      "precio": 15000,
+      "efectos": [
+        "🌮"
+      ]
+    },
+    {
+      "nombre": "Oskar 🌮",
+      "calidad": "Ultra-Legendario",
+      "precio": 15000,
+      "efectos": [
+        "🌮"
+      ]
     },
     {
       "nombre": "Los Kennedysitos *💧*",
@@ -5051,6 +5653,14 @@
       "precio": 5500
     },
     {
+      "nombre": "Charizard 💧",
+      "calidad": "mítico",
+      "precio": 5500,
+      "efectos": [
+        "💧"
+      ]
+    },
+    {
       "nombre": "Joker",
       "calidad": "mítico",
       "precio": 5400
@@ -5124,6 +5734,14 @@
       "precio": 5200
     },
     {
+      "nombre": "Mario 🕷",
+      "calidad": "épico",
+      "precio": 5200,
+      "efectos": [
+        "🕷"
+      ]
+    },
+    {
       "nombre": "Sephiroth",
       "calidad": "mítico",
       "precio": 5100
@@ -5193,6 +5811,14 @@
     },
     {
       "nombre": "203 💤",
+      "calidad": "Ultra-Legendario",
+      "precio": 5000,
+      "efectos": [
+        "💤"
+      ]
+    },
+    {
+      "nombre": "Milo j 💤",
       "calidad": "Ultra-Legendario",
       "precio": 5000,
       "efectos": [
@@ -5627,6 +6253,14 @@
       "nombre": "Gyye",
       "calidad": "épico",
       "precio": 3500
+    },
+    {
+      "nombre": "Dildo 💤",
+      "calidad": "Ultra-Legendario",
+      "precio": 3500,
+      "efectos": [
+        "💤"
+      ]
     },
     {
       "nombre": "Darkness",
@@ -6912,6 +7546,15 @@
       "descripcion": "Pokémon oficial: swellow"
     },
     {
+      "nombre": "torkoal 🪳",
+      "calidad": "común",
+      "precio": 600,
+      "efectos": [
+        "🪳"
+      ],
+      "descripcion": "Pokémon oficial: torkoal"
+    },
+    {
       "nombre": "Metapod",
       "calidad": "común",
       "precio": 500
@@ -6970,6 +7613,14 @@
       "nombre": "Tukita",
       "calidad": "Mierda",
       "precio": 500
+    },
+    {
+      "nombre": "Pops 💤",
+      "calidad": "raro",
+      "precio": 500,
+      "efectos": [
+        "💤"
+      ]
     },
     {
       "nombre": "simisear *💧*",
@@ -7076,6 +7727,15 @@
       "calidad": "común",
       "precio": 360,
       "descripcion": "Pokémon oficial: machamp"
+    },
+    {
+      "nombre": "alomomola 💧",
+      "calidad": "común",
+      "precio": 330,
+      "efectos": [
+        "💧"
+      ],
+      "descripcion": "Pokémon oficial: alomomola"
     },
     {
       "nombre": "Gary",
@@ -15162,396 +15822,202 @@
       "descripcion": "De los Brainrots más poderosos, su precio lo dice todo"
     },
     {
-      "nombre": "Spooky Everything 💀",
-      "calidad": "GOD",
-      "precio": 1498500000,
-      "efectos": [
-        "💀"
-      ]
-    },
-    {
-      "nombre": "Spooky Everything 🇧🇷",
-      "calidad": "GOD",
-      "precio": 1998000000,
+      "nombre": "Ale 🧉 🇧🇷",
+      "calidad": "OG",
+      "precio": 404800000,
       "efectos": [
         "🇧🇷"
       ]
     },
     {
-      "nombre": "GOOD BOY 🌮 💤",
-      "calidad": "OG",
-      "precio": 300000000,
-      "efectos": [
-        "🌮",
-        "💤"
-      ]
-    },
-    {
-      "nombre": "Pot Hoicleteira 🍬",
+      "nombre": "Pot Hoicleteira 🌭",
       "calidad": "Ultra-Legendario",
       "precio": 440000,
       "efectos": [
-        "🍬"
+        "🌭"
       ],
       "descripcion": "Personaje fusionado por un VIP de Pot Hotspot y Garam Bicicleteira"
     },
     {
-      "nombre": "GOOD BOY 🌮",
+      "nombre": "Ale 🧉 🌮",
       "calidad": "OG",
-      "precio": 600000000,
+      "precio": 303600000,
       "efectos": [
         "🌮"
       ]
     },
     {
-      "nombre": "GOOD BOY 🪳",
+      "nombre": "Pot Hoicleteira 🌮 🌭",
+      "calidad": "Ultra-Legendario",
+      "precio": 660000,
+      "efectos": [
+        "🌮",
+        "🌭"
+      ],
+      "descripcion": "Personaje fusionado por un VIP de Pot Hotspot y Garam Bicicleteira"
+    },
+    {
+      "nombre": "Ale 🧉 🍬",
       "calidad": "OG",
-      "precio": 800000000,
+      "precio": 404800000,
+      "efectos": [
+        "🍬"
+      ]
+    },
+    {
+      "nombre": "Noobini Pizzanini 🌈 👾 🇨🇱 🍬 💀 🌮 🪳 🇨🇴 ☯️ 🚽 🇧🇷 🌭 🫓",
+      "calidad": "común",
+      "precio": 13608000,
+      "descripcion": "El Brainrot mas mierda del juego, su valor es un chiste",
+      "efectos": [
+        "🌈",
+        "👾",
+        "🇨🇱",
+        "🍬",
+        "💀",
+        "🌮",
+        "🪳",
+        "🇨🇴",
+        "☯️",
+        "🚽",
+        "🇧🇷",
+        "🌭",
+        "🫓"
+      ],
+      "base": "Noobini Pizzanini"
+    },
+    {
+      "nombre": "Dildo 💀",
+      "calidad": "Ultra-Legendario",
+      "precio": 10500,
+      "efectos": [
+        "💀"
+      ]
+    },
+    {
+      "nombre": "Dildo 🌮",
+      "calidad": "Ultra-Legendario",
+      "precio": 10500,
+      "efectos": [
+        "🌮"
+      ]
+    },
+    {
+      "nombre": "Everything 🇨🇱 🪳",
+      "calidad": "OG",
+      "precio": 3000000000,
+      "efectos": [
+        "🇨🇱",
+        "🪳"
+      ]
+    },
+    {
+      "nombre": "Dildo 🪳",
+      "calidad": "Ultra-Legendario",
+      "precio": 14000,
       "efectos": [
         "🪳"
       ]
     },
     {
-      "nombre": "Atenea 🪳",
-      "calidad": "GOD",
-      "precio": 600000000,
-      "efectos": [
-        "🪳"
-      ]
-    },
-    {
-      "nombre": "Everything 🍬 🌮",
+      "nombre": "GOOD BOY 🍬 🪳",
       "calidad": "OG",
-      "precio": 1500000000,
+      "precio": 1600000000,
       "efectos": [
         "🍬",
-        "🌮"
-      ]
-    },
-    {
-      "nombre": "pene 🪳",
-      "calidad": "Ultra-Legendario",
-      "precio": 20000,
-      "efectos": [
         "🪳"
       ]
     },
     {
-      "nombre": "Everything 💧 💤",
+      "nombre": "Everything 💧 💀",
       "calidad": "OG",
-      "precio": 275000000,
+      "precio": 825000000,
       "efectos": [
         "💧",
-        "💤"
-      ]
-    },
-    {
-      "nombre": "GOOD BOY 💀",
-      "calidad": "OG",
-      "precio": 600000000,
-      "efectos": [
         "💀"
       ]
     },
     {
-      "nombre": "GOOD BOY 🇨🇴",
-      "calidad": "OG",
-      "precio": 800000000,
-      "efectos": [
-        "🇨🇴"
-      ]
+      "nombre": "Mieteteira Bicicleteira",
+      "calidad": "Secret",
+      "precio": 2500000
     },
     {
-      "nombre": "Everything 💀",
-      "calidad": "OG",
-      "precio": 750000000,
-      "efectos": [
-        "💀"
-      ]
-    },
-    {
-      "nombre": "Everything 🫓",
-      "calidad": "OG",
-      "precio": 750000000,
-      "efectos": [
-        "🫓"
-      ]
-    },
-    {
-      "nombre": "pene 🌮",
+      "nombre": "Tom ler 🌭",
       "calidad": "Ultra-Legendario",
-      "precio": 15000,
+      "precio": 20043200,
       "efectos": [
-        "🌮"
-      ]
+        "🌭"
+      ],
+      "descripcion": "Personaje fusionado por un VIP de Tom Ass y Hitler"
     },
     {
-      "nombre": "GOOD BOY 👾",
+      "nombre": "GOOD BOY 🍬 🌭",
       "calidad": "OG",
-      "precio": 2000000000,
+      "precio": 1600000000,
       "efectos": [
-        "👾"
-      ]
-    },
-    {
-      "nombre": "Atenea 👾 💤",
-      "calidad": "GOD",
-      "precio": 750000000,
-      "efectos": [
-        "👾",
-        "💤"
-      ]
-    },
-    {
-      "nombre": "Sai Ass",
-      "calidad": "OG",
-      "precio": 10000000,
-      "descripcion": "Personaje fusionado de Sai 🎉 y Tom Ass"
-    },
-    {
-      "nombre": "Tom Ass 🪳",
-      "calidad": "OG",
-      "precio": 20000000,
-      "efectos": [
-        "🪳"
-      ]
-    },
-    {
-      "nombre": "Tom Ass 👾",
-      "calidad": "OG",
-      "precio": 50000000,
-      "efectos": [
-        "👾"
-      ]
-    },
-    {
-      "nombre": "Dildo 💤",
-      "calidad": "Ultra-Legendario",
-      "precio": 3500,
-      "efectos": [
-        "💤"
-      ]
-    },
-    {
-      "nombre": "Smurf Cat 🫓",
-      "calidad": "OG",
-      "precio": 150000000,
-      "efectos": [
-        "🫓"
-      ]
-    },
-    {
-      "nombre": "Everything 🪳",
-      "calidad": "OG",
-      "precio": 1000000000,
-      "efectos": [
-        "🪳"
-      ]
-    },
-    {
-      "nombre": "Zeus 🌭",
-      "calidad": "GOD",
-      "precio": 600000000,
-      "efectos": [
+        "🍬",
         "🌭"
       ]
     },
     {
-      "nombre": "Everything 💤 🪳",
-      "calidad": "OG",
-      "precio": 500000000,
-      "efectos": [
-        "💤",
-        "🪳"
-      ]
-    },
-    {
-      "nombre": "Everything 🇧🇷",
-      "calidad": "OG",
-      "precio": 1000000000,
-      "efectos": [
-        "🇧🇷"
-      ]
-    },
-    {
-      "nombre": "Everything 🌈",
-      "calidad": "OG",
-      "precio": 4000000000,
-      "efectos": [
-        "🌈"
-      ]
-    },
-    {
-      "nombre": "GOOD BOY 🇧🇷",
-      "calidad": "OG",
-      "precio": 800000000,
-      "efectos": [
-        "🇧🇷"
-      ]
-    },
-    {
-      "nombre": "Zeus 🪳",
-      "calidad": "GOD",
-      "precio": 600000000,
-      "efectos": [
-        "🪳"
-      ]
-    },
-    {
-      "nombre": "Snorlax Shiny",
-      "calidad": "OG",
-      "precio": 1000000
-    },
-    {
-      "nombre": "Snorlax Shiny 💀",
-      "calidad": "OG",
-      "precio": 1500000,
-      "efectos": [
-        "💀"
-      ]
-    },
-    {
-      "nombre": "GOOD BOY 🍬 💀",
-      "calidad": "OG",
-      "precio": 1200000000,
-      "efectos": [
-        "🍬",
-        "💀"
-      ]
-    },
-    {
-      "nombre": "GOOD BOY 🌮 💧",
+      "nombre": "GOOD BOY 💧 💀",
       "calidad": "OG",
       "precio": 660000000,
       "efectos": [
-        "🌮",
+        "💧",
+        "💀"
+      ]
+    },
+    {
+      "nombre": "GOOD BOY 🕷",
+      "calidad": "OG",
+      "precio": 520000000,
+      "efectos": [
+        "🕷"
+      ]
+    },
+    {
+      "nombre": "Everything 🌭 🪳",
+      "calidad": "OG",
+      "precio": 2000000000,
+      "efectos": [
+        "🌭",
+        "🪳"
+      ]
+    },
+    {
+      "nombre": "Everything 🍬 💧",
+      "calidad": "OG",
+      "precio": 1100000000,
+      "efectos": [
+        "🍬",
         "💧"
       ]
     },
     {
-      "nombre": "Milo j 💤",
-      "calidad": "Ultra-Legendario",
-      "precio": 5000,
-      "efectos": [
-        "💤"
-      ]
-    },
-    {
-      "nombre": "Atenea 🌮 🇧🇷",
+      "nombre": "Hera 🌮 🇨🇴",
       "calidad": "GOD",
       "precio": 900000000,
       "efectos": [
         "🌮",
-        "🇧🇷"
-      ]
-    },
-    {
-      "nombre": "Everything 🇨🇴",
-      "calidad": "OG",
-      "precio": 1000000000,
-      "efectos": [
         "🇨🇴"
       ]
     },
     {
-      "nombre": "Zeus 🇧🇷",
-      "calidad": "GOD",
-      "precio": 600000000,
-      "efectos": [
-        "🇧🇷"
-      ]
-    },
-    {
-      "nombre": "Ares 🇨🇱",
-      "calidad": "GOD",
-      "precio": 900000000,
-      "efectos": [
-        "🇨🇱"
-      ]
-    },
-    {
-      "nombre": "Apolo 🌭",
-      "calidad": "GOD",
-      "precio": 600000000,
-      "efectos": [
-        "🌭"
-      ]
-    },
-    {
-      "nombre": "Ares 🫓",
-      "calidad": "GOD",
-      "precio": 450000000,
-      "efectos": [
-        "🫓"
-      ]
-    },
-    {
-      "nombre": "Apolo 🪳",
-      "calidad": "GOD",
-      "precio": 600000000,
-      "efectos": [
-        "🪳"
-      ]
-    },
-    {
-      "nombre": "Hera 🪳",
-      "calidad": "GOD",
-      "precio": 600000000,
-      "efectos": [
-        "🪳"
-      ]
-    },
-    {
-      "nombre": "Poseidón 🌭",
-      "calidad": "GOD",
-      "precio": 600000000,
-      "efectos": [
-        "🌭"
-      ]
-    },
-    {
-      "nombre": "Hera 👾 💩",
-      "calidad": "GOD",
-      "precio": 150000000,
-      "efectos": [
-        "👾",
-        "💩"
-      ]
-    },
-    {
-      "nombre": "Everything 💧 ☯️",
-      "calidad": "OG",
-      "precio": 1375000000,
-      "efectos": [
-        "💧",
-        "☯️"
-      ]
-    },
-    {
-      "nombre": "Oskar 🌮",
+      "nombre": "Everyler",
       "calidad": "Ultra-Legendario",
-      "precio": 15000,
+      "precio": 500021600,
+      "descripcion": "Personaje fusionado por un VIP de Everything y Hitler"
+    },
+    {
+      "nombre": "sliggoo *Chicle*",
+      "calidad": "común",
+      "precio": 1500,
       "efectos": [
-        "🌮"
-      ]
-    },
-    {
-      "nombre": "Oskar 🌭",
-      "calidad": "Ultra-Legendario",
-      "precio": 20000,
-      "efectos": [
-        "🌭"
-      ]
-    },
-    {
-      "nombre": "Fragama And Chocrama",
-      "calidad": "Secret",
-      "precio": 15000000
-    },
-    {
-      "nombre": "Nooo La Polizia",
-      "calidad": "Secret",
-      "precio": 15000000
+        "Chicle"
+      ],
+      "descripcion": "Pokémon oficial: sliggoo"
     }
   ]
 }

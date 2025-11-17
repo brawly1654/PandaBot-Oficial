@@ -27,14 +27,11 @@ https://www.instagram.com/miangelnevado?igsh=MWk5cGcxem5zN3p3bA==
 > Miguelito
 
 Playtesters🛡:
-https://www.instagram.com/jxfed_r.g?igsh=MTBnaWd6MTUxNXNyNA==
-> Jafed
 
-https://www.instagram.com/josexo_balatrino?igsh=YzlyM2JiM2psa2I0
-> Josexo
+https://www.instagram.com/awendoperez?igsh=MWZqeDQzYWYyN2JrMw==
+> Lilan
 
-https://www.instagram.com/xy77nnn?igsh=MTlhaWpxdmgzZHUyOA==
-> José
+-Y Pool pero no tiene Instagran🥹🥹
 
 > Gracias por todo.💗
 ┗━━━━━━━━━━━━━━━━━━━┛

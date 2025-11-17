@@ -79,6 +79,14 @@ export async function run(sock, msg, args) {
       const personajeRobado = target.personajes[randomIndex];
 
       target.personajes.splice(randomIndex, 1);
+
+      const posiciones = target.alineacion?.posiciones || {};
+      for (const pos in posiciones) {
+        if (posiciones[pos] === personajeRobado) {
+          delete posiciones[pos];
+        }
+      }
+
       user.personajes = user.personajes || [];
       user.personajes.push(personajeRobado);
       robado = personajeRobado;

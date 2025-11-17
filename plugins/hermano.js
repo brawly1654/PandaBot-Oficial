@@ -1,4 +1,6 @@
 import fs from 'fs';
+import { checkAchievements, initializeAchievements } from '../data/achievementsDB.js';
+import { cargarDatabase } from '../data/database.js';
 
 const file = './data/hermandad.json';
 
@@ -18,8 +20,15 @@ export async function run(sock, msg, args) {
   const sender = msg.key.participant || msg.key.remoteJid;
   const quoted = msg.message?.extendedTextMessage?.contextInfo?.participant;
   const mencionados = msg.message?.extendedTextMessage?.contextInfo?.mentionedJid || [];
-
+  
   const hermandad = cargarHermandad();
+  
+  // ✅ Inicializar achievements si no existen
+  const db = cargarDatabase();
+  if (!db.users[sender]?.achievements) {
+    initializeAchievements(sender);
+  }
+
   const target = mencionados[0] || quoted;
 
   if (!target) {
@@ -31,7 +40,7 @@ export async function run(sock, msg, args) {
     await sock.sendMessage(from, { text: '❌ No puedes ser tu propio hermano/a.' });
     return;
   }
-  
+
   const yaSonHermanos = (u1, u2) => hermandad[u1]?.includes(u2) || hermandad[u2]?.includes(u1);
 
   if (yaSonHermanos(sender, target)) {
@@ -43,18 +52,16 @@ export async function run(sock, msg, args) {
     await sock.sendMessage(from, { text: '✉️ Ya le has enviado una solicitud pendiente.' });
     return;
   }
-  
+
   if (hermandad[`solicitud_${sender}`] && hermandad[`solicitud_${sender}`].includes(target)) {
     await sock.sendMessage(from, { text: '↩️ Tienes una solicitud de esa persona. Usa *.aceptarhermano*.' });
     return;
   }
 
-
   if (!hermandad[`solicitud_${target}`]) {
     hermandad[`solicitud_${target}`] = [];
   }
   hermandad[`solicitud_${target}`].push(sender);
-  
   guardarHermandad(hermandad);
 
   await sock.sendMessage(from, {
@@ -62,4 +69,3 @@ export async function run(sock, msg, args) {
     mentions: [sender, target]
   });
 }
-
