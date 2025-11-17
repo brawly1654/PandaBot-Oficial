@@ -31,3 +31,8 @@ build/
 node_modules/
 sessions/
 .env
+
+#Python enviroment
+venv/
+__pycache__/
+*.pyc
