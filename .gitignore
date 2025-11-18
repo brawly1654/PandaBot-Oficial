@@ -31,3 +31,15 @@ build/
 node_modules/
 sessions/
 .env
+
+#Python enviroment
+venv/
+__pycache__/
+*.pyc
+
+#PandaLove project
+PandaLove/
+
+#auth_info
+auth_info/
+auth_info

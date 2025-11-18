@@ -19,6 +19,7 @@ import chalk from 'chalk';
 import NodeCache from 'node-cache';
 import pino from 'pino';
 import { cargarDatabase, guardarDatabase } from './data/database.js';
+import { createDatabaseBackup } from './tools/createBackup.js';
 import {
   makeWASocket,
   useMultiFileAuthState,
@@ -61,8 +62,26 @@ const sessions = 'auth_info';
 const nameqr = 'PandaBot';
 const methodCodeQR = process.argv.includes("qr");
 const methodCode = process.argv.includes("code");
+let startupBackupCreated = false;
+
+function ensureStartupBackup() {
+  if (startupBackupCreated) return;
+  try {
+    const { backupPath } = createDatabaseBackup({
+      filenameFormatter: (timestamp) => `backup_startup(${timestamp}).json`,
+      filenamePrefix: 'backup',
+      maxBackups: 10
+    });
+    console.log(`📦 Backup inicial creado: ${backupPath}`);
+  } catch (error) {
+    console.error('❌ No se pudo crear el backup inicial:', error.message);
+  } finally {
+    startupBackupCreated = true;
+  }
+}
 
 async function startBot() {
+  ensureStartupBackup();
   const { version } = await fetchLatestBaileysVersion();
   const { state, saveCreds } = await useMultiFileAuthState(sessions);
 

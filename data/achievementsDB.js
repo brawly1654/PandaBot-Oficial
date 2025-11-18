@@ -185,6 +185,7 @@ ${achievement.reward?.title ? `👑 Título: "${achievement.reward.title}"` : ''
  */
 export function trackProgress(userJid, actionType, value = 1, sock = null, from = null) {
   const db = cargarDatabase();
+  db.users = db.users || {};
   const user = db.users[userJid];
 
   if (!user) {

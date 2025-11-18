@@ -1,5 +1,5 @@
 import { consumirStock } from './addstock.js';
-import { getSuerteMultiplicador } from './activate.js';
+import { getSuerteMultiplicador } from './lib/boostState.js';
 import { cargarStock, guardarStock } from '../plugins/addstock.js';
 import fs from 'fs';
 import { cargarDatabase, guardarDatabase } from '../data/database.js';

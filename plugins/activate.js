@@ -4,6 +4,7 @@ import path from 'path';
 import { tmpdir } from 'os';
 import { exec } from 'child_process';
 import axios from 'axios';
+import { efectosBoost, expiraciones, suerteTimeouts, getSuerteMultiplicador, getEfectosBoost as fetchBoosts } from '../lib/boostState.js';
 
 const multiplicadores = {
     '🌈': 8,
@@ -27,15 +28,9 @@ const multiplicadores = {
 
 export const command = 'activate';
 
-let efectosBoost = {};
-let suerteTimeouts = {};
-let expiraciones = {};
+export const getEfectosBoost = fetchBoosts;
 
 const pedoUrls = ['http://localhost:8000/upload/speedytiger_7_2025-11-12-17-27-56_1762979276351.mp4'];
-
-export function getEfectosBoost() {
-    return efectosBoost;
-}
 
 async function enviarAudioPedo(sock, from, msg) {
     const randomUrl = pedoUrls[Math.floor(Math.random() * pedoUrls.length)];
@@ -220,6 +215,4 @@ export async function run(sock, msg, args) {
     }, duracion);
 }
 
-export function getSuerteMultiplicador() {
-    return efectosBoost['general'] || 1;
-}
+export { getSuerteMultiplicador };
