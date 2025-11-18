@@ -2,6 +2,11 @@ import { cargarDatabase, guardarDatabase } from '../data/database.js';
 
 export function isVip(userJid) {
   const db = cargarDatabase();
+  if (!db || typeof db !== 'object') {
+    return false;
+  }
+
+  db.users = db.users || {};
   const user = db.users[userJid];
 
   if (!user || !user.vip) {
@@ -18,4 +23,3 @@ export function isVip(userJid) {
 
   return true;
 }
-

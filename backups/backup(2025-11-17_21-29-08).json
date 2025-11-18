@@ -131,16 +131,28 @@
         "monthly": 1761447399509,
         "weekly": 1761447404781
       },
-      "personajes": [],
-      "pandacoins": 191597166628,
+      "personajes": [
+        "Everything",
+        "Everything",
+        "Everything",
+        "Everything 💧",
+        "Everything",
+        "Everything",
+        "Everything",
+        "Everything",
+        "Everything",
+        "Everything",
+        "Everything"
+      ],
+      "pandacoins": 186047166628,
       "exp": 95324,
       "oro": 1,
       "diamantes": 0,
       "inventario": [
         "Spooky Lucky Block"
       ],
-      "ultimoBuy": 1763436557571,
-      "ultimoSell": 1763436564186,
+      "ultimoBuy": 1763436542348,
+      "ultimoSell": 1763433404780,
       "ultimoApostar": 1762726988333,
       "robarpsCooldown": 1763262592982,
       "id": 3,
@@ -177,11 +189,11 @@
         "stats": {
           "minar_count": 0,
           "trabajar_count": 0,
-          "buy_count": 14,
+          "buy_count": 12,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 26,
+          "commands_used": 22,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763433250707,
@@ -495,7 +507,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 39,
+          "commands_used": 38,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763418612031,
@@ -9370,7 +9382,7 @@
         "180444930768966@lid",
         "35610177859722@lid"
       ],
-      "recolectados": 321974488101
+      "recolectados": 315424488101
     }
   },
   "bannedUsers": [
@@ -9387,6 +9399,6 @@
     "adCount": 2
   },
   "_meta": {
-    "savesWithoutBackup": 9
+    "savesWithoutBackup": 24
   }
 }

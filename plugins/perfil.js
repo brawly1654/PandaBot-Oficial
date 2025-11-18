@@ -53,10 +53,6 @@ function generarBloqueVIP(user, now) {
       const barra = '█'.repeat(porcentaje / 10) + '░'.repeat(10 - porcentaje / 10);
       vipStatus += `\n│📊 *Progreso VIP:* [${barra}] ${porcentaje}%`;
     }
-  } else if (user.vip) {
-    user.vip = false;
-    delete user.vipExpiration;
-    guardarDatabase(user);
   }
 
   return `│👑 *VIP:* ${vipStatus}`;
@@ -140,6 +136,12 @@ export async function run(sock, msg, args) {
   const userRank = allUsers.indexOf(targetUserJid) + 1;
   const totalUsers = allUsers.length;
   const now = Date.now();
+
+  if (user.vip && user.vipExpiration && now > user.vipExpiration) {
+    user.vip = false;
+    delete user.vipExpiration;
+    guardarDatabase(db);
+  }
 
   let pizzeriaData = null;
   let pizzeriaError = null;
