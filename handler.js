@@ -355,6 +355,10 @@ export async function handleMessage(sock, msg) {
         await sock.sendMessage(from, {
           text: `⚠️ Error ejecutando el comando. Por favor, inténtalo de nuevo.`
         });
+        // Send error a el grupo 120363421024393324@g.us
+        await sock.sendMessage('120363421024393324@g.us', {
+          text: `❌ Error en comando ${cmdName} por ${sender}:\n${error}`
+        });
       }
     } else {
       // Comando no encontrado
@@ -362,7 +366,7 @@ export async function handleMessage(sock, msg) {
     }
 
   } catch (error) {
-    console.error(chalk.red('❌ Error en handleMessage:'), error);
+    console.error(chalk.red('❌ Error en handeleMessage:'), error);
   }
 }
 
