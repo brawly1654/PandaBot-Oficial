@@ -1,6 +1,4 @@
-import { exec } from 'child_process';
-import fs from 'fs';
-import path from 'path';
+import { createDatabaseBackup } from '../tools/createBackup.js';
 
 export const command = 'backup';
 
@@ -21,34 +19,15 @@ export async function run(sock, msg, args) {
 
   await sock.sendMessage(from, { text: '📦 Creando respaldo de la base de datos...' });
 
-  // Crear carpeta backups si no existe
-  const backupsFolder = path.join(process.cwd(), 'backups');
-  if (!fs.existsSync(backupsFolder)) {
-    fs.mkdirSync(backupsFolder);
+  try {
+    const timestamp = new Date().toISOString();
+    const { backupPath } = createDatabaseBackup({
+      filenameFormatter: (timestamp) => `backup(${timestamp}).json`,
+      filenamePrefix: 'backup',
+      maxBackups: 10
+    });
+    await sock.sendMessage(from, { text: `✅ Respaldo creado correctamente:\n📁 *${backupPath}*` });
+  } catch (error) {
+    await sock.sendMessage(from, { text: `❌ Error al crear respaldo: ${error.message}` });
   }
-
-  // Crear nombre del archivo con fecha y hora
-  const date = new Date();
-  const timestamp = `${date.getFullYear()}-${(date.getMonth()+1)
-    .toString().padStart(2,'0')}-${date.getDate()
-    .toString().padStart(2,'0')}_${date.getHours()
-    .toString().padStart(2,'0')}-${date.getMinutes()
-    .toString().padStart(2,'0')}-${date.getSeconds()
-    .toString().padStart(2,'0')}`;
-
-  const backupFile = path.join(backupsFolder, `backup_${timestamp}.json`);
-
-  // Comando compatible con Linux/Termux y Windows
-  const copyCommand = process.platform === "win32"
-    ? `copy database.json "${backupFile}"`
-    : `cp database.json "${backupFile}"`;
-
-  exec(copyCommand, async (error) => {
-    if (error) {
-      await sock.sendMessage(from, { text: `❌ Error al crear respaldo: ${error.message}` });
-      return;
-    }
-
-    await sock.sendMessage(from, { text: `✅ Respaldo creado correctamente:\n📁 *${backupFile}*` });
-  });
 }
