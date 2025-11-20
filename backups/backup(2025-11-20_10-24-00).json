@@ -13,7 +13,7 @@
         "Pikachu 💤",
         "Everything 🇨🇴 💤"
       ],
-      "pandacoins": 1905377806.455462,
+      "pandacoins": 2405377806.455462,
       "ultimoSell": 1763578762751,
       "robarpsCooldown": 1763597137792,
       "exp": 519,
@@ -60,7 +60,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 245,
+          "commands_used": 239,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763314511093,
@@ -88,8 +88,8 @@
           "inversionTotal": 0
         },
         "DRAGONTOKEN": {
-          "cantidad": 10546456.03251653,
-          "inversionTotal": 500000000
+          "cantidad": 0,
+          "inversionTotal": 0
         },
         "UNISTAR": {
           "cantidad": 0,
@@ -301,13 +301,12 @@
       "personajes": [
         "Patito De Josefino",
         "Patito De Josefino",
-        "Sai 🎉 🫓 🇨🇴",
-        "CICADA 3302"
+        "Sai 🎉 🫓 🇨🇴"
       ],
-      "pandacoins": 903603363,
-      "ultimoSell": 1763645627687,
+      "pandacoins": 1393601363,
+      "ultimoSell": 1763314339722,
       "inventario": [],
-      "ultimoBuy": 1763645597980,
+      "ultimoBuy": 1763314324703,
       "robarpsCooldown": 1762655231857,
       "exp": 10069,
       "vip": false,
@@ -329,11 +328,10 @@
           "coin_collector_4",
           "social_butterfly",
           "gambler_1",
-          "married",
-          "buyer_1"
+          "married"
         ],
         "progress": {},
-        "points": 250,
+        "points": 240,
         "titles": [
           "Novato",
           "Millonario",
@@ -344,11 +342,11 @@
         "stats": {
           "minar_count": 0,
           "trabajar_count": 0,
-          "buy_count": 3,
+          "buy_count": 0,
           "apostar_count": 1,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 53,
+          "commands_used": 41,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763418601152,
@@ -398,7 +396,7 @@
     },
     "97539277717625@lid": {
       "alias": "thiagoo🦖",
-      "pandacoins": 2144989244,
+      "pandacoins": 7700693351,
       "exp": 2190,
       "oro": 0,
       "diamantes": 0,
@@ -419,12 +417,10 @@
         "seel",
         "kingler",
         "Everything 💤",
-        "Everything",
-        "Everything",
         "Everything"
       ],
       "inventario": [],
-      "ultimoBuy": 1763649041914,
+      "ultimoBuy": 1763640199295,
       "id": 7,
       "achievements": {
         "unlocked": [
@@ -449,11 +445,11 @@
         "stats": {
           "minar_count": 1,
           "trabajar_count": 0,
-          "buy_count": 6,
+          "buy_count": 4,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 23,
+          "commands_used": 16,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763515426913,
@@ -464,10 +460,6 @@
       },
       "cooldowns": {
         "ps": 1763604345801
-      },
-      "robos": {
-        "exitosos": 1,
-        "fallidos": 0
       }
     },
     "30868416512052@lid": {
@@ -699,12 +691,10 @@
       "cooldowns": {
         "daily": 1761410304754,
         "hourly": 1761410306389,
-        "ps": 1762700247519,
-        "weekly": 1763646262095,
-        "monthly": 1763646269343
+        "ps": 1762700247519
       },
-      "pandacoins": 0,
-      "exp": 97114,
+      "pandacoins": 255,
+      "exp": 10135,
       "personajes": [
         "Snorlax ☯️",
         "genesect *💧* *Tacos*",
@@ -750,7 +740,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 64,
+          "commands_used": 54,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763418612031,
@@ -761,8 +751,8 @@
       },
       "inversiones": {
         "LILANCOIN": {
-          "cantidad": 81781.29725709015,
-          "inversionTotal": 83868.39405689044
+          "cantidad": 68858.1031893343,
+          "inversionTotal": 69000
         },
         "DRAGONTOKEN": {
           "cantidad": 0,
@@ -1138,7 +1128,7 @@
           "apostar_count": 1,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 147,
+          "commands_used": 129,
           "cm_tiradas": 8,
           "cm_ataques": 0,
           "registered_date": 1763418650239,
@@ -1590,29 +1580,7 @@
         "Dildo",
         "Dildo"
       ],
-      "id": 48,
-      "achievements": {
-        "unlocked": [],
-        "progress": {},
-        "points": 0,
-        "titles": [],
-        "selectedTitle": null,
-        "stats": {
-          "minar_count": 0,
-          "trabajar_count": 0,
-          "buy_count": 0,
-          "apostar_count": 0,
-          "robos_exitosos": 0,
-          "robos_fallidos": 0,
-          "commands_used": 0,
-          "cm_tiradas": 0,
-          "cm_ataques": 0,
-          "registered_date": 1763645293408,
-          "was_broke": false,
-          "comeback": false,
-          "spotify_count": 0
-        }
-      }
+      "id": 48
     },
     "215586017693846@lid": {
       "alias": "Mia🎶",
@@ -1948,29 +1916,7 @@
         "Dildo"
       ],
       "id": 63,
-      "pandacoins": null,
-      "achievements": {
-        "unlocked": [],
-        "progress": {},
-        "points": 0,
-        "titles": [],
-        "selectedTitle": null,
-        "stats": {
-          "minar_count": 0,
-          "trabajar_count": 0,
-          "buy_count": 0,
-          "apostar_count": 0,
-          "robos_exitosos": 0,
-          "robos_fallidos": 0,
-          "commands_used": 0,
-          "cm_tiradas": 0,
-          "cm_ataques": 0,
-          "registered_date": 1763647303761,
-          "was_broke": false,
-          "comeback": false,
-          "spotify_count": 0
-        }
-      }
+      "pandacoins": null
     },
     "119769508376657@lid": {
       "alias": "Meowl",
@@ -2263,7 +2209,7 @@
         "magicbox": 1763433107515,
         "monthly": 1763310286506
       },
-      "pandacoins": 70389342997,
+      "pandacoins": 70408322170,
       "exp": 187717,
       "oro": 6,
       "diamantes": 602,
@@ -2427,7 +2373,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 49,
+          "commands_used": 48,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763507491248,
@@ -2791,7 +2737,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 292,
+          "commands_used": 289,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763502207251,
@@ -2933,7 +2879,7 @@
         "Milo j 🕷"
       ],
       "id": 91,
-      "pandacoins": -9999999976326270000,
+      "pandacoins": 23654745502,
       "exp": 1277,
       "oro": 0,
       "diamantes": 200,
@@ -2946,11 +2892,11 @@
       "inventario": [],
       "ultimoBuy": 1763605736820,
       "robos": {
-        "exitosos": 11,
+        "exitosos": 10,
         "fallidos": 4
       },
       "ultimoApostar": 1763308239280,
-      "vip": false,
+      "vip": true,
       "favorito": "Milo j",
       "ultimoSell": 1763605917263,
       "ultimoTransfer": 1763522023365,
@@ -2963,11 +2909,10 @@
           "coin_collector_4",
           "married",
           "social_butterfly",
-          "buyer_1",
-          "broke"
+          "buyer_1"
         ],
         "progress": {},
-        "points": 245,
+        "points": 240,
         "titles": [
           "Novato",
           "Millonario",
@@ -2982,15 +2927,16 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 139,
+          "commands_used": 130,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763314569363,
-          "was_broke": true,
+          "was_broke": false,
           "comeback": false
         }
       },
-      "robarpsCooldown": 1763595851242
+      "robarpsCooldown": 1763595851242,
+      "vipExpiration": 1763606108422
     },
     "280908712132850@lid": {
       "alias": "el goleador de la escuela",
@@ -4621,7 +4567,7 @@
       "alias": "Mica",
       "personajes": [],
       "id": 158,
-      "pandacoins": 39144944570,
+      "pandacoins": 39211592396,
       "exp": 1743,
       "achievements": {
         "unlocked": [
@@ -4648,7 +4594,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 78,
+          "commands_used": 75,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763504811197,
@@ -4837,7 +4783,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 34,
+          "commands_used": 33,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763506962240,
@@ -7903,29 +7849,7 @@
         "Patito De Josefino",
         "Dildo",
         "Dildo"
-      ],
-      "achievements": {
-        "unlocked": [],
-        "progress": {},
-        "points": 0,
-        "titles": [],
-        "selectedTitle": null,
-        "stats": {
-          "minar_count": 0,
-          "trabajar_count": 0,
-          "buy_count": 0,
-          "apostar_count": 0,
-          "robos_exitosos": 0,
-          "robos_fallidos": 0,
-          "commands_used": 0,
-          "cm_tiradas": 0,
-          "cm_ataques": 0,
-          "registered_date": 1763648955112,
-          "was_broke": false,
-          "comeback": false,
-          "spotify_count": 0
-        }
-      }
+      ]
     },
     "119748620714082@lid": {
       "alias": "Shelsea⭐️",
@@ -11771,7 +11695,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 11,
+          "commands_used": 9,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763605021685,
@@ -11780,7 +11704,7 @@
           "spotify_count": 0
         }
       },
-      "pandacoins": 10111263000
+      "pandacoins": 10051263000
     },
     "170471647625376@lid": {
       "alias": "Laura <3"
@@ -12252,7 +12176,7 @@
       "resumenes": []
     },
     "125675138736203@lid": {
-      "pandacoins": 46951439061,
+      "pandacoins": 30129087128,
       "exp": 873,
       "diamantes": 0,
       "piedras": 0,
@@ -12260,15 +12184,54 @@
       "pescado": 0,
       "oro": 1,
       "personajes": [
-        "GOOD BOY 🇧🇷 💤"
+        "GOOD BOY",
+        "GOOD BOY 💤",
+        "GOOD BOY",
+        "GOOD BOY 💤",
+        "GOOD BOY 🧦",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY 🇧🇷 💤",
+        "GOOD BOY 💤",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY 👾",
+        "GOOD BOY 💤",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY",
+        "GOOD BOY"
       ],
       "inventario": [],
       "ultimoBuy": 1763620303492,
       "vip": true,
-      "ultimoSell": 1763647997478,
+      "ultimoSell": 1763619821597,
       "robarpsCooldown": 1763583640530,
       "robos": {
-        "exitosos": 5,
+        "exitosos": 4,
         "fallidos": 2
       },
       "achievements": {
@@ -12299,7 +12262,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 427,
+          "commands_used": 412,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763418602648,
@@ -12814,7 +12777,7 @@
         "97027992080542@lid",
         "166164298780822@lid"
       ],
-      "recolectados": 27214961427
+      "recolectados": 26424961427
     },
     "salsa 777": {
       "creador": "180444930768966@lid",
@@ -12839,6 +12802,6 @@
     "adCount": 2
   },
   "_meta": {
-    "savesWithoutBackup": 17
+    "savesWithoutBackup": 24
   }
 }

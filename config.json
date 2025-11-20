@@ -81,6 +81,13 @@
       "modoowner": false,
       "grupos": true,
       "chatsprivados": true
+    },
+    "120363394533218878@g.us": {
+      "antilink": false,
+      "modoadmin": false,
+      "modoowner": false,
+      "grupos": true,
+      "chatsprivados": true
     }
   }
 }

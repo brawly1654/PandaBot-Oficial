@@ -1,47 +1,32 @@
+import { actualizarMercado, obtenerEstadoMercado } from '../lib/cryptoManager.js';
+
 export const command = 'mercado';
+export const aliases = ['market'];
 
-export async function run(sock, msg) {
-  const from = msg.key.remoteJid;
-  const sender = msg.key.participant || msg.key.remoteJid;
+export async function run(sock, msg, args) {
+    const from = msg.key.remoteJid;
 
-  const items = [
-    {
-      nombre: 'Guante de Gato',
-      precio: 10000,
-      descripcion: 'Aumenta tu probabilidad de éxito en el robo en un 10%. (1 uso)',
-      emoji: '🧤'
-    },
-    {
-      nombre: 'Máscara de Zorro',
-      precio: 20000,
-      descripcion: 'Duplica las ganancias de tu próximo robo exitoso. (1 uso)',
-      emoji: '🦊'
-    },
-    {
-      nombre: 'Escudo Antirrobo',
-      precio: 50000,
-      descripcion: 'Te protege de un solo robo por 24 horas.',
-      emoji: '🛡️'
-    },
-    {
-      nombre: 'Pase de Salida',
-      precio: 15000,
-      descripcion: 'Te permite robar de nuevo, ignorando el cooldown de 3 horas. (1 uso)',
-      emoji: '🎫'
-    }
-  ];
+    // Actualizar y obtener estado del mercado
+    await actualizarMercado();
+    const mercado = await obtenerEstadoMercado();
 
-  let mensaje = '🛒 *Mercado Negro de PandaBot* 🛒\n\n';
-  mensaje += '¡Usa tus Pandacoins para mejorar tus habilidades de robo!\n\n';
-  
-  items.forEach(item => {
-    mensaje += `${item.emoji} *${item.nombre}*\n`;
-    mensaje += `  - 💰 Precio: ${item.precio.toLocaleString()} Pandacoins\n`;
-    mensaje += `  - 📝 Descripción: ${item.descripcion}\n\n`;
-  });
-  
-  mensaje += `📌 Uso: *.buy <nombre_del_item>*`;
+    let mensaje = `🏦 *MERCADO CRIPTO* 🏦\n\n`;
+    mensaje += `🕒 *Última actualización:* ${new Date(mercado.ultimaActualizacion).toLocaleTimeString()}\n\n`;
 
-  await sock.sendMessage(from, { text: mensaje });
+    Object.values(mercado.monedas).forEach(moneda => {
+        const cambio = moneda.precioActual - moneda.precioAnterior;
+        const porcentaje = (cambio / moneda.precioAnterior) * 100;
+        const tendencia = cambio >= 0 ? '📈' : '📉';
+        const colorFlecha = cambio >= 0 ? '🟢' : '🔴';
+
+        mensaje += `${moneda.color} *${moneda.nombre}*\n`;
+        mensaje += `💰 Precio: ${moneda.precioActual.toFixed(2)} 🐼\n`;
+        mensaje += `${tendencia} Cambio: ${colorFlecha} ${cambio >= 0 ? '+' : ''}${cambio.toFixed(2)} (${porcentaje >= 0 ? '+' : ''}${porcentaje.toFixed(2)}%)\n`;
+        mensaje += `🎯 Volatilidad: ${(moneda.volatilidad * 100).toFixed(1)}%\n\n`;
+    });
+
+    mensaje += `💡 *Invertir:* .invertir <cantidad> <moneda>\n`;
+    mensaje += `📊 *Tu portafolio:* .miinversion`;
+
+    await sock.sendMessage(from, { text: mensaje });
 }
-

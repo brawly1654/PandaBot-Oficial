@@ -398,7 +398,7 @@
     },
     "97539277717625@lid": {
       "alias": "thiagoo🦖",
-      "pandacoins": 2144989244,
+      "pandacoins": 7700693351,
       "exp": 2190,
       "oro": 0,
       "diamantes": 0,
@@ -419,12 +419,10 @@
         "seel",
         "kingler",
         "Everything 💤",
-        "Everything",
-        "Everything",
         "Everything"
       ],
       "inventario": [],
-      "ultimoBuy": 1763649041914,
+      "ultimoBuy": 1763640199295,
       "id": 7,
       "achievements": {
         "unlocked": [
@@ -449,11 +447,11 @@
         "stats": {
           "minar_count": 1,
           "trabajar_count": 0,
-          "buy_count": 6,
+          "buy_count": 4,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 23,
+          "commands_used": 16,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763515426913,
@@ -464,10 +462,6 @@
       },
       "cooldowns": {
         "ps": 1763604345801
-      },
-      "robos": {
-        "exitosos": 1,
-        "fallidos": 0
       }
     },
     "30868416512052@lid": {
@@ -750,7 +744,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 64,
+          "commands_used": 62,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763418612031,
@@ -4621,7 +4615,7 @@
       "alias": "Mica",
       "personajes": [],
       "id": 158,
-      "pandacoins": 39144944570,
+      "pandacoins": 39211592396,
       "exp": 1743,
       "achievements": {
         "unlocked": [
@@ -7903,29 +7897,7 @@
         "Patito De Josefino",
         "Dildo",
         "Dildo"
-      ],
-      "achievements": {
-        "unlocked": [],
-        "progress": {},
-        "points": 0,
-        "titles": [],
-        "selectedTitle": null,
-        "stats": {
-          "minar_count": 0,
-          "trabajar_count": 0,
-          "buy_count": 0,
-          "apostar_count": 0,
-          "robos_exitosos": 0,
-          "robos_fallidos": 0,
-          "commands_used": 0,
-          "cm_tiradas": 0,
-          "cm_ataques": 0,
-          "registered_date": 1763648955112,
-          "was_broke": false,
-          "comeback": false,
-          "spotify_count": 0
-        }
-      }
+      ]
     },
     "119748620714082@lid": {
       "alias": "Shelsea⭐️",
@@ -12252,7 +12224,7 @@
       "resumenes": []
     },
     "125675138736203@lid": {
-      "pandacoins": 46951439061,
+      "pandacoins": 46929087128,
       "exp": 873,
       "diamantes": 0,
       "piedras": 0,
@@ -12268,7 +12240,7 @@
       "ultimoSell": 1763647997478,
       "robarpsCooldown": 1763583640530,
       "robos": {
-        "exitosos": 5,
+        "exitosos": 4,
         "fallidos": 2
       },
       "achievements": {
@@ -12299,7 +12271,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 427,
+          "commands_used": 425,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763418602648,
@@ -12839,6 +12811,6 @@
     "adCount": 2
   },
   "_meta": {
-    "savesWithoutBackup": 17
+    "savesWithoutBackup": 24
   }
 }

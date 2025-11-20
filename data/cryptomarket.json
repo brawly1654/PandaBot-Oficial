@@ -1,0 +1,93 @@
+{
+  "monedas": {
+    "LILANCOIN": {
+      "nombre": "LilanCoin",
+      "precioActual": 1.0255204658008692,
+      "precioAnterior": 1.014953521309945,
+      "volatilidad": 0.02,
+      "historial": [
+        {
+          "precio": 0.9954331997264831,
+          "timestamp": "2025-11-20T12:39:32.163Z"
+        },
+        {
+          "precio": 1.002060713323391,
+          "timestamp": "2025-11-20T13:13:19.684Z"
+        },
+        {
+          "precio": 1.0008596685355768,
+          "timestamp": "2025-11-20T13:36:43.829Z"
+        },
+        {
+          "precio": 1.014953521309945,
+          "timestamp": "2025-11-20T13:59:05.516Z"
+        },
+        {
+          "precio": 1.0255204658008692,
+          "timestamp": "2025-11-20T14:25:22.141Z"
+        }
+      ],
+      "color": "🟡"
+    },
+    "DRAGONTOKEN": {
+      "nombre": "DragonToken",
+      "precioActual": 45.37843029696942,
+      "precioAnterior": 47.078976885871604,
+      "volatilidad": 0.08,
+      "historial": [
+        {
+          "precio": 46.272163263079314,
+          "timestamp": "2025-11-20T12:39:32.163Z"
+        },
+        {
+          "precio": 46.71829969562798,
+          "timestamp": "2025-11-20T13:13:19.684Z"
+        },
+        {
+          "precio": 47.40929070944916,
+          "timestamp": "2025-11-20T13:36:43.829Z"
+        },
+        {
+          "precio": 47.078976885871604,
+          "timestamp": "2025-11-20T13:59:05.516Z"
+        },
+        {
+          "precio": 45.37843029696942,
+          "timestamp": "2025-11-20T14:25:22.141Z"
+        }
+      ],
+      "color": "🔴"
+    },
+    "UNISTAR": {
+      "nombre": "UniStar",
+      "precioActual": 124.15040584247592,
+      "precioAnterior": 119.98306231844015,
+      "volatilidad": 0.12,
+      "historial": [
+        {
+          "precio": 98.39490895608259,
+          "timestamp": "2025-11-20T12:39:32.163Z"
+        },
+        {
+          "precio": 104.6746049325614,
+          "timestamp": "2025-11-20T13:13:19.684Z"
+        },
+        {
+          "precio": 116.56417052959463,
+          "timestamp": "2025-11-20T13:36:43.829Z"
+        },
+        {
+          "precio": 119.98306231844015,
+          "timestamp": "2025-11-20T13:59:05.516Z"
+        },
+        {
+          "precio": 124.15040584247592,
+          "timestamp": "2025-11-20T14:25:22.141Z"
+        }
+      ],
+      "color": "🔵"
+    }
+  },
+  "ultimaActualizacion": "2025-11-20T14:25:22.141Z",
+  "actualizacionesPorHora": 4
+}

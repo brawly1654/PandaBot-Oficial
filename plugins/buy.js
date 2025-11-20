@@ -4,46 +4,51 @@ import fs from 'fs';
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 import { trackBuy, checkSpecialAchievements } from '../middleware/trackAchievements.js';
 import { initializeAchievements } from '../data/achievementsDB.js';
+import { cargarDatos, agregarPersonajeConEfectos } from '../lib/cacheManager.js';
 
 export const command = 'buy';
 export const aliases = ['comprar', 'b'];
 export const description = 'Compra personajes, ítems o lucky blocks';
 export const category = 'economía';
 
-let personajesCache = null;
-let itemsCache = null;
-let lastLoadTime = 0;
-
-function cargarDatos() {
-    const now = Date.now();
-    if (!personajesCache || !itemsCache || now - lastLoadTime > 300000) {
-        const personajesData = JSON.parse(fs.readFileSync('./data/personajes.json', 'utf8'));
-        const itemsData = JSON.parse(fs.readFileSync('./data/items.json', 'utf8'));
-        personajesCache = personajesData.characters;
-        itemsCache = itemsData.items;
-        lastLoadTime = now;
-    }
-    return { personajes: personajesCache, items: itemsCache };
-}
-
 export const multiplicadores = {
-    '🌈': 8,
-    '🚽': 14,
-    '👾': 5,
-    '🇨🇱': 3,
-    '☯️': 2.5,
-    '🌭': 2,
-    '🍬': 2,
-    '🇧🇷': 2,
-    '🇨🇴': 2,
-    '🪳': 2,
-    '💀': 1.5,
-    '🌮': 1.5,
-    '🫓': 1.5,
-    '💧': 1.1,
-    '💤': 0.5,
-    '💩': 0.1,
-    '🦆': 1.8
+    '🌈': 8,      // Rainbow (Legendario)
+    '🚽': 14,     // Toilet (Mítico)
+    '👾': 5,      // Alien (Épico)
+    '🇨🇱': 3,     // Chile (Raro)
+    '☯️': 2.5,    // Yin Yang
+    '🌭': 2,      // Hot Dog
+    '🍬': 2,      // Candy
+    '🇧🇷': 2,     // Brasil
+    '🇨🇴': 2,     // Colombia
+    '🪳': 2,      // Cucaracha
+    '💀': 1.5,    // Calavera
+    '🌮': 1.5,    // Taco
+    '🫓': 1.5,    // Pan
+    '💧': 1.1,    // Gota
+    '💤': 0.5,    // Sueño (nerf)
+    '💩': 0.1,    // Caca (maldición)
+    '🦆': 1.8,    // Pato
+    '🎄': 6,      // Árbol Navideño (Épico)
+    '🎅': 12,     // Santa Claus (Mítico)
+    '❄️': 3,      // Nieve (Raro)
+    '🔥': 4,      // Fuego (Épico)
+    '🌟': 7,      // Estrella Brillante (Legendario)
+    '⚡': 5,      // Rayo (Épico)
+    '🌙': 3,      // Luna (Raro)
+    '☃️': 8,      // Muñeco de Nieve (Legendario)
+    '🎁': 9,      // Regalo (Legendario)
+    '🧦': 2,      // Calcetín Navideño (Común)
+    '🐉': 10,     // Dragón (Mítico)
+    '👑': 8,      // Corona (Legendario)
+    '💎': 9,      // Diamante (Legendario)
+    '🦄': 6,      // Unicornio (Épico)
+    '⚓': 3,      // Ancla (Raro)
+    '🎯': 4,      // Diana (Épico)
+    '🛡️': 5,      // Escudo (Épico)
+    '🗡️': 4,      // Espada (Épico)
+    '🏆': 7,      // Trofeo (Legendario)
+    '🎨': 3       // Paleta de Arte (Raro)
 };
 
 const probBase = {
@@ -63,7 +68,27 @@ const probBase = {
     '💧': 0.009,
     '💤': 0.05,
     '💩': 0.001,
-    '🦆': 0.003
+    '🦆': 0.003,
+    '🎄': 0.0008,
+    '🎅': 0.00005,
+    '❄️': 0.002,
+    '🔥': 0.001,
+    '🌟': 0.0003,
+    '⚡': 0.0009,
+    '🌙': 0.003,
+    '☃️': 0.0004,
+    '🎁': 0.0002,
+    '🧦': 0.008,
+    '🐉': 0.00007,
+    '👑': 0.00025,
+    '💎': 0.0002,
+    '🦄': 0.0007,
+    '⚓': 0.0025,
+    '🎯': 0.0012,
+    '🛡️': 0.001,
+    '🗡️': 0.0015,
+    '🏆': 0.0004,
+    '🎨': 0.003
 };
 
 function contieneEfectoProhibido(nombrePersonaje) {
@@ -93,22 +118,42 @@ function aplicarEfectos(personaje, suerte) {
 
     if (efectos.length > 0) {
         const nombreFinal = `${personaje.nombre} ${efectos.join(' ')}`;
+        
+        // 🔥 CREAR NUEVO PERSONAJE CON EFECTOS Y AGREGARLO AL SISTEMA
+        const personajeConEfectos = {
+            nombre: nombreFinal,
+            calidad: personaje.calidad + ' con Efectos',
+            precio: Math.floor(precioFinal),
+            efectos: efectos,
+            base: personaje.nombre,
+            creadoEn: new Date().toISOString()
+        };
+        
+        // Agregar a la caché y al archivo inmediatamente
+        const fueAgregado = agregarPersonajeConEfectos(personajeConEfectos);
+        
+        if (fueAgregado) {
+            console.log(`🎯 Nuevo personaje con efectos creado: ${nombreFinal}`);
+        }
+        
         return {
             nombreFinal,
             efectos,
-            precioFinal: Math.floor(precioFinal)
+            precioFinal: Math.floor(precioFinal),
+            personajeConEfectos: fueAgregado ? personajeConEfectos : null
         };
     }
 
     return {
         nombreFinal: personaje.nombre,
         efectos: [],
-        precioFinal: personaje.precio
+        precioFinal: personaje.precio,
+        personajeConEfectos: null
     };
 }
 
 async function mostrarAnimacionCompra(sock, from, nombrePersonaje) {
-    const frames = ['🛒', '💳', '✨', '🎁', '🎉'];
+    const frames = ['✨', '🎁', '🎉'];
     let i = 0;
     const m = await sock.sendMessage(from, { text: `⏳ Comprando a *${nombrePersonaje}*...` });
     const intervalo = setInterval(async () => {
@@ -155,14 +200,19 @@ export async function run(sock, msg, args) {
     user.inventario = user.inventario || [];
 
     if (args.length === 0) {
-        await sock.sendMessage(from, { text: '❌ Uso: `.buy <nombre>` o `.buy random`\n\n📝 Ejemplos:\n• `.buy Goku`\n• `.buy random`\n• `.buy Spooky Lucky Block`' }, { quoted: msg });
+        await sock.sendMessage(from, {
+            text: '❌ Uso: `.buy <nombre>` o `.buy random`\n\n📝 Ejemplos:\n• `.buy Goku`\n• `.buy random`\n• `.buy Spooky Lucky Block`\n• `.buy Xmas Lucky Block`'
+        }, { quoted: msg });
         return;
     }
 
     const nombreInput = args.join(' ').toLowerCase();
     const suerte = getSuerteMultiplicador();
+    
+    // 🔥 USAR CACHÉ EN LUGAR DE CARGAR DIRECTAMENTE
     const { personajes, items } = cargarDatos();
 
+    // CASO 1: SPOOKY LUCKY BLOCK
     if (nombreInput === 'spooky lucky block') {
         const price = 250000000;
         if (!consumirStock('spooky lucky block')) {
@@ -191,13 +241,56 @@ export async function run(sock, msg, args) {
         }, 350);
         setTimeout(async () => {
             clearInterval(intervalo);
-            await sock.sendMessage(from, { edit: m.key, text: `✅ ¡Compraste un 🎃 *Spooky Lucky Block*!\n\n🎁 Usa \`.open Spooky Lucky Block\` para abrirlo.` });
+            await sock.sendMessage(from, {
+                edit: m.key,
+                text: `✅ ¡Compraste un 🎃 *Spooky Lucky Block*!\n\n🎁 Usa \`.open Spooky Lucky Block\` para abrirlo.`
+            });
         }, 3500);
         trackBuy(sender, sock, from);
         checkSpecialAchievements(sender, sock, from);
         return;
     }
 
+    // CASO 2: XMAS LUCKY BLOCK (NUEVO)
+    if (nombreInput === 'xmas lucky block') {
+        const price = 300000000; // Un poco más caro que el Spooky
+        if (!consumirStock('xmas lucky block')) {
+            await sock.sendMessage(from, { text: `❌ El 🎄 *Xmas Lucky Block* está agotado.` }, { quoted: msg });
+            return;
+        }
+        if (user.pandacoins < price) {
+            await sock.sendMessage(from, { text: `❌ Necesitas *${price.toLocaleString()}* 🐼 pandacoins.\nTienes: *${user.pandacoins.toLocaleString()}* 🐼` }, { quoted: msg });
+            return;
+        }
+        user.pandacoins -= price;
+        user.inventario.push("Xmas Lucky Block");
+        user.ultimoBuy = ahora;
+        guardarDatabase(db);
+        const frames = ['🎄','🎅','❄️','☃️','🌟'];
+        let i = 0;
+        const m = await sock.sendMessage(from, { text: `🛒 Comprando 🎄 Xmas Lucky Block...` });
+        const intervalo = setInterval(async () => {
+            const texto = `🛒 Comprando Xmas Lucky Block... ${frames[i]}`;
+            i = (i + 1) % frames.length;
+            try {
+                await sock.sendMessage(from, { edit: m.key, text: texto });
+            } catch (e) {
+                clearInterval(intervalo);
+            }
+        }, 350);
+        setTimeout(async () => {
+            clearInterval(intervalo);
+            await sock.sendMessage(from, {
+                edit: m.key,
+                text: `✅ ¡Compraste un 🎄 *Xmas Lucky Block*!\n\n🎁 Usa \`.open Xmas Lucky Block\` para abrirlo.`
+            });
+        }, 3500);
+        trackBuy(sender, sock, from);
+        checkSpecialAchievements(sender, sock, from);
+        return;
+    }
+
+    // CASO 3: COMPRA RANDOM
     if (nombreInput === 'random') {
         const personajesValidos = personajes.filter(p => !contieneEfectoProhibido(p.nombre));
         if (personajesValidos.length === 0) {
@@ -225,6 +318,12 @@ export async function run(sock, msg, args) {
             mensaje += `\n✨ ¡Obtuvo efectos especiales!\n`;
             mensaje += `🎁 Efectos: ${resultado.efectos.join(' ')}\n`;
             mensaje += `📈 Valor multiplicado: *${personaje.precio.toLocaleString()}* → *${resultado.precioFinal.toLocaleString()}* 🐼`;
+            
+            // 🔥 MENSAJE ESPECIAL SI SE CREÓ NUEVO PERSONAJE
+            if (resultado.personajeConEfectos) {
+                mensaje += `\n\n🆕 *Nuevo personaje creado!* Ahora puedes vender *${resultado.nombreFinal}* usando .sell`;
+            }
+            
             const tieneRainbow = resultado.efectos.includes('🌈');
             const tieneToilet = resultado.efectos.includes('🚽');
             if (tieneRainbow || tieneToilet) {
@@ -240,6 +339,7 @@ export async function run(sock, msg, args) {
         return;
     }
 
+    // CASO 4: COMPRA ESPECÍFICA
     const personaje = personajes.find(p => p.nombre.toLowerCase() === nombreInput);
     const item = items.find(i => i.nombre.toLowerCase() === nombreInput);
 
@@ -268,6 +368,12 @@ export async function run(sock, msg, args) {
             mensaje += `\n✨ ¡Obtuvo efectos especiales!\n`;
             mensaje += `🎁 Efectos: ${resultado.efectos.join(' ')}\n`;
             mensaje += `📈 Valor multiplicado: *${personaje.precio.toLocaleString()}* → *${resultado.precioFinal.toLocaleString()}* 🐼`;
+            
+            // 🔥 MENSAJE ESPECIAL SI SE CREÓ NUEVO PERSONAJE
+            if (resultado.personajeConEfectos) {
+                mensaje += `\n\n🆕 *Nuevo personaje creado!* Ahora puedes vender *${resultado.nombreFinal}* usando .sell`;
+            }
+            
             const tieneRainbow = resultado.efectos.includes('🌈');
             const tieneToilet = resultado.efectos.includes('🚽');
             if (tieneRainbow || tieneToilet) {

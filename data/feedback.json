@@ -1056,5 +1056,15 @@
     "content": "que puedas comprar más de 1 ps en una compra por ejemplo .buy everything 12 Has comprado 12 everythings y a uno le cayó 💧 a 3 🪳 y los demás nada",
     "timestamp": 1763297839036,
     "status": "pending"
+  },
+  {
+    "id": 116,
+    "type": "sugerencia",
+    "senderJid": "260051814117536@lid",
+    "content": "poner un personaje de five nights at Freddy's muy caro no tan caro pero que valga plata como 100 millones o 50 millones por hay o otro animatronico",
+    "timestamp": 1763600420913,
+    "status": "replied",
+    "reply": "muchas gracias por tu sugerencia amigo, usa `.code graciasportusugerencia` en algún grupo. Añadiré los animatronicos al bot. Thx",
+    "replyTimestamp": 1763600520650
   }
 ]

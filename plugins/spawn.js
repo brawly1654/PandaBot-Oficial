@@ -5,6 +5,11 @@ import { multiplicadores } from './buy.js';
 
 export const command = 'spawn';
 
+// Inicializar array de spawns si no existe
+if (!global.psSpawns) {
+    global.psSpawns = [];
+}
+
 export async function run(sock, msg, args) {
     const from = msg.key.remoteJid;
     const sender = msg.key.participant || msg.key.remoteJid;
@@ -63,16 +68,33 @@ export async function run(sock, msg, args) {
         fs.writeFileSync('./data/personajes.json', JSON.stringify({ characters: personajes }, null, 2));
     }
 
-    global.psSpawn = {
+    // 🔥 CREAR NUEVO SPAWN CON ID ÚNICO
+    const spawnId = Date.now().toString();
+    const nuevoSpawn = {
+        id: spawnId,
         activo: true,
         personaje: personajeModificado,
-        grupo: '120363402403091432@g.us',
+        grupo: '120363402403091432@g.us', // Ajusta el grupo según necesites
         reclamadoPor: null,
         timestamp: Date.now(),
         forzadoPorOwner: isOwner
     };
 
-    await sock.sendMessage(global.psSpawn.grupo, {
-        text: `> Este personaje está protegido durante 30 segundos por el Creador\n🌀 A SECRET PS HAS SPAWNED IN THIS GROUP!\nUse *.claim* to get *${nombreConEfectos}* before anyone else!\n> Si el personaje tiene efectos lo obtendrás cuando el bot sea reiniciado.`
+    // Agregar al array de spawns activos
+    global.psSpawns.push(nuevoSpawn);
+
+    // Limpiar spawns expirados (más de 10 minutos)
+    const ahora = Date.now();
+    global.psSpawns = global.psSpawns.filter(spawn => 
+        spawn.activo && (ahora - spawn.timestamp < 10 * 60 * 1000) // 10 minutos
+    );
+
+    await sock.sendMessage(nuevoSpawn.grupo, {
+        text: `> Este personaje está protegido durante 30 segundos por el Creador\n🌀 A SECRET PS HAS SPAWNED IN THIS GROUP!\nUse *.claim ${spawnId}* to get *${nombreConEfectos}* before anyone else!\n\n🆔 *ID:* ${spawnId}\n⏰ *Expira en:* 10 minutos\n\n📝 *Activos:* ${global.psSpawns.filter(s => s.activo).length} PS disponibles`
+    });
+
+    // Mensaje de confirmación al owner
+    await sock.sendMessage(from, {
+        text: `✅ *Spawn creado exitosamente!*\n\n📛 *Personaje:* ${nombreConEfectos}\n💰 *Precio:* ${precioFinal.toLocaleString()} 🐼\n🆔 *ID:* ${spawnId}\n\n📊 *Total activos:* ${global.psSpawns.filter(s => s.activo).length} PS`
     });
 }
