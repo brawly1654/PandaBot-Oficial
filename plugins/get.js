@@ -5,11 +5,10 @@ import { crearFolio } from '../PandaLove/monetizar.js';
 const API_KEY = "751b0c047ef1d83995f6e301a"
 
 const RECURSOS_DISPONIBLES = {
-  pandacoins: 1000,
-  exp: 1500,
+  pandacoins: 2000,
+  exp: 2000,
   piedra: 20,
   diamantes: 3,
-  personaje: 'aleatorio',
   pizzacoins: 3000,
   giros: 35,
   coins: 100000,

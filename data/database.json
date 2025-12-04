@@ -1,59 +1,505 @@
 {
-  "_meta": {
-    "savesWithoutBackup": 11
-  },
-  "bossGlobal": {
-    "activo": true,
-    "nombre": "Dragón Diario",
-    "vidaActual": 500,
-    "vidaMaxima": 500,
-    "recompensaBase": 2000,
-    "fechaInicio": 1764780137340,
-    "ataquesRecibidos": 0,
-    "ataquesNecesarios": 50,
-    "derrotado": false,
-    "historicoAtaques": {}
-  },
-  "ultimoBossTimestamp": 1764780137340,
   "users": {
-    "166164298780822@lid": {
-      "pandacoins": 1340061282,
-      "exp": 259,
-      "diamantes": 0,
-      "piedras": 0,
-      "carne": 0,
-      "pescado": 0,
-      "oro": 0,
+    "97027992080542@lid": {
+      "nombre": "Usuario_97027992080542",
+      "registrado": "2025-12-04T13:07:04.548Z",
+      "pandacoins": 54540,
+      "exp": 105,
+      "nivel": 2,
+      "inventario": {
+        "recursos": {
+          "pescado": 0,
+          "carne": 2,
+          "madera": 0,
+          "diamantes": 0,
+          "piedras": 0,
+          "comida": 10,
+          "hierro": 1,
+          "carbon": 0,
+          "cuero": 1,
+          "tela": 0,
+          "plata": 0,
+          "esmeraldas": 0,
+          "rubies": 0
+        },
+        "herramientas": {
+          "pico": 0,
+          "hacha": 0,
+          "caña": 0,
+          "arco": 0,
+          "espada": 0,
+          "armadura": 0
+        },
+        "especiales": {
+          "pocion": 3,
+          "llave": 1,
+          "gema": 0,
+          "pergamino": 0
+        },
+        "mascotas": {
+          "comida_basica": 5,
+          "comida_premium": 0,
+          "juguetes": 2
+        }
+      },
+      "stats": {
+        "pescas": 0,
+        "cazas": 1,
+        "minas": 2,
+        "ventas": 1,
+        "compras": 0,
+        "boss_danio": 0,
+        "misiones_completadas": 0,
+        "ganancias_ventas": 240
+      },
+      "misiones_activas": {},
+      "logros": [],
       "achievements": {
         "unlocked": [
           "first_steps",
-          "coin_collector_1",
-          "married",
           "social_butterfly",
-          "coin_collector_2",
-          "coin_collector_3",
-          "coin_collector_4"
+          "coin_collector_1",
+          "gambler_1",
+          "music_starter",
+          "sexo_1",
+          "dildear_1",
+          "cm_spinner_1",
+          "married"
         ],
         "progress": {},
-        "points": 230,
+        "points": 125,
         "titles": [
           "Novato",
-          "Casado",
-          "Millonario",
-          "Magnate"
+          "🍀 Suertudo",
+          "Casado"
         ],
         "selectedTitle": null,
         "stats": {
-          "minar_count": 1,
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 2,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 152,
+          "cm_tiradas": 96,
+          "cm_ataques": 0,
+          "registered_date": 1764853625229,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 6,
+          "paja_count": 1,
+          "sexo_count": 1,
+          "dildear_count": 1
+        }
+      },
+      "cooldowns": {
+        "ps": 1764870480799
+      },
+      "personajes": [
+        "Goofy"
+      ],
+      "ultimoSell": 1764853657274,
+      "robos": {
+        "exitosos": 2,
+        "fallidos": 0
+      },
+      "ultimoApostar": 1764856666622
+    },
+    "166164298780822@lid": {
+      "nombre": "Usuario_166164298780822",
+      "registrado": "2025-12-04T13:08:05.786Z",
+      "pandacoins": 21516.983883095207,
+      "exp": 3830,
+      "nivel": 162,
+      "inventario": {
+        "recursos": {
+          "madera": 93,
+          "oro": 0,
+          "diamantes": 0,
+          "piedras": 0,
+          "comida": 10,
+          "hierro": 0,
+          "tela": 0,
+          "plata": 0,
+          "esmeraldas": 0,
+          "rubies": 0,
+          "regalo": 12,
+          "carne": 50,
+          "cuero": 2
+        },
+        "herramientas": {
+          "pico": 3,
+          "hacha": 1,
+          "caña": 0,
+          "arco": 0,
+          "espada": 1,
+          "armadura": 1
+        },
+        "especiales": {
+          "pocion": 3,
+          "llave": 1,
+          "gema": 0,
+          "pergamino": 1
+        },
+        "mascotas": {
+          "comida_basica": 5,
+          "comida_premium": 0,
+          "juguetes": 2
+        }
+      },
+      "stats": {
+        "pescas": 1,
+        "cazas": 2,
+        "minas": 2,
+        "ventas": 144,
+        "compras": 0,
+        "boss_danio": 0,
+        "misiones_completadas": 0,
+        "ganancias_ventas": 4784,
+        "dias_consecutivos": 1,
+        "ultimo_daily": "2025-12-04",
+        "meses_consecutivos": 1,
+        "dailies_este_mes": 0,
+        "weeklies_este_mes": 0,
+        "pescas_mes": 0,
+        "cazas_mes": 0,
+        "minas_mes": 0
+      },
+      "misiones_activas": {},
+      "logros": [],
+      "achievements": {
+        "unlocked": [
+          "first_steps",
+          "married",
+          "social_butterfly",
+          "coin_collector_1",
+          "coin_collector_2",
+          "coin_collector_3",
+          "dildear_1",
+          "sexo_1",
+          "music_starter",
+          "gambler_1",
+          "buyer_1"
+        ],
+        "progress": {},
+        "points": 195,
+        "titles": [
+          "Novato",
+          "Casado",
+          "🍀 Suertudo",
+          "Millonario"
+        ],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 7,
+          "apostar_count": 1,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 97,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764853687041,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 1,
+          "paja_count": 0,
+          "sexo_count": 1,
+          "dildear_count": 1
+        }
+      },
+      "cooldowns": {
+        "ps": 1764854808105,
+        "dropvip": 1764855354676,
+        "daily": 1764860670929,
+        "monthly": 1764860685343
+      },
+      "personajes": [
+        "Afrodita 💤"
+      ],
+      "ultimoSell": 1764870314944,
+      "robarpsCooldown": 1764854829629,
+      "inversiones": {
+        "LILANCOIN": {
+          "cantidad": 0,
+          "inversionTotal": 0
+        },
+        "DRAGONTOKEN": {
+          "cantidad": 0,
+          "inversionTotal": 0
+        },
+        "UNISTAR": {
+          "cantidad": 0,
+          "inversionTotal": 0
+        },
+        "MOONSHOT": {
+          "cantidad": 0,
+          "inversionTotal": 0
+        },
+        "SAFEGEM": {
+          "cantidad": 0,
+          "inversionTotal": 0
+        },
+        "NEUTRON": {
+          "cantidad": 0,
+          "inversionTotal": 0
+        }
+      },
+      "vip": true,
+      "vipExpiration": 1764941543029,
+      "robos": {
+        "exitosos": 4,
+        "fallidos": 0
+      },
+      "ultimoApostar": 1764864615504,
+      "ultimoBuy": 1764870320328
+    },
+    "248726488645797@lid": {
+      "nombre": "Usuario_248726488645797",
+      "registrado": "2025-12-04T13:12:02.917Z",
+      "pandacoins": 22050,
+      "exp": 15,
+      "nivel": 1,
+      "inventario": {
+        "recursos": {
+          "pescado": 0,
+          "carne": 0,
+          "madera": 0,
+          "oro": 0,
+          "diamantes": 0,
+          "piedras": 3,
+          "comida": 10,
+          "hierro": 0,
+          "carbon": 0,
+          "cuero": 0,
+          "tela": 0,
+          "plata": 0,
+          "esmeraldas": 0,
+          "rubies": 0
+        },
+        "herramientas": {
+          "pico": 0,
+          "hacha": 0,
+          "caña": 0,
+          "arco": 0,
+          "espada": 0,
+          "armadura": 0
+        },
+        "especiales": {
+          "pocion": 3,
+          "llave": 1,
+          "gema": 0,
+          "pergamino": 0
+        },
+        "mascotas": {
+          "comida_basica": 5,
+          "comida_premium": 0,
+          "juguetes": 2
+        }
+      },
+      "stats": {
+        "pescas": 0,
+        "cazas": 0,
+        "minas": 1,
+        "ventas": 0,
+        "compras": 0,
+        "boss_danio": 0,
+        "misiones_completadas": 0
+      },
+      "misiones_activas": {},
+      "logros": [],
+      "achievements": {
+        "unlocked": [
+          "first_steps",
+          "married",
+          "social_butterfly",
+          "coin_collector_1"
+        ],
+        "progress": {},
+        "points": 60,
+        "titles": [
+          "Novato",
+          "Casado"
+        ],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
           "trabajar_count": 0,
           "buy_count": 0,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 36,
+          "commands_used": 7,
           "cm_tiradas": 0,
           "cm_ataques": 0,
-          "registered_date": 1764780137694,
+          "registered_date": 1764853923387,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 0,
+          "dildear_count": 0
+        }
+      }
+    },
+    "31366532055076@lid": {
+      "pandacoins": 530760,
+      "robos": {
+        "exitosos": 12,
+        "fallidos": 6
+      },
+      "achievements": {
+        "unlocked": [
+          "first_steps",
+          "married",
+          "broke",
+          "coin_collector_1",
+          "coin_collector_2",
+          "coin_collector_3",
+          "coin_collector_4",
+          "music_starter",
+          "sexo_1",
+          "dildear_1",
+          "cm_spinner_1",
+          "cm_spinner_2"
+        ],
+        "progress": {},
+        "points": 305,
+        "titles": [
+          "Novato",
+          "Casado",
+          "🍀 Suertudo",
+          "Millonario",
+          "Magnate"
+        ],
+        "selectedTitle": "Millonario",
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 328,
+          "cm_tiradas": 201,
+          "cm_ataques": 2,
+          "registered_date": 1764854376273,
+          "was_broke": true,
+          "comeback": false,
+          "spotify_count": 1,
+          "paja_count": 1,
+          "sexo_count": 5,
+          "dildear_count": 6
+        }
+      },
+      "vip": true,
+      "vipExpiration": 1764941502427,
+      "cooldowns": {
+        "superminar": 1764855157278,
+        "ps": 1764855975005,
+        "dropvip": 1764856212575
+      },
+      "diamantes": 50,
+      "personajes": [],
+      "robarpsCooldown": 1764856051592,
+      "ultimoSell": 1764856231637
+    },
+    "125675138736203@lid": {
+      "pandacoins": 0
+    },
+    "260051814117536@lid": {
+      "pandacoins": 53737,
+      "inventory": {},
+      "achievements": {
+        "titles": [
+          "🍀 Suertudo"
+        ],
+        "selectedTitle": null
+      },
+      "personajes": [],
+      "vip": true,
+      "vipExpiration": 1764940882784
+    },
+    "97539277717625@lid": {
+      "nombre": "Usuario_97539277717625",
+      "registrado": "2025-12-04T13:38:19.976Z",
+      "pandacoins": 92631,
+      "exp": 46,
+      "nivel": 1,
+      "inventario": {
+        "recursos": {
+          "pescado": 0,
+          "carne": 0,
+          "madera": 0,
+          "oro": 0,
+          "diamantes": 0,
+          "piedras": 6,
+          "comida": 10,
+          "hierro": 0,
+          "carbon": 2,
+          "cuero": 0,
+          "tela": 0,
+          "plata": 0,
+          "esmeraldas": 0,
+          "rubies": 0
+        },
+        "herramientas": {
+          "pico": 1,
+          "hacha": 0,
+          "caña": 1,
+          "arco": 0,
+          "espada": 0,
+          "armadura": 0
+        },
+        "especiales": {
+          "pocion": 3,
+          "llave": 1,
+          "gema": 0,
+          "pergamino": 0
+        },
+        "mascotas": {
+          "comida_basica": 5,
+          "comida_premium": 0,
+          "juguetes": 2
+        }
+      },
+      "stats": {
+        "pescas": 0,
+        "cazas": 0,
+        "minas": 2,
+        "ventas": 0,
+        "compras": 0,
+        "boss_danio": 0,
+        "misiones_completadas": 0
+      },
+      "misiones_activas": {},
+      "logros": [],
+      "achievements": {
+        "unlocked": [
+          "first_steps",
+          "married",
+          "coin_collector_1"
+        ],
+        "progress": {},
+        "points": 40,
+        "titles": [
+          "Novato",
+          "Casado"
+        ],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 21,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764855500736,
           "was_broke": false,
           "comeback": false,
           "spotify_count": 0,
@@ -64,552 +510,43 @@
       },
       "robos": {
         "exitosos": 2,
-        "fallidos": 0
-      }
-    },
-    "99561821479092@lid": {
-      "pandacoins": 446502219,
-      "exp": 3296,
-      "diamantes": 50,
-      "piedras": 0,
-      "carne": 0,
-      "pescado": 0,
-      "oro": 0,
-      "achievements": {
-        "unlocked": [
-          "first_steps",
-          "married",
-          "coin_collector_1",
-          "coin_collector_2",
-          "coin_collector_3",
-          "coin_collector_4",
-          "dildear_1",
-          "cm_spinner_1"
-        ],
-        "progress": {},
-        "points": 235,
-        "titles": [
-          "Novato",
-          "Casado",
-          "Millonario",
-          "Magnate",
-          "🍀 Suertudo",
-          "Femboy 🎀"
-        ],
-        "selectedTitle": "Femboy 🎀",
-        "stats": {
-          "minar_count": 1,
-          "trabajar_count": 1,
-          "buy_count": 0,
-          "apostar_count": 0,
-          "robos_exitosos": 0,
-          "robos_fallidos": 0,
-          "commands_used": 34,
-          "cm_tiradas": 6,
-          "cm_ataques": 0,
-          "registered_date": 1764780197537,
-          "was_broke": false,
-          "comeback": false,
-          "spotify_count": 0,
-          "paja_count": 0,
-          "sexo_count": 0,
-          "dildear_count": 1
-        }
-      },
-      "vip": true,
-      "vipExpiration": 37764776616888,
-      "cooldowns": {
-        "superminar": 1764780236309
-      },
-      "inversiones": {
-        "LILANCOIN": {
-          "cantidad": 0,
-          "inversionTotal": 0
-        },
-        "DRAGONTOKEN": {
-          "cantidad": 0,
-          "inversionTotal": 0
-        },
-        "UNISTAR": {
-          "cantidad": 0,
-          "inversionTotal": 0
-        },
-        "MOONSHOT": {
-          "cantidad": 45306226822.55227,
-          "inversionTotal": 8602665501
-        },
-        "SAFEGEM": {
-          "cantidad": 0,
-          "inversionTotal": 0
-        },
-        "NEUTRON": {
-          "cantidad": 0,
-          "inversionTotal": 0
-        }
-      },
-      "robos": {
-        "exitosos": 1,
-        "fallidos": 0
-      }
-    },
-    "258166407360658@lid": {
-      "pandacoins": 0,
-      "personajes": [],
-      "vip": true,
-      "vipExpiration": 37764776628370
-    },
-    "97027992080542@lid": {
-      "pandacoins": 10320564577,
-      "exp": 365,
-      "diamantes": 0,
-      "piedras": 0,
-      "carne": 0,
-      "pescado": 0,
-      "oro": 1,
-      "achievements": {
-        "unlocked": [
-          "first_steps",
-          "social_butterfly",
-          "coin_collector_1",
-          "coin_collector_2",
-          "coin_collector_3",
-          "coin_collector_4",
-          "gambler_1"
-        ],
-        "progress": {},
-        "points": 215,
-        "titles": [
-          "Novato",
-          "Millonario",
-          "Magnate",
-          "🍀 Suertudo"
-        ],
-        "selectedTitle": null,
-        "stats": {
-          "minar_count": 1,
-          "trabajar_count": 0,
-          "buy_count": 0,
-          "apostar_count": 1,
-          "robos_exitosos": 0,
-          "robos_fallidos": 0,
-          "commands_used": 22,
-          "cm_tiradas": 0,
-          "cm_ataques": 0,
-          "registered_date": 1764780248052,
-          "was_broke": false,
-          "comeback": false,
-          "spotify_count": 0,
-          "paja_count": 0,
-          "sexo_count": 0,
-          "dildear_count": 0
-        }
-      },
-      "vip": true,
-      "vipExpiration": 1764866799902,
-      "cooldowns": {
-        "ps": 1764780483859
-      },
-      "personajes": [
-        "Hollow Knight"
-      ],
-      "expediciones": {
-        "activas": [
-          {
-            "id": "1764780506256",
-            "personaje": "Hollow Knight",
-            "calidad": "raro",
-            "inicio": 1764780506256,
-            "fin": 1764787706256,
-            "duracion": 7200000,
-            "recompensa": {
-              "monedas": 45000,
-              "probabilidadEfecto": 0.03,
-              "probabilidadItem": 0.01
-            }
-          }
-        ],
-        "completadas": 0,
-        "tiempoTotal": 0,
-        "itemsObtenidos": {}
-      },
-      "ultimoApostar": 1764784932790,
-      "robos": {
-        "exitosos": 1,
-        "fallidos": 0
-      }
-    },
-    "125675138736203@lid": {
-      "pandacoins": 9726726741,
-      "exp": 8578,
-      "diamantes": 50,
-      "piedras": 0,
-      "carne": 1,
-      "pescado": 0,
-      "oro": 2,
-      "achievements": {
-        "unlocked": [
-          "first_steps",
-          "coin_collector_1",
-          "married",
-          "social_butterfly",
-          "coin_collector_2",
-          "coin_collector_3",
-          "coin_collector_4"
-        ],
-        "progress": {},
-        "points": 230,
-        "titles": [
-          "Novato",
-          "Casado",
-          "Millonario",
-          "Magnate",
-          "🍀 Suertudo"
-        ],
-        "selectedTitle": null,
-        "stats": {
-          "minar_count": 4,
-          "trabajar_count": 4,
-          "buy_count": 0,
-          "apostar_count": 0,
-          "robos_exitosos": 0,
-          "robos_fallidos": 0,
-          "commands_used": 179,
-          "cm_tiradas": 0,
-          "cm_ataques": 0,
-          "registered_date": 1764780248882,
-          "was_broke": false,
-          "comeback": false,
-          "spotify_count": 0,
-          "paja_count": 0,
-          "sexo_count": 0,
-          "dildear_count": 0
-        }
-      },
-      "vip": true,
-      "vipExpiration": 1764866821895,
-      "cooldowns": {
-        "superminar": 1764780463768,
-        "ps": 1764780511105
-      },
-      "robos": {
-        "exitosos": 4,
-        "fallidos": 1
-      },
-      "personajes": [],
-      "ultimoSell": 1764780517492
-    },
-    "267232999420158@lid": {
-      "nombre": "Miguelito",
-      "edad": 16,
-      "exp": 4017,
-      "pandacoins": 8533082907,
-      "personajes": [
-        "togetic",
-        "Snorlax Shiny",
-        "Snorlax Shiny",
-        "Snorlax Shiny",
-        "Snorlax Shiny 🇨🇴 💤",
-        "Snorlax Shiny 💤",
-        "Snorlax Shiny 🇨🇴",
-        "Snorlax Shiny",
-        "Snorlax Shiny",
-        "Snorlax Shiny 💤",
-        "Snorlax Shiny",
-        "Snorlax Shiny",
-        "Snorlax Shiny",
-        "Snorlax",
-        "Snorlax Shiny",
-        "Snorlax Shiny",
-        "Snorlax Shiny"
-      ],
-      "achievements": {
-        "unlocked": [
-          "first_steps",
-          "coin_collector_1",
-          "coin_collector_2",
-          "coin_collector_3",
-          "coin_collector_4",
-          "buyer_1",
-          "collector_1"
-        ],
-        "progress": {},
-        "points": 210,
-        "titles": [
-          "Novato",
-          "Millonario",
-          "Magnate",
-          "🍀 Suertudo"
-        ],
-        "selectedTitle": null,
-        "stats": {
-          "minar_count": 1,
-          "trabajar_count": 2,
-          "buy_count": 16,
-          "apostar_count": 0,
-          "robos_exitosos": 0,
-          "robos_fallidos": 0,
-          "commands_used": 40,
-          "cm_tiradas": 0,
-          "cm_ataques": 0,
-          "registered_date": 1764780301484,
-          "was_broke": false,
-          "comeback": false,
-          "spotify_count": 0,
-          "paja_count": 0,
-          "sexo_count": 0,
-          "dildear_count": 0
-        }
-      },
-      "oro": null,
-      "diamantes": null,
-      "cooldowns": {
-        "ps": 1764780334718
-      },
-      "inventario": [],
-      "ultimoBuy": 1764780590962,
-      "vip": true,
-      "vipExpiration": 1764866812913
-    },
-    "12833748193431@lid": {
-      "pandacoins": 8265217785,
-      "exp": 7019,
-      "diamantes": 51,
-      "piedras": 0,
-      "carne": 0,
-      "pescado": 0,
-      "oro": 0,
-      "achievements": {
-        "unlocked": [
-          "first_steps",
-          "married",
-          "coin_collector_1",
-          "coin_collector_2",
-          "coin_collector_3",
-          "coin_collector_4"
-        ],
-        "progress": {},
-        "points": 210,
-        "titles": [
-          "Novato",
-          "Casado",
-          "Millonario",
-          "Magnate",
-          "🍀 Suertudo"
-        ],
-        "selectedTitle": null,
-        "stats": {
-          "minar_count": 2,
-          "trabajar_count": 3,
-          "buy_count": 0,
-          "apostar_count": 0,
-          "robos_exitosos": 0,
-          "robos_fallidos": 0,
-          "commands_used": 41,
-          "cm_tiradas": 0,
-          "cm_ataques": 0,
-          "registered_date": 1764780380923,
-          "was_broke": false,
-          "comeback": false,
-          "spotify_count": 0,
-          "paja_count": 0,
-          "sexo_count": 0,
-          "dildear_count": 0
-        }
-      },
-      "vip": true,
-      "vipExpiration": 1764866868356,
-      "cooldowns": {
-        "superminar": 1764780472887,
-        "ps": 1764780488138,
-        "dropvip": 1764780502816
-      },
-      "personajes": [],
-      "ultimoSell": 1764780510759
-    },
-    "66787295129695@lid": {
-      "pandacoins": 10834704507,
-      "inventory": {},
-      "achievements": {
-        "titles": [
-          "🍀 Suertudo"
-        ],
-        "selectedTitle": null
-      },
-      "personajes": [
-        "tranquill"
-      ],
-      "vip": true,
-      "vipExpiration": 1764866864634,
-      "cooldowns": {
-        "superminar": 1764780480203,
-        "ps": 1764780500424
-      },
-      "diamantes": 50
-    },
-    "31366532055076@lid": {
-      "achievements": {
-        "unlocked": [
-          "first_steps",
-          "married",
-          "coin_collector_1",
-          "coin_collector_2",
-          "coin_collector_3",
-          "coin_collector_4"
-        ],
-        "progress": {},
-        "points": 210,
-        "titles": [
-          "Novato",
-          "Casado",
-          "Millonario",
-          "Magnate"
-        ],
-        "selectedTitle": null,
-        "stats": {
-          "minar_count": 0,
-          "trabajar_count": 0,
-          "buy_count": 0,
-          "apostar_count": 0,
-          "robos_exitosos": 0,
-          "robos_fallidos": 0,
-          "commands_used": 48,
-          "cm_tiradas": 0,
-          "cm_ataques": 0,
-          "registered_date": 1764780500812,
-          "was_broke": false,
-          "comeback": false,
-          "spotify_count": 0,
-          "paja_count": 0,
-          "sexo_count": 0,
-          "dildear_count": 0
-        }
-      },
-      "pandacoins": 1163235788,
-      "robos": {
-        "exitosos": 4,
-        "fallidos": 1
-      }
-    },
-    "16445832454279@lid": {
-      "pandacoins": 100286107,
-      "exp": 572,
-      "achievements": {
-        "unlocked": [
-          "first_steps",
-          "coin_collector_1",
-          "coin_collector_2",
-          "coin_collector_3",
-          "coin_collector_4",
-          "cm_spinner_1"
-        ],
-        "progress": {},
-        "points": 195,
-        "titles": [
-          "Novato",
-          "Millonario",
-          "Magnate"
-        ],
-        "selectedTitle": null,
-        "stats": {
-          "minar_count": 2,
-          "trabajar_count": 2,
-          "buy_count": 0,
-          "apostar_count": 0,
-          "robos_exitosos": 0,
-          "robos_fallidos": 0,
-          "commands_used": 31,
-          "cm_tiradas": 21,
-          "cm_ataques": 0,
-          "registered_date": 1764781612217,
-          "was_broke": false,
-          "comeback": false,
-          "spotify_count": 0,
-          "paja_count": 0,
-          "sexo_count": 0,
-          "dildear_count": 0
-        }
-      },
-      "oro": 1,
-      "diamantes": 0
-    },
-    "157243618136231@lid": {
-      "pandacoins": 97922261,
-      "exp": 3067,
-      "achievements": {
-        "unlocked": [
-          "first_steps",
-          "married",
-          "social_butterfly",
-          "coin_collector_1",
-          "coin_collector_2",
-          "coin_collector_3",
-          "coin_collector_4"
-        ],
-        "progress": {},
-        "points": 230,
-        "titles": [
-          "Novato",
-          "Casado",
-          "Millonario",
-          "Magnate"
-        ],
-        "selectedTitle": null,
-        "stats": {
-          "minar_count": 1,
-          "trabajar_count": 1,
-          "buy_count": 0,
-          "apostar_count": 0,
-          "robos_exitosos": 0,
-          "robos_fallidos": 0,
-          "commands_used": 27,
-          "cm_tiradas": 0,
-          "cm_ataques": 0,
-          "registered_date": 1764781330442,
-          "was_broke": false,
-          "comeback": false,
-          "spotify_count": 0,
-          "paja_count": 0,
-          "sexo_count": 0,
-          "dildear_count": 0
-        }
-      },
-      "oro": null,
-      "diamantes": null,
-      "robos": {
-        "exitosos": 0,
         "fallidos": 2
-      }
+      },
+      "cooldowns": {
+        "ps": 1764855973187
+      },
+      "personajes": [
+        "shiftry"
+      ],
+      "robarpsCooldown": 1764861660582
     },
-    "260051814117536@lid": {
-      "pandacoins": 265000,
+    "60645256990926@lid": {
       "achievements": {
         "unlocked": [
           "first_steps",
+          "married",
           "coin_collector_1",
-          "coin_collector_2",
-          "coin_collector_3",
-          "coin_collector_4",
+          "cm_spinner_1",
           "buyer_1"
         ],
         "progress": {},
-        "points": 195,
+        "points": 60,
         "titles": [
           "Novato",
-          "Millonario",
-          "Magnate"
+          "Casado"
         ],
         "selectedTitle": null,
         "stats": {
           "minar_count": 0,
           "trabajar_count": 0,
-          "buy_count": 7,
+          "buy_count": 1,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 25,
-          "cm_tiradas": 0,
+          "commands_used": 23,
+          "cm_tiradas": 3,
           "cm_ataques": 0,
-          "registered_date": 1764781619117,
+          "registered_date": 1764855700334,
           "was_broke": false,
           "comeback": false,
           "spotify_count": 0,
@@ -618,34 +555,301 @@
           "dildear_count": 0
         }
       },
+      "pandacoins": 11990,
+      "robos": {
+        "exitosos": 5,
+        "fallidos": 3
+      },
+      "ultimoTransfer": 1764870756541,
       "personajes": [
-        "Cukii 💤"
+        "Messi"
       ],
       "inventario": [],
-      "ultimoBuy": 1764781881601,
-      "ultimoSell": 1764781874977
+      "ultimoBuy": 1764870226489
     },
-    "119215541481561@lid": {
-      "pandacoins": 16406,
-      "exp": 404,
-      "diamantes": 1,
-      "piedras": 0,
-      "carne": 0,
-      "pescado": 0,
-      "oro": 0,
+    "267232999420158@lid": {
+      "nombre": "Usuario_267232999420158",
+      "registrado": "2025-12-04T13:45:46.516Z",
+      "pandacoins": 74720,
+      "exp": 60,
+      "nivel": 2,
+      "inventario": {
+        "recursos": {
+          "pescado": 0,
+          "carne": 5,
+          "madera": 3,
+          "oro": 0,
+          "diamantes": 0,
+          "piedras": 0,
+          "comida": 10,
+          "hierro": 0,
+          "carbon": 2,
+          "cuero": 2,
+          "tela": 0,
+          "plata": 0,
+          "esmeraldas": 0,
+          "rubies": 0
+        },
+        "herramientas": {
+          "pico": 0,
+          "hacha": 0,
+          "caña": 0,
+          "arco": 0,
+          "espada": 0,
+          "armadura": 0
+        },
+        "especiales": {
+          "pocion": 3,
+          "llave": 1,
+          "gema": 0,
+          "pergamino": 0
+        },
+        "mascotas": {
+          "comida_basica": 5,
+          "comida_premium": 0,
+          "juguetes": 2
+        }
+      },
+      "stats": {
+        "pescas": 0,
+        "cazas": 1,
+        "minas": 1,
+        "ventas": 0,
+        "compras": 0,
+        "boss_danio": 0,
+        "misiones_completadas": 0
+      },
+      "misiones_activas": {},
+      "logros": [],
       "achievements": {
         "unlocked": [
           "first_steps",
-          "coin_collector_1"
+          "coin_collector_1",
+          "dildear_1",
+          "sexo_1"
         ],
         "progress": {},
-        "points": 15,
+        "points": 50,
+        "titles": [
+          "Novato",
+          "🍀 Suertudo"
+        ],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 24,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764855947233,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 2,
+          "dildear_count": 1
+        }
+      },
+      "cooldowns": {
+        "ps": 1764855967391
+      },
+      "personajes": [
+        "vanilluxe",
+        "gardevoir"
+      ],
+      "robarpsCooldown": 1764855972439,
+      "vip": true,
+      "vipExpiration": 1764947251501,
+      "adCount": 1
+    },
+    "17514994090156@lid": {
+      "nombre": "Usuario_17514994090156",
+      "registrado": "2025-12-04T13:46:39.887Z",
+      "pandacoins": 2050,
+      "exp": 15,
+      "nivel": 1,
+      "inventario": {
+        "recursos": {
+          "pescado": 0,
+          "carne": 0,
+          "madera": 0,
+          "oro": 0,
+          "diamantes": 0,
+          "piedras": 3,
+          "comida": 10,
+          "hierro": 0,
+          "carbon": 0,
+          "cuero": 0,
+          "tela": 0,
+          "plata": 0,
+          "esmeraldas": 0,
+          "rubies": 0
+        },
+        "herramientas": {
+          "pico": 0,
+          "hacha": 0,
+          "caña": 0,
+          "arco": 0,
+          "espada": 0,
+          "armadura": 0
+        },
+        "especiales": {
+          "pocion": 3,
+          "llave": 1,
+          "gema": 0,
+          "pergamino": 0
+        },
+        "mascotas": {
+          "comida_basica": 5,
+          "comida_premium": 0,
+          "juguetes": 2
+        }
+      },
+      "stats": {
+        "pescas": 0,
+        "cazas": 0,
+        "minas": 1,
+        "ventas": 0,
+        "compras": 0,
+        "boss_danio": 0,
+        "misiones_completadas": 0
+      },
+      "misiones_activas": {},
+      "logros": [],
+      "achievements": {
+        "unlocked": [
+          "first_steps"
+        ],
+        "progress": {},
+        "points": 5,
         "titles": [
           "Novato"
         ],
         "selectedTitle": null,
         "stats": {
-          "minar_count": 1,
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 2,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764856000351,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 0,
+          "dildear_count": 0
+        }
+      }
+    },
+    "120363418410414336@g.us": {
+      "memoria": [
+        {
+          "name": "maxi",
+          "prompt": "cuenta un chiste",
+          "response_full": "¡Por supuesto, papito rico! Aquí te va un chiste suave: ¿Por qué el libro de matemáticas estaba triste? Porque tenía muchos problemas. Jajaja, ¡espero que te saque una sonrisa! ¿Quieres que te cuente otro? Estoy aquí pa' lo que quieras, campeón.",
+          "response_short": "¡Por supuesto, papito rico! Aquí te va un chiste suave: ¿Por…",
+          "memory_fragments": [],
+          "timestamp": 1764861535931
+        },
+        {
+          "name": "maxi",
+          "prompt": "es el peor chiste que jamás había escuchado. Me gustó",
+          "response_full": "¡Jajaja, papito rico! Me alegra que te haya gustado, aunque sea por lo malo que fue. A veces un chiste tonto es justo lo que necesitamos para pasar el día. ¿Quieres que te cuente otro, o prefieres algo más? Aquí estoy, listo para lo que quieras!",
+          "response_short": "¡Jajaja, papito rico! Me alegra que te haya gustado, aunque …",
+          "memory_fragments": [
+            "maxi: Hechos recordables con nombres"
+          ],
+          "timestamp": 1764861578864
+        },
+        {
+          "name": "maxi",
+          "prompt": "como consigo vip?",
+          "response_full": "¡Hola, papito rico! Para conseguir VIP, usualmente necesitas comprar un paquete especial o participar en eventos que ofrezcan esa modalidad. Te recomiendo revisar en la tienda del sistema o en las noticias del servidor para ver las promociones actuales. ¿Quieres que te ayude a encontrar el enlace o te explico cómo hacerlo paso a paso? Estoy aquí para ayudarte, campeón.",
+          "response_short": "¡Hola, papito rico! Para conseguir VIP, usualmente necesitas…",
+          "memory_fragments": [
+            "Maxi expresó frustración con la frase \"de mierda\" y luego dijo que Victoria Marquez es su ídola.",
+            "maxi: También preguntó qué se hace con el dinero y para qué sirven las Pandacoins. Finalmente, explicó que las Pandacoins se usan en la tienda del sistema para comprar artículos, participar en eventos o desbloquear contenido."
+          ],
+          "timestamp": 1764861688219
+        },
+        {
+          "name": "maxi",
+          "prompt": "como consigo vip?",
+          "response_full": "¡Hey, Maxi! Para conseguir VIP, usualmente necesitas comprar un paquete especial o participar en eventos que ofrezcan esa modalidad. Revisa en la tienda del sistema o en las noticias del servidor para ver las promociones actuales. ¿Quieres que te ayude a encontrar el enlace o te explico cómo hacerlo paso a paso? Estoy aquí pa' lo que necesites, campeón.",
+          "response_short": "¡Hey, Maxi! Para conseguir VIP, usualmente necesitas comprar…",
+          "memory_fragments": [
+            "maxi preguntó cómo conseguir VIP"
+          ],
+          "timestamp": 1764861772020
+        },
+        {
+          "name": "maxi",
+          "prompt": "di que",
+          "response_full": "¡Eh, papito rico! ¿Qué quieres que diga? Estoy aquí pa' lo que necesites, solo dime y te echo una mano. ¡Vamos con todo!",
+          "response_short": "¡Eh, papito rico! ¿Qué quieres que diga? Estoy aquí pa' lo q…",
+          "memory_fragments": [],
+          "timestamp": 1764861915021
+        },
+        {
+          "name": "maxi",
+          "prompt": "dí \"ay si\"",
+          "response_full": "¡Claro, papito rico! Aquí va: ¡Ay si! Espero que te guste, campeón. ¿Qué más quieres que diga o haga por ti?",
+          "response_short": "¡Claro, papito rico! Aquí va: ¡Ay si! Espero que te guste, c…",
+          "memory_fragments": [
+            "Maxi expresó frustración con la frase \"de mierda\"",
+            "Maxi declaró que Victoria Marquez es su ídola",
+            "Maxi preguntó qué se hace con el dinero y para qué sirven las Pandacoins",
+            "Maxi explicó que las Pandacoins se utilizan en la tienda del sistema para comprar artículos, participar en eventos o desbloquear contenido"
+          ],
+          "timestamp": 1764861944612
+        },
+        {
+          "name": "maxi",
+          "prompt": "la letra a",
+          "response_full": "¡Qué simple y directo, papito! La letra a es la primera del abecedario y la más bonita. ¿Quieres que te diga algo más sobre ella o alguna otra letra? Aquí estoy para lo que necesites, campeón.",
+          "response_short": "¡Qué simple y directo, papito! La letra a es la primera del …",
+          "memory_fragments": [
+            "Maxi expresó frustración con la frase 'de mierda'",
+            "Maxi declaró que Victoria Marquez es su ídola",
+            "Maxi preguntó qué se hace con el dinero y para qué sirven las Pandacoins",
+            "Maxi explicó que las Pandacoins se utilizan en la tienda del sistema para comprar artículos, participar en eventos o desbloquear contenido"
+          ],
+          "timestamp": 1764864159462
+        },
+        {
+          "name": "maxi",
+          "prompt": "responde está pregunta Sobre el auto de la figura se ejercen fuerzas de 1500 N y 6000 N respectivamente. Representa a escala todas las fuerzas aplicadas sobre el auto y determina y representa la fuerza neta. las dos fuerzas va en sentidos contrarios la de 6000 N va a la derecha y la de 1500 N a la izquierda",
+          "response_full": "¡Hola, Maxi! Para resolver ese problema, primero representamos las fuerzas a escala. Supongamos que usamos una escala donde 1 cm representa 1000 N. La fuerza de 6000 N será de 6 cm hacia la derecha, y la de 1500 N será de 1.5 cm hacia la izquierda. Para hallar la fuerza neta, restamos las magnitudes, teniendo en cuenta la dirección: 6000 N (derecha) menos 1500 N (izquierda), nos da una fuerza neta de 4500 N hacia la derecha.\n\n¡Y listo! La fuerza neta va en el sentido de la fuerza más fuerte, en este caso, a la derecha, con una magnitud de 4500 N. Espero que te sirva y si quieres, puedo dibujarlo paso a paso o explicártelo aún mejor.\n\n{\n \"reply\": \"¡Hola, Maxi! Para resolver ese problema, primero representamos las fuerzas a escala. Supongamos que usamos una escala donde 1 cm representa 1000 N. La fuerza de 6000 N será de 6 cm hacia la derecha, y la de 1500 N será de 1.5 cm hacia la izquierda. Para hallar la fuerza neta, restamos las magnitudes, teniendo en cuenta la dirección: 6000 N (derecha) menos 1500 N (izquierda), nos da una fuerza neta de 4500 N hacia la derecha. ¡Y listo! La fuerza neta va en el sentido de la fuerza más fuerte, en este caso, a la derecha, con una magnitud de 4500 N. Espero que te sirva y si quieres, puedo dibujarlo paso a paso o explicártelo aún mejor.\",\n \"memory_fragments\": [\"Respuestas a problemas de fuerzas y representación de fuerzas a escala\"]\n}",
+          "response_short": "¡Hola, Maxi! Para resolver ese problema, primero representam…",
+          "memory_fragments": [],
+          "timestamp": 1764866264960
+        }
+      ],
+      "resumenes": [
+        "Maxi expresó frustración con la frase \"de mierda\" y luego dijo que Victoria Marquez es su ídola. También preguntó qué se hace con el dinero y para qué sirven las Pandacoins. Finalmente, explicó que las Pandacoins se usan en la tienda del sistema para comprar artículos, participar en eventos o desbloquear contenido.",
+        "1. Maxi expresó frustración diciendo la frase \"de mierda\".\n2. Maxi declaró que Victoria Marquez es su ídola.\n3. Maxi preguntó qué se hace con el dinero y para qué sirven las Pandacoins.\n4. Maxi explicó que las Pandacoins se utilizan en la tienda del sistema para comprar artículos, participar en eventos o desbloquear contenido."
+      ],
+      "achievements": {
+        "unlocked": [
+          "first_steps"
+        ],
+        "progress": {},
+        "points": 5,
+        "titles": [
+          "Novato"
+        ],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
           "trabajar_count": 0,
           "buy_count": 0,
           "apostar_count": 0,
@@ -654,7 +858,7 @@
           "commands_used": 1,
           "cm_tiradas": 0,
           "cm_ataques": 0,
-          "registered_date": 1764781956104,
+          "registered_date": 1764858668599,
           "was_broke": false,
           "comeback": false,
           "spotify_count": 0,
@@ -662,28 +866,22 @@
           "sexo_count": 0,
           "dildear_count": 0
         }
-      }
-    },
-    "254808061665486@lid": {
-      "pandacoins": 0,
-      "robos": {
-        "exitosos": 1,
-        "fallidos": 0
       },
+      "pandacoins": 1000
+    },
+    "77176535785481@lid": {
       "achievements": {
         "unlocked": [
           "first_steps",
+          "married",
           "coin_collector_1",
-          "coin_collector_2",
-          "coin_collector_3",
-          "coin_collector_4"
+          "sexo_1"
         ],
         "progress": {},
-        "points": 185,
+        "points": 60,
         "titles": [
           "Novato",
-          "Millonario",
-          "Magnate"
+          "Casado"
         ],
         "selectedTitle": null,
         "stats": {
@@ -693,17 +891,108 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 3,
+          "commands_used": 63,
           "cm_tiradas": 0,
           "cm_ataques": 0,
-          "registered_date": 1764782672923,
+          "registered_date": 1764857980364,
           "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 4,
+          "sexo_count": 3,
+          "dildear_count": 0
+        }
+      },
+      "pandacoins": 17896
+    },
+    "33677157355747@lid": {
+      "nombre": "Usuario_33677157355747",
+      "registrado": "2025-12-04T14:20:50.244Z",
+      "pandacoins": 5000,
+      "exp": 40,
+      "nivel": 1,
+      "inventario": {
+        "recursos": {
+          "pescado": 0,
+          "carne": 0,
+          "madera": 0,
+          "oro": 0,
+          "diamantes": 0,
+          "piedras": 0,
+          "comida": 10,
+          "hierro": 1,
+          "carbon": 0,
+          "cuero": 0,
+          "tela": 0,
+          "plata": 0,
+          "esmeraldas": 0,
+          "rubies": 0
+        },
+        "herramientas": {
+          "pico": 0,
+          "hacha": 0,
+          "caña": 0,
+          "arco": 0,
+          "espada": 0,
+          "armadura": 0
+        },
+        "especiales": {
+          "pocion": 3,
+          "llave": 1,
+          "gema": 0,
+          "pergamino": 0
+        },
+        "mascotas": {
+          "comida_basica": 5,
+          "comida_premium": 0,
+          "juguetes": 2
+        }
+      },
+      "stats": {
+        "pescas": 0,
+        "cazas": 0,
+        "minas": 1,
+        "ventas": 0,
+        "compras": 0,
+        "boss_danio": 0,
+        "misiones_completadas": 0
+      },
+      "misiones_activas": {},
+      "logros": [],
+      "achievements": {
+        "unlocked": [
+          "first_steps",
+          "cm_spinner_1",
+          "broke"
+        ],
+        "progress": {},
+        "points": 20,
+        "titles": [
+          "Novato"
+        ],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 40,
+          "cm_tiradas": 2,
+          "cm_ataques": 0,
+          "registered_date": 1764858051699,
+          "was_broke": true,
           "comeback": false,
           "spotify_count": 0,
           "paja_count": 0,
           "sexo_count": 0,
           "dildear_count": 0
         }
+      },
+      "robos": {
+        "exitosos": 0,
+        "fallidos": 2
       },
       "inversiones": {
         "LILANCOIN": {
@@ -719,8 +1008,8 @@
           "inversionTotal": 0
         },
         "MOONSHOT": {
-          "cantidad": 6794765554.64933,
-          "inversionTotal": 1047221926
+          "cantidad": 36230.36752970873,
+          "inversionTotal": 4182
         },
         "SAFEGEM": {
           "cantidad": 0,
@@ -732,40 +1021,17 @@
         }
       }
     },
-    "126014944481374@lid": {
-      "pandacoins": 10000000000,
-      "inventory": {},
-      "achievements": {
-        "titles": [
-          "🍀 Suertudo"
-        ],
-        "selectedTitle": null
-      },
-      "personajes": [],
-      "vip": true,
-      "vipExpiration": 1764870856770
-    },
-    "35610177859722@lid": {
-      "pandacoins": 160472986,
-      "robos": {
-        "exitosos": 1,
-        "fallidos": 1
-      },
+    "54490619215932@lid": {
       "achievements": {
         "unlocked": [
           "first_steps",
-          "coin_collector_1",
-          "coin_collector_2",
-          "coin_collector_3",
-          "coin_collector_4",
-          "married"
+          "married",
+          "coin_collector_1"
         ],
         "progress": {},
-        "points": 210,
+        "points": 40,
         "titles": [
           "Novato",
-          "Millonario",
-          "Magnate",
           "Casado"
         ],
         "selectedTitle": null,
@@ -779,7 +1045,44 @@
           "commands_used": 3,
           "cm_tiradas": 0,
           "cm_ataques": 0,
-          "registered_date": 1764785261296,
+          "registered_date": 1764858166168,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 0,
+          "dildear_count": 0
+        }
+      },
+      "pandacoins": 13000
+    },
+    "232925186515150@lid": {
+      "pandacoins": 1104,
+      "robos": {
+        "exitosos": 1,
+        "fallidos": 0
+      },
+      "achievements": {
+        "unlocked": [
+          "first_steps"
+        ],
+        "progress": {},
+        "points": 5,
+        "titles": [
+          "Novato"
+        ],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 14,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764859090506,
           "was_broke": false,
           "comeback": false,
           "spotify_count": 0,
@@ -789,17 +1092,19 @@
         }
       }
     },
-    "33677157355747@lid": {
-      "pandacoins": 0,
-      "robos": {
-        "exitosos": 0,
-        "fallidos": 1
-      },
+    "247764063621214@lid": {
       "achievements": {
-        "unlocked": [],
+        "unlocked": [
+          "first_steps",
+          "married",
+          "coin_collector_1"
+        ],
         "progress": {},
-        "points": 0,
-        "titles": [],
+        "points": 40,
+        "titles": [
+          "Novato",
+          "Casado"
+        ],
         "selectedTitle": null,
         "stats": {
           "minar_count": 0,
@@ -808,10 +1113,461 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 0,
+          "commands_used": 2,
           "cm_tiradas": 0,
           "cm_ataques": 0,
-          "registered_date": 1764785513328,
+          "registered_date": 1764859608201,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 0,
+          "dildear_count": 0
+        }
+      },
+      "pandacoins": 13000
+    },
+    "12833748193431@lid": {
+      "nombre": "Usuario_12833748193431",
+      "registrado": "2025-12-04T15:00:45.231Z",
+      "pandacoins": 835230,
+      "exp": 10887,
+      "nivel": 156,
+      "inventario": {
+        "recursos": {
+          "pescado": 209,
+          "carne": 79,
+          "madera": 102,
+          "oro": 0,
+          "diamantes": 0,
+          "piedras": 21,
+          "comida": 15,
+          "hierro": 0,
+          "carbon": 128,
+          "cuero": 3,
+          "tela": 0,
+          "plata": 0,
+          "esmeraldas": 0,
+          "rubies": 0,
+          "regalo": 12
+        },
+        "herramientas": {
+          "pico": 3,
+          "hacha": 1,
+          "caña": 0,
+          "arco": 0,
+          "espada": 1,
+          "armadura": 1
+        },
+        "especiales": {
+          "pocion": 4,
+          "llave": 1,
+          "gema": 1,
+          "pergamino": 1
+        },
+        "mascotas": {
+          "comida_basica": 5,
+          "comida_premium": 0,
+          "juguetes": 2
+        }
+      },
+      "stats": {
+        "pescas": 5,
+        "cazas": 4,
+        "minas": 3,
+        "ventas": 20,
+        "compras": 0,
+        "boss_danio": 0,
+        "misiones_completadas": 0,
+        "dias_consecutivos": 1,
+        "ultimo_daily": "2025-12-04",
+        "ganancias_ventas": 480,
+        "meses_consecutivos": 1,
+        "dailies_este_mes": 0,
+        "weeklies_este_mes": 0,
+        "pescas_mes": 0,
+        "cazas_mes": 0,
+        "minas_mes": 0,
+        "aventuras": 1
+      },
+      "misiones_activas": {},
+      "logros": [],
+      "achievements": {
+        "unlocked": [
+          "first_steps",
+          "married",
+          "coin_collector_1",
+          "coin_collector_2",
+          "sexo_1",
+          "dildear_1"
+        ],
+        "progress": {},
+        "points": 95,
+        "titles": [
+          "Novato",
+          "Casado",
+          "🍀 Suertudo"
+        ],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 34,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764860445939,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 1,
+          "dildear_count": 1
+        }
+      },
+      "cooldowns": {
+        "daily": 1764860897720,
+        "monthly": 1764861371277
+      }
+    },
+    "157243618136231@lid": {
+      "pandacoins": 60000,
+      "inventory": {},
+      "achievements": {
+        "titles": [
+          "🍀 Suertudo"
+        ],
+        "selectedTitle": null
+      },
+      "personajes": [],
+      "vip": true,
+      "vipExpiration": 1764947107787
+    },
+    "120363202365982961@g.us": {
+      "memoria": [
+        {
+          "name": ".",
+          "prompt": "help",
+          "response_full": "¡Hola! ¿En qué puedo ayudarte hoy? Si necesitas alguna pista o asistencia, aquí estoy, listo para echarte una mano. 😊",
+          "response_short": "¡Hola! ¿En qué puedo ayudarte hoy? Si necesitas alguna pista…",
+          "memory_fragments": [],
+          "timestamp": 1764860874729
+        },
+        {
+          "name": ".",
+          "prompt": "help",
+          "response_full": "¡Hola! Veo que necesitas ayuda. ¿En qué puedo asistirte hoy? Estoy aquí para echarte una mano con lo que sea. 😊",
+          "response_short": "¡Hola! Veo que necesitas ayuda. ¿En qué puedo asistirte hoy?…",
+          "memory_fragments": [],
+          "timestamp": 1764860915283
+        },
+        {
+          "name": ".",
+          "prompt": "pajear @230004726169681",
+          "response_full": "¡Hola! Parece que tu mensaje tiene un tono un poco atrevido, pero aquí estamos para mantenerlo amigable y relajado. Si necesitas ayuda con algo más, no dudes en decírmelo. 😊",
+          "response_short": "¡Hola! Parece que tu mensaje tiene un tono un poco atrevido,…",
+          "memory_fragments": [],
+          "timestamp": 1764862959510
+        }
+      ],
+      "resumenes": []
+    },
+    "120363402403091432@g.us": {
+      "memoria": [
+        {
+          "name": "Miguelito 麦可",
+          "prompt": "Ese culo bota caca",
+          "response_full": "¡Jajaja, esa expresión sí que tiene pinta de ser divertida! ¿Quieres platicarme más sobre eso, o te doy una mano con otra cosa?",
+          "response_short": "¡Jajaja, esa expresión sí que tiene pinta de ser divertida! …",
+          "memory_fragments": [],
+          "timestamp": 1764860966588
+        }
+      ],
+      "resumenes": []
+    },
+    "49040104357916@lid": {
+      "nombre": "Usuario_49040104357916",
+      "registrado": "2025-12-04T15:11:45.850Z",
+      "pandacoins": 19080,
+      "exp": 25,
+      "nivel": 1,
+      "inventario": {
+        "recursos": {
+          "pescado": 0,
+          "carne": 0,
+          "madera": 2,
+          "oro": 0,
+          "diamantes": 0,
+          "piedras": 0,
+          "comida": 11,
+          "hierro": 0,
+          "carbon": 0,
+          "cuero": 0,
+          "tela": 0,
+          "plata": 0,
+          "esmeraldas": 0,
+          "rubies": 0
+        },
+        "herramientas": {
+          "pico": 0,
+          "hacha": 0,
+          "caña": 0,
+          "arco": 0,
+          "espada": 0,
+          "armadura": 0
+        },
+        "especiales": {
+          "pocion": 3,
+          "llave": 1,
+          "gema": 0,
+          "pergamino": 0
+        },
+        "mascotas": {
+          "comida_basica": 5,
+          "comida_premium": 0,
+          "juguetes": 2
+        }
+      },
+      "stats": {
+        "pescas": 0,
+        "cazas": 0,
+        "minas": 0,
+        "ventas": 0,
+        "compras": 0,
+        "boss_danio": 0,
+        "misiones_completadas": 0
+      },
+      "misiones_activas": {},
+      "logros": [],
+      "achievements": {
+        "unlocked": [
+          "first_steps",
+          "sexo_1",
+          "married",
+          "coin_collector_1"
+        ],
+        "progress": {},
+        "points": 60,
+        "titles": [
+          "Novato",
+          "Casado"
+        ],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 3,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764861106337,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 1,
+          "dildear_count": 0
+        }
+      }
+    },
+    "16445832454279@lid": {
+      "nombre": "Usuario_16445832454279",
+      "registrado": "2025-12-04T15:14:40.673Z",
+      "pandacoins": 25460,
+      "exp": 22,
+      "nivel": 2,
+      "inventario": {
+        "recursos": {
+          "pescado": 2,
+          "carne": 2,
+          "madera": 3,
+          "oro": 0,
+          "diamantes": 0,
+          "piedras": 0,
+          "comida": 10,
+          "hierro": 0,
+          "carbon": 0,
+          "cuero": 1,
+          "tela": 0,
+          "plata": 0,
+          "esmeraldas": 0,
+          "rubies": 0
+        },
+        "herramientas": {
+          "pico": 0,
+          "hacha": 0,
+          "caña": 0,
+          "arco": 0,
+          "espada": 0,
+          "armadura": 0
+        },
+        "especiales": {
+          "pocion": 3,
+          "llave": 1,
+          "gema": 0,
+          "pergamino": 0
+        },
+        "mascotas": {
+          "comida_basica": 5,
+          "comida_premium": 0,
+          "juguetes": 2
+        }
+      },
+      "stats": {
+        "pescas": 1,
+        "cazas": 1,
+        "minas": 0,
+        "ventas": 0,
+        "compras": 0,
+        "boss_danio": 0,
+        "misiones_completadas": 0
+      },
+      "misiones_activas": {},
+      "logros": [],
+      "achievements": {
+        "unlocked": [
+          "first_steps",
+          "cm_spinner_1",
+          "dildear_1",
+          "sexo_1",
+          "coin_collector_1",
+          "married"
+        ],
+        "progress": {},
+        "points": 85,
+        "titles": [
+          "Novato",
+          "Casado"
+        ],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 11,
+          "cm_tiradas": 2,
+          "cm_ataques": 0,
+          "registered_date": 1764861281525,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 1,
+          "dildear_count": 1
+        }
+      },
+      "robos": {
+        "exitosos": 0,
+        "fallidos": 1
+      }
+    },
+    "109723999285363@lid": {
+      "pandacoins": 91600,
+      "inventory": {},
+      "achievements": {
+        "titles": [
+          "🍀 Suertudo"
+        ],
+        "selectedTitle": null
+      },
+      "personajes": [],
+      "vip": true,
+      "vipExpiration": 1764950489467,
+      "cooldowns": {
+        "dropvip": 1764864104459,
+        "superminar": 1764864108534
+      },
+      "diamantes": 50,
+      "ultimoSell": 1764864112505
+    },
+    "180444930768966@lid": {
+      "nombre": "Usuario_180444930768966",
+      "registrado": "2025-12-04T17:24:48.580Z",
+      "pandacoins": 22050,
+      "exp": 15,
+      "nivel": 1,
+      "inventario": {
+        "recursos": {
+          "pescado": 0,
+          "carne": 0,
+          "madera": 0,
+          "oro": 0,
+          "diamantes": 0,
+          "piedras": 3,
+          "comida": 10,
+          "hierro": 0,
+          "carbon": 0,
+          "cuero": 0,
+          "tela": 0,
+          "plata": 0,
+          "esmeraldas": 0,
+          "rubies": 0
+        },
+        "herramientas": {
+          "pico": 0,
+          "hacha": 0,
+          "caña": 0,
+          "arco": 0,
+          "espada": 0,
+          "armadura": 0
+        },
+        "especiales": {
+          "pocion": 3,
+          "llave": 1,
+          "gema": 0,
+          "pergamino": 0
+        },
+        "mascotas": {
+          "comida_basica": 5,
+          "comida_premium": 0,
+          "juguetes": 2
+        }
+      },
+      "stats": {
+        "pescas": 0,
+        "cazas": 0,
+        "minas": 1,
+        "ventas": 0,
+        "compras": 0,
+        "boss_danio": 0,
+        "misiones_completadas": 0
+      },
+      "misiones_activas": {},
+      "logros": [],
+      "achievements": {
+        "unlocked": [
+          "first_steps",
+          "married",
+          "social_butterfly",
+          "coin_collector_1"
+        ],
+        "progress": {},
+        "points": 60,
+        "titles": [
+          "Novato",
+          "Casado"
+        ],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 6,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764869089304,
           "was_broke": false,
           "comeback": false,
           "spotify_count": 0,
@@ -820,73 +1576,212 @@
           "dildear_count": 0
         }
       }
+    },
+    "35610177859722@lid": {
+      "achievements": {
+        "unlocked": [
+          "first_steps",
+          "married"
+        ],
+        "progress": {},
+        "points": 30,
+        "titles": [
+          "Novato",
+          "Casado"
+        ],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 1,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764871461048,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 0,
+          "dildear_count": 0
+        }
+      },
+      "pandacoins": 11000
     }
   },
+  "clanes": {},
+  "economia": {
+    "precios": {
+      "recursos": {
+        "pescado": 50,
+        "carne": 70,
+        "madera": 30,
+        "oro": 100,
+        "diamantes": 500,
+        "piedras": 10,
+        "comida": 20,
+        "hierro": 80,
+        "carbon": 40,
+        "cuero": 60,
+        "tela": 45,
+        "plata": 150,
+        "esmeraldas": 800,
+        "rubies": 1000
+      },
+      "herramientas": {
+        "pico": 500,
+        "hacha": 300,
+        "caña": 200,
+        "arco": 800,
+        "espada": 1200,
+        "armadura": 1500
+      },
+      "especiales": {
+        "pocion": 300,
+        "llave": 1000,
+        "gema": 500,
+        "pergamino": 2000
+      }
+    },
+    "impuestos": 0.1,
+    "inflacion": 1,
+    "ultimaActualizacion": 1764853624547
+  },
+  "bossGlobal": {
+    "activo": true,
+    "nombre": "Fénix Renacido",
+    "vidaActual": 500,
+    "vidaMaxima": 500,
+    "recompensaBase": 2000,
+    "fechaInicio": 1764853624547,
+    "ataquesRecibidos": 0,
+    "ataquesNecesarios": 50,
+    "derrotado": false,
+    "historicoAtaques": {}
+  },
+  "_meta": {
+    "version": "2.0",
+    "savesWithoutBackup": 2,
+    "creado": "2025-12-04T13:05:46.997Z"
+  },
+  "ultimoBossTimestamp": 1764853624547,
   "adviento": {
     "activo": true,
     "año": 2025,
     "usuarios": {
-      "97027992080542@lid": {
+      "260051814117536@lid": {
+        "diasReclamados": [
+          4,
+          1,
+          3,
+          2
+        ],
+        "primerReclamo": "2025-12-04T13:20:54.045Z",
+        "ultimoReclamo": "2025-12-04T13:21:29.123Z"
+      },
+      "31366532055076@lid": {
         "diasReclamados": [
           1,
           2,
-          3
+          3,
+          4
         ],
-        "primerReclamo": "2025-12-03T16:46:19.874Z",
-        "ultimoReclamo": "2025-12-03T16:46:39.908Z"
+        "primerReclamo": "2025-12-04T13:31:24.302Z",
+        "ultimoReclamo": "2025-12-04T13:31:50.252Z"
+      },
+      "166164298780822@lid": {
+        "diasReclamados": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "primerReclamo": "2025-12-04T13:32:03.181Z",
+        "ultimoReclamo": "2025-12-04T13:32:27.969Z"
+      },
+      "97027992080542@lid": {
+        "diasReclamados": [
+          2
+        ],
+        "primerReclamo": "2025-12-04T13:51:36.351Z",
+        "ultimoReclamo": "2025-12-04T13:51:36.351Z"
+      },
+      "157243618136231@lid": {
+        "diasReclamados": [
+          3,
+          4,
+          1,
+          2
+        ],
+        "primerReclamo": "2025-12-04T15:05:07.787Z",
+        "ultimoReclamo": "2025-12-04T15:05:47.621Z"
       },
       "267232999420158@lid": {
         "diasReclamados": [
           1,
           2,
-          3
+          3,
+          4
         ],
-        "primerReclamo": "2025-12-03T16:46:28.117Z",
-        "ultimoReclamo": "2025-12-03T16:46:52.913Z"
+        "primerReclamo": "2025-12-04T15:07:12.093Z",
+        "ultimoReclamo": "2025-12-04T15:07:34.385Z"
       },
-      "99561821479092@lid": {
-        "diasReclamados": [
-          1,
-          2
-        ],
-        "primerReclamo": "2025-12-03T16:46:40.316Z",
-        "ultimoReclamo": "2025-12-03T16:46:41.862Z"
-      },
-      "125675138736203@lid": {
+      "16445832454279@lid": {
         "diasReclamados": [
           1,
           2,
-          3
+          3,
+          4
         ],
-        "primerReclamo": "2025-12-03T16:46:51.230Z",
-        "ultimoReclamo": "2025-12-03T16:47:01.895Z"
+        "primerReclamo": "2025-12-04T15:07:44.344Z",
+        "ultimoReclamo": "2025-12-04T15:07:55.638Z"
       },
       "12833748193431@lid": {
         "diasReclamados": [
           1,
-          2,
-          3
+          2
         ],
-        "primerReclamo": "2025-12-03T16:46:55.942Z",
-        "ultimoReclamo": "2025-12-03T16:47:48.356Z"
+        "primerReclamo": "2025-12-04T15:08:30.409Z",
+        "ultimoReclamo": "2025-12-04T15:08:36.149Z"
       },
-      "66787295129695@lid": {
+      "109723999285363@lid": {
         "diasReclamados": [
           1,
           2,
-          3
-        ],
-        "primerReclamo": "2025-12-03T16:47:29.921Z",
-        "ultimoReclamo": "2025-12-03T16:47:44.634Z"
-      },
-      "126014944481374@lid": {
-        "diasReclamados": [
           3,
-          2,
-          1
+          4
         ],
-        "primerReclamo": "2025-12-03T17:54:16.770Z",
-        "ultimoReclamo": "2025-12-03T17:55:11.941Z"
+        "primerReclamo": "2025-12-04T16:01:17.466Z",
+        "ultimoReclamo": "2025-12-04T16:01:32.878Z"
+      }
+    }
+  },
+  "monetization": {
+    "adCount": 1
+  },
+  "juegos": {
+    "ahorcado": {
+      "victorias": {
+        "33677157355747@lid": 1,
+        "158166499246318@lid": 2
+      },
+      "120363418410414336@g.us": {
+        "activo": true,
+        "palabra": "comida",
+        "adivinada": "_o_i_a",
+        "intentos": 2,
+        "letrasUsadas": [
+          "a",
+          "g",
+          "e",
+          "i",
+          "o",
+          "p",
+          "u"
+        ]
       }
     }
   }

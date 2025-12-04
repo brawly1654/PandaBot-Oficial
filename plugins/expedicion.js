@@ -18,16 +18,16 @@ const CONFIG_EXPEDICION = {
         'custom': 6 * 60 * 60 * 1000           // 6 horas (por defecto)
     },
     recompensas: {
-        'común': { monedas: 15000, probabilidadEfecto: 0.01, probabilidadItem: 0.005 },
-        'raro': { monedas: 45000, probabilidadEfecto: 0.03, probabilidadItem: 0.01 },
-        'épico': { monedas: 120000, probabilidadEfecto: 0.08, probabilidadItem: 0.02 },
-        'mítico': { monedas: 300000, probabilidadEfecto: 0.15, probabilidadItem: 0.04 },
-        'legendario': { monedas: 500000, probabilidadEfecto: 0.25, probabilidadItem: 0.08 },
-        'Ultra-Legendario': { monedas: 10000000, probabilidadEfecto: 0.35, probabilidadItem: 0.15 },
-        'Secret': { monedas: 50000000, probabilidadEfecto: 0.50, probabilidadItem: 0.25 },
-        'OG': { monedas: 100000000, probabilidadEfecto: 0.75, probabilidadItem: 0.40 },
-        'GOD': { monedas: 150000000, probabilidadEfecto: 0.8, probabilidadItem: 0.40 },
-        'custom': { monedas: 20000, probabilidadEfecto: 0.05, probabilidadItem: 0.02 }
+        'común': { monedas: 500, probabilidadEfecto: 0.01, probabilidadItem: 0.005 },
+        'raro': { monedas: 1000, probabilidadEfecto: 0.03, probabilidadItem: 0.01 },
+        'épico': { monedas: 1500, probabilidadEfecto: 0.08, probabilidadItem: 0.02 },
+        'mítico': { monedas: 2000, probabilidadEfecto: 0.15, probabilidadItem: 0.04 },
+        'legendario': { monedas: 2500, probabilidadEfecto: 0.25, probabilidadItem: 0.08 },
+        'Ultra-Legendario': { monedas: 3000, probabilidadEfecto: 0.35, probabilidadItem: 0.15 },
+        'Secret': { monedas: 3500, probabilidadEfecto: 0.50, probabilidadItem: 0.25 },
+        'OG': { monedas: 4000, probabilidadEfecto: 0.75, probabilidadItem: 0.40 },
+        'GOD': { monedas: 4500, probabilidadEfecto: 0.8, probabilidadItem: 0.40 },
+        'custom': { monedas: 3500, probabilidadEfecto: 0.05, probabilidadItem: 0.02 }
     },
     itemsEspeciales: {
         'común': ['Tickets de Circo', 'Fragmentos Comunes'],
@@ -111,15 +111,15 @@ async function mostrarAyuda(sock, from, user) {
     mensaje += `• GOD: 6 horas\n\n`;
     
     mensaje += `💎 *Recompensas por rareza:*\n`;
-    mensaje += `• común: 15,000 🐼\n`;
-    mensaje += `• raro: 45,000 🐼\n`;
-    mensaje += `• épico: 120,000 🐼\n`;
-    mensaje += `• mítico: 300,000 🐼\n`;
-    mensaje += `• legendario: 500,000 🐼\n`;
-    mensaje += `• Ultra-Legendario: 10,000,000 🐼\n`;
-    mensaje += `• Secret: 50,000,000 🐼\n`;
-    mensaje += `• OG: 100,000,000 🐼\n\n`;
-    mensaje += `• GOD: 150,000,000 🐼\n\n`;
+    mensaje += `• común: 500 🐼\n`;
+    mensaje += `• raro: 1.000 🐼\n`;
+    mensaje += `• épico: 1.500 🐼\n`;
+    mensaje += `• mítico: 2.000 🐼\n`;
+    mensaje += `• legendario: 2.500 🐼\n`;
+    mensaje += `• Ultra-Legendario: 3.000 🐼\n`;
+    mensaje += `• Secret: 3.500 🐼\n`;
+    mensaje += `• OG: 4.000 🐼\n\n`;
+    mensaje += `• GOD: 4.500 🐼\n\n`;
 
     mensaje += `💡 *Consejo:* Envía personajes más raros para mejores recompensas y items especiales!`;
 

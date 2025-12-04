@@ -20,7 +20,7 @@ export async function run(sock, msg, args) {
 
     if (user.personajes.length === 0) {
         await sock.sendMessage(from, { 
-            text: '📦 No tienes personajes aún.\n\n💡 Compra uno con:\n• `.buy <nombre>`\n• `.buy random`\n• `.buy Spooky Lucky Block`' 
+            text: '📦 No tienes personajes aún.\n\n💡 Compra uno con:\n• `.buy2 <nombre>`\n• `.buy2 random`\n• `.buy2 Spooky Lucky Block`' 
         });
         return;
     }

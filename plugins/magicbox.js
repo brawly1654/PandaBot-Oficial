@@ -31,7 +31,7 @@ export async function run(sock, msg) {
   }
   
   const premios = [
-    { type: 'pandacoins', value: Math.floor(Math.random() * 20000) + 10000 },
+    { type: 'pandacoins', value: Math.floor(Math.random() * 500) + 5000 },
     { type: 'legendario', value: null },
     { type: 'creditos', value: Math.floor(Math.random() * 10) + 5 }
   ];

@@ -17,7 +17,7 @@ import {
   makeCacheableSignalKeyStore
 } from "@whiskeysockets/baileys";
 import fs from 'fs';
-
+import { petDB } from './data/petsystem.js';
 // ============================================
 // CONFIGURACIÓN DE LOGS - SILENCIAR BAILEYS
 // ============================================

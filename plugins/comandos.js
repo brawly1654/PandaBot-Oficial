@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-export const command = 'comandos';
+export const command = 'allfunctions';
 
 export async function run(sock, msg, args) {
     const from = msg.key.remoteJid;

@@ -3,28 +3,28 @@ import { ownerNumber } from '../config.js';
 import fs from 'fs';
 
 const premiosAdviento = {
-  1: { tipo: 'pandacoins', cantidad: 10000000000, mensaje: "🎄 ¡Primer día de Adviento! 🎁 10,000,000,000 pandacoins" },
+  1: { tipo: 'pandacoins', cantidad: 30000, mensaje: "🎄 ¡Primer día de Adviento! 🎁 10,000,000,000 pandacoins" },
   2: { tipo: 'titulo', titulo: "🍀 Suertudo", mensaje: "🎄 Día 2 - Título especial: 🍀 Suertudo" },
   3: { tipo: 'vip', duracion: 24, mensaje: "🎄 Día 3 - 24 horas de VIP ⭐" },
-  4: { tipo: 'pandacoins', cantidad: 10000000000, mensaje: "🎄 Día 4 - 20,000,000,000 pandacoins" },
-  5: { tipo: 'personaje', personaje: "Everything", mensaje: "🎄 Día 5 - Personaje exclusivo: usa .misps para ver qué te tocó" },
+  4: { tipo: 'pandacoins', cantidad: 30000, mensaje: "🎄 Día 4 - 20,000,000,000 pandacoins" },
+  5: { tipo: 'personaje', personaje: "Santa PandaBot", mensaje: "🎄 Día 5 - Personaje exclusivo: usa .misps para ver qué te tocó" },
   6: { tipo: 'giros', cantidad: 500, mensaje: "🎄 Día 6 - 500 tiros en Coin Master System 🎯" },
   7: { tipo: 'creditos', cantidad: 2000, mensaje: "🎄 Día 7 - 2,000 créditos en Coin Master System 💰" },
   8: { tipo: 'vip', duracion: 24, mensaje: "🎄 Día 8 - 24 horas de VIP ⭐" },
-  9: { tipo: 'pandacoins', cantidad: 10000000000, mensaje: "🎄 Día 9 - 30,000,000,000 Pandacoins" },
+  9: { tipo: 'pandacoins', cantidad: 30000, mensaje: "🎄 Día 9 - 30,000,000,000 Pandacoins" },
   10: { tipo: 'diamantes', cantidad: 30, mensaje: "🎄 Día 10 - 30 diamantes 💎" },
   11: { tipo: 'titulo', titulo: "🤡 Payaso", mensaje: "🎄 Día 11 - Título especial: 🤡 Payaso" },
   12: { tipo: 'nada', mensaje: "🎄 Día 12 - Encontraste un chocolate con hongos 🍫🍄\n(No ganaste nada, mejor suerte mañana)" },
-  13: { tipo: 'pandacoins', cantidad: 10000000000, mensaje: "🎄 Día 13 - 20,000,000,000 Pandacoins" },
-  14: { tipo: 'personaje', personaje: "Santa Claus Legendario", mensaje: "🎄 Día 14 - Personaje: usa .misps para ver qué te tocó." },
+  13: { tipo: 'pandacoins', cantidad: 30000, mensaje: "🎄 Día 13 - 20,000,000,000 Pandacoins" },
+  14: { tipo: 'personaje', personaje: "Nyan Cat", mensaje: "🎄 Día 14 - Personaje: usa .misps para ver qué te tocó." },
   15: { tipo: 'giros', cantidad: 500, mensaje: "🎄 Día 15 - 500 tiros en Coin Master System 🎯" },
-  16: { tipo: 'pandacoins', cantidad: 10000000000, mensaje: "🎄 Día 16 - 15,000,000,000 Pandacoins" },
+  16: { tipo: 'pandacoins', cantidad: 30000, mensaje: "🎄 Día 16 - 15,000,000,000 Pandacoins" },
   17: { tipo: 'vip', duracion: 48, mensaje: "🎄 Día 17 - 48 horas de VIP ⭐" },
   18: { tipo: 'titulo', titulo: "🎁 Regalero", mensaje: "🎄 Día 18 - Título especial: 🎁 Regalero" },
-  19: { tipo: 'personaje', personaje: "Rodolfo el Reno", mensaje: "🎄 Día 19 - Personaje festivo: usa .misps para ver qué te tocó." },
+  19: { tipo: 'personaje', personaje: "Smurf Cat", mensaje: "🎄 Día 19 - Personaje festivo: usa .misps para ver qué te tocó." },
   20: { tipo: 'nada', mensaje: "🎄 Día 20 - El Grinch visitó tu calendario... ¡No ganaste nada! 🎄" },
   21: { tipo: 'diamantes', cantidad: 50, mensaje: "🎄 Día 21 - 50 diamantes 💎" },
-  22: { tipo: 'pandacoins', cantidad: 10000000000, mensaje: "🎄 Día 22 - 25,000,000,000 Pandacoins" },
+  22: { tipo: 'pandacoins', cantidad: 30000, mensaje: "🎄 Día 22 - 25,000,000,000 Pandacoins" },
   23: { tipo: 'giros', cantidad: 1000, mensaje: "🎄 Día 23 - 1,000 tiros en Coin Master System 🎯" },
   24: { tipo: 'premio_especial', mensaje: "🎄 ¡FELIZ NAVIDAD! 🎅 - Premio Especial Navideño: 100,000,000,000 Pandacoins + 100 diamantes + Título 🎄 Navideño ✨" }
 };
@@ -252,14 +252,14 @@ async function reclamarDiaAdviento(sock, from, sender, db, diaSolicitado, diaAct
         break;
 
       case 'premio_especial':
-        user.pandacoins = (user.pandacoins || 0) + 100000000000;
+        user.pandacoins = (user.pandacoins || 0) + 30000;
         user.diamantes = (user.diamantes || 0) + 100;
         if (!user.achievements) user.achievements = { titles: [], selectedTitle: null };
         const tituloNavidad = "🎄 Navideño";
         if (!user.achievements.titles.includes(tituloNavidad)) {
           user.achievements.titles.push(tituloNavidad);
         }
-        mensajePremio = `✨ PREMIO ESPECIAL: 100B pandacoins + 100 diamantes + Título "🎄 Navideño"`;
+        mensajePremio = `✨ PREMIO ESPECIAL: 30k pandacoins + 100 diamantes + Título "🎄 Navideño"`;
         recompensaAplicada = true;
         break;
     }

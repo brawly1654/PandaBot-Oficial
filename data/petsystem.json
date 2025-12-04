@@ -1,0 +1,472 @@
+{
+  "pets": {
+    "pet_1764791692090_f2zr55qg1": {
+      "id": "pet_1764791692090_f2zr55qg1",
+      "name": "Erick",
+      "type": "dog",
+      "owners": [
+        "111064062640327@lid"
+      ],
+      "level": 1,
+      "exp": 0,
+      "expToNextLevel": 100,
+      "health": 75,
+      "maxHealth": 75,
+      "happiness": 85,
+      "hunger": 65,
+      "energy": 100,
+      "birthDate": "2025-12-03T19:54:52.090Z",
+      "lastInteraction": "2025-12-04T00:39:28.390Z",
+      "status": "awake",
+      "location": "home",
+      "inventory": {
+        "food": {},
+        "toys": {}
+      },
+      "stats": {
+        "timesFed": 0,
+        "timesPlayed": 0,
+        "timesWalked": 0,
+        "timesSlept": 0,
+        "totalExp": 0
+      }
+    },
+    "pet_1764791714396_jv07qvoqi": {
+      "id": "pet_1764791714396_jv07qvoqi",
+      "name": "Hitler2",
+      "type": "hamster",
+      "owners": [
+        "228260516507722@lid"
+      ],
+      "level": 1,
+      "exp": 15,
+      "expToNextLevel": 100,
+      "health": 50,
+      "maxHealth": 50,
+      "happiness": 100,
+      "hunger": 90,
+      "energy": 85,
+      "birthDate": "2025-12-03T19:55:14.396Z",
+      "lastInteraction": "2025-12-03T19:55:41.527Z",
+      "status": "awake",
+      "location": "home",
+      "inventory": {
+        "food": {},
+        "toys": {}
+      },
+      "stats": {
+        "timesFed": 0,
+        "timesPlayed": 1,
+        "timesWalked": 0,
+        "timesSlept": 0,
+        "totalExp": 0
+      }
+    },
+    "pet_1764791850430_ogmhgc3d0": {
+      "id": "pet_1764791850430_ogmhgc3d0",
+      "name": "pepsi",
+      "type": "dog",
+      "owners": [
+        "260051814117536@lid"
+      ],
+      "level": 1,
+      "exp": 25,
+      "expToNextLevel": 100,
+      "health": 75,
+      "maxHealth": 75,
+      "happiness": 100,
+      "hunger": 45,
+      "energy": 85,
+      "birthDate": "2025-12-03T19:57:30.430Z",
+      "lastInteraction": "2025-12-03T20:12:26.255Z",
+      "status": "sleeping",
+      "location": "home",
+      "inventory": {
+        "food": {},
+        "toys": {}
+      },
+      "stats": {
+        "timesFed": 1,
+        "timesPlayed": 1,
+        "timesWalked": 0,
+        "timesSlept": 1,
+        "totalExp": 0
+      }
+    },
+    "pet_1764792068583_v27erqxkr": {
+      "id": "pet_1764792068583_v27erqxkr",
+      "name": "Mochi",
+      "type": "fox",
+      "owners": [
+        "12833748193431@lid"
+      ],
+      "level": 1,
+      "exp": 20,
+      "expToNextLevel": 100,
+      "health": 65,
+      "maxHealth": 65,
+      "happiness": 80,
+      "hunger": 35,
+      "energy": 100,
+      "birthDate": "2025-12-03T20:01:08.583Z",
+      "lastInteraction": "2025-12-03T20:27:36.200Z",
+      "status": "awake",
+      "location": "home",
+      "inventory": {
+        "food": {},
+        "toys": {}
+      },
+      "stats": {
+        "timesFed": 2,
+        "timesPlayed": 0,
+        "timesWalked": 0,
+        "timesSlept": 0,
+        "totalExp": 0
+      }
+    },
+    "pet_1764808799638_ia1g3ah62": {
+      "id": "pet_1764808799638_ia1g3ah62",
+      "name": "Brell",
+      "type": "dragon",
+      "owners": [
+        "166164298780822@lid"
+      ],
+      "level": 1,
+      "exp": 75,
+      "expToNextLevel": 100,
+      "health": 100,
+      "maxHealth": 100,
+      "happiness": 100,
+      "hunger": 10,
+      "energy": 35,
+      "birthDate": "2025-12-04T00:39:59.638Z",
+      "lastInteraction": "2025-12-04T13:17:01.621Z",
+      "status": "awake",
+      "location": "home",
+      "inventory": {
+        "food": {},
+        "toys": {}
+      },
+      "stats": {
+        "timesFed": 2,
+        "timesPlayed": 1,
+        "timesWalked": 2,
+        "timesSlept": 0,
+        "totalExp": 0
+      }
+    },
+    "pet_1764854057515_0jd34ef89": {
+      "id": "pet_1764854057515_0jd34ef89",
+      "name": "El bicho mio",
+      "type": "cat",
+      "owners": [
+        "97027992080542@lid"
+      ],
+      "level": 1,
+      "exp": 25,
+      "expToNextLevel": 100,
+      "health": 70,
+      "maxHealth": 70,
+      "happiness": 100,
+      "hunger": 50,
+      "energy": 85,
+      "birthDate": "2025-12-04T13:14:17.515Z",
+      "lastInteraction": "2025-12-04T13:42:07.602Z",
+      "status": "awake",
+      "location": "home",
+      "inventory": {
+        "food": {
+          "apple": 10
+        },
+        "toys": {}
+      },
+      "stats": {
+        "timesFed": 1,
+        "timesPlayed": 1,
+        "timesWalked": 0,
+        "timesSlept": 0,
+        "totalExp": 0
+      }
+    }
+  },
+  "couples": {
+    "couple_1764791256959": {
+      "id": "couple_1764791256959",
+      "users": [
+        "166164298780822@lid",
+        "111064062640327@lid"
+      ],
+      "petId": "pet_1764791692090_f2zr55qg1",
+      "lovePoints": 100,
+      "level": 1,
+      "createdAt": "2025-12-03T19:47:36.959Z",
+      "lastInteraction": "2025-12-03T19:47:36.959Z",
+      "status": "active"
+    }
+  },
+  "adoptionRequests": {
+    "req_1764791119123": {
+      "id": "req_1764791119123",
+      "from": "166164298780822@lid",
+      "to": "111064062640327@lid",
+      "groupId": "120363402403091432@g.us",
+      "status": "accepted",
+      "createdAt": "2025-12-03T19:45:19.123Z",
+      "expiresAt": 1764877519123
+    },
+    "req_1764792096743": {
+      "id": "req_1764792096743",
+      "from": "12833748193431@lid",
+      "to": "230004726169681@lid",
+      "groupId": "120363402403091432@g.us",
+      "status": "pending",
+      "createdAt": "2025-12-03T20:01:36.743Z",
+      "expiresAt": 1764878496743
+    },
+    "req_1764808847476": {
+      "id": "req_1764808847476",
+      "from": "166164298780822@lid",
+      "to": "31366532055076@lid",
+      "groupId": "120363402403091432@g.us",
+      "status": "pending",
+      "createdAt": "2025-12-04T00:40:47.476Z",
+      "expiresAt": 1764895247476
+    },
+    "req_1764808865543": {
+      "id": "req_1764808865543",
+      "from": "31366532055076@lid",
+      "to": "166164298780822@lid",
+      "groupId": "120363402403091432@g.us",
+      "status": "pending",
+      "createdAt": "2025-12-04T00:41:05.543Z",
+      "expiresAt": 1764895265543
+    }
+  },
+  "petStats": {
+    "totalPets": 6,
+    "totalCouples": 1,
+    "topPets": [
+      {
+        "id": "pet_1764791095251_vh0nudnp9",
+        "name": "Arisu",
+        "type": "rabbit",
+        "level": 1,
+        "owners": [
+          "166164298780822@lid"
+        ]
+      },
+      {
+        "id": "pet_1764791850430_ogmhgc3d0",
+        "name": "pepsi",
+        "type": "dog",
+        "level": 1,
+        "owners": [
+          "260051814117536@lid"
+        ]
+      },
+      {
+        "id": "pet_1764792068583_v27erqxkr",
+        "name": "Mochi",
+        "type": "fox",
+        "level": 1,
+        "owners": [
+          "12833748193431@lid"
+        ]
+      },
+      {
+        "id": "pet_1764791714396_jv07qvoqi",
+        "name": "Hitler2",
+        "type": "hamster",
+        "level": 1,
+        "owners": [
+          "228260516507722@lid"
+        ]
+      },
+      {
+        "id": "pet_1764791692090_f2zr55qg1",
+        "name": "Erick",
+        "type": "dog",
+        "level": 1,
+        "owners": [
+          "166164298780822@lid",
+          "111064062640327@lid"
+        ]
+      }
+    ]
+  },
+  "petTypes": {
+    "dragon": {
+      "name": "🐉 Dragón",
+      "rarity": "legendary",
+      "baseStats": {
+        "health": 100,
+        "happiness": 80,
+        "hunger": 50
+      }
+    },
+    "unicorn": {
+      "name": "🦄 Unicornio",
+      "rarity": "epic",
+      "baseStats": {
+        "health": 90,
+        "happiness": 90,
+        "hunger": 40
+      }
+    },
+    "phoenix": {
+      "name": "🔥 Fénix",
+      "rarity": "epic",
+      "baseStats": {
+        "health": 85,
+        "happiness": 85,
+        "hunger": 45
+      }
+    },
+    "wolf": {
+      "name": "🐺 Lobo",
+      "rarity": "rare",
+      "baseStats": {
+        "health": 80,
+        "happiness": 75,
+        "hunger": 60
+      }
+    },
+    "cat": {
+      "name": "🐱 Gato",
+      "rarity": "common",
+      "baseStats": {
+        "health": 70,
+        "happiness": 80,
+        "hunger": 70
+      }
+    },
+    "dog": {
+      "name": "🐶 Perro",
+      "rarity": "common",
+      "baseStats": {
+        "health": 75,
+        "happiness": 85,
+        "hunger": 65
+      }
+    },
+    "fox": {
+      "name": "🦊 Zorro",
+      "rarity": "uncommon",
+      "baseStats": {
+        "health": 65,
+        "happiness": 70,
+        "hunger": 75
+      }
+    },
+    "rabbit": {
+      "name": "🐰 Conejo",
+      "rarity": "uncommon",
+      "baseStats": {
+        "health": 60,
+        "happiness": 85,
+        "hunger": 80
+      }
+    },
+    "bird": {
+      "name": "🐦 Pájaro",
+      "rarity": "common",
+      "baseStats": {
+        "health": 55,
+        "happiness": 75,
+        "hunger": 85
+      }
+    },
+    "hamster": {
+      "name": "🐹 Hámster",
+      "rarity": "common",
+      "baseStats": {
+        "health": 50,
+        "happiness": 90,
+        "hunger": 90
+      }
+    }
+  },
+  "foodItems": {
+    "apple": {
+      "name": "🍎 Manzana",
+      "health": 10,
+      "happiness": 5,
+      "hunger": -20,
+      "price": 100
+    },
+    "meat": {
+      "name": "🥩 Carne",
+      "health": 15,
+      "happiness": 10,
+      "hunger": -30,
+      "price": 200
+    },
+    "fish": {
+      "name": "🐟 Pescado",
+      "health": 12,
+      "happiness": 8,
+      "hunger": -25,
+      "price": 150
+    },
+    "carrot": {
+      "name": "🥕 Zanahoria",
+      "health": 8,
+      "happiness": 3,
+      "hunger": -15,
+      "price": 80
+    },
+    "cake": {
+      "name": "🍰 Pastel",
+      "health": 5,
+      "happiness": 20,
+      "hunger": -10,
+      "price": 300
+    },
+    "bone": {
+      "name": "🦴 Hueso",
+      "health": 20,
+      "happiness": 15,
+      "hunger": -35,
+      "price": 250
+    },
+    "milk": {
+      "name": "🥛 Leche",
+      "health": 7,
+      "happiness": 12,
+      "hunger": -18,
+      "price": 120
+    }
+  },
+  "toyItems": {
+    "ball": {
+      "name": "⚽ Pelota",
+      "happiness": 15,
+      "durability": 10,
+      "price": 150
+    },
+    "doll": {
+      "name": "🧸 Muñeco",
+      "happiness": 20,
+      "durability": 15,
+      "price": 250
+    },
+    "rope": {
+      "name": "🪢 Cuerda",
+      "happiness": 10,
+      "durability": 20,
+      "price": 100
+    },
+    "frisbee": {
+      "name": "🥏 Frisbee",
+      "happiness": 18,
+      "durability": 12,
+      "price": 200
+    },
+    "puzzle": {
+      "name": "🧩 Rompecabezas",
+      "happiness": 25,
+      "durability": 8,
+      "price": 350
+    }
+  }
+}

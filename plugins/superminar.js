@@ -27,7 +27,7 @@ export async function run(sock, msg) {
     return;
   }
 
-  const coinsGanados = 1000000000;
+  const coinsGanados = 10000;
   const diamantesGanados = 50;
   
   user.pandacoins = (user.pandacoins || 0) + coinsGanados;
