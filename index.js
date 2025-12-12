@@ -1,139 +1,34 @@
-import { reiniciarStock } from './plugins/addstock.js';
-import { migrarStockPlano } from './plugins/addstock.js';
-import { limpiarPersonajes } from "./limpiarPersonajes.js";
-import qrcode from "qrcode-terminal";
-import { handleMessage } from './handler.js';
-import chalk from 'chalk';
-import NodeCache from 'node-cache';
-import {
-  makeWASocket,
-  useMultiFileAuthState,
-  fetchLatestBaileysVersion,
-  DisconnectReason,
-  makeCacheableSignalKeyStore
-} from "@whiskeysockets/baileys";
-import fs from 'fs';
+import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import fs from 'fs';
 
+const require = createRequire(import.meta.url);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-process.env.PINO_LOG_LEVEL = 'silent';
-process.env.PINO_LEVEL = 'silent';
-process.env.BAILEYS_LOG_LEVEL = 'silent';
+import chalk from 'chalk';
+import pino from 'pino';
+import qrcode from 'qrcode-terminal';
+import NodeCache from 'node-cache';
+import { 
+  makeWASocket, 
+  useMultiFileAuthState, 
+  fetchLatestBaileysVersion, 
+  DisconnectReason,
+  makeCacheableSignalKeyStore,
+  Browsers 
+} from "@whiskeysockets/baileys";
+import { Boom } from "@hapi/boom";
+import { handleMessage } from './handler.js';
+import { cargarDatabase, guardarDatabase } from './data/database.js';
+import { createDatabaseBackup } from './tools/createBackup.js';
+import { reiniciarStock } from './plugins/addstock.js';
+import { limpiarPersonajes } from "./limpiarPersonajes.js";
 
-const streamOriginal = process.stdout.write;
-const streamErrorOriginal = process.stderr.write;
-
-const filtrosLogs = [
-  'Closing session: SessionEntry',
-  'Closing stale open session',
-  'SessionEntry {',
-  '_chains:',
-  'registrationId:',
-  'ephemeralKeyPair:',
-  'currentRatchet:',
-  'indexInfo:',
-  'pendingPreKey:',
-  'lastRemoteEphemeralKey',
-  'previousCounter:',
-  'rootKey:',
-  'baseKey:',
-  'closed:',
-  'used:',
-  'created:',
-  'remoteIdentityKey:',
-  'signedKeyId:',
-  'preKeyId:',
-  'chainKey:',
-  'chainType:',
-  'messageKeys:',
-  'pubKey: <Buffer',
-  'privKey: <Buffer'
-];
-
-process.stdout.write = function(chunk, encoding, callback) {
-  const texto = chunk.toString();
-  
-  if (filtrosLogs.some(filtro => texto.includes(filtro))) {
-    if (callback) callback();
-    return true;
-  }
-  
-  if (texto.includes('0|bot  |')) {
-    const contenido = texto.replace('0|bot  |', '').trim();
-    
-    if (filtrosLogs.some(filtro => contenido.includes(filtro))) {
-      if (callback) callback();
-      return true;
-    }
-    
-    if (contenido.includes('💾') || contenido.includes('🧹') || contenido.includes('🔄')) {
-      const hora = new Date().toLocaleTimeString();
-      const mensajeLimpio = contenido.replace(/-\s*\d+:\d+:\d+\s*(AM|PM)/, `- ${hora}`);
-      const resultado = `0|bot  | ${mensajeLimpio}\n`;
-      return streamOriginal.call(process.stdout, resultado, encoding, callback);
-    }
-  }
-  
-  return streamOriginal.call(process.stdout, chunk, encoding, callback);
-};
-
-process.stderr.write = function(chunk, encoding, callback) {
-  const texto = chunk.toString();
-  
-  if (filtrosLogs.some(filtro => texto.includes(filtro))) {
-    if (callback) callback();
-    return true;
-  }
-  
-  if (texto.includes('0|bot  |')) {
-    const contenido = texto.replace('0|bot  |', '').trim();
-    
-    if (filtrosLogs.some(filtro => contenido.includes(filtro))) {
-      if (callback) callback();
-      return true;
-    }
-  }
-  
-  return streamErrorOriginal.call(process.stderr, chunk, encoding, callback);
-};
-
-const loggerMock = {
-  trace: () => {},
-  debug: () => {},
-  info: () => {},
-  warn: () => {},
-  error: () => {},
-  fatal: () => {},
-  child: () => loggerMock,
-  level: 'silent',
-  isLevelEnabled: () => false,
-  getLevel: () => 100,
-  silent: () => {}
-};
-
-const loggerBaileys = {
-  ...loggerMock,
-  error: (msg, ...args) => {
-    if (typeof msg === 'string') {
-      if (msg.includes('Failed to connect') || 
-          msg.includes('Connection closed') ||
-          msg.includes('Authentication failed')) {
-        console.log(chalk.red('❌ Error crítico:'), msg);
-      }
-    }
-  }
-};
-
-console.clear();
-console.log(chalk.magenta(`
-╔══════════════════════════════════╗
-║        🐼 PANDABOT 🐼            ║
-║     📱 Reconexión Segura         ║
-╚══════════════════════════════════╝
-`));
+// ======================
+// VARIABLES GLOBALES
+// ======================
 
 global.psSpawn = {
   activo: false,
@@ -142,352 +37,484 @@ global.psSpawn = {
   reclamadoPor: null
 };
 
-global.cache = new NodeCache({
-  stdTTL: 300,
-  checkperiod: 120,
-  maxKeys: 100
-});
+// Sistema de rate limiting
+global.rateLimit = new Map();
+global.MAX_REQUESTS_PER_MINUTE = 30;
+global.MAX_MESSAGES_PER_SECOND = 15;
+global.MAX_CONCURRENT_REQUESTS = 3;
 
+global.requestStats = {
+  total: 0,
+  success: 0,
+  errors: 0,
+  rateLimited: 0
+};
+
+// Cargar base de datos coinmaster
 try {
-  const coinmasterPath = join(__dirname, 'coinmaster.json');
-  if (fs.existsSync(coinmasterPath)) {
-    global.cmDB = JSON.parse(fs.readFileSync(coinmasterPath, 'utf8'));
-    console.log(chalk.green('✅ Coinmaster cargado'));
-  } else {
-    global.cmDB = {};
-    console.log(chalk.yellow('⚠️  Coinmaster no encontrado, creando nuevo'));
-  }
+  global.cmDB = JSON.parse(fs.readFileSync('./coinmaster.json', 'utf-8'));
 } catch (error) {
   global.cmDB = {};
-  console.log(chalk.red('❌ Error cargando coinmaster:'), error.message);
+  console.log(chalk.yellow('📁 Creando nueva base de datos coinmaster...'));
+  fs.writeFileSync('./coinmaster.json', JSON.stringify({}, null, 2));
 }
 
 global.guardarCM = () => {
   try {
-    const coinmasterPath = join(__dirname, 'coinmaster.json');
-    fs.writeFileSync(coinmasterPath, JSON.stringify(global.cmDB, null, 2));
+    fs.writeFileSync('./coinmaster.json', JSON.stringify(global.cmDB, null, 2));
   } catch (error) {
-    console.log(chalk.red('❌ Error guardando coinmaster:'), error.message);
+    console.error(chalk.red('❌ Error guardando coinmaster:'), error.message);
   }
 };
 
+// Cooldown para recolección
 global.recolectarCooldown = {};
 
-let lastQR = '';
+// Logs de terminal
+global.terminalLogs = [];
 
-function displayQR(qr) {
-  if (qr !== lastQR) {
-    lastQR = qr;
-    console.clear();
-    console.log(chalk.magenta(`
-╔══════════════════════════════════╗
-║        🐼 PANDABOT 🐼            ║
-║     📱 ESCANEA EL QR CODE       ║
-╚══════════════════════════════════╝
-`));
-    console.log(chalk.yellow('📱 ESCANEA ESTE CÓDIGO QR CON WHATSAPP:'));
-    console.log(chalk.yellow('⏰ Tienes 60 segundos para escanearlo\n'));
-    qrcode.generate(qr, { small: true });
-    console.log(chalk.cyan('\n📱 PASOS PARA ESCANEAR:'));
-    console.log(chalk.cyan('1. Abre WhatsApp en tu teléfono'));
-    console.log(chalk.cyan('2. Toca los 3 puntos (⋮) > Dispositivos vinculados'));
-    console.log(chalk.cyan('3. Toca "Vincular un dispositivo"'));
-    console.log(chalk.cyan('4. Escanea el código QR mostrado arriba'));
-    console.log(chalk.cyan('\n🔗 También puedes usar WhatsApp Web:'));
-    console.log(chalk.cyan('   web.whatsapp.com → ⋮ → Vincular dispositivo'));
-  }
+// Configuración de limpieza de personajes
+try {
+  const resultado = limpiarPersonajes("./data/personajes.json");
+  console.log(chalk.green(`✅ Personajes limpiados: ${resultado.length}`));
+} catch (error) {
+  console.error(chalk.red('❌ Error en limpiarPersonajes:'), error.message);
 }
 
-function logMessage(type, message, data = null) {
-  const timestamp = new Date().toLocaleTimeString();
-  const colors = {
-    success: chalk.green,
-    error: chalk.red,
-    info: chalk.cyan,
-    warning: chalk.yellow,
-    event: chalk.magenta,
-    message: chalk.blue
-  };
-  if (type === 'message') {
-    const from = data?.from || 'Desconocido';
-    const text = message.length > 50 ? message.substring(0, 47) + '...' : message;
-    console.log(`${chalk.gray(timestamp)} ${chalk.blue('📱')} ${chalk.yellow(from.split('@')[0])}: ${text}`);
-  } else if (colors[type]) {
-    console.log(`${chalk.gray(timestamp)} ${colors[type](message)}`);
-  }
-}
+// ======================
+// CONFIGURACIÓN INICIAL
+// ======================
 
-async function connectWhatsApp() {
-  const sessions = join(__dirname, 'auth_info');
-  if (!fs.existsSync(sessions)) {
-    fs.mkdirSync(sessions, { recursive: true });
-  }
+const sessionsDir = 'auth_info';
+const methodCodeQR = process.argv.includes("qr");
+const methodCode = process.argv.includes("code");
+let startupBackupCreated = false;
+let reconnectAttempts = 0;
+const MAX_RECONNECT_ATTEMPTS = 5;
+const msgRetryCounterCache = new NodeCache();
+
+// Backup inicial
+function ensureStartupBackup() {
+  if (startupBackupCreated) return;
   try {
-    console.log(chalk.blue('🔄 Iniciando conexión a WhatsApp...'));
-    const { version } = await fetchLatestBaileysVersion();
-    console.log(chalk.gray(`📦 Usando Baileys v${version.join('.')}`));
-    const { state, saveCreds } = await useMultiFileAuthState(sessions);
-    console.log(chalk.green('✅ Estado de autenticación cargado'));
-    const credsFile = join(sessions, 'creds.json');
-    const hasCreds = fs.existsSync(credsFile);
-    if (hasCreds) {
-      console.log(chalk.cyan('🔑 Credenciales encontradas, intentando restaurar sesión...'));
+    const { backupPath } = createDatabaseBackup({
+      filenameFormatter: (timestamp) => `backup_startup_${timestamp}.json`,
+      filenamePrefix: 'backup',
+      maxBackups: 5
+    });
+    console.log(chalk.cyan(`📦 Backup inicial creado: ${backupPath}`));
+    startupBackupCreated = true;
+  } catch (error) {
+    console.error(chalk.red('❌ Error en backup:'), error.message);
+  }
+}
+
+// ======================
+// SISTEMA DE RATE LIMIT
+// ======================
+
+let globalRequestCount = 0;
+let lastResetTime = Date.now();
+
+// Resetear contadores cada minuto
+setInterval(() => {
+  globalRequestCount = 0;
+  lastResetTime = Date.now();
+  global.rateLimit.clear();
+  console.log(chalk.gray('🔄 Rate limit reseteado'));
+}, 60000);
+
+function checkRateLimit(userId) {
+  const now = Date.now();
+  
+  // Rate limit global por minuto
+  if (globalRequestCount >= global.MAX_MESSAGES_PER_SECOND * 60) {
+    global.requestStats.rateLimited++;
+    return false;
+  }
+  
+  // Rate limit por usuario
+  const userKey = `user_${userId}`;
+  const userData = global.rateLimit.get(userKey) || { count: 0, lastReset: now };
+  
+  if (now - userData.lastReset > 60000) {
+    userData.count = 0;
+    userData.lastReset = now;
+  }
+  
+  if (userData.count >= global.MAX_REQUESTS_PER_MINUTE) {
+    global.requestStats.rateLimited++;
+    return false;
+  }
+  
+  userData.count++;
+  global.rateLimit.set(userKey, userData);
+  globalRequestCount++;
+  global.requestStats.total++;
+  
+  return true;
+}
+
+// ======================
+// FUNCIONES DE LOGGING
+// ======================
+
+/**
+ * Extrae el texto de un mensaje
+ */
+function extractMessageText(msg) {
+  if (!msg.message) return '';
+  
+  // Mensaje de texto simple
+  if (msg.message.conversation) {
+    return msg.message.conversation;
+  }
+  
+  // Mensaje extendido (reply, etc.)
+  if (msg.message.extendedTextMessage?.text) {
+    return msg.message.extendedTextMessage.text;
+  }
+  
+  // Imagen con caption
+  if (msg.message.imageMessage?.caption) {
+    return msg.message.imageMessage.caption;
+  }
+  
+  // Video con caption
+  if (msg.message.videoMessage?.caption) {
+    return msg.message.videoMessage.caption;
+  }
+  
+  // Documento con caption
+  if (msg.message.documentMessage?.caption) {
+    return msg.message.documentMessage.caption;
+  }
+  
+  return '';
+}
+
+/**
+ * Formatea el remitente para mostrar
+ */
+function formatSender(msg) {
+  const sender = msg.key.participant || msg.key.remoteJid;
+  const isGroup = sender.endsWith('@g.us');
+  
+  // Extraer número
+  let number = sender.split('@')[0];
+  if (number.includes(':')) {
+    number = number.split(':')[0];
+  }
+  
+  // Obtener nombre de usuario si está disponible
+  const pushName = msg.pushName || 'Sin nombre';
+  
+  if (isGroup) {
+    const groupId = msg.key.remoteJid;
+    return {
+      display: `${pushName} (${number})`,
+      number: number,
+      name: pushName,
+      group: groupId,
+      isGroup: true
+    };
+  } else {
+    return {
+      display: `${pushName} (${number})`,
+      number: number,
+      name: pushName,
+      isGroup: false
+    };
+  }
+}
+
+/**
+ * Muestra el mensaje en consola
+ */
+function logIncomingMessage(msg) {
+  try {
+    const text = extractMessageText(msg);
+    if (!text) return; // No mostrar mensajes sin texto
+    
+    const senderInfo = formatSender(msg);
+    const isCommand = text.startsWith('.');
+    
+    // Formatear para consola
+    const timestamp = new Date().toLocaleTimeString();
+    const location = senderInfo.isGroup ? 'GRUPO' : 'PRIVADO';
+    
+    if (isCommand) {
+      // Mostrar comandos en color amarillo
+      console.log(
+        chalk.gray(`[${timestamp}]`),
+        chalk.cyan(location),
+        chalk.magenta('⚡'),
+        chalk.yellow(senderInfo.display),
+        chalk.white('->'),
+        chalk.green(text)
+      );
     } else {
-      console.log(chalk.yellow('🔐 No hay sesión guardada, se mostrará QR code'));
+      // Mostrar mensajes normales en color gris
+      console.log(
+        chalk.gray(`[${timestamp}]`),
+        chalk.cyan(location),
+        chalk.blue('✉️'),
+        chalk.yellow(senderInfo.display),
+        chalk.white(':'),
+        chalk.gray(text.length > 50 ? text.substring(0, 50) + '...' : text)
+      );
     }
+  } catch (error) {
+    console.error(chalk.red('❌ Error en logging:'), error.message);
+  }
+}
+
+function showStats() {
+  const stats = global.requestStats;
+  const now = new Date().toLocaleTimeString();
+  
+  console.log(chalk.cyan(`
+╔══════════════════════════════════╗
+║     📊 ESTADÍSTICAS [${now}]     ║
+╠══════════════════════════════════╣
+║ Total de peticiones: ${String(stats.total).padEnd(8)} ║
+║ Exitosas: ${String(stats.success).padEnd(11)} ✅ ║
+║ Errores: ${String(stats.errors).padEnd(12)} ❌ ║
+║ Rate limited: ${String(stats.rateLimited).padEnd(5)} ⏰ ║
+╚══════════════════════════════════╝
+  `));
+}
+
+// Mostrar estadísticas cada 10 minutos
+setInterval(showStats, 10 * 60 * 1000);
+
+async function delayedReconnect(attempt) {
+  const delay = Math.min(1000 * Math.pow(2, attempt), 20000);
+  console.log(chalk.yellow(`\n🔄 Reconectando en ${delay/1000} segundos... (Intento ${attempt + 1}/${MAX_RECONNECT_ATTEMPTS})`));
+  
+  await new Promise(resolve => setTimeout(resolve, delay));
+  await startBot();
+}
+
+// ======================
+// FUNCIÓN PRINCIPAL
+// ======================
+
+async function startBot() {
+  try {
+    // Crear backup inicial
+    ensureStartupBackup();
+    
+    // Obtener última versión de Baileys
+    const { version } = await fetchLatestBaileysVersion();
+    
+    // Estado de autenticación
+    const { state, saveCreds } = await useMultiFileAuthState(sessionsDir);
+    
+    // Configuración del socket
     const sock = makeWASocket({
       version,
       auth: {
         creds: state.creds,
-        keys: makeCacheableSignalKeyStore(state.keys, loggerMock),
+        keys: makeCacheableSignalKeyStore(state.keys, pino({ level: 'silent' }))
       },
-      browser: ['Ubuntu', 'Chrome', '122.0.0.0'],
-      logger: loggerMock,
-      printQRInTerminal: false,
+      printQRInTerminal: methodCodeQR || !methodCode,
+      browser: Browsers.macOS('Desktop'),
+      msgRetryCounterCache,
+      logger: pino({ 
+        level: 'error', // Solo errores de Baileys
+        transport: {
+          target: 'pino-pretty',
+          options: { colorize: true }
+        }
+      }),
       markOnlineOnConnect: true,
       syncFullHistory: false,
-      generateHighQualityLinkPreview: true,
-      defaultQueryTimeoutMs: 60000,
-      connectTimeoutMs: 30000,
-      keepAliveIntervalMs: 15000,
-      emitOwnEvents: true,
-      msgRetryCounterCache: new NodeCache(),
-      getMessage: async () => ({}),
-      shouldIgnoreJid: () => false,
-      fireInitQueries: true,
-      transactionOpts: { maxCommitRetries: 0 }
+      getMessage: async () => ({
+        conversation: "Mensaje no disponible"
+      })
     });
+    
+    // Guardar socket globalmente
     global.sock = sock;
-    console.log(chalk.cyan('✅ Socket creado correctamente'));
+    
+    // Actualizar credenciales
     sock.ev.on('creds.update', saveCreds);
-    sock.ev.on('messages.upsert', async ({ messages, type }) => {
-      if (type !== 'notify') return;
-      for (const msg of messages) {
-        if (!msg.message || msg.key?.fromMe) continue;
-        const sender = msg.key.remoteJid;
-        const text = msg.message.conversation || 
-                     msg.message.extendedTextMessage?.text || 
-                     '[Media/Archivo/Sticker]';
-        logMessage('message', text, { from: sender });
+    
+    // Manejar mensajes entrantes
+    sock.ev.on('messages.upsert', async (data) => {
+      if (data.type !== 'notify') return;
+      
+      for (const msg of data.messages) {
+        // Ignorar mensajes propios
+        if (msg.key.fromMe) continue;
+        
+        // Verificar que tenga contenido
+        if (!msg.message) continue;
+        
+        // Loggear mensaje en consola
+        logIncomingMessage(msg);
+        
+        // Verificar rate limit
+        const userId = msg.key.participant || msg.key.remoteJid;
+        if (!checkRateLimit(userId)) {
+          console.log(chalk.yellow(`⏰ Rate limit excedido para: ${userId}`));
+          continue;
+        }
+        
+        // Procesar mensaje
         try {
           await handleMessage(sock, msg);
+          global.requestStats.success++;
         } catch (error) {
-          logMessage('error', `Error procesando mensaje: ${error.message}`);
+          console.error(chalk.red(`❌ Error procesando mensaje: ${error.message}`));
+          global.requestStats.errors++;
         }
       }
     });
-    sock.ev.on('connection.update', (update) => {
-      const { connection, lastDisconnect, qr, isNewLogin } = update;
+    
+    // Loggear otros eventos
+    sock.ev.on('messages.update', (updates) => {
+      // Aquí puedes agregar logging para actualizaciones de mensajes si lo necesitas
+    });
+    
+    sock.ev.on('message-receipt.update', (updates) => {
+      // Loggear recibidos y leídos si quieres
+    });
+    
+    // Manejar actualizaciones de conexión
+    sock.ev.on('connection.update', async (update) => {
+      const { connection, lastDisconnect, qr } = update;
+      
       if (qr) {
-        displayQR(qr);
+        console.log(chalk.yellow('\n📱 ESCANEA EL CÓDIGO QR CON WHATSAPP:\n'));
+        qrcode.generate(qr, { small: true });
       }
-      if (connection === 'open') {
-        console.clear();
-        console.log(chalk.green.bold(`
-╔══════════════════════════════════╗
-║        🎉 CONEXIÓN EXITOSA       ║
-║        🤖 BOT LISTO              ║
-╚══════════════════════════════════╝
-`));
-        const userNumber = sock.user?.id?.replace('@s.whatsapp.net', '') || 'Desconocido';
-        console.log(chalk.cyan(`👤 Usuario: ${userNumber}`));
-        console.log(chalk.cyan(`📅 Hora: ${new Date().toLocaleTimeString()}`));
-        console.log(chalk.green('\n✨ ¡Bot listo para recibir comandos!\n'));
-        startBackgroundTasks();
-      }
-      if (connection === 'close') {
-        const statusCode = lastDisconnect?.error?.output?.statusCode;
-        const error = lastDisconnect?.error;
-        console.log(chalk.yellow('\n🔌 Conexión cerrada'));
-        if (statusCode) {
-          console.log(chalk.yellow(`📊 Código: ${statusCode}`));
-        }
-        if (error?.message) {
-          console.log(chalk.yellow(`⚠️  Error: ${error.message}`));
-        }
-        if (statusCode === DisconnectReason.loggedOut) {
-          console.log(chalk.red('\n❌ SESIÓN EXPIRADA'));
-          console.log(chalk.red('💡 Elimina la carpeta "auth_info" y vuelve a iniciar'));
-          console.log(chalk.yellow('\n¿Eliminar sesión expirada automáticamente? (s/n)'));
-          setTimeout(() => {
-            console.log(chalk.cyan('\n🔄 Ejecuta nuevamente el bot después de eliminar auth_info'));
-            process.exit(0);
-          }, 3000);
-          return;
-        }
-        if (statusCode === DisconnectReason.connectionClosed) {
-          console.log(chalk.yellow('🔄 Conexión cerrada, reconectando en 5s...'));
-          setTimeout(connectWhatsApp, 5000);
-          return;
-        }
-        if (statusCode === DisconnectReason.connectionLost) {
-          console.log(chalk.yellow('📶 Pérdida de conexión, reconectando en 3s...'));
-          setTimeout(connectWhatsApp, 3000);
-          return;
-        }
-        if (statusCode === DisconnectReason.restartRequired) {
-          console.log(chalk.yellow('🔄 Reinicio requerido, reconectando en 2s...'));
-          setTimeout(connectWhatsApp, 2000);
-          return;
-        }
-        if (statusCode === DisconnectReason.timedOut) {
-          console.log(chalk.yellow('⏰ Timeout, reconectando en 10s...'));
-          setTimeout(connectWhatsApp, 10000);
-          return;
-        }
-        console.log(chalk.yellow('🔄 Reconectando en 15s...'));
-        setTimeout(connectWhatsApp, 15000);
-      }
+      
       if (connection === 'connecting') {
-        console.log(chalk.blue('🔄 Conectando al servidor de WhatsApp...'));
+        console.log(chalk.blue('🔄 Conectando...'));
+        
+        // Modo código de emparejamiento
+        if (methodCode && !sock.authState.creds.registered) {
+          console.log(chalk.cyan('\n🔐 MODO CÓDIGO DE EMPAREJAMIENTO'));
+          
+          try {
+            const code = await sock.requestPairingCode('56912345678'.replace(/\D/g, ''));
+            console.log(chalk.white(`🔢 Tu código es: ${code}`));
+          } catch (error) {
+            console.log(chalk.red(`❌ Error generando código: ${error.message}`));
+          }
+        }
+      }
+      
+      if (connection === 'open') {
+        console.log(chalk.green('\n✅ BOT CONECTADO EXITOSAMENTE!'));
+        console.log(chalk.cyan(`👤 Usuario: ${sock.user?.id || 'Desconocido'}`));
+        console.log(chalk.cyan(`📱 Número: ${sock.user?.id?.split(':')[0]?.split('@')[0] || 'N/A'}`));
+        
+        reconnectAttempts = 0;
+        
+        // Iniciar sistema de stock
+        try {
+          setInterval(() => {
+            try {
+              reiniciarStock();
+              console.log(chalk.gray('[SISTEMA] Stock reiniciado automáticamente'));
+            } catch (error) {
+              console.error(chalk.red('❌ Error en sistema de stock:'), error.message);
+            }
+          }, 60 * 1000); // Cada minuto
+          
+          console.log(chalk.green('✅ Sistema de stock iniciado (cada 60s)'));
+        } catch (error) {
+          console.error(chalk.red('❌ Error iniciando sistemas:'), error);
+        }
+        
+        // Mostrar mensaje de estado
+        console.log(chalk.green('\n🚀 Bot listo para recibir mensajes...\n'));
+      }
+      
+      if (connection === 'close') {
+        const statusCode = new Boom(lastDisconnect?.error)?.output?.statusCode;
+        const shouldReconnect = statusCode !== DisconnectReason.loggedOut;
+        
+        console.log(chalk.yellow(`\n⚠️  CONEXIÓN CERRADA (Código: ${statusCode})`));
+        
+        if (shouldReconnect && reconnectAttempts < MAX_RECONNECT_ATTEMPTS) {
+          reconnectAttempts++;
+          await delayedReconnect(reconnectAttempts - 1);
+        } else {
+          console.log(chalk.red('\n❌ DESCONECTADO PERMANENTEMENTE'));
+          console.log(chalk.yellow('🗑️  Elimina la carpeta "auth_info" para reiniciar sesión'));
+          process.exit(1);
+        }
       }
     });
-    sock.ev.on('messages.reaction', (reactions) => {});
-    sock.ev.on('groups.update', (updates) => {});
-    return sock;
-  } catch (error) {
-    console.log(chalk.red('\n🔥 ERROR CRÍTICO DE CONEXIÓN:'));
-    console.log(chalk.red('Mensaje:', error.message));
-    if (error.stack) {
-      const stackLines = error.stack.split('\n').slice(0, 3);
-      console.log(chalk.red('Stack:', stackLines.join('\n')));
-    }
-    console.log(chalk.yellow('\n🔄 Intentando reconexión en 10 segundos...'));
-    setTimeout(connectWhatsApp, 10000);
-  }
-}
-
-function startBackgroundTasks() {
-  console.log(chalk.gray('\n🔧 Iniciando tareas en segundo plano...'));
-  setInterval(() => {
-    try {
-      global.guardarCM();
-    } catch (error) {
-      console.log(chalk.red('❌ Error en backup automático:'), error.message);
-    }
-  }, 1800000);
-  setInterval(() => {
-    try {
-      global.cache.flushAll();
-    } catch (error) {
-      console.log(chalk.red('❌ Error limpiando caché:'), error.message);
-    }
-  }, 900000);
-  if (typeof reiniciarStock === 'function') {
+    
+    // Mostrar banner de inicio
+    console.log(chalk.magenta(`
+╔══════════════════════════════════════════════╗
+║             🐼 PANDA BOT 🐼                  ║
+║           ⚡ VERSIÓN OPTIMIZADA ⚡            ║
+║                                              ║
+║  Conectando con WhatsApp Web...              ║
+║  [Logs de mensajes activados]                ║
+╚══════════════════════════════════════════════╝
+    `));
+    
+    // Iniciar también el sistema de limpieza de cooldowns
     setInterval(() => {
-      try {
-        reiniciarStock();
-      } catch (error) {
-        console.log(chalk.red('❌ Error reiniciando stock:'), error.message);
+      const now = Date.now();
+      for (const [key, timestamp] of Object.entries(global.recolectarCooldown)) {
+        if (now - timestamp > 3600000) { // 1 hora
+          delete global.recolectarCooldown[key];
+        }
       }
-    }, 600000);
+    }, 60000); // Cada minuto
+    
+  } catch (error) {
+    console.error(chalk.red('\n❌ ERROR CRÍTICO EN STARTBOT:'), error);
+    
+    if (reconnectAttempts < MAX_RECONNECT_ATTEMPTS) {
+      reconnectAttempts++;
+      await delayedReconnect(reconnectAttempts - 1);
+    } else {
+      console.log(chalk.red('❌ MÁXIMO DE INTENTOS DE RECONEXIÓN ALCANZADO'));
+      process.exit(1);
+    }
   }
-  setInterval(() => {
-    const now = new Date();
-    console.log(chalk.cyan(`\n📊 Estado del Bot - ${now.toLocaleTimeString()}`));
-    console.log(chalk.cyan(`📅 ${now.toLocaleDateString()}`));
-    console.log(chalk.cyan('✅ Bot funcionando correctamente'));
-  }, 3600000);
-  console.log(chalk.green('✅ Tareas en segundo plano iniciadas'));
 }
 
-async function initializeBot() {
-  console.log(chalk.blue('🚀 Iniciando Pandabot...'));
-  const dirs = ['data', 'backups', 'logs'];
-  for (const dir of dirs) {
-    const dirPath = join(__dirname, dir);
-    if (!fs.existsSync(dirPath)) {
-      fs.mkdirSync(dirPath, { recursive: true });
-      console.log(chalk.gray(`📁 Carpeta ${dir} creada`));
-    }
-  }
-  try {
-    if (typeof limpiarPersonajes === 'function') {
-      const personajesPath = join(__dirname, 'data', 'personajes.json');
-      if (fs.existsSync(personajesPath)) {
-        const result = limpiarPersonajes(personajesPath);
-        console.log(chalk.green(`🧹 ${result?.length || 0} personajes limpiados`));
-      }
-    }
-    if (typeof migrarStockPlano === 'function') {
-      migrarStockPlano();
-      console.log(chalk.green('📦 Migración de stock completada'));
-    }
-  } catch (error) {
-    console.log(chalk.yellow('⚠️  Advertencia en inicialización:'), error.message);
-  }
-  await connectWhatsApp();
-}
+// ======================
+// MANEJO DE EXCEPCIONES
+// ======================
 
 process.on('uncaughtException', (error) => {
-  console.log(chalk.red('\n🔥 ERROR NO MANEJADO (uncaughtException):'));
-  console.log(chalk.red('Mensaje:', error.message));
-  if (error.stack) {
-    const stackLines = error.stack.split('\n').slice(0, 3);
-    console.log(chalk.red('Stack:', stackLines.join('\n')));
-  }
-  const criticalErrors = [
-    'ERR_ASSERTION',
-    'EACCES',
-    'EADDRINUSE',
-    'MODULE_NOT_FOUND'
-  ];
-  const isCritical = criticalErrors.some(err => error.message.includes(err));
-  if (isCritical) {
-    console.log(chalk.red('\n❌ Error crítico, saliendo...'));
-    process.exit(1);
-  } else {
-    console.log(chalk.yellow('\n🔄 Continuando ejecución...'));
-  }
+  console.error(chalk.red('\n⚠️  EXCEPCIÓN NO CAPTURADA:'), error.message);
+  console.error(chalk.gray('Stack trace:'), error.stack);
 });
 
 process.on('unhandledRejection', (reason, promise) => {
-  console.log(chalk.yellow('\n⚠️  PROMESA RECHAZADA NO MANEJADA:'));
-  if (reason && typeof reason === 'object') {
-    if (reason.message) {
-      console.log(chalk.yellow('Razón:'), reason.message);
-    } else {
-      console.log(chalk.yellow('Razón:'), JSON.stringify(reason));
-    }
-  } else {
-    console.log(chalk.yellow('Razón:'), String(reason));
-  }
+  console.error(chalk.red('\n⚠️  PROMESA RECHAZADA NO MANEJADA:'), reason);
 });
 
 process.on('SIGINT', () => {
-  console.log(chalk.yellow('\n\n👋 Recibida señal SIGINT. Cerrando bot...'));
+  console.log(chalk.yellow('\n👋 Recibida señal de interrupción (Ctrl+C)'));
+  
+  // Guardar base de datos antes de salir
   try {
+    guardarDatabase();
     global.guardarCM();
-    console.log(chalk.green('💾 Datos guardados correctamente'));
+    console.log(chalk.green('✅ Bases de datos guardadas'));
   } catch (error) {
-    console.log(chalk.red('❌ Error guardando datos al salir:'), error.message);
+    console.error(chalk.red('❌ Error guardando datos:'), error.message);
   }
-  console.log(chalk.cyan('✨ ¡Hasta pronto!'));
+  
   process.exit(0);
 });
 
-process.on('SIGTERM', () => {
-  console.log(chalk.yellow('\n⚡ Recibida señal SIGTERM. Reiniciando...'));
-  process.exit(0);
-});
+// ======================
+// INICIAR EL BOT
+// ======================
 
-console.log(chalk.cyan(`
-💡 INFORMACIÓN IMPORTANTE:
-• El bot necesita acceso a WhatsApp Web
-• Si no se muestra el QR, verifica tu conexión a internet
-• Para forzar nuevo QR: Elimina la carpeta 'auth_info'
-• Usa Ctrl+C para apagar correctamente
-`));
-
-setTimeout(() => {
-  initializeBot().catch(error => {
-    console.log(chalk.red('❌ ERROR FATAL AL INICIAR:'), error.message);
-    if (error.stack) {
-      console.log(chalk.red('Stack:', error.stack.split('\n')[0]));
-    }
-    console.log(chalk.yellow('\n🔄 Reiniciando en 5 segundos...'));
-    setTimeout(() => {
-      process.exit(1);
-    }, 5000);
-  });
-}, 2000);
+startBot();

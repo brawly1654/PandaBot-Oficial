@@ -186,7 +186,7 @@
       },
       "vipExpiration": 37765242412153,
       "diamantes": 50,
-      "afkCooldown": 1765321050828
+      "afkCooldown": 1765505973013
     },
     "166164298780822@lid": {
       "nombre": "Usuario_166164298780822",
@@ -402,11 +402,11 @@
         "posiciones": {}
       },
       "vipExpiration": 36001765155440744,
-      "afkCooldown": 1765319627942,
+      "afkCooldown": 1765505973013,
       "afkStats": {
-        "totalTiempo": 3913573,
-        "totalSesiones": 1,
-        "robosPrevenidos": 3,
+        "totalTiempo": 90313573,
+        "totalSesiones": 2,
+        "robosPrevenidos": 5,
         "mejorRacha": 1
       }
     },
@@ -2359,10 +2359,10 @@
           "inversionTotal": 0
         }
       },
-      "afkCooldown": 1765324356040,
+      "afkCooldown": 1765505973013,
       "afkStats": {
-        "totalTiempo": 81443660,
-        "totalSesiones": 2,
+        "totalTiempo": 167843660,
+        "totalSesiones": 3,
         "robosPrevenidos": 1,
         "mejorRacha": 19
       }
@@ -6397,11 +6397,11 @@
       "vip": true,
       "vipExpiration": 5365239776308,
       "ultimoSell": 1765321024347,
-      "afkCooldown": 1765321191649,
+      "afkCooldown": 1765505973013,
       "afkStats": {
-        "totalTiempo": 71232930,
-        "totalSesiones": 1,
-        "robosPrevenidos": 0,
+        "totalTiempo": 157632930,
+        "totalSesiones": 2,
+        "robosPrevenidos": 1,
         "mejorRacha": 19
       }
     },
@@ -7646,7 +7646,7 @@
   },
   "_meta": {
     "version": "2.0",
-    "savesWithoutBackup": 22,
+    "savesWithoutBackup": 1,
     "creado": "2025-12-04T13:05:46.997Z"
   },
   "ultimoBossTimestamp": 1764853624547,
@@ -7997,7 +7997,7 @@
           "produccionPorSegundo": 1.8564650000000003,
           "capacidad": 92823.25000000001,
           "acumulado": 92823.25000000001,
-          "ultimaActualizacion": 1765410394833,
+          "ultimaActualizacion": 1765550145259,
           "mejora": 1.3
         }
       ],
@@ -8008,7 +8008,7 @@
           "produccionPorSegundo": 0.65,
           "capacidad": 32500,
           "acumulado": 32500,
-          "ultimaActualizacion": 1765410394833,
+          "ultimaActualizacion": 1765550145259,
           "mejora": 1.3
         },
         {
@@ -8017,7 +8017,7 @@
           "produccionPorSegundo": 141.98569999999998,
           "capacidad": 14198569.999999998,
           "acumulado": 14198569.999999998,
-          "ultimaActualizacion": 1765410394833,
+          "ultimaActualizacion": 1765550145259,
           "mejora": 1.7
         }
       ],
@@ -8028,7 +8028,7 @@
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
           "acumulado": 25000,
-          "ultimaActualizacion": 1765410394833,
+          "ultimaActualizacion": 1765550145259,
           "mejora": 1.3
         }
       ],
@@ -8038,8 +8038,8 @@
           "nivel": 9,
           "produccionPorSegundo": 654,
           "capacidad": 69757573,
-          "acumulado": 58475018.975999944,
-          "ultimaActualizacion": 1765410394833,
+          "acumulado": 69757573,
+          "ultimaActualizacion": 1765550145259,
           "mejora": 1.7
         },
         {
@@ -8047,8 +8047,8 @@
           "nivel": 10,
           "produccionPorSegundo": 275,
           "capacidad": 25769801,
-          "acumulado": 24588119.59999993,
-          "ultimaActualizacion": 1765410394833,
+          "acumulado": 25769801,
+          "ultimaActualizacion": 1765550145259,
           "mejora": 1.6
         },
         {
@@ -8056,8 +8056,8 @@
           "nivel": 11,
           "produccionPorSegundo": 94,
           "capacidad": 69197994,
-          "acumulado": 8404666.335999947,
-          "ultimaActualizacion": 1765410394833,
+          "acumulado": 21541206.380000018,
+          "ultimaActualizacion": 1765550145259,
           "mejora": 1.5
         },
         {
@@ -8066,7 +8066,7 @@
           "produccionPorSegundo": 48.59478203596797,
           "capacidad": 2429739.1017983984,
           "acumulado": 2429739.1017983984,
-          "ultimaActualizacion": 1765410394833,
+          "ultimaActualizacion": 1765550145259,
           "mejora": 1.4
         },
         {
@@ -8075,7 +8075,7 @@
           "produccionPorSegundo": 8.960801970185003,
           "capacidad": 448040.09850925015,
           "acumulado": 448040.09850925015,
-          "ultimaActualizacion": 1765410394833,
+          "ultimaActualizacion": 1765550145259,
           "mejora": 1.3
         }
       ],
@@ -8086,7 +8086,7 @@
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
           "acumulado": 25000,
-          "ultimaActualizacion": 1765410394833,
+          "ultimaActualizacion": 1765550145259,
           "mejora": 1.3
         }
       ],
@@ -8097,7 +8097,7 @@
           "produccionPorSegundo": 17,
           "capacidad": 1700000,
           "acumulado": 1700000,
-          "ultimaActualizacion": 1765410394833,
+          "ultimaActualizacion": 1765550145259,
           "mejora": 1.7
         }
       ],
@@ -8107,8 +8107,8 @@
           "nivel": 4,
           "produccionPorSegundo": 49.129999999999995,
           "capacidad": 4912999.999999999,
-          "acumulado": 4407692.594829997,
-          "ultimaActualizacion": 1765410394833,
+          "acumulado": 4912999.999999999,
+          "ultimaActualizacion": 1765550145259,
           "mejora": 1.7
         }
       ]
@@ -8116,40 +8116,7 @@
     "ultimaActualizacion": 1764891853127
   },
   "afk": {
-    "usuarios": {
-      "166164298780822@lid": {
-        "usuario": "166164298780822@lid",
-        "inicio": 1765319627942,
-        "estado": "activo",
-        "grupo": "120363402403091432@g.us",
-        "robosPrevenidos": 2,
-        "ultimaActualizacion": 1765320874957
-      },
-      "97027992080542@lid": {
-        "usuario": "97027992080542@lid",
-        "inicio": 1765321050828,
-        "estado": "activo",
-        "grupo": "120363402403091432@g.us",
-        "robosPrevenidos": 0,
-        "ultimaActualizacion": 1765321050828
-      },
-      "258166407360658@lid": {
-        "usuario": "258166407360658@lid",
-        "inicio": 1765321191649,
-        "estado": "activo",
-        "grupo": "120363402403091432@g.us",
-        "robosPrevenidos": 1,
-        "ultimaActualizacion": 1765322003813
-      },
-      "12833748193431@lid": {
-        "usuario": "12833748193431@lid",
-        "inicio": 1765324356040,
-        "estado": "activo",
-        "grupo": "120363402403091432@g.us",
-        "robosPrevenidos": 0,
-        "ultimaActualizacion": 1765324356040
-      }
-    },
+    "usuarios": {},
     "estadisticas": {
       "31366532055076@lid": {
         "totalTiempo": 1615533,
