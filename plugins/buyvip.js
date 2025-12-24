@@ -11,7 +11,7 @@ export async function run(sock, msg, args) {
   db.users = db.users || {};
   const user = db.users[sender] || { pandacoins: 0 };
   
-  const ticketCost = 1000000;
+  const ticketCost = 50000000;
   const subCommand = args[0]?.toLowerCase();
 
   if (subCommand === 'ticket') {
@@ -22,7 +22,7 @@ export async function run(sock, msg, args) {
     
     user.pandacoins -= ticketCost;
     user.vip = true;
-    user.vipExpiration = Date.now() + 24 * 60 * 60 * 1000;
+    user.vipExpiration = Date.now() + 72 * 60 * 60 * 1000;
     guardarDatabase(db);
     
     await sock.sendMessage(from, { text: `✅ ¡Felicidades! Has comprado un ticket VIP por 24 horas. Disfruta de los beneficios.` });

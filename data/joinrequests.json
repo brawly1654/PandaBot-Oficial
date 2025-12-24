@@ -706,9 +706,10 @@
     "senderJid": "109723999285363@lid",
     "senderNumber": "109723999285363",
     "groupLink": "https://chat.whatsapp.com/FXtakOIASdnDsdD3Eo1cU2?mode=hqrc",
-    "status": "pending",
+    "status": "rejected",
     "timestamp": 1765079082927,
-    "senderName": "Kent Llanta"
+    "senderName": "Kent Llanta",
+    "rejectedAt": 1765973676394
   },
   {
     "id": 100,
@@ -718,5 +719,107 @@
     "status": "pending",
     "timestamp": 1765200069982,
     "senderName": "𝐻𝑒𝑟𝑛𝑎́𝑛𝑑𝑒𝑧🫟"
+  },
+  {
+    "id": 101,
+    "senderJid": "197182351265964@lid",
+    "senderNumber": "197182351265964",
+    "groupLink": "https://chat.whatsapp.com/GV0CIlkNk3vGf1ncfMJowW",
+    "status": "rejected",
+    "timestamp": 1765570599801,
+    "senderName": ".",
+    "rejectedAt": 1765570632309
+  },
+  {
+    "id": 102,
+    "senderJid": "197182351265964@lid",
+    "senderNumber": "197182351265964",
+    "groupLink": "https://chat.whatsapp.com/HJxoP5GSMwoIgwyp7Y2ABH",
+    "status": "accepted",
+    "timestamp": 1765570693496,
+    "senderName": ".",
+    "acceptedAt": 1765570716211
+  },
+  {
+    "id": 103,
+    "senderJid": "166164298780822@lid",
+    "senderNumber": "166164298780822",
+    "groupLink": "https://chat.whatsapp.com/FXtakOIASdnDsdD3Eo1cU2?mode=hqrc",
+    "status": "pending",
+    "timestamp": 1765973691226,
+    "senderName": "𝕃𝕦𝕜𝕒𝕤"
+  },
+  {
+    "id": 104,
+    "senderJid": "166164298780822@lid",
+    "senderNumber": "166164298780822",
+    "groupLink": "https://chat.whatsapp.com/FXtakOIASdnDsdD3Eo1cU2?mode=hqrt3",
+    "status": "pending",
+    "timestamp": 1765973787934,
+    "senderName": "𝕃𝕦𝕜𝕒𝕤"
+  },
+  {
+    "id": 105,
+    "senderJid": "99561821479092@lid",
+    "senderNumber": "99561821479092",
+    "groupLink": "https://chat.whatsapp.com/Jqh8XqDWGJQCfzZJ1glQUk?mode=hqrt3",
+    "status": "pending",
+    "timestamp": 1766082807724,
+    "senderName": "𝐓𝐮 𝐏𝐚𝐩𝐚́ ⏤͟͟͞͞✰"
+  },
+  {
+    "id": 106,
+    "senderJid": "66787295129695@lid",
+    "senderNumber": "66787295129695",
+    "groupLink": "https://chat.whatsapp.com/DoXakMO2Fbi33GLOjc98Jy?mode=hqrt3",
+    "status": "pending",
+    "timestamp": 1766113437580,
+    "senderName": "Valu 🐁"
+  },
+  {
+    "id": 107,
+    "senderJid": "33677157355747@lid",
+    "senderNumber": "33677157355747",
+    "groupLink": "https://chat.whatsapp.com/FqbnYKtfdGrDQVfeBsaaF9",
+    "status": "pending",
+    "timestamp": 1766174352304,
+    "senderName": "yarey"
+  },
+  {
+    "id": 108,
+    "senderJid": "176587681087545@lid",
+    "senderNumber": "176587681087545",
+    "groupLink": "https://chat.whatsapp.com/HMsgxRuxT5FGwQCJuC9Eps",
+    "status": "pending",
+    "timestamp": 1766209093996,
+    "senderName": "Pelao"
+  },
+  {
+    "id": 109,
+    "senderJid": "68999270371333@lid",
+    "senderNumber": "68999270371333",
+    "groupLink": "https://chat.whatsapp.com/DrMamgDNbL2Hz5TT4WkL6R",
+    "status": "pending",
+    "timestamp": 1766246712259,
+    "senderName": "Frannn"
+  },
+  {
+    "id": 110,
+    "senderJid": "226426884247635@lid",
+    "senderNumber": "226426884247635",
+    "groupLink": "https://chat.whatsapp.com/Lpjs4bINVBnKhk0x3lXsaa",
+    "status": "pending",
+    "timestamp": 1766432312286,
+    "senderName": "Isaaaaaaa⛄"
+  },
+  {
+    "id": 111,
+    "senderJid": "228260516507722@lid",
+    "senderNumber": "228260516507722",
+    "groupLink": "https://chat.whatsapp.com/JQyWhhf6R6819oolBPJ4ae",
+    "status": "accepted",
+    "timestamp": 1766443362863,
+    "senderName": "pedro",
+    "acceptedAt": 1766443394543
   }
 ]

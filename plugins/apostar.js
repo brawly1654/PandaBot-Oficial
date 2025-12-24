@@ -24,15 +24,15 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  if (monto > 25000000) {
+  if (monto > 500000000) {
     await sock.sendMessage(from, {
-      text: '❌ El monto máximo permitido para apostar es *25 millones* de Pandacoins.'
+      text: '❌ El monto máximo permitido para apostar es *500 millones* de Pandacoins.'
     }, { quoted: msg });
     return;
   }
 
   const niveles = {
-    bajo: { multiplicador: 1.5, prob: 0.6 },
+    bajo: { multiplicador: 1.1, prob: 0.5 },
     medio: { multiplicador: 2, prob: 0.4 },
     alto: { multiplicador: 3, prob: 0.2 }
   };

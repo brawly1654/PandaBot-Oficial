@@ -148,13 +148,13 @@ export async function run(sock, msg, args) {
     }
 
     if (tipo === 'edit') {
-        const DURACION_EMOJI = 10 * 60 * 1000;
-        const DURACION_LUCK = 15 * 60 * 1000;
+        const DURACION_EMOJI = 20 * 60 * 1000;
+        const DURACION_LUCK = 25 * 60 * 1000;
         try { await enviarAudioPedo(sock, from, msg); } catch (error) { console.error('Error enviando audio:', error); }
         const efectosActivados = [];
         for (const emoji of Object.keys(multiplicadores)) {
             if (suerteTimeouts[emoji]) clearTimeout(suerteTimeouts[emoji]);
-            efectosBoost[emoji] = 2;
+            efectosBoost[emoji] = 4;
             expiraciones[emoji] = Date.now() + DURACION_EMOJI;
             efectosActivados.push(emoji);
             suerteTimeouts[emoji] = setTimeout(() => {
@@ -174,7 +174,7 @@ export async function run(sock, msg, args) {
         await sock.sendMessage(from, { text: `💥 *Boosts activados masivamente:*\n\n• Emojis (${Object.keys(multiplicadores).length}) → x2 por 10 minutos\n• Suerte general → x4 por 15 minutos` }, { quoted: msg });
         for (const emoji of efectosActivados) {
             await new Promise(resolve => setTimeout(resolve, 500));
-            await sock.sendMessage(from, { text: `🎯 *Lukas activó ${emoji} x2!*` });
+            await sock.sendMessage(from, { text: `🎯 *Un Owner activó ${emoji} x4!*` });
         }
         await new Promise(resolve => setTimeout(resolve, 1000));
         await sock.sendMessage(from, { text: `✨ *¡Todos los efectos han sido activados!* (${efectosActivados.length} efectos)` });

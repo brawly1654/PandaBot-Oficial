@@ -3,15 +3,31 @@
     "67": {
       "recompensa": 1000,
       "usosMaximos": 1,
-      "usosActuales": 0,
+      "usosActuales": 1,
       "creadoPor": "+166164298780822",
       "fechaCreacion": "2025-12-12T16:47:54.436Z",
+      "activo": true
+    },
+    "13334402": {
+      "recompensa": 20000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-20T05:55:02.671Z",
+      "activo": true
+    },
+    "111111111": {
+      "recompensa": 20000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-20T06:01:59.894Z",
       "activo": true
     },
     "JESUCRISTO": {
       "recompensa": 100000000,
       "usosMaximos": 1,
-      "usosActuales": 0,
+      "usosActuales": 1,
       "creadoPor": "+166164298780822",
       "fechaCreacion": "2025-12-12T16:48:29.663Z",
       "activo": true
@@ -27,7 +43,7 @@
     "PANDABOT": {
       "recompensa": -5000000,
       "usosMaximos": 1,
-      "usosActuales": 0,
+      "usosActuales": 1,
       "creadoPor": "+166164298780822",
       "fechaCreacion": "2025-12-12T16:49:00.038Z",
       "activo": true
@@ -39,6 +55,491 @@
       "creadoPor": "+166164298780822",
       "fechaCreacion": "2025-12-12T16:50:06.044Z",
       "activo": true
+    },
+    "LUKITAS": {
+      "recompensa": 50000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-14T14:35:40.586Z",
+      "activo": true
+    },
+    "IRARRAZAVAL": {
+      "recompensa": 10000000,
+      "usosMaximos": 1,
+      "usosActuales": 0,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-17T14:54:34.004Z",
+      "activo": true
+    },
+    "BIOBIO": {
+      "recompensa": 10000000,
+      "usosMaximos": 1,
+      "usosActuales": 0,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-17T14:54:50.742Z",
+      "activo": true
+    },
+    "LOSDOMINICOS": {
+      "recompensa": 10000000,
+      "usosMaximos": 1,
+      "usosActuales": 0,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-17T14:55:10.269Z",
+      "activo": true
+    },
+    "FRANKLIN": {
+      "recompensa": 10000000,
+      "usosMaximos": 1,
+      "usosActuales": 0,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-17T14:55:23.805Z",
+      "activo": true
+    },
+    "CAMINOAGRICOLA": {
+      "recompensa": 10000000,
+      "usosMaximos": 1,
+      "usosActuales": 0,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-17T14:56:01.321Z",
+      "activo": true
+    },
+    "BRELL": {
+      "recompensa": 20000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-17T16:45:46.629Z",
+      "activo": true
+    },
+    "CASHHH": {
+      "recompensa": 10000000000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-18T16:00:25.490Z",
+      "activo": true
+    },
+    "NEPTUNO": {
+      "recompensa": 10000000,
+      "usosMaximos": 1,
+      "usosActuales": 0,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-19T15:23:21.068Z",
+      "activo": true
+    },
+    "SEMEN": {
+      "recompensa": 3,
+      "usosMaximos": 100,
+      "usosActuales": 4,
+      "creadoPor": "+180444930768966",
+      "fechaCreacion": "2025-12-19T15:23:25.038Z",
+      "activo": true
+    },
+    "SOYGAY": {
+      "recompensa": 300000,
+      "usosMaximos": 5,
+      "usosActuales": 2,
+      "creadoPor": "+180444930768966",
+      "fechaCreacion": "2025-12-19T15:37:20.349Z",
+      "activo": true
+    },
+    "PQOODLRLRKWJD": {
+      "recompensa": 10000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-19T17:09:48.701Z",
+      "activo": true
+    },
+    "HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAA": {
+      "recompensa": 10000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-19T17:10:39.587Z",
+      "activo": true
+    },
+    "JOSE1234561": {
+      "recompensa": 50000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-19T17:11:46.664Z",
+      "activo": true
+    },
+    "PENE1233": {
+      "recompensa": 100000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-20T00:28:20.459Z",
+      "activo": true
+    },
+    "TOM123456789": {
+      "recompensa": 50000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-21T17:59:37.820Z",
+      "activo": true
+    },
+    "LUKETE": {
+      "recompensa": 100000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-21T18:04:55.286Z",
+      "activo": true
+    },
+    "TOMITEAMOPAPITORIKO": {
+      "recompensa": 6000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-21T18:27:34.782Z",
+      "activo": true
+    },
+    "GOODBOYS": {
+      "recompensa": 100,
+      "usosMaximos": 100,
+      "usosActuales": 2,
+      "creadoPor": "+180444930768966",
+      "fechaCreacion": "2025-12-21T20:25:22.112Z",
+      "activo": true
+    },
+    "BRELLSITO33333": {
+      "recompensa": 30000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T01:25:21.116Z",
+      "activo": true
+    },
+    "MEENCANTAELPENE": {
+      "recompensa": 999999,
+      "usosMaximos": 100,
+      "usosActuales": 4,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T01:33:07.852Z",
+      "activo": true
+    },
+    "XNXX": {
+      "recompensa": 250000000,
+      "usosMaximos": 100,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T02:14:32.387Z",
+      "activo": true
+    },
+    "COCO123": {
+      "recompensa": 310000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T18:39:11.362Z",
+      "activo": true
+    },
+    "LILANSELACOME1": {
+      "recompensa": 50000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T20:27:39.163Z",
+      "activo": true
+    },
+    "DEJOLASPUSSYSCONMISEMEN1": {
+      "recompensa": 300000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T20:34:39.170Z",
+      "activo": true
+    },
+    "HENTAISUPREMO2": {
+      "recompensa": -50000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T20:47:46.107Z",
+      "activo": true
+    },
+    "HENTAISUPREMO1": {
+      "recompensa": 50000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T20:48:20.506Z",
+      "activo": true
+    },
+    "HENTAISUPREMO3": {
+      "recompensa": -300000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T20:48:39.369Z",
+      "activo": true
+    },
+    "HENTAISUPREMO4": {
+      "recompensa": 100000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T20:48:52.635Z",
+      "activo": true
+    },
+    "HENTAISUPREMO5": {
+      "recompensa": 1,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T20:49:12.260Z",
+      "activo": true
+    },
+    "HENTAISUPREMO6": {
+      "recompensa": -666666666,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T20:49:33.047Z",
+      "activo": true
+    },
+    "HENTAISUPREMO7": {
+      "recompensa": 20000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T20:49:54.572Z",
+      "activo": true
+    },
+    "HENTAISUPREMO8": {
+      "recompensa": 100000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T20:50:06.939Z",
+      "activo": true
+    },
+    "HENTAISUPREMO9": {
+      "recompensa": -999999999,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T20:50:31.492Z",
+      "activo": true
+    },
+    "PANDA1": {
+      "recompensa": -15000000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T21:07:45.251Z",
+      "activo": true
+    },
+    "PANDA2": {
+      "recompensa": 333333333,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T21:07:58.184Z",
+      "activo": true
+    },
+    "PANDA3": {
+      "recompensa": -1,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T21:08:10.209Z",
+      "activo": true
+    },
+    "PANDA4": {
+      "recompensa": 50000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T21:08:23.319Z",
+      "activo": true
+    },
+    "PANDA5": {
+      "recompensa": -500000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T21:08:32.738Z",
+      "activo": true
+    },
+    "PANDA6": {
+      "recompensa": 77777777,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T21:08:54.623Z",
+      "activo": true
+    },
+    "PANDA7": {
+      "recompensa": -666666666,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T21:09:07.246Z",
+      "activo": true
+    },
+    "PANDA8": {
+      "recompensa": 3,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T21:09:19.907Z",
+      "activo": true
+    },
+    "PANDA9": {
+      "recompensa": -9,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T21:09:38.377Z",
+      "activo": true
+    },
+    "PANDA10": {
+      "recompensa": 100000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T21:09:47.421Z",
+      "activo": true
+    },
+    "192928192818928389183829838193839928483972829278392828838372937828283829838283828929292838292838389283828382983384910910102883928383": {
+      "recompensa": 999999999,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T21:13:51.267Z",
+      "activo": true
+    },
+    "PENEEE": {
+      "recompensa": 12345678,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-22T21:29:47.420Z",
+      "activo": true
+    },
+    "METAAI": {
+      "recompensa": 1,
+      "usosMaximos": 5,
+      "usosActuales": 4,
+      "creadoPor": "+180444930768966",
+      "fechaCreacion": "2025-12-22T21:31:16.686Z",
+      "activo": true
+    },
+    "LOL1": {
+      "recompensa": 10000000,
+      "usosMaximos": 2,
+      "usosActuales": 2,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-23T20:54:31.363Z",
+      "activo": true
     }
+  },
+  "usuariosCanjeados": {
+    "166164298780822@lid": [
+      "LUKITAS",
+      "MINAR",
+      "LUKASSES",
+      "CASH",
+      "CASHHH",
+      "PENE1233",
+      "LUKETE",
+      "PENEEE",
+      "THESPOOKYPANDABOT",
+      "XNXX",
+      "DEJOLASPUSSYSCONMISEMEN1"
+    ],
+    "68999270371333@lid": [
+      "PANDABOT"
+    ],
+    "31366532055076@lid": [
+      "BRELL",
+      "SEMEN",
+      "PQOODLRLRKWJD",
+      "HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "SOYGAY",
+      "GOODBOYS",
+      "JESUCRISTO",
+      "MEENCANTAELPENE",
+      "HENTAISUPREMO4",
+      "PANDA5",
+      "PANDA7",
+      "METAAI"
+    ],
+    "180444930768966@lid": [
+      "TOMSES",
+      "SOYGAY",
+      "TOM123456789",
+      "LOL1"
+    ],
+    "22042241953940@lid": [
+      "SEMEN",
+      "TOMITEAMOPAPITORIKO",
+      "HENTAISUPREMO7",
+      "HENTAISUPREMO5",
+      "PANDA10",
+      "PANDA9",
+      "PANDA8",
+      "PANDA6",
+      "192928192818928389183829838193839928483972829278392828838372937828283829838283828929292838292838389283828382983384910910102883928383",
+      "LOL1"
+    ],
+    "16445832454279@lid": [
+      "SEMEN"
+    ],
+    "267232999420158@lid": [
+      "SEMEN"
+    ],
+    "17514994090156@lid": [
+      "JOSE1234561"
+    ],
+    "176587681087545@lid": [
+      "13334402",
+      "111111111"
+    ],
+    "157243618136231@lid": [
+      "GOODBOYS",
+      "BRELLSITO33333",
+      "MEENCANTAELPENE",
+      "COCO123",
+      "HENTAISUPREMO1",
+      "HENTAISUPREMO3",
+      "PENEEE",
+      "METAAI"
+    ],
+    "236536851361948@lid": [
+      "MEENCANTAELPENE",
+      "METAAI"
+    ],
+    "125675138736203@lid": [
+      "MEENCANTAELPENE",
+      "HENTAISUPREMO2",
+      "METAAI"
+    ],
+    "12833748193431@lid": [
+      "LILANSELACOME1"
+    ],
+    "184365883650217@lid": [
+      "HENTAISUPREMO9",
+      "HENTAISUPREMO6"
+    ],
+    "99561821479092@lid": [
+      "HENTAISUPREMO8"
+    ],
+    "109723999285363@lid": [
+      "PANDA1",
+      "PANDA2",
+      "PANDA3",
+      "PANDA4"
+    ],
+    "51364168224954@lid": [
+      "67"
+    ]
   }
 }

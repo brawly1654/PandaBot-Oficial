@@ -1334,5 +1334,263 @@
     "content": "hacer un grupo para la pesca",
     "timestamp": 1765221211045,
     "status": "pending"
+  },
+  {
+    "id": 148,
+    "type": "sugerencia",
+    "senderJid": "260051814117536@lid",
+    "content": "suguiero que deberían nerfear los robos de owners para que sea algo igual pero no lo nerfeen tanto es como que está muy roto digamos",
+    "timestamp": 1766174424973,
+    "status": "pending"
+  },
+  {
+    "id": 149,
+    "type": "sugerencia",
+    "senderJid": "99561821479092@lid",
+    "content": "un comando para comprar varios personajes en una compra",
+    "timestamp": 1766362364577,
+    "status": "replied",
+    "reply": "no, tómense el tiempo de comprar uno por uno, lo podría añadir con la condición de que no pueden caer efectos en los personajes que son comprados de a varios",
+    "replyTimestamp": 1766362430595
+  },
+  {
+    "id": 150,
+    "type": "sugerencia",
+    "senderJid": "157243618136231@lid",
+    "content": "un comando que sea como batallas de Pokémon pero con los ps, que se juegue con otra persona. Si ganas le puedes quitar un ps al rival o robarle pandacoins",
+    "timestamp": 1766362470451,
+    "status": "pending"
+  },
+  {
+    "id": 151,
+    "type": "sugerencia",
+    "senderJid": "258166407360658@lid",
+    "content": "Olaaas soy iannn, quiero meter esta surg, de clonar Que diga \".clonarmips (el nombre del ps y su efecto) Perooo, tiene un nerfeo, por ejemplo si valia 5000 panda coins ahora vale 1250 , y si tiene efecto tiene un 45 % de que le saque el efecto o se lo reduzca",
+    "timestamp": 1766362527472,
+    "status": "replied",
+    "reply": "pero amigo el comando te empeora el personaje, básicamente es pay2lose, además pueden ocurrir errores si duplicamos personajes en el archivo destinado para personajes",
+    "replyTimestamp": 1766362611894
+  },
+  {
+    "id": 152,
+    "type": "sugerencia",
+    "senderJid": "99561821479092@lid",
+    "content": "poder fusionar personajes pero como los simuladores de cajas de csgo, osea: que tu pongas varios personajes y un multiplicador y que cuanto mas multiplicador pongas menos probabilidad tienes de que te salga bien",
+    "timestamp": 1766362927078,
+    "status": "replied",
+    "reply": "no quiero mas comandos de personajes de ese estilo, se va a romper la economía otra vez, es como a la gente que le ha tocado Jesucristo, la probabilidad es bajísima pero si no lo consigues no te ocurre nada",
+    "replyTimestamp": 1766363240858
+  },
+  {
+    "id": 153,
+    "type": "sugerencia",
+    "senderJid": "31366532055076@lid",
+    "content": "agregar un comando que si pones .noticia te tire una noticia revelante en un país, o un continente, tipo para estar informado",
+    "timestamp": 1766363014437,
+    "status": "replied",
+    "reply": "basura",
+    "replyTimestamp": 1766363179677
+  },
+  {
+    "id": 154,
+    "type": "sugerencia",
+    "senderJid": "31366532055076@lid",
+    "content": "un comando que si usas .pelicula te recomiende peliculas que estén en un top de Netflix o aplicaciones conocida, tipo para que la gente se divierta",
+    "timestamp": 1766363135122,
+    "status": "replied",
+    "reply": "basura",
+    "replyTimestamp": 1766363161831
+  },
+  {
+    "id": 155,
+    "type": "sugerencia",
+    "senderJid": "31366532055076@lid",
+    "content": "un comando q tire una pregunta y se la tire a cualquier persona y la responda, algo para romper el hielo",
+    "timestamp": 1766363346901,
+    "status": "replied",
+    "reply": "dale joa sugerencias buenas",
+    "replyTimestamp": 1766363520082
+  },
+  {
+    "id": 156,
+    "type": "sugerencia",
+    "senderJid": "31366532055076@lid",
+    "content": "poder bloquear a alguien de el bot, ej esa persona no te puede robar, ni nada pero no perma por ejemplo 2 horas",
+    "timestamp": 1766363603309,
+    "status": "replied",
+    "reply": "ya está el afk, los del top q la sufran nomas",
+    "replyTimestamp": 1766363667363
+  },
+  {
+    "id": 157,
+    "type": "sugerencia",
+    "senderJid": "99561821479092@lid",
+    "content": "lucky blocks que no sean de eventos",
+    "timestamp": 1766363709013,
+    "status": "replied",
+    "reply": "prácticamente es un .ps",
+    "replyTimestamp": 1766363731176
+  },
+  {
+    "id": 158,
+    "type": "sugerencia",
+    "senderJid": "31366532055076@lid",
+    "content": "un comando que si dice un país, el bot empieze a tomar el lenguaje del país ej: Chile, Argentina, México etc",
+    "timestamp": 1766363821574,
+    "status": "replied",
+    "reply": "hermano está imposible",
+    "replyTimestamp": 1766363919683
+  },
+  {
+    "id": 159,
+    "type": "sugerencia",
+    "senderJid": "31366532055076@lid",
+    "content": "un comando que el bot te de ánimos o incluso te insulte ej: .animo, frase motivadora",
+    "timestamp": 1766364075555,
+    "status": "replied",
+    "reply": "basura",
+    "replyTimestamp": 1766364342517
+  },
+  {
+    "id": 160,
+    "type": "sugerencia",
+    "senderJid": "31366532055076@lid",
+    "content": "un comando que sea algo .cumpleañoshoy y le de la felicidades al cumpleañero/a",
+    "timestamp": 1766364109653,
+    "status": "replied",
+    "reply": "ya está la opción de colocar tu cumpleaños, con eso me basta",
+    "replyTimestamp": 1766364358729
+  },
+  {
+    "id": 161,
+    "type": "sugerencia",
+    "senderJid": "157243618136231@lid",
+    "content": "que al completar el índice te de un título llamado \"Sin Tocar Pasto\"",
+    "timestamp": 1766365975017,
+    "status": "pending"
+  },
+  {
+    "id": 162,
+    "type": "sugerencia",
+    "senderJid": "157243618136231@lid",
+    "content": "que al completar el índice te de un título llamado \"Sin Tocar Pasto\"",
+    "timestamp": 1766365978520,
+    "status": "pending"
+  },
+  {
+    "id": 163,
+    "type": "sugerencia",
+    "senderJid": "157243618136231@lid",
+    "content": "que al completar el índice te de un título llamado \"Sin Tocar Pasto\"",
+    "timestamp": 1766365979688,
+    "status": "pending"
+  },
+  {
+    "id": 164,
+    "type": "sugerencia",
+    "senderJid": "31366532055076@lid",
+    "content": "un comando que al poner .14 salga guitar cantando tienes 14 activa cam",
+    "timestamp": 1766411257679,
+    "status": "pending"
+  },
+  {
+    "id": 165,
+    "type": "sugerencia",
+    "senderJid": "246403028803664@lid",
+    "content": "Poner el precio de mejora de las granjas en el . granja/.granja info",
+    "timestamp": 1766415528822,
+    "status": "pending"
+  },
+  {
+    "id": 166,
+    "type": "pregunta",
+    "senderJid": "246403028803664@lid",
+    "content": "Cuando se compra el titulo de owner soy owner o solo tengo el título??",
+    "timestamp": 1766423785227,
+    "status": "replied",
+    "reply": "cuando lo puedas comprar me avisas",
+    "replyTimestamp": 1766423907872
+  },
+  {
+    "id": 167,
+    "type": "sugerencia",
+    "senderJid": "31366532055076@lid",
+    "content": "un comando que te permita saber el significado de las palabras",
+    "timestamp": 1766424741270,
+    "status": "pending"
+  },
+  {
+    "id": 168,
+    "type": "sugerencia",
+    "senderJid": "31366532055076@lid",
+    "content": "apostar personajes y si ganas, ganas otro y si no pierdes con una multa",
+    "timestamp": 1766426507933,
+    "status": "pending"
+  },
+  {
+    "id": 169,
+    "type": "pregunta",
+    "senderJid": "246403028803664@lid",
+    "content": "Ayudaaa no me deja conseguir money Y estoy en negativo Que ago????",
+    "timestamp": 1766427265895,
+    "status": "pending"
+  },
+  {
+    "id": 170,
+    "type": "sugerencia",
+    "senderJid": "33677157355747@lid",
+    "content": "un título q sea piano embrujado (se toca solo)",
+    "timestamp": 1766431917112,
+    "status": "pending"
+  },
+  {
+    "id": 171,
+    "type": "pregunta",
+    "senderJid": "246403028803664@lid",
+    "content": "Colo me vuelvo vip permanente?",
+    "timestamp": 1766433659852,
+    "status": "pending"
+  },
+  {
+    "id": 172,
+    "type": "sugerencia",
+    "senderJid": "22042241953940@lid",
+    "content": "Avisarte cada vez que terminan las expediciones",
+    "timestamp": 1766433792418,
+    "status": "replied",
+    "reply": "es innecesario, está .expedicion estado para comprobar si tus expediciones ya finalizaron",
+    "replyTimestamp": 1766433931577
+  },
+  {
+    "id": 173,
+    "type": "sugerencia",
+    "senderJid": "246403028803664@lid",
+    "content": "Poner pets Tipo personajes pero con otras características",
+    "timestamp": 1766435085912,
+    "status": "pending"
+  },
+  {
+    "id": 174,
+    "type": "sugerencia",
+    "senderJid": "22042241953940@lid",
+    "content": "Poner un comando para vips que puedas reclamar todo lo del menu rpg y fijarte que tenés disponible para reclamar",
+    "timestamp": 1766437302643,
+    "status": "pending"
+  },
+  {
+    "id": 175,
+    "type": "reporte",
+    "senderJid": "246403028803664@lid",
+    "content": "El comando .robar @166164298780822 No me funciona en ningún momento y con nadie Desde hace 2 dias",
+    "timestamp": 1766488003312,
+    "status": "pending"
+  },
+  {
+    "id": 176,
+    "type": "reporte",
+    "senderJid": "228260516507722@lid",
+    "content": "ami tampoco me anda el comando .robar desde ayer",
+    "timestamp": 1766488172139,
+    "status": "pending"
   }
 ]

@@ -24,9 +24,9 @@ const premiosAdviento = {
   19: { tipo: 'personaje', personaje: "Smurf Cat", mensaje: "🎄 Día 19 - Personaje festivo: usa .misps para ver qué te tocó." },
   20: { tipo: 'nada', mensaje: "🎄 Día 20 - El Grinch visitó tu calendario... ¡No ganaste nada! 🎄" },
   21: { tipo: 'diamantes', cantidad: 50, mensaje: "🎄 Día 21 - 50 diamantes 💎" },
-  22: { tipo: 'pandacoins', cantidad: 30000, mensaje: "🎄 Día 22 - 25,000,000,000 Pandacoins" },
+  22: { tipo: 'pandacoins', cantidad: 30000, mensaje: "🎄 Día 22 - 30,000 Pandacoins" },
   23: { tipo: 'giros', cantidad: 1000, mensaje: "🎄 Día 23 - 1,000 tiros en Coin Master System 🎯" },
-  24: { tipo: 'premio_especial', mensaje: "🎄 ¡FELIZ NAVIDAD! 🎅 - Premio Especial Navideño: 100,000,000,000 Pandacoins + 100 diamantes + Título 🎄 Navideño ✨" }
+  24: { tipo: 'premio_especial', mensaje: "🎄 ¡FELIZ NAVIDAD! 🎅 - Premio Especial Navideño: 30,000 Pandacoins + 100 diamantes + Título 🎄 Navideño ✨" }
 };
 
 export const command = 'adviento';

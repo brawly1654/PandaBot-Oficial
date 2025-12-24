@@ -9,6 +9,6 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  const text = `🤗 Abraza fuerte a @${mentions[0].split('@')[0]}!`;
+  const text = `🤗 Abrazaste fuerte a @${mentions[0].split('@')[0]}!`;
   await sock.sendMessage(from, { text, mentions });
 }

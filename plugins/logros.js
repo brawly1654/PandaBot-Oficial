@@ -1,3 +1,4 @@
+import { cargarDatabase } from '../data/database.js';
 import {
   getAllAchievements,
   getUserAchievementStats,
@@ -145,9 +146,11 @@ export async function run(sock, msg, args) {
   const allAchievements = getAllAchievements();
   
   // Últimos 3 logros desbloqueados
-  const db = JSON.parse(fs.readFileSync('./database.json', 'utf8'));
-  const user = db.users[targetUserJid];
-  const recentUnlocked = user.achievements?.unlocked.slice(-3).reverse() || [];
+  const db = cargarDatabase();
+  const user = db.users?.[targetUserJid];
+  const recentUnlocked = Array.isArray(user?.achievements?.unlocked)
+  ? user.achievements.unlocked.slice(-3).reverse()
+  : [];
   
   let texto = `╭━━━━━ 🏆 LOGROS ━━━━━╮\n\n`;
   texto += `👤 Usuario: @${targetUserJid.split('@')[0]}\n`;

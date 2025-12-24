@@ -40,7 +40,7 @@ export async function run(sock, msg, args) {
 
       if (i + 5 < groups.length) {
         await sock.sendMessage(from, { text: '⌛ Esperando 30 segundos antes de enviar el siguiente lote de grupos...' });
-        await sleep(15000);
+        await sleep(25000);
       }
     }
 

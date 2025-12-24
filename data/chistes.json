@@ -34,6 +34,16 @@
       "id": 18,
       "senderJid": "248726488645797@lid",
       "content": "te sabes el chiste de pocoyo? No, Tampoco yo ajaja ríanse no tengo amigos"
+    },
+    {
+      "id": 19,
+      "senderJid": "54164235231390@lid",
+      "content": "porno"
+    },
+    {
+      "id": 24,
+      "senderJid": "210015965175820@lid",
+      "content": "que le dice un sobrino a un tio"
     }
   ],
   "acceptedJokes": [
@@ -191,6 +201,26 @@
       "id": 17,
       "senderJid": "31366532055076@lid",
       "content": "¿Qué le dice mi abuelo a mi abuela?, te voy a sacar la chucha vieja culia"
+    },
+    {
+      "id": 20,
+      "senderJid": "267232999420158@lid",
+      "content": "¿Cuál es el mayor miedo de alguien en silla de ruedas? Irse a la villa."
+    },
+    {
+      "id": 21,
+      "senderJid": "180444930768966@lid",
+      "content": "Porque la gallina cruzo la calle? -pa culearse un gato"
+    },
+    {
+      "id": 23,
+      "senderJid": "267232999420158@lid",
+      "content": "¿Cuál es el mayor miedo de alguien en silla de ruedas? Irse a la villa."
+    },
+    {
+      "id": 25,
+      "senderJid": "157243618136231@lid",
+      "content": "Porque no se puede tirar una bomba a África? Porque no hay un punto blanco"
     }
   ]
 }

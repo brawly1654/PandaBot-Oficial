@@ -133,7 +133,7 @@ export async function desactivarAFKAutomatico(sender, from, sock = null) {
       const minutos = Math.floor((tiempoAFK % 3600000) / 60000);
       
       const mensaje = `🔄 *AFK DESACTIVADO AUTOMÁTICAMENTE*\n\n` +
-                     `👤 *Usuario:* @${sender.split('@')[0]}\n` +
+                     `👤 *Usuario:* Tú` +
                      `⏱️ *Tiempo en AFK:* ${horas}h ${minutos}m\n` +
                      `🛡️ *Robos prevenidos:* ${usuarioAFK.robosPrevenidos || 0}\n\n` +
                      `💡 *El AFK se desactiva automáticamente cuando envías mensajes.*\n` +
@@ -414,7 +414,7 @@ async function desactivarAFK(sock, msg, from, sender) {
   guardarDatabase(db);
 
   let mensaje = `✅ *MODO AFK DESACTIVADO* 🔓\n\n`;
-  mensaje += `👤 *Usuario:* @${sender.split('@')[0]}\n`;
+  mensaje += `👤 *Usuario:* Tú\n`;
   mensaje += `⏱️ *Tiempo en AFK:* ${horas}h ${minutos}m ${segundos}s\n`;
   mensaje += `🛡️ *Robos prevenidos:* ${usuarioAFK.robosPrevenidos || 0}\n\n`;
 
@@ -449,7 +449,7 @@ async function estadoAFK(sock, msg, from, sender) {
   const usuarioAFK = afkUsuarios.get(sender);
 
   let mensaje = `📊 *ESTADO DE PROTECCIÓN AFK* 🛡️\n\n`;
-  mensaje += `👤 *Usuario:* @${sender.split('@')[0]}\n`;
+  mensaje += `👤 *Usuario:* Tú\n`;
 
   if (!isVip(sender)) {
     mensaje += `⭐ *Estado VIP:* ❌ No eres VIP\n\n`;
@@ -703,8 +703,8 @@ async function quitarAFK(sock, msg, from, sender, args) {
   guardarDatabase(db);
 
   const mensaje = `⚙️ *AFK REMOVIDO POR ADMINISTRADOR*\n\n` +
-                  `👤 *Usuario afectado:* @${mencionado.split('@')[0]}\n` +
-                  `👑 *Removido por:* @${sender.split('@')[0]}\n` +
+                  `👤 *Usuario afectado:* Usuario\n` +
+                  `👑 *Removido por:* Owner\n` +
                   `⏱️ *Tiempo en AFK:* ${horas}h ${minutos}m\n` +
                   `🛡️ *Robos prevenidos:* ${usuarioAFK.robosPrevenidos || 0}\n\n` +
                   `🔓 *El usuario ya no está protegido*\n` +
@@ -719,7 +719,7 @@ async function quitarAFK(sock, msg, from, sender, args) {
   try {
     await sock.sendMessage(mencionado, {
       text: `⚠️ *TU MODO AFK HA SIDO DESACTIVADO*\n\n` +
-            `👑 *Owner:* @${sender.split('@')[0]}\n` +
+            `👑 *Owner:* Probablemente Lukas\n` +
             `⏱️ *Tiempo en AFK:* ${horas}h ${minutos}m\n` +
             `🛡️ *Robos prevenidos:* ${usuarioAFK.robosPrevenidos || 0}\n\n` +
             `🔓 *Tu protección AFK ha sido removida*\n` +

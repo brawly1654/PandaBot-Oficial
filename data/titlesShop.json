@@ -296,6 +296,15 @@
       "price": 15000000,
       "emoji": "\ud83d",
       "createdBy": "166164298780822"
+    },
+    {
+      "id": "___owner",
+      "name": "🐼 Owner",
+      "displayName": "🐼 Owner",
+      "description": "Título comprable creado por owners",
+      "price": 1000000000000,
+      "emoji": "\ud83d",
+      "createdBy": "166164298780822"
     }
   ]
 }

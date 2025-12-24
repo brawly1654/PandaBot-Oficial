@@ -2,6 +2,8 @@
 import fs from 'fs';
 import path from 'path';
 import { cargarDatabase, guardarDatabase, inicializarUsuario } from '../data/database.js';
+import { trackMinar, checkSpecialAchievements } from '../middleware/trackAchievements.js';
+import { initializeAchievements } from '../data/achievementsDB.js';
 
 export const command = 'minar';
 
@@ -125,4 +127,8 @@ export async function run(sock, msg, args) {
   respuesta += `💡 *Consejo:* Los recursos raros valen más en el mercado`;
   
   await sock.sendMessage(from, { text: respuesta }, { quoted: msg });
+
+trackMinar(sender, sock, from);
+  checkSpecialAchievements(sender, sock, from);
 }
+

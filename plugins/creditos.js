@@ -9,9 +9,9 @@ export async function run(sock, msg, args) {
 ┏━━━━━━━━━━━━━━━━━━━┓
 👑 *Owners:*
 +56 9 5350 8566 > Lukas
-+57 302 3181375 > Josefino
 +52 55 3883 0665 > Miguelito
 +52 951 316 4242 > Lilan
++56 9 3061 7575 > Tom
 
 🌐 *Instagram:*
 Bot🐼:
@@ -21,14 +21,15 @@ Creador❗️:
 https://www.instagram.com/lukas.sec_._?igsh=MWhocXdvZGt5cGtldA==
 
 Owners👑:
-https://www.instagram.com/josedavid.martinezarrieta?igsh=bmRmeG01ZDcxNGkx
-> Josefino
 
 https://www.instagram.com/miangelnevado?igsh=MWk5cGcxem5zN3p3bA==
 > Miguelito
 
 https://www.instagram.com/awendoperez?igsh=MWZqeDQzYWYyN2JrMw==
 > Lilan
+
+https://www.instagram.com/sigmatom777?igsh=cmc4eWgxMmR3b2Nq
+> Tom
 
 > Gracias por todo.💗
 ┗━━━━━━━━━━━━━━━━━━━┛

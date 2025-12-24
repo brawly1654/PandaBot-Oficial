@@ -1,9 +1,46 @@
 import fs from 'fs';
 import { cargarDatabase, guardarDatabase } from './database.js';
 
+function ensureAchievementStats(user) {
+  if (!user.achievements) user.achievements = {};
+
+  if (!user.achievements.stats) {
+    user.achievements.stats = {
+      minar_count: 0,
+      trabajar_count: 0,
+      buy_count: 0,
+      apostar_count: 0,
+      robos_exitosos: 0,
+      robos_fallidos: 0,
+      commands_used: 0,
+      cm_tiradas: 0,
+      cm_ataques: 0,
+      registered_date: Date.now(),
+      was_broke: false,
+      comeback: false,
+      spotify_count: 0,
+      paja_count: 0,
+      sexo_count: 0,
+      dildear_count: 0
+    };
+  }
+
+  // Campos nuevos futuros
+  const defaults = {
+    paja_count: 0,
+    sexo_count: 0,
+    dildear_count: 0
+  };
+
+  for (const k in defaults) {
+    if (user.achievements.stats[k] === undefined) {
+      user.achievements.stats[k] = defaults[k];
+    }
+  }
+}
+
 const achievementsFile = './data/achievements.json';
 
-// Cargar definiciones de logros
 let achievementsData = null;
 
 function loadAchievements() {
@@ -12,16 +49,12 @@ function loadAchievements() {
       achievementsData = JSON.parse(fs.readFileSync(achievementsFile, 'utf8'));
     } catch (error) {
       console.error('Error cargando achievements.json:', error);
-      // Datos por defecto para evitar crash
       achievementsData = { categories: {}, achievements: [] };
     }
   }
   return achievementsData;
 }
 
-/**
- * Inicializar sistema de logros para un usuario
- */
 export function initializeAchievements(userJid) {
   const db = cargarDatabase();
   db.users = db.users || {};
@@ -31,7 +64,6 @@ export function initializeAchievements(userJid) {
   }
 
   if (!db.users[userJid].achievements) {
-    // Usuario NUEVO - crear desde cero
     db.users[userJid].achievements = {
       unlocked: [],
       progress: {},
@@ -84,9 +116,6 @@ export function initializeAchievements(userJid) {
   return db.users[userJid].achievements;
 }
 
-/**
- * Obtener todos los logros disponibles
- */
 export function getAllAchievements() {
   const data = loadAchievements();
   return data.achievements;
@@ -226,12 +255,11 @@ export function trackProgress(userJid, actionType, value = 1, sock = null, from 
     user.achievements = dbUpdated.users[userJid].achievements;
   }
 
+  ensureAchievementStats(user);
   const stats = user.achievements.stats;
-  console.log(`📊 Antes - ${actionType}: ${stats[actionType]}`);
   // Actualizar estadística
 if (stats[actionType] !== undefined) {
     stats[actionType] += value;
-    console.log(`📊 Después - ${actionType}: ${stats[actionType]}`);
   } else {
     console.log(`❌ ${actionType} no existe en stats`);
   }
@@ -262,6 +290,7 @@ export function checkAchievements(userJid, sock = null, from = null) {
     user.achievements = dbUpdated.users[userJid].achievements;
   }
 
+  ensureAchievementStats(user);
   const stats = user.achievements.stats;
   const achievements = getAllAchievements();
   const unlocked = [];
@@ -318,7 +347,6 @@ export function checkAchievements(userJid, sock = null, from = null) {
         break;
 
       case 'pizzeria_registered':
-        // Verificar si tiene pizzería
         completed = !!user.pizzeria;
         break;
 
@@ -354,7 +382,6 @@ export function checkAchievements(userJid, sock = null, from = null) {
   case 'paja_count':
   case 'sexo_count': 
   case 'dildear_count':
-    console.log(`🔍 Verificando ${req.type}: ${stats[req.type] || 0} >= ${req.value}`);
     completed = (stats[req.type] || 0) >= req.value;
     break;
   }
@@ -370,9 +397,6 @@ export function checkAchievements(userJid, sock = null, from = null) {
   return unlocked;
 }
 
-/**
- * Obtener estadísticas de logros de un usuario
- */
 export function getUserAchievementStats(userJid) {
   const db = cargarDatabase();
   const user = db.users[userJid];
@@ -397,9 +421,6 @@ export function getUserAchievementStats(userJid) {
   };
 }
 
-/**
- * Obtener progreso de un logro específico
- */
 export function getAchievementProgress(userJid, achievementId) {
   const db = cargarDatabase();
   const user = db.users[userJid];
@@ -437,9 +458,6 @@ export function getAchievementProgress(userJid, achievementId) {
   };
 }
 
-/**
- * Seleccionar título
- */
 export function selectTitle(userJid, title) {
   const db = cargarDatabase();
   const user = db.users[userJid];

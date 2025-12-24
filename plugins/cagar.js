@@ -13,7 +13,7 @@ export async function run(sock, msg) {
   const userCooldown = cooldowns[sender]?.cagar || 0;
   const now = Date.now();
 
-  const cooldownMs = 4 * 60 * 1000;
+  const cooldownMs = 1 * 60 * 1000;
   if (now - userCooldown < cooldownMs) {
     const remainingSeconds = Math.ceil((cooldownMs - (now - userCooldown)) / 1000);
     const minutes = Math.floor(remainingSeconds / 60);
@@ -31,8 +31,8 @@ export async function run(sock, msg) {
   db.users[sender] = db.users[sender] || { pandacoins: 0, exp: 0 };
   
   const randomChance = Math.random() * 100;
-  const jackpotChance = 0.4;
-  const jackpotAmount = 444444;
+  const jackpotChance = 0.1;
+  const jackpotAmount = 444444444;
 
   if (randomChance <= jackpotChance) {
     db.users[sender].pandacoins += jackpotAmount;
@@ -56,4 +56,3 @@ export async function run(sock, msg) {
   cooldowns[sender].cagar = now;
   fs.writeFileSync(cooldownFile, JSON.stringify(cooldowns, null, 2));
 }
-

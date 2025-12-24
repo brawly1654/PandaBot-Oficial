@@ -2,8 +2,11 @@
 import fs from 'fs';
 import path from 'path';
 import { cargarDatabase, guardarDatabase, inicializarUsuario } from '../data/database.js';
+import { trackTrabajar, checkSpecialAchievements } from '../middleware/trackAchievements.js';
+import { initializeAchievements } from '../data/achievementsDB.js';
 
 export const command = 'trabajar';
+export const aliases = ['w', 'work', 'chamba', 'chambear', 'laburo'];
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
@@ -15,7 +18,7 @@ export async function run(sock, msg, args) {
   const cooldowns = JSON.parse(fs.readFileSync(cdPath));
   const lastTime = cooldowns[sender]?.trabajar || 0;
   const now = Date.now();
-  const cooldownTime = 24 * 60 * 60 * 1000; // 24 horas (trabajo diario)
+  const cooldownTime = 3 * 60 * 60 * 1000;
 
   if (now - lastTime < cooldownTime) {
     const hoursLeft = Math.ceil((cooldownTime - (now - lastTime)) / (60 * 60 * 1000));
@@ -122,8 +125,11 @@ export async function run(sock, msg, args) {
     respuesta += `+1000 coins de bonus extra\n`;
   }
   
-  respuesta += `\n⏰ *Próximo trabajo en:* 24 horas\n`;
+  respuesta += `\n⏰ *Próximo trabajo en:* 3 horas\n`;
   respuesta += `💡 *Consejo:* Sube de nivel para acceder a trabajos mejores pagados`;
   
   await sock.sendMessage(from, { text: respuesta }, { quoted: msg });
+
+trackTrabajar(sender, sock, from);
+  checkSpecialAchievements(sender, sock, from);
 }

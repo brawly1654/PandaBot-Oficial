@@ -196,7 +196,7 @@
         "31366532055076@lid"
       ],
       "level": 1,
-      "exp": 80,
+      "exp": 90,
       "expToNextLevel": 100,
       "health": 80,
       "maxHealth": 80,
@@ -204,7 +204,7 @@
       "hunger": 0,
       "energy": 45,
       "birthDate": "2025-12-04T21:11:12.146Z",
-      "lastInteraction": "2025-12-07T18:38:59.370Z",
+      "lastInteraction": "2025-12-12T23:43:42.635Z",
       "status": "awake",
       "location": "home",
       "inventory": {
@@ -212,7 +212,7 @@
         "toys": {}
       },
       "stats": {
-        "timesFed": 3,
+        "timesFed": 4,
         "timesPlayed": 2,
         "timesWalked": 1,
         "timesSlept": 0,
@@ -278,6 +278,68 @@
         "timesPlayed": 0,
         "timesWalked": 0,
         "timesSlept": 0,
+        "totalExp": 0
+      }
+    },
+    "pet_1766037484904_2ukwv4n8l": {
+      "id": "pet_1766037484904_2ukwv4n8l",
+      "name": "Teio",
+      "type": "dragon",
+      "owners": [
+        "92977468833839@lid"
+      ],
+      "level": 1,
+      "exp": 70,
+      "expToNextLevel": 100,
+      "health": 100,
+      "maxHealth": 100,
+      "happiness": 100,
+      "hunger": 30,
+      "energy": 100,
+      "birthDate": "2025-12-18T05:58:04.904Z",
+      "lastInteraction": "2025-12-18T14:19:03.841Z",
+      "status": "awake",
+      "location": "home",
+      "inventory": {
+        "food": {},
+        "toys": {}
+      },
+      "stats": {
+        "timesFed": 1,
+        "timesPlayed": 1,
+        "timesWalked": 1,
+        "timesSlept": 1,
+        "totalExp": 0
+      }
+    },
+    "pet_1766430465655_pxpq3fnk0": {
+      "id": "pet_1766430465655_pxpq3fnk0",
+      "name": "queso",
+      "type": "cat",
+      "owners": [
+        "184365883650217@lid"
+      ],
+      "level": 1,
+      "exp": 60,
+      "expToNextLevel": 100,
+      "health": 70,
+      "maxHealth": 70,
+      "happiness": 100,
+      "hunger": 50,
+      "energy": 75,
+      "birthDate": "2025-12-22T19:07:45.655Z",
+      "lastInteraction": "2025-12-22T19:15:45.188Z",
+      "status": "sleeping",
+      "location": "home",
+      "inventory": {
+        "food": {},
+        "toys": {}
+      },
+      "stats": {
+        "timesFed": 1,
+        "timesPlayed": 0,
+        "timesWalked": 1,
+        "timesSlept": 1,
         "totalExp": 0
       }
     }
@@ -351,10 +413,19 @@
       "status": "pending",
       "createdAt": "2025-12-04T21:13:45.000Z",
       "expiresAt": 1764969225000
+    },
+    "req_1766430321474": {
+      "id": "req_1766430321474",
+      "from": "184365883650217@lid",
+      "to": "171030379270368@lid",
+      "groupId": "120363424460590440@g.us",
+      "status": "pending",
+      "createdAt": "2025-12-22T19:05:21.474Z",
+      "expiresAt": 1766516721474
     }
   },
   "petStats": {
-    "totalPets": 9,
+    "totalPets": 11,
     "totalCouples": 1,
     "topPets": [
       {
