@@ -50,7 +50,7 @@ export const aliases = ['activar', 'iniciar'];
 export const getEfectosBoost = fetchBoosts;
 
 const pedoUrls = ['https://files.catbox.moe/otuozc.mp4', 'https://files.catbox.moe/su2l4w.mp4'];
-const nombre = msg.pushName || 'Usuario';
+
 async function enviarAudioPedo(sock, from, msg) {
     const randomUrl = pedoUrls[Math.floor(Math.random() * pedoUrls.length)];
     const loadingMsg = await sock.sendMessage(from, { text: '💀' });
@@ -96,6 +96,7 @@ export async function run(sock, msg, args) {
     const from = msg.key.remoteJid;
     const sender = msg.key.participant || msg.key.remoteJid;
     const senderId = sender.split('@')[0];
+    const nombre = msg.pushName || 'Usuario';
 
     if (!ownerNumber.includes(`+${senderId}`)) {
         await sock.sendMessage(from, { text: '❌ Este comando solo puede ser usado por los owners.' }, { quoted: msg });
@@ -140,9 +141,9 @@ export async function run(sock, msg, args) {
 
     if (tipo === 'clear') {
         Object.keys(suerteTimeouts).forEach(e => { clearTimeout(suerteTimeouts[e]); });
-        efectosBoost = {};
-        suerteTimeouts = {};
-        expiraciones = {};
+        Object.keys(efectosBoost).forEach(k => delete efectosBoost[k]);
+        Object.keys(suerteTimeouts).forEach(k => delete suerteTimeouts[k]);
+        Object.keys(expiraciones).forEach(k => delete expiraciones[k]);
         await sock.sendMessage(from, { text: '🧹 Todos los boosts han sido eliminados.' }, { quoted: msg });
         return;
     }

@@ -170,7 +170,7 @@ export async function run(sock, msg, args) {
 - .ttt | .tictactoe | .tresenraya | .gato
 > Juegas al famoso *Tic Tac Toe* en PandaBot. Usa *.ttt help* para más información.
 
-- .daily
+- .daily | .diario | .cadadia
 > Reclamas tu recompensa diaria en PandaBot.
 
 - .hourly

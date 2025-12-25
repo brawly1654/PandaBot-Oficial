@@ -772,8 +772,8 @@ async function mejorarGranja(sock, from, sender, db, args) {
   
 
   const capacidadBase = tipo.capacidad;
-  const nuevaCapacidad = capacidadBase * Math.pow(mejoraMultiplicador, granja.nivel - 1);
-  
+  let nuevaCapacidad = capacidadBase * Math.pow(mejoraMultiplicador, granja.nivel - 1);
+
   if (activacionesGlobales.capacidad_x2.activo) {
     nuevaCapacidad = nuevaCapacidad * 2;
   }

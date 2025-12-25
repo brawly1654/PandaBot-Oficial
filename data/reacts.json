@@ -1,0 +1,10 @@
+{
+  "reactions": [
+    { "emoji": "🎉", "price": 100000000, "stock": 10, "description": ".." },
+    { "emoji": "🎀", "price": 200000000, "stock": 7, "description": ".." },
+    { "emoji": "🤯", "price": 300000000, "stock": 4, "description": ".." },
+    { "emoji": "🚽", "price": 400000000, "stock": 3, "description": ".." },
+    { "emoji": "👶", "price": 500000000, "stock": 3, "description": ".." },
+    { "emoji": "🐼", "price": 600000000, "stock": 3, "description": ".." }
+  ]
+}

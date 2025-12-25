@@ -120,6 +120,16 @@ export async function handleMessage(sock, msg) {
     sock.sendMessage(from, { react: { text: '👑', key: msg.key } }).catch(() => {});
   }
 
+  try {
+    const db = cargarDatabase();
+    if (db.reactions && db.reactions.users && db.reactions.users[sender] && db.reactions.users[sender].selected) {
+      const emoji = db.reactions.users[sender].selected;
+      if (emoji) {
+        sock.sendMessage(from, { react: { text: emoji, key: msg.key } }).catch(() => {});
+      }
+    }
+  } catch {}
+
   await desactivarAFKAutomatico(sender, from, sock).catch(() => {});
 
   const db = cargarDatabase();
