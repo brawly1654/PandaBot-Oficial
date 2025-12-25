@@ -1,0 +1,39 @@
+[Unit]
+Description=PandaBot - WhatsApp Bot Service
+Documentation=https://github.com/brawly1654/PandaBot-Oficial
+After=network.target
+
+[Service]
+Type=forking
+User=pandabot
+Group=pandabot
+WorkingDirectory=/home/pandabot/PandaBot-Oficial
+Environment="NODE_ENV=production"
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+
+# Comando para iniciar el bot usando PM2
+ExecStart=/usr/bin/pm2 start /home/pandabot/PandaBot-Oficial/ecosystem.config.cjs
+ExecReload=/usr/bin/pm2 restart bot
+ExecStop=/usr/bin/pm2 stop bot
+
+# Reintentos en caso de fallo
+Restart=on-failure
+RestartSec=10
+StartLimitInterval=200
+StartLimitBurst=5
+
+# Seguridad
+NoNewPrivileges=true
+PrivateTmp=true
+
+# Límites de recursos
+LimitNOFILE=65536
+LimitNPROC=4096
+
+# Logs
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=pandabot
+
+[Install]
+WantedBy=multi-user.target
