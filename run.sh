@@ -45,7 +45,7 @@ start_bot() {
     log_info "Iniciando PandaBot con PM2..."
     
     # Verificar si el bot ya está corriendo
-    if pm2 list | grep -q "bot.*online"; then
+    if pm2 describe bot &>/dev/null && pm2 list | grep -q "│ bot.*│ online"; then
         log_warning "PandaBot ya está corriendo. Usa 'restart' para reiniciar."
         return 0
     fi
@@ -82,7 +82,7 @@ restart_bot() {
 # Función para ver el estado
 status_bot() {
     log_info "Estado de PandaBot:"
-    pm2 list | grep -E "bot|PandaLove" || log_warning "No hay procesos corriendo."
+    pm2 list | grep "bot" || log_warning "No hay procesos corriendo."
 }
 
 # Función para ver los logs

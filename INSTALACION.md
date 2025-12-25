@@ -2,7 +2,7 @@
 
 ## Requisitos Previos
 
-- Node.js (versión 16 o superior)
+- Node.js (versión 18 o superior recomendado)
 - npm o yarn
 - PM2 (Process Manager para Node.js)
 - systemd (para ejecutar como servicio en el servidor)
