@@ -42,23 +42,33 @@ fi
 
 # Función para iniciar el bot
 start_bot() {
+    local daemon_mode="${1:-normal}"
+    
     log_info "Iniciando PandaBot con PM2..."
     
-    # Verificar si el bot ya está corriendo
-    if pm2 describe bot &>/dev/null && pm2 list | grep -q "│ bot.*│ online"; then
-        log_warning "PandaBot ya está corriendo. Usa 'restart' para reiniciar."
-        return 0
+    # Verificar si el bot ya está corriendo (solo en modo normal)
+    if [ "$daemon_mode" = "normal" ]; then
+        if pm2 describe bot &>/dev/null && pm2 list | grep -q "│ bot.*│ online"; then
+            log_warning "PandaBot ya está corriendo. Usa 'restart' para reiniciar."
+            return 0
+        fi
     fi
     
     # Iniciar usando el archivo de configuración de PM2
-    pm2 start ecosystem.config.cjs
-    
-    # Guardar configuración de PM2
-    pm2 save
-    
-    log_info "✅ PandaBot iniciado correctamente!"
-    log_info "Usa 'pm2 logs bot' para ver los logs en tiempo real."
-    log_info "Usa 'pm2 monit' para monitorear el bot."
+    if [ "$daemon_mode" = "systemd" ]; then
+        # Modo para systemd: ejecutar PM2 sin daemon
+        exec pm2 start ecosystem.config.cjs --no-daemon
+    else
+        # Modo normal: PM2 como daemon
+        pm2 start ecosystem.config.cjs
+        
+        # Guardar configuración de PM2
+        pm2 save
+        
+        log_info "✅ PandaBot iniciado correctamente!"
+        log_info "Usa 'pm2 logs bot' para ver los logs en tiempo real."
+        log_info "Usa 'pm2 monit' para monitorear el bot."
+    fi
 }
 
 # Función para detener el bot
@@ -102,7 +112,11 @@ delete_bot() {
 # Procesar comandos
 case "${1:-start}" in
     start)
-        start_bot
+        start_bot normal
+        ;;
+    systemd)
+        # Modo especial para systemd
+        start_bot systemd
         ;;
     stop)
         stop_bot

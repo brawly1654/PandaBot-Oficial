@@ -5,17 +5,16 @@ After=network.target
 
 [Service]
 Type=simple
-User=pandabot
-Group=pandabot
-WorkingDirectory=/home/pandabot/PandaBot-Oficial
+User=root
+WorkingDirectory=/root/PandaBot-Oficial
 Environment="NODE_ENV=production"
-Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+Environment="PATH=/root/.nvm/versions/node/v20.19.6/bin:/usr/local/bin:/usr/bin:/bin"
 
-# Comando para iniciar el bot usando PM2 (sin daemon para systemd)
-ExecStart=/usr/bin/pm2 start /home/pandabot/PandaBot-Oficial/ecosystem.config.cjs --no-daemon
-ExecReload=/usr/bin/pm2 restart bot
-ExecStop=/usr/bin/pm2 stop bot
-ExecStopPost=/usr/bin/pm2 kill
+# Comando para iniciar el bot usando el script run.sh
+ExecStart=/root/PandaBot-Oficial/run.sh systemd
+ExecReload=/root/.nvm/versions/node/v20.19.6/bin/pm2 restart bot
+ExecStop=/root/.nvm/versions/node/v20.19.6/bin/pm2 stop bot
+ExecStopPost=/root/.nvm/versions/node/v20.19.6/bin/pm2 kill
 
 # Reintentos en caso de fallo
 Restart=on-failure

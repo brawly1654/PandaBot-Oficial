@@ -43,50 +43,35 @@ El script `run.sh` proporciona una interfaz simple para gestionar el bot con PM2
 
 Para ejecutar PandaBot como un servicio del sistema que se inicia automáticamente al arrancar el servidor:
 
-### 1. Crear un usuario del sistema (opcional pero recomendado)
+### 1. Verificar la ubicación del proyecto
+
+El archivo de servicio está preconfigurado para:
+- **Usuario**: `root`
+- **Directorio del proyecto**: `/root/PandaBot-Oficial`
+- **PM2**: `/root/.nvm/versions/node/v20.19.6/bin/pm2`
+
+Si tu configuración es diferente, edita `pandabot.service` antes de continuar.
+
+### 2. Asegurar que el script run.sh es ejecutable
 
 ```bash
-sudo useradd -r -s /bin/bash -d /home/pandabot -m pandabot
+chmod +x /root/PandaBot-Oficial/run.sh
 ```
 
-### 2. Copiar el proyecto al directorio del usuario
-
-```bash
-sudo cp -r /ruta/al/proyecto /home/pandabot/PandaBot-Oficial
-sudo chown -R pandabot:pandabot /home/pandabot/PandaBot-Oficial
-```
-
-### 3. Instalar dependencias
-
-```bash
-sudo -u pandabot bash -c "cd /home/pandabot/PandaBot-Oficial && npm install"
-```
-
-### 4. Instalar PM2 para el usuario (si es necesario)
-
-```bash
-sudo npm install -g pm2
-```
-
-### 5. Copiar el archivo de servicio
-
-**IMPORTANTE**: Antes de copiar el archivo de servicio, edita `pandabot.service` y ajusta:
-- `User=` y `Group=` (tu usuario del sistema)
-- `WorkingDirectory=` (ruta absoluta a tu proyecto)
-- Rutas en `ExecStart`, `ExecReload` y `ExecStop`
+### 3. Copiar el archivo de servicio
 
 ```bash
 sudo cp pandabot.service /etc/systemd/system/
 ```
 
-### 6. Recargar systemd y habilitar el servicio
+### 4. Recargar systemd y habilitar el servicio
 
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable pandabot.service
 ```
 
-### 7. Iniciar el servicio
+### 5. Iniciar el servicio
 
 ```bash
 sudo systemctl start pandabot.service
@@ -119,15 +104,27 @@ sudo systemctl disable pandabot
 
 ## Configuración Personalizada
 
-### Editar el archivo de servicio
+### Editar el archivo de servicio para tu entorno
 
-Si necesitas personalizar el servicio, edita el archivo en `/etc/systemd/system/pandabot.service`:
+El archivo `pandabot.service` viene preconfigurado para el servidor específico con:
+- Usuario: `root`
+- Directorio: `/root/PandaBot-Oficial`
+- PM2: `/root/.nvm/versions/node/v20.19.6/bin/pm2`
+
+Si tu configuración es diferente, edita `pandabot.service` **antes** de copiarlo:
 
 ```bash
-sudo nano /etc/systemd/system/pandabot.service
+nano pandabot.service
 ```
 
-Después de cualquier cambio, recarga systemd:
+Ajusta las siguientes líneas según tu entorno:
+- `User=` (tu usuario del sistema)
+- `WorkingDirectory=` (ruta absoluta a tu proyecto)
+- `Environment="PATH=..."` (incluye la ruta a tu PM2)
+- `ExecStart=` (ruta al script run.sh)
+- `ExecReload=`, `ExecStop=`, `ExecStopPost=` (ruta a tu PM2)
+
+Después de copiar o modificar el archivo en `/etc/systemd/system/`, recarga systemd:
 
 ```bash
 sudo systemctl daemon-reload
@@ -183,9 +180,11 @@ Si quieres ejecutar el servicio con tu usuario actual:
 ## Notas Importantes
 
 - El archivo `ecosystem.config.cjs` contiene la configuración de PM2 para el bot
+- El servicio systemd usa el script `run.sh` con el comando especial `systemd` que ejecuta PM2 en modo no-daemon
 - El servicio está configurado para reiniciar automáticamente en caso de fallo
 - Los logs se guardan en el journal de systemd y también están disponibles a través de PM2
 - El servicio se inicia automáticamente al arrancar el sistema si está habilitado
+- El archivo `pandabot.service` está preconfigurado para el servidor en `/root/PandaBot-Oficial` con Node.js v20.19.6
 
 ## Diferencias entre start.sh y run.sh
 
