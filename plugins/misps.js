@@ -32,11 +32,18 @@ export async function run(sock, msg, args) {
     const userCharacters = user.personajes
         .map(pName => {
             const clave = String(pName).toLowerCase().trim();
-            return personajes.find(p => (
-                (p.nombre && p.nombre.toLowerCase() === clave) ||
-                (p.base && p.base.toLowerCase() === clave) ||
-                (p.nombre && p.nombre.toLowerCase().includes(clave))
-            ));
+            // 1) exact nombre
+            let found = personajes.find(p => p.nombre && p.nombre.toLowerCase() === clave);
+            if (found) return found;
+            // 2) base exact without efectos
+            found = personajes.find(p => p.base && p.base.toLowerCase() === clave && (!p.efectos || p.efectos.length === 0));
+            if (found) return found;
+            // 3) any base match
+            found = personajes.find(p => p.base && p.base.toLowerCase() === clave);
+            if (found) return found;
+            // 4) fallback: nombre includes
+            found = personajes.find(p => p.nombre && p.nombre.toLowerCase().includes(clave));
+            return found;
         })
         .filter(p => p !== undefined);
 

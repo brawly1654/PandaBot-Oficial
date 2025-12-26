@@ -265,7 +265,14 @@ Tienes: *${user.pandacoins.toLocaleString()}* 🐼` });
         return;
     }
 
-    const personaje = personajes.find(p => p.nombre.toLowerCase() === nombreInput || (p.base && p.base.toLowerCase() === nombreInput));
+    // Prefer exact name match, then base without efectos, then any base match
+    let personaje = personajes.find(p => p.nombre && p.nombre.toLowerCase() === nombreInput);
+    if (!personaje) {
+        personaje = personajes.find(p => p.base && p.base.toLowerCase() === nombreInput && (!p.efectos || p.efectos.length === 0));
+    }
+    if (!personaje) {
+        personaje = personajes.find(p => p.base && p.base.toLowerCase() === nombreInput);
+    }
 
     if (!personaje) {
         await sock.sendMessage(from, { text: `❌ No se encontró *"${args.join(' ')}"*.\n\n📝 Usa \`.viewps\` para ver personajes disponibles.` });
