@@ -7,6 +7,7 @@ import { cargarDatos, agregarPersonajeConEfectos } from '../lib/cacheManager.js'
 
 export const command = 'buy2';
 export const aliases = ['buyps', 'buypersonaje'];
+
 export const category = 'economía';
 
 export const multiplicadores = {
@@ -121,7 +122,7 @@ function aplicarEfectos(personaje, suerte) {
 
         const personajeConEfectos = {
             nombre: nombreFinal,
-            calidad: personaje.calidad + ' con Efectos',
+            calidad: (personaje.calidad || 'Normal') + ' con Efectos',
             precio: Math.floor(precioFinal),
             efectos: efectos,
             base: personaje.nombre,
@@ -157,10 +158,10 @@ export async function run(sock, msg, args) {
     const from = msg.key.remoteJid;
     const sender = msg.key.participant || msg.key.remoteJid;
     const db = cargarDatabase();
-    
+
     db.users = db.users || {};
     let user = db.users[sender];
-    
+
     if (!user) {
         await sock.sendMessage(from, { text: '❌ No estás registrado. Usa `.registrar` para empezar.' });
         return;
@@ -173,7 +174,7 @@ export async function run(sock, msg, args) {
     const COOLDOWN_MS = 3 * 1000;
     const ahora = Date.now();
     const ultimoBuy = user.ultimoBuy || 0;
-    
+
     if (ahora - ultimoBuy < COOLDOWN_MS) {
         const restante = Math.ceil((COOLDOWN_MS - (ahora - ultimoBuy)) / 1000);
         await sock.sendMessage(from, { text: `⏳ Debes esperar *${restante}s* antes de volver a comprar.` });
@@ -182,11 +183,8 @@ export async function run(sock, msg, args) {
 
     user.pandacoins = user.pandacoins || 0;
     user.personajes = user.personajes || [];
-    
 
-    if (!user.inventario) {
-        user.inventario = [];
-    }
+    if (!user.inventario) user.inventario = [];
 
     if (args.length === 0) {
         await sock.sendMessage(from, {
@@ -208,35 +206,35 @@ export async function run(sock, msg, args) {
 
     if (nombreInput === 'random') {
         const personajesValidos = personajes.filter(p => !contieneEfectoProhibido(p.nombre));
-        
+
         if (personajesValidos.length === 0) {
             await sock.sendMessage(from, { text: '❌ No hay personajes disponibles para compra random.' });
             return;
         }
-        
+
         const personaje = personajesValidos[Math.floor(Math.random() * personajesValidos.length)];
-        
+
         if (!consumirStock(personaje.nombre.toLowerCase())) {
             await sock.sendMessage(from, { text: `❌ El personaje *${personaje.nombre}* está agotado. Intenta de nuevo.` });
             return;
         }
-        
+
         if (user.pandacoins < personaje.precio) {
-            await sock.sendMessage(from, { text: `❌ Necesitas *${personaje.precio.toLocaleString()}* 🐼 para comprar *${personaje.nombre}*.\nTienes: *${user.pandacoins.toLocaleString()}* 🐼` });
+            await sock.sendMessage(from, { text: `❌ Necesitas *${personaje.precio.toLocaleString()}* 🐼 para comprar *${personaje.nombre}*.
+Tienes: *${user.pandacoins.toLocaleString()}* 🐼` });
             return;
         }
-        
-        
+
         const resultado = aplicarEfectos(personaje, suerte);
-        
+
         user.pandacoins -= personaje.precio;
         user.personajes.push(resultado.nombreFinal);
         user.ultimoBuy = ahora;
         guardarDatabase(db);
-        
+
         let mensaje = `🎉 ¡Compraste a *${personaje.nombre}*!\n`;
         mensaje += `💰 Te quedan: *${user.pandacoins.toLocaleString()}* 🐼\n`;
-        
+
         if (resultado.efectos.length > 0) {
             const negativos = resultado.efectos.filter(e => (multiplicadores[e] || 1) < 1);
             if (negativos.length > 0) {
@@ -255,82 +253,72 @@ export async function run(sock, msg, args) {
 
             const tieneRainbow = resultado.efectos.includes('🌈');
             const tieneToilet = resultado.efectos.includes('🚽');
-            if (tieneRainbow || tieneToilet) {
-                console.log(`🎯 Efecto especial obtenido: ${resultado.efectos.join(', ')}`);
-            }
+            if (tieneRainbow || tieneToilet) console.log(`🎯 Efecto especial obtenido: ${resultado.efectos.join(', ')}`);
         }
 
         await sock.sendMessage(from, { text: mensaje });
-        
-        if (suerte > 1) {
-            await sock.sendMessage(from, { react: { text: '🍀', key: msg.key } });
-        }
-        
+
+        if (suerte > 1) await sock.sendMessage(from, { react: { text: '🍀', key: msg.key } });
+
         trackBuy(sender, sock, from);
         checkSpecialAchievements(sender, sock, from);
         return;
     }
 
-    const personaje = personajes.find(p => p.nombre.toLowerCase() === nombreInput);
+    const personaje = personajes.find(p => p.nombre.toLowerCase() === nombreInput || (p.base && p.base.toLowerCase() === nombreInput));
 
-
-    if (personaje) {
-        if (contieneEfectoProhibido(personaje.nombre)) {
-            await sock.sendMessage(from, { text: '❌ No puedes comprar personajes que ya tienen efectos.' });
-            return;
-        }
-        
-        if (!consumirStock(personaje.nombre.toLowerCase())) {
-            await sock.sendMessage(from, { text: `❌ El personaje *${personaje.nombre}* está agotado.` });
-            return;
-        }
-        
-        if (user.pandacoins < personaje.precio) {
-            await sock.sendMessage(from, { text: `❌ Necesitas *${personaje.precio.toLocaleString()}* 🐼 para comprar *${personaje.nombre}*.\nTienes: *${user.pandacoins.toLocaleString()}* 🐼` });
-            return;
-        }
-        
-
-        const resultado = aplicarEfectos(personaje, suerte);
-        
-        user.pandacoins -= personaje.precio;
-        user.personajes.push(resultado.nombreFinal);
-        user.ultimoBuy = ahora;
-        guardarDatabase(db);
-        
-        let mensaje = `🎉 ¡Compraste a *${personaje.nombre}*!\n`;
-        mensaje += `💰 Te quedan: *${user.pandacoins.toLocaleString()}* 🐼\n`;
-        
-        if (resultado.efectos.length > 0) {
-            const negativos = resultado.efectos.filter(e => (multiplicadores[e] || 1) < 1);
-            if (negativos.length > 0) {
-                mensaje += `\n⚠️ *Efectos negativos aplicados!*\n`;
-                mensaje += `🎁 Efectos: ${resultado.efectos.join(' ')}\n`;
-                mensaje += `📉 Valor reducido: *${personaje.precio.toLocaleString()}* → *${resultado.precioFinal.toLocaleString()}* 🐼`;
-            } else {
-                await sock.sendMessage(from, { text: `❌ No se encontró *"${args.join(' ')}"*.
-
-        📝 Usa \.viewps para ver personajes disponibles.` });
-            }
-        }
-        
-        user.pandacoins -= item.precio;
-        
-
-        if (!user.inventario) {
-            user.inventario = [];
-        }
-        
-        user.inventario.push(item.nombre);
-        user.ultimoBuy = ahora;
-        guardarDatabase(db);
-        
-        await sock.sendMessage(from, { text: `✅ Compraste *${item.nombre}* por *${item.precio.toLocaleString()}* 🐼\n💰 Te quedan: *${user.pandacoins.toLocaleString()}* 🐼` });
-        
-        trackBuy(sender, sock, from);
-        checkSpecialAchievements(sender, sock, from);
-        
-    } else {
+    if (!personaje) {
         await sock.sendMessage(from, { text: `❌ No se encontró *"${args.join(' ')}"*.\n\n📝 Usa \`.viewps\` para ver personajes disponibles.` });
+        return;
     }
+
+    if (contieneEfectoProhibido(personaje.nombre)) {
+        await sock.sendMessage(from, { text: '❌ No puedes comprar personajes que ya tienen efectos.' });
+        return;
+    }
+
+    if (!consumirStock(personaje.nombre.toLowerCase())) {
+        await sock.sendMessage(from, { text: `❌ El personaje *${personaje.nombre}* está agotado.` });
+        return;
+    }
+
+    if (user.pandacoins < personaje.precio) {
+        await sock.sendMessage(from, { text: `❌ Necesitas *${personaje.precio.toLocaleString()}* 🐼 para comprar *${personaje.nombre}*.
+Tienes: *${user.pandacoins.toLocaleString()}* 🐼` });
+        return;
+    }
+
+    const resultado = aplicarEfectos(personaje, suerte);
+
+    user.pandacoins -= personaje.precio;
+    user.personajes.push(resultado.nombreFinal);
+    user.ultimoBuy = ahora;
+    guardarDatabase(db);
+
+    let mensaje = `🎉 ¡Compraste a *${personaje.nombre}*!\n`;
+    mensaje += `💰 Te quedan: *${user.pandacoins.toLocaleString()}* 🐼\n`;
+
+    if (resultado.efectos.length > 0) {
+        const negativos = resultado.efectos.filter(e => (multiplicadores[e] || 1) < 1);
+        if (negativos.length > 0) {
+            mensaje += `\n⚠️ *Efectos negativos aplicados!*\n`;
+            mensaje += `🎁 Efectos: ${resultado.efectos.join(' ')}\n`;
+            mensaje += `📉 Valor reducido: *${personaje.precio.toLocaleString()}* → *${resultado.precioFinal.toLocaleString()}* 🐼`;
+        } else {
+            mensaje += `\n✨ ¡Obtuvo efectos especiales!\n`;
+            mensaje += `🎁 Efectos: ${resultado.efectos.join(' ')}\n`;
+            mensaje += `📈 Valor multiplicado: *${personaje.precio.toLocaleString()}* → *${resultado.precioFinal.toLocaleString()}* 🐼`;
+        }
+
+        if (resultado.personajeConEfectos) {
+            mensaje += `\n\n🆕 *Nuevo personaje creado!* Ahora puedes vender *${resultado.nombreFinal}* usando .sell`;
+        }
+    }
+
+    await sock.sendMessage(from, { text: mensaje });
+
+    if (suerte > 1) await sock.sendMessage(from, { react: { text: '🍀', key: msg.key } });
+
+    trackBuy(sender, sock, from);
+    checkSpecialAchievements(sender, sock, from);
 }

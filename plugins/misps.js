@@ -30,7 +30,14 @@ export async function run(sock, msg, args) {
 
     
     const userCharacters = user.personajes
-        .map(pName => personajes.find(p => p.nombre === pName))
+        .map(pName => {
+            const clave = String(pName).toLowerCase().trim();
+            return personajes.find(p => (
+                (p.nombre && p.nombre.toLowerCase() === clave) ||
+                (p.base && p.base.toLowerCase() === clave) ||
+                (p.nombre && p.nombre.toLowerCase().includes(clave))
+            ));
+        })
         .filter(p => p !== undefined);
 
     
@@ -44,7 +51,7 @@ export async function run(sock, msg, args) {
     let texto = `🐼 *Tus Personajes* 🐼\n\n`;
 
     
-    const valorTotal = userCharacters.reduce((sum, p) => sum + p.precio, 0);
+    const valorTotal = userCharacters.reduce((sum, p) => sum + (p.precio || 0), 0);
     const alineados = Object.values(user.alineacion?.posiciones || {}).length;
     
     texto += `📊 *Estadísticas:*\n`;
