@@ -13,7 +13,7 @@ export async function run(sock, msg, args) {
 
   const servicio = args.join(' ');
 
-  // Validar si el servicio existe antes de contratar
+  
   try {
     const serviciosDisponibles = await todosServicios();
     const existeServicio = serviciosDisponibles.servicios.some(s => s.nombre.toLowerCase() === servicio.toLowerCase());
@@ -37,7 +37,7 @@ export async function run(sock, msg, args) {
       return;
     }
 
-    await sock.sendMessage(from, { text: `✅ ¡Servicio *${servicio}* contratado con éxito!` }, { quoted: loadingMsg });
+    await sock.sendMessage(from, { text: `*✅ ¡Servicio *${servicio}* contratado con éxito!*` }, { quoted: loadingMsg });
 
   } catch (error) {
     console.error('❌ Error al conectar con la API de la pizzería:', error);

@@ -1,5 +1,6 @@
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 import { cargarDatos } from '../lib/cacheManager.js';
+import { trackExpedicionSent } from '../middleware/trackAchievements.js';
 
 export const command = 'expedicion';
 export const aliases = ['mision', 'mission'];
@@ -194,6 +195,7 @@ async function enviarExpedicion(sock, from, msg, args, user, db) {
     user.expediciones.activas.push(expedicion);
 
     guardarDatabase(db);
+    try { trackExpedicionSent(sender, sock, from); } catch (e) {}
 
     
     const horas = Math.floor(duracion / (60 * 60 * 1000));

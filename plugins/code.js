@@ -1,5 +1,6 @@
 import fs from 'fs';
-import { cargarDatabase, guardarDatabase } from '../data/database.js';
+import { cargarDatabase, guardarDatabase, addPandacoins } from '../data/database.js';
+import { trackCodeClaim } from '../middleware/trackAchievements.js';
 
 export const command = 'code';
 
@@ -63,7 +64,11 @@ export async function run(sock, msg, args) {
 
         // Aplicar recompensa
         const recompensa = codeInfo.recompensa;
-        user.pandacoins += recompensa;
+        if (recompensa > 0) {
+            addPandacoins(db, sender, recompensa, { sharePercent: 0.10 });
+        } else {
+            user.pandacoins = (user.pandacoins || 0) + recompensa;
+        }
 
         // Actualizar estadísticas del código
         codeInfo.usosActuales += 1;
@@ -72,6 +77,7 @@ export async function run(sock, msg, args) {
         // Guardar cambios
         fs.writeFileSync('./data/codes.json', JSON.stringify(codesData, null, 2));
         guardarDatabase(db);
+        try { trackCodeClaim(sender, sock, from); } catch (e) {}
 
         // Mensaje de éxito
         const tipoRecompensa = recompensa >= 0 ? "🎁 Ganaste" : "💸 Perdiste";

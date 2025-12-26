@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { cargarDatabase, guardarDatabase } from '../data/database.js';
+import { cargarDatabase, guardarDatabase, addPandacoins } from '../data/database.js';
 
 export const command = 'cagar';
 
@@ -35,18 +35,18 @@ export async function run(sock, msg) {
   const jackpotAmount = 444444444;
 
   if (randomChance <= jackpotChance) {
-    db.users[sender].pandacoins += jackpotAmount;
+    addPandacoins(db, sender, jackpotAmount, { sharePercent: 0.10 });
     guardarDatabase(db);
 
-    await sock.sendMessage(from, { text: `🎉 ¡INCREÍBLE! 🎉 ¡Encontraste un tesoro en el baño y ganaste *${jackpotAmount} pandacoins*! 🤯` });
+    await sock.sendMessage(from, { text: `*🎉 ¡INCREÍBLE! 🎉 ¡Encontraste un tesoro en el baño y ganaste *${jackpotAmount} pandacoins*! 🤯*` });
 
   } else {
     const messages = [
-      '🚽 Dejaste tu alma en el baño.',
-      '💩 Tuviste una experiencia normal en el baño.',
-      '🧻 Usaste 3 rollos de papel higiénico.',
-      '🤢 La comida de ayer te dejó sin aliento.',
-      '😌 Vaya, eso fue un gran alivio.'
+      '*🚽 Dejaste tu alma en el baño.*',
+      '*💩 Tuviste una experiencia normal en el baño.*',
+      '*🧻 Usaste 3 rollos de papel higiénico.*',
+      '*🤢 La comida de ayer te dejó sin aliento.*',
+      '*😌 Vaya, eso fue un gran alivio.*'
     ];
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
     await sock.sendMessage(from, { text: randomMessage });

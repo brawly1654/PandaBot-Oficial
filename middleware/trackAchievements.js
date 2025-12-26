@@ -57,6 +57,102 @@ export function trackSpotify(userJid, sock, from) {
   trackProgress(userJid, 'spotify_count', 1, sock, from);
 }
 
+export function trackGranjaLevel(userJid, level = 1, sock, from) {
+  trackProgress(userJid, 'granja_level', level, sock, from);
+}
+
+export function trackGranjaCount(userJid, sock, from) {
+  trackProgress(userJid, 'granja_count', 1, sock, from);
+}
+
+export function trackInstagram(userJid, sock, from) {
+  trackProgress(userJid, 'instagram_count', 1, sock, from);
+}
+
+export function trackYtmp4(userJid, sock, from) {
+  trackProgress(userJid, 'ytmp4_count', 1, sock, from);
+}
+
+export function trackTiktok(userJid, sock, from) {
+  trackProgress(userJid, 'tiktok_count', 1, sock, from);
+}
+
+export function trackBeso(userJid, sock, from) {
+  trackProgress(userJid, 'beso_count', 1, sock, from);
+}
+
+export function trackSugerencia(userJid, sock, from) {
+  trackProgress(userJid, 'sugerencia_count', 1, sock, from);
+}
+
+export function trackPregunta(userJid, sock, from) {
+  trackProgress(userJid, 'pregunta_count', 1, sock, from);
+}
+
+export function trackReporte(userJid, sock, from) {
+  trackProgress(userJid, 'reporte_count', 1, sock, from);
+}
+
+export function trackCodeClaim(userJid, sock, from) {
+  trackProgress(userJid, 'code_claims', 1, sock, from);
+}
+
+export function trackHola(userJid, sock, from) {
+  trackProgress(userJid, 'hola_count', 1, sock, from);
+}
+
+export function trackImpostorPlay(userJid, sock, from) {
+  trackProgress(userJid, 'impostor_games', 1, sock, from);
+}
+
+export function trackImpostorWin(userJid, sock, from) {
+  trackProgress(userJid, 'impostor_wins', 1, sock, from);
+}
+
+export function trackInvertir(userJid, sock, from) {
+  trackProgress(userJid, 'invertir_count', 1, sock, from);
+}
+
+export function trackMercado(userJid, sock, from) {
+  trackProgress(userJid, 'inversiones_count', 1, sock, from);
+}
+
+export function trackMiInversion(userJid, sock, from) {
+  trackProgress(userJid, 'miinversion_count', 1, sock, from);
+}
+
+export function trackRetirar(userJid, sock, from) {
+  trackProgress(userJid, 'retirar_count', 1, sock, from);
+}
+
+export function trackKick(userJid, sock, from) {
+  trackProgress(userJid, 'kick_count', 1, sock, from);
+}
+
+export function trackPokedex(userJid, sock, from) {
+  trackProgress(userJid, 'pokedex_count', 1, sock, from);
+}
+
+export function trackPozoDonate(userJid, amount = 0, sock, from) {
+  trackProgress(userJid, 'pozo_donated', amount, sock, from);
+}
+
+export function trackAdivinaBanderaWin(userJid, sock, from) {
+  trackProgress(userJid, 'adivinabandera_wins', 1, sock, from);
+}
+
+export function trackStickersCreated(userJid, sock, from) {
+  trackProgress(userJid, 'stickers_created', 1, sock, from);
+}
+
+export function trackExpedicionSent(userJid, sock, from) {
+  trackProgress(userJid, 'expediciones_sent', 1, sock, from);
+}
+
+export function trackDownloadsTotal(userJid, sock, from) {
+  trackProgress(userJid, 'downloads_total', 1, sock, from);
+}
+
 export function checkSpecialAchievements(userJid, sock, from) {
   const db = cargarDatabase();
   const user = db.users[userJid];

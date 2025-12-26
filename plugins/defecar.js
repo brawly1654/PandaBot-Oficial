@@ -10,7 +10,7 @@ export async function run(sock, msg, args) {
 
   if (!ownerNumber.includes(`+${senderId}`)) {
     await sock.sendMessage(from, {
-      text: '❌ Este comando solo puede ser usado por los owners.'
+      text: '*❌ Este comando solo puede ser usado por los owners.*'
     }, { quoted: msg });
     return;
   }

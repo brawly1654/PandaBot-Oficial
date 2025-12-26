@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { cargarDatabase, guardarDatabase } from '../data/database.js';
+import { cargarDatabase, guardarDatabase, addPandacoins } from '../data/database.js';
 
 export const command = 'cofre';
 
@@ -13,7 +13,7 @@ export async function run(sock, msg) {
   const cds = JSON.parse(fs.readFileSync(cdFile));
   const last = cds[sender]?.cofre || 0;
   const now = Date.now();
-  const cd = 60 * 60 * 1000; // 1 hora
+  const cd = 60 * 60 * 1000;
 
   if (now - last < cd) {
     const m = Math.ceil((cd - (now - last)) / 60000);
@@ -24,7 +24,7 @@ export async function run(sock, msg) {
   const db = cargarDatabase();
   db.users[sender] = db.users[sender] || { pandacoins: 0, exp: 0 };
 
-  // Definir probabilidades y recompensas
+
   const cofres = [
     { tipo: 'Común', prob: 50, minCoins: 700, maxCoins: 1200, minExp: 20, maxExp: 40 },
     { tipo: 'Raro', prob: 30, minCoins: 1300, maxCoins: 2500, minExp: 40, maxExp: 80 },
@@ -32,7 +32,7 @@ export async function run(sock, msg) {
     { tipo: 'Legendario', prob: 5, minCoins: 7500, maxCoins: 15000, minExp: 200, maxExp: 400 }
   ];
 
-  // Elegir cofre según probabilidad
+
   const random = Math.random() * 100;
   let acumulado = 0;
   let elegido = cofres[0];
@@ -44,16 +44,15 @@ export async function run(sock, msg) {
     }
   }
 
-  // Calcular recompensas
+
   const coins = elegido.minCoins + Math.floor(Math.random() * (elegido.maxCoins - elegido.minCoins + 1));
   const exp = elegido.minExp + Math.floor(Math.random() * (elegido.maxExp - elegido.minExp + 1));
 
-  // Aplicar recompensas
-  db.users[sender].pandacoins += coins;
+
+  addPandacoins(db, sender, coins, { sharePercent: 0.10 });
   db.users[sender].exp += exp;
   guardarDatabase(db);
-
-  // Guardar cooldown
+  
   cds[sender] = cds[sender] || {};
   cds[sender].cofre = now;
   fs.writeFileSync(cdFile, JSON.stringify(cds, null, 2));

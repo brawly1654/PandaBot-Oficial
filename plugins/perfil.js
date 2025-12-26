@@ -2,6 +2,7 @@ import fs from 'fs';
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 import { obtenerPizzeria } from '../PandaLove/pizzeria.js';
 import { isVip } from '../utils/vip.js';
+import { ensureCMUser } from '../lib/cmManager.js';
 
 export const command = 'perfil';
 
@@ -115,7 +116,7 @@ export async function run(sock, msg) {
   // CoinMaster
   const uid = targetUserJid.split('@')[0];
   global.cmDB = global.cmDB || {};
-  global.cmDB[uid] = global.cmDB[uid] || { spins: 0, coins: 0, creditos: 0 };
+  const cmData = ensureCMUser(uid);
 
   let pizzeriaData = null;
   let pizzeriaError = null;
@@ -131,7 +132,7 @@ export async function run(sock, msg) {
   const identidad = generarBloqueIdentidad(user, targetUserJid, pareja, userRank, totalUsers);
   const vip = generarBloqueVIP(user, now);
   const rpg = generarBloqueRPG(user, db.users);
-  const cm = generarBloqueCoinMaster(global.cmDB[uid]);
+  const cm = generarBloqueCoinMaster(cmData);
   const pizzeria = generarBloquePizzeria(pizzeriaData, pizzeriaError);
 
   const header = `╭───${isVip(sender) || isVip(targetUserJid) ? ' 👑 Perfil VIP' : '👤 Perfil'} ───`;

@@ -1,3 +1,4 @@
+import { ensureCMUser, saveCM } from '../lib/cmManager.js';
 export const command = 'robarcm';
 
 const cooldown = 15 * 60 * 1000;
@@ -8,11 +9,7 @@ export async function run(sock, msg, args) {
   const senderJid = msg.key.participant || msg.key.remoteJid;
   const user = senderJid.split('@')[0];
 
-  if (!global.cmDB[user]) {
-    global.cmDB[user] = { spins: 5, coins: 0, shields: 0, villageLevel: 1 };
-  }
-
-  const data = global.cmDB[user];
+  const data = ensureCMUser(user);
   const now = Date.now();
 
   if (robCooldown[user] && now - robCooldown[user] < cooldown) {
@@ -38,14 +35,14 @@ export async function run(sock, msg, args) {
     return sock.sendMessage(from, { text: `❌ El usuario mencionado no tiene cuenta en Coin Master.` }, { quoted: msg });
   }
 
-  const targetData = global.cmDB[targetNumber];
+  const targetData = ensureCMUser(targetNumber);
 
   const stolenCoins = Math.floor(Math.random() * 300000) + 100000;
   const coinsTaken = Math.min(stolenCoins, targetData.coins);
   targetData.coins -= coinsTaken;
   data.coins += coinsTaken;
   robCooldown[user] = now;
-  global.guardarCM();
+  saveCM();
 
   await sock.sendMessage(from, {
     text: `🦹 Robaste al usuario y obtuviste *${coinsTaken.toLocaleString()} monedas*.`,

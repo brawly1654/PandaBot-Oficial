@@ -1,5 +1,7 @@
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 import { actualizarMercado, obtenerPrecioMoneda } from '../lib/cryptoManager.js';
+import { trackInvertir } from '../middleware/trackAchievements.js';
+import { trackProgress } from '../data/achievementsDB.js';
 
 export const command = 'invertir';
 export const aliases = ['invest'];
@@ -105,6 +107,9 @@ export async function run(sock, msg, args) {
     inversion.inversionTotal += cantidadPandacoins;
 
     guardarDatabase(db);
+
+    try { trackInvertir(sender, sock, from); } catch (e) {}
+    try { trackProgress(sender, 'inversion_amount', cantidadPandacoins, sock, from); } catch (e) {}
 
     await sock.sendMessage(from, {
         text: `✅ *INVERSIÓN EXITOSA!* ✅\n\n${precioInfo.color} *Moneda:* ${precioInfo.nombre}\n💰 *Invertido:* ${cantidadPandacoins.toLocaleString()} 🐼\n🪙 *Monedas compradas:* ${cantidadMonedas.toFixed(4)}\n📈 *Precio unitario:* ${precioInfo.precioActual.toFixed(2)} 🐼\n\n💼 *Portafolio actual:*\n• ${precioInfo.nombre}: ${inversion.cantidad.toFixed(4)} monedas\n💰 *Saldo restante:* ${user.pandacoins.toLocaleString()} 🐼\n\n⚠️ *Recuerda:* Los precios cambian cada 5 minutos`

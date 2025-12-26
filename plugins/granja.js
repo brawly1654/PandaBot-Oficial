@@ -1,4 +1,5 @@
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
+import { trackGranjaCount, trackGranjaLevel } from '../middleware/trackAchievements.js';
 
 const tiposGranjas = {
   1: {
@@ -546,6 +547,7 @@ async function comprarGranja(sock, from, sender, db, args) {
 
   usuarioGranjas.push(nuevaGranja);
   guardarDatabase(db);
+  try { trackGranjaCount(sender, sock, from); } catch (e) {}
 
   let produccionPorSegundo = tipoGranja.produccionPorSegundo;
   let produccionHora = produccionPorSegundo * 3600;
@@ -762,6 +764,7 @@ async function mejorarGranja(sock, from, sender, db, args) {
 
   user.pandacoins -= costoMejora;
   granja.nivel = nivelActual + 1;
+  try { trackGranjaLevel(sender, granja.nivel, sock, from); } catch (e) {}
   
 
   const mejoraMultiplicador = granja.mejora || tipo.mejora;

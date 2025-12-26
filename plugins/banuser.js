@@ -8,7 +8,7 @@ export async function run(sock, msg, args) {
   const sender = msg.key.participant || msg.key.remoteJid;
   const senderNumber = sender.split('@')[0];
   const alertGroup = '120363421450862624@g.us';
-
+  const nombre = msg.pushName || 'Usuario';
   if (!ownerNumber.includes(`+${senderNumber}`)) {
     await sock.sendMessage(from, { text: '❌ Solo el owner puede usar este comando.' });
     return;
@@ -37,7 +37,7 @@ export async function run(sock, msg, args) {
     });
 
     await sock.sendMessage(alertGroup, {
-      text: `🚫 @${targetNumber} ha sido *baneado del bot*\n📝 Motivo: ${motivo}`,
+      text: `🚫 ${nombre} ha baneado a @${targetNumber} de PandaBot. 😹\n📝 Motivo: ${motivo}`,
       mentions: [targetJid]
     });
 

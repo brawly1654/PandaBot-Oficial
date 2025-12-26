@@ -1,10 +1,12 @@
 import { actualizarMercado, obtenerEstadoMercado, obtenerTiempoProximaActualizacion, obtenerAnalisisMoneda } from '../lib/cryptoManager.js';
+import { trackMercado } from '../middleware/trackAchievements.js';
 
 export const command = 'mercado';
 export const aliases = ['market'];
 
 export async function run(sock, msg, args) {
     const from = msg.key.remoteJid;
+    const sender = msg.key.participant || msg.key.remoteJid;
 
     // Enviar mensaje de carga
     const loadingMsg = await sock.sendMessage(from, {
@@ -47,4 +49,5 @@ export async function run(sock, msg, args) {
     }, { 
         edit: loadingMsg.key 
     });
+    try { trackMercado(sender, sock, from); } catch (e) {}
 }

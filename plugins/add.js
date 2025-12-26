@@ -1,14 +1,6 @@
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 import { addCoins } from "../PandaLove/pizzeria.js";
-
-const ownersPermitidos = [
-  '56953508566',
-  '5219513164242',
-  '50589329325',
-  '5215538830665',
-  '166164298780822',
-  '230004726169681'
-];
+import { ownerNumber } from '../config.js';
 
 const recursosValidos = [
   'pandacoins',
@@ -21,9 +13,7 @@ const recursosValidos = [
   'pizzacoins'
 ];
 
-function esOwner(userId) {
-  return ownersPermitidos.includes(userId);
-}
+
 
 export const command = 'add';
 
@@ -31,10 +21,8 @@ export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = (msg.key.participant || msg.key.remoteJid).split('@')[0];
 
-  if (!esOwner(sender)) {
-    await sock.sendMessage(from, {
-      text: '❌ No tienes permisos para usar este comando.'
-    }, { quoted: msg });
+  if (!ownerNumber.includes(`+${senderNumber}`)) {
+    await sock.sendMessage(from, { text: '❌ Solo el owner puede usar este comando.' });
     return;
   }
 
@@ -75,7 +63,7 @@ export async function run(sock, msg, args) {
   try {
     let mensajeFinal = '';
 
-    // 🍕 PizzaCoins (API externa)
+  
     if (recurso === 'pizzacoins') {
       const response = await addCoins(receptor, cantidad);
 
@@ -86,7 +74,7 @@ export async function run(sock, msg, args) {
       mensajeFinal = `🍕 Se añadieron *${cantidad} PizzaCoins* a @${receptor.split('@')[0]}`;
     }
 
-    // 🎰 Giros / Coins globales
+
     else if (recurso === 'giros' || recurso === 'coins') {
       global.cmDB = global.cmDB || {};
       global.cmDB[receptor] = global.cmDB[receptor] || { giros: 0, coins: 0 };
@@ -99,7 +87,7 @@ export async function run(sock, msg, args) {
       mensajeFinal = `✅ Se añadieron *${cantidad} ${recurso}* a @${receptor.split('@')[0]}`;
     }
 
-    // 💰 Recursos normales (DB principal)
+ 
     else {
       const db = cargarDatabase();
       db.users = db.users || {};

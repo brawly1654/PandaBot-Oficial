@@ -1,7 +1,7 @@
 import fs from 'fs';
+import { ensureCMUser, saveCM } from '../lib/cmManager.js';
 
 export const command = 'registrarcm';
-//export const aliases = ['regcm'];
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
@@ -15,16 +15,10 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  if (!global.cmDB[sender]) {
-    global.cmDB[sender] = {};
-  }
-
-  global.cmDB[sender].nombre = nombre;
-
-  guardarCM();
-
-  // Guardamos en el archivo coinmaster.json
-  fs.writeFileSync('./coinmaster.json', JSON.stringify(global.cmDB, null, 2));
+  const uid = sender.split('@')[0];
+  const user = ensureCMUser(uid);
+  user.name = nombre;
+  saveCM();
 
   await sock.sendMessage(from, {
     text: `✅ Te has registrado exitosamente como *${nombre}* para el modo Coin Master.`,

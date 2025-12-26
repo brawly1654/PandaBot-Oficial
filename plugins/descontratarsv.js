@@ -23,7 +23,7 @@ export async function run(sock, msg, args) {
       return;
     }
 
-    if (response.number === 405) { // Lógica que pediste
+    if (response.number === 405) {
       await sock.sendMessage(from, { text: '❌ Servicio no encontrado.' }, { quoted: loadingMsg });
       return;
     }
@@ -33,7 +33,7 @@ export async function run(sock, msg, args) {
       return;
     }
 
-    await sock.sendMessage(from, { text: `✅ ¡Servicio descontratado con éxito!` }, { quoted: loadingMsg });
+    await sock.sendMessage(from, { text: `*✅ ¡Servicio descontratado con éxito!*` }, { quoted: loadingMsg });
 
   } catch (error) {
     console.error('❌ Error al conectar con la API de la pizzería:', error);

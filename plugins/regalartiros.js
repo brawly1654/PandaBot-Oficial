@@ -1,3 +1,4 @@
+import { ensureCMUser, saveCM } from '../lib/cmManager.js';
 export const command = 'regalartiros';
 
 export async function run(sock, msg, args) {
@@ -25,22 +26,17 @@ export async function run(sock, msg, args) {
 
   const receptorID = mentioned.split('@')[0];
 
-  if (!global.cmDB[senderID]) {
-    global.cmDB[senderID] = { spins: 5, coins: 0, shields: 0, villageLevel: 1 };
-  }
+  const senderData = ensureCMUser(senderID);
+  const receptorData = ensureCMUser(receptorID);
 
-  if (!global.cmDB[receptorID]) {
-    global.cmDB[receptorID] = { spins: 5, coins: 0, shields: 0, villageLevel: 1 };
-  }
-
-  if (global.cmDB[senderID].spins < cantidad) {
-    await sock.sendMessage(from, { text: `❌ No tienes suficientes tiros. Actualmente tienes *${global.cmDB[senderID].spins}* giros.` }, { quoted: msg });
+  if (senderData.spins < cantidad) {
+    await sock.sendMessage(from, { text: `❌ No tienes suficientes tiros. Actualmente tienes *${senderData.spins}* giros.` }, { quoted: msg });
     return;
   }
 
-  global.cmDB[senderID].spins -= cantidad;
-  global.cmDB[receptorID].spins += cantidad;
-  global.guardarCM();
+  senderData.spins -= cantidad;
+  receptorData.spins += cantidad;
+  saveCM();
 
   await sock.sendMessage(from, {
     text: `🎁 *@${senderID}* le ha regalado *${cantidad} tiros* a *@${receptorID}*! 🎉`,

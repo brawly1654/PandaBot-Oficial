@@ -30,7 +30,7 @@ export async function run(sock, msg, args) {
     }, { quoted: msg });
   }
 
-  // Asegurar estructura de inventario y valores por defecto
+
   user.pandacoins = user.pandacoins || 0;
   user.inventario = user.inventario || {};
   user.inventario.herramientas = user.inventario.herramientas || {};
@@ -71,7 +71,7 @@ export async function run(sock, msg, args) {
     paquete_inicio: { 
       tipo: 'paquete', 
       emoji: '🎒', 
-      nombre: 'Paquete Inicial', 
+      nombre: 'paquete_inicio', 
       precio: 500, 
       desc: 'Pico + Hacha + 5 Comida',
       contenido: { pico: 1, hacha: 1, comida: 5 }
@@ -79,7 +79,7 @@ export async function run(sock, msg, args) {
     paquete_cazador: {
       tipo: 'paquete',
       emoji: '🏹',
-      nombre: 'Paquete Cazador',
+      nombre: 'paquete_cazador',
       precio: 1500,
       desc: 'Arco + Espada + 3 Pociones',
       nivel: 5,
@@ -88,7 +88,7 @@ export async function run(sock, msg, args) {
     paquete_minero: {
       tipo: 'paquete',
       emoji: '⛏️',
-      nombre: 'Paquete Minero',
+      nombre: 'paquete_minero',
       precio: 2000,
       desc: '2 Picos + 100 Piedras + 50 Hierro',
       nivel: 7,

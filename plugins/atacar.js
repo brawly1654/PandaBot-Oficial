@@ -1,6 +1,7 @@
 import { trackCMAtaque, checkSpecialAchievements } from '../middleware/trackAchievements.js';
 import { initializeAchievements } from '../data/achievementsDB.js';
 import { cargarDatabase } from '../data/database.js';
+import { ensureCMUser, saveCM } from '../lib/cmManager.js';
 
 export const command = 'atacar';
 const cooldown = 1 * 60 * 1000;
@@ -17,18 +18,14 @@ export async function run(sock, msg, args) {
     initializeAchievements(sender);
   }
 
-  if (!global.cmDB[user]) {
-    global.cmDB[user] = { spins: 5, coins: 0, shields: 2, villageLevel: 1 };
-  }
-  
-  const data = global.cmDB[user];
+  const data = ensureCMUser(user);
   const now = Date.now();
   
   if (attackCooldown[user] && now - attackCooldown[user] < cooldown) {
     const timeLeft = Math.ceil((cooldown - (now - attackCooldown[user])) / 60000);
     return sock.sendMessage(from, {
-      text: `🕒 *@+${user}*, debes esperar ${timeLeft} minuto(s) para volver a usar *atacar*.`
-    }, { quoted: msg });
+      text: `🕒 *@${user}*, debes esperar ${timeLeft} minuto(s) para volver a usar *atacar*.`,
+    }, { quoted: msg, mentions: [sender] });
   }
 
   const targetMention = args[0];
@@ -41,13 +38,13 @@ export async function run(sock, msg, args) {
     return sock.sendMessage(from, { text: `❌ El usuario no tiene cuenta en Coin Master.` }, { quoted: msg });
   }
 
-  const targetData = global.cmDB[target];
+  const targetData = ensureCMUser(target);
   
   if (targetData.shields > 0) {
     targetData.shields--;
     attackCooldown[user] = now;
-    global.guardarCM();
-    return sock.sendMessage(from, { text: `🛡 El escudo de *@+${target}* bloqueó tu ataque.` }, { quoted: msg });
+    saveCM();
+    return sock.sendMessage(from, { text: `🛡 El escudo de *@${target}* bloqueó tu ataque.` }, { quoted: msg, mentions: [`${target}@s.whatsapp.net`] });
   }
 
   const stolenCoins = Math.floor(Math.random() * 30000) + 10000;
@@ -55,7 +52,7 @@ export async function run(sock, msg, args) {
   targetData.coins -= coinsTaken;
   data.coins += coinsTaken;
   attackCooldown[user] = now;
-  global.guardarCM();
+  saveCM();
 
   await sock.sendMessage(from, {
     text: `💣 Atacaste la aldea del usuario y le robaste *${coinsTaken.toLocaleString()} monedas*.`

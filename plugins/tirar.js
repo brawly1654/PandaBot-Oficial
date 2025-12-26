@@ -1,6 +1,7 @@
 import { trackCMTirada, checkSpecialAchievements } from '../middleware/trackAchievements.js';
 import { initializeAchievements } from '../data/achievementsDB.js';
 import { cargarDatabase } from '../data/database.js';
+import { ensureCMUser, saveCM } from '../lib/cmManager.js';
 
 export const command = 'tirar';
 
@@ -27,17 +28,7 @@ export async function run(sock, msg, args) {
   cooldowns[user] = now;
 
 
-  if (!global.cmDB[user]) {
-    global.cmDB[user] = {
-      spins: 5,
-      coins: 300,
-      shields: 1,
-      villageLevel: 1,
-      creditos: 1
-    };
-  }
-
-  const data = global.cmDB[user];
+  const data = ensureCMUser(user);
 
   if (data.spins <= 0) {
     await sock.sendMessage(from, {
@@ -90,7 +81,7 @@ export async function run(sock, msg, args) {
   const resultText = result.map(r => r.emoji).join(' | ');
   const rewardMessages = result.map(r => r.action()).join('\n');
 
-  global.guardarCM();
+  saveCM();
 
   const reply = `
 🎰 *Coin Master - TIRADA DE SLOT* 🎰

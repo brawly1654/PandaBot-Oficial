@@ -3,7 +3,7 @@ import { cargarDatabase, guardarDatabase, inicializarUsuario } from '../data/dat
 const partidasCaramelo = new Map();
 const mensajesPrivados = new Map();
 
-// Plantilla de caramelos (5x5)
+
 const PLANTILLA = `
 🍭🍬🍫🍬🍭
 🍬🍭🍬🍭🍬
@@ -11,7 +11,7 @@ const PLANTILLA = `
 🍬🍭🍬🍭🍬
 🍭🍬🍫🍬🍭`;
 
-// Posiciones numeradas (1-25)
+
 const POSICIONES = {
   1: [0, 0], 2: [0, 1], 3: [0, 2], 4: [0, 3], 5: [0, 4],
   6: [1, 0], 7: [1, 1], 8: [1, 2], 9: [1, 3], 10: [1, 4],
@@ -340,27 +340,45 @@ async function enviarInstruccionesPrivadas(sock, partida) {
 4. Evita elegir tu propio veneno durante el juego
 
 📝 *Para colocar tu caramelo:*
-\`.caramelo posicion <número>\`
-
-💡 *Ejemplo:* \`.caramelo posicion 13\`
+\.caramelo posicion <número>
 
 ⏰ *Tienes 1 minuto para colocar tu caramelo.*
 ⚡ *¡Buena suerte!*`;
 
-  // Enviar a jugador 1
+  const failed = [];
+
+
   try {
     await sock.sendMessage(partida.jugador1, { text: instrucciones });
     mensajesPrivados.set(partida.jugador1, partida.id);
-  } catch (error) {
-    console.error('❌ Error enviando mensaje privado a jugador 1:', error);
+  } catch (e) {
+    console.error('❌ Error enviando mensaje privado a jugador 1:', e);
+    failed.push(partida.jugador1);
   }
 
-  // Enviar a jugador 2
+
   try {
     await sock.sendMessage(partida.jugador2, { text: instrucciones });
     mensajesPrivados.set(partida.jugador2, partida.id);
-  } catch (error) {
-    console.error('❌ Error enviando mensaje privado a jugador 2:', error);
+  } catch (e) {
+    console.error('❌ Error enviando mensaje privado a jugador 2:', e);
+    failed.push(partida.jugador2);
+  }
+
+  
+  if (failed.length > 0) {
+    const faltaron = failed.map(j => `@${j.split('@')[0]}`).join(', ');
+    const aviso = `⚠️ No pude enviar mensaje privado a: ${faltaron}.
+
+Por favor, *abrid un chat privado con el bot* y enviad:
+.caramelo posicion <número>
+
+⏰ Tenéis 1 minuto para colocar vuestro caramelo en privado.`;
+
+    await sock.sendMessage(partida.grupo, {
+      text: aviso,
+      mentions: [partida.jugador1, partida.jugador2]
+    });
   }
 }
 

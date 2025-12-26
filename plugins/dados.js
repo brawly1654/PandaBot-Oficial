@@ -1,4 +1,4 @@
-// plugins/dados.js
+
 import { cargarDatabase, guardarDatabase, inicializarUsuario } from '../data/database.js';
 
 const partidasDados = new Map();

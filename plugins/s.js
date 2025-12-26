@@ -4,11 +4,13 @@ import path from 'path';
 import { tmpdir } from 'os';
 import { exec } from 'child_process';
 import { writeExifImg } from '../lib/sticker.js';
+import { trackStickersCreated } from '../middleware/trackAchievements.js';
 
 export const command = 's';
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
+  const sender = msg.key.participant || msg.key.remoteJid;
   const quoted = msg.message?.extendedTextMessage?.contextInfo?.quotedMessage;
   const description = args.join(' ') || 'Sticker creado con PandaBot 🐼';
 
@@ -49,6 +51,7 @@ export async function run(sock, msg, args) {
       if (isVideo) {
         // 🎞️ Animado: enviar sin metadatos
         await sock.sendMessage(from, { sticker: stickerBuffer }, { quoted: msg });
+        try { trackStickersCreated(sender, sock, from); } catch (e) {}
       } else {
         // 🏷️ Estático: agregar metadatos usando writeExifImg
         const stickerWithExif = await writeExifImg(stickerBuffer, {
@@ -57,6 +60,7 @@ export async function run(sock, msg, args) {
           description
         });
         await sock.sendMessage(from, { sticker: stickerWithExif }, { quoted: msg });
+        try { trackStickersCreated(sender, sock, from); } catch (e) {}
       }
 
       fs.unlinkSync(inputPath);

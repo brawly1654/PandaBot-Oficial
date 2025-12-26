@@ -7,5 +7,6 @@ export async function run(sock, msg) {
   const message = `¡Hola!, ¿qué tal? Usa .menu para ver mis funciones.`;
   
   await sock.sendMessage(from, { text: message, mentions: [sender] });
+  try { (await import('../middleware/trackAchievements.js')).trackHola(sender, sock, from); } catch (e) {}
 }
 

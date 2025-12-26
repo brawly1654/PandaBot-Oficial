@@ -1,5 +1,6 @@
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 import { actualizarMercado, obtenerPrecioMoneda } from '../lib/cryptoManager.js';
+import { trackRetirar } from '../middleware/trackAchievements.js';
 
 export const command = 'retirar';
 export const aliases = ['withdraw', 'with'];
@@ -116,6 +117,8 @@ export async function run(sock, msg, args) {
     }
 
     guardarDatabase(db);
+
+    try { trackRetirar(sender, sock, from); } catch (e) {}
 
     const resultadoEmoji = gananciaPerdida >= 0 ? '📈' : '📉';
     const resultadoColor = gananciaPerdida >= 0 ? '🟢' : '🔴';

@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { trackPregunta } from '../middleware/trackAchievements.js';
 
 const CREADOR_JID = '120363420237055271@g.us';
 const feedbackFile = path.resolve('./data/feedback.json');
@@ -41,6 +42,7 @@ export async function run(sock, msg, args) {
   };
   feedback.push(newPregunta);
   saveFeedback(feedback);
+  try { trackPregunta(sender, sock, from); } catch (e) {}
 
   const notificationText = `
 ❓ *NUEVA PREGUNTA*

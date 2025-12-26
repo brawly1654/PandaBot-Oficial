@@ -1,9 +1,11 @@
 import fetch from 'node-fetch';
+import { trackPokedex } from '../middleware/trackAchievements.js';
 
 export const command = 'pokedex';
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
+  const sender = msg.key.participant || msg.key.remoteJid;
   const text = args.join(' ');
   const rwait = '⏳'; // Emoji de espera
   const done = '✅';  // Emoji de éxito
@@ -57,6 +59,7 @@ export async function run(sock, msg, args) {
       `🔍 *Más info:* https://www.pokemon.com/es/pokedex/${json.name.toLowerCase()}`;
 
     await sock.sendMessage(from, { text: aipokedex }, { quoted: msg });
+    try { trackPokedex(sender, sock, from); } catch (e) {}
     await sock.sendMessage(from, { react: { text: done, key: msg.key } });
 
   } catch (err) {

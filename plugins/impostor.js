@@ -5,6 +5,7 @@
 // - Si el último no habla a tiempo, se marca (silencio) y se pasa a votación
 
 global.impostorGames = global.impostorGames || {};
+import { trackImpostorPlay, trackImpostorWin } from '../middleware/trackAchievements.js';
 
 // -----------------------------
 // Constantes de personalización
@@ -397,6 +398,26 @@ async function endGame(sock, game, message) {
   clearPhaseTimer(game); clearTurnTimer(game);
   game.estado = 'Finalizado';
   await sock.sendMessage(game.chatId, { text: message });
+  // Determine winners and track wins
+  try {
+    const impAlive = impostorsAliveCount(game);
+    const crewAlive = crewsAliveCount(game);
+    let winnersRole = null;
+    if (impAlive <= 0) winnersRole = 'crew';
+    else if (impAlive >= crewAlive) winnersRole = 'impostor';
+
+    if (winnersRole) {
+      for (const pj of game.jugadores) {
+        if (!pj) continue;
+        if (winnersRole === 'crew' && pj.role !== 'impostor') {
+          try { trackImpostorWin(pj.jid, sock, game.chatId); } catch (e) {}
+        }
+        if (winnersRole === 'impostor' && pj.role === 'impostor') {
+          try { trackImpostorWin(pj.jid, sock, game.chatId); } catch (e) {}
+        }
+      }
+    }
+  } catch (e) {}
   delete global.impostorGames[game.chatId];
 }
 
@@ -539,6 +560,12 @@ Se enviaron los *roles por DM*.
     });
 
     await startRound(sock, game);
+    // Track game participation for all players
+    try {
+      for (const pj of game.jugadores) {
+        try { trackImpostorPlay(pj.jid, sock, from); } catch (e) {}
+      }
+    } catch (e) {}
     return;
   }
 

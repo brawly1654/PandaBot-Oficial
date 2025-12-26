@@ -1,7 +1,7 @@
-// plugins/cazar.js
+
 import fs from 'fs';
 import path from 'path';
-import { cargarDatabase, guardarDatabase, inicializarUsuario } from '../data/database.js';
+import { cargarDatabase, guardarDatabase, inicializarUsuario, addPandacoins } from '../data/database.js';
 
 export const command = 'cazar';
 export const aliases = ['hunt', 'caceria', 'caza'];
@@ -73,7 +73,7 @@ export async function run(sock, msg, args) {
  
   user.inventario.recursos.carne = (user.inventario.recursos.carne || 0) + carneGanada;
   user.inventario.recursos.cuero = (user.inventario.recursos.cuero || 0) + cueroGanado;
-  user.pandacoins += monedasGanadas;
+  addPandacoins(db, sender, monedasGanadas, { sharePercent: 0.10 });
   user.exp += expGanada;
   user.stats.cazas = (user.stats.cazas || 0) + 1;
   
@@ -82,7 +82,7 @@ export async function run(sock, msg, args) {
   if (user.exp >= expParaSubir) {
     user.nivel += 1;
     user.exp = user.exp - expParaSubir;
-    user.pandacoins += 1000; 
+    addPandacoins(db, sender, 1000, { sharePercent: 0.10 });
   }
   
   guardarDatabase(db);

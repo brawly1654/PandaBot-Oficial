@@ -1,5 +1,7 @@
 export const command = 'kiss';
 
+import { trackBeso } from '../middleware/trackAchievements.js';
+
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
 
@@ -55,6 +57,7 @@ export async function run(sock, msg, args) {
       caption: str,
       mentions: mentionList
     }, { quoted: msg });
+    try { trackBeso(senderJid, sock, from); } catch (e) {}
   } catch (e) {
     console.error('❌ Error al enviar kiss:', e);
     await sock.sendMessage(from, { text: '❌ Ocurrió un error.' });

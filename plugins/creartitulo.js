@@ -8,7 +8,7 @@ export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = (msg.key.participant || msg.key.remoteJid).split('@')[0];
 
-  // Verificar si es owner
+
   if (!ownerNumber.includes(`+${sender}`)) {
     await sock.sendMessage(from, { text: '❌ Solo los owners pueden usar este comando.' });
     return;
@@ -41,7 +41,7 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  // Generar ID único basado en el nombre
+
   const id = equipName.toLowerCase().replace(/[^a-z0-9]/g, '_');
 
   const titleData = {
@@ -49,7 +49,7 @@ export async function run(sock, msg, args) {
     name: visibleName,
     displayName: equipName,
     price: price,
-    emoji: visibleName.charAt(0), // Usar el primer emoji del nombre visible
+    emoji: visibleName.charAt(0),
     createdBy: sender
   };
 

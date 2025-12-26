@@ -1,4 +1,5 @@
 import { loadWins, saveWins, loadCooldowns, saveCooldowns } from '../utils/banderas_db.js';
+import { trackAdivinaBanderaWin } from '../middleware/trackAchievements.js';
 
 export const command = 'adivinabandera';
 export const aliases = ['flagquiz', 'guessflag'];
@@ -219,6 +220,7 @@ export async function run(sock, msg, args) {
           const wins = loadWins();
           wins[sender] = (wins[sender] || 0) + 1;
           saveWins(wins);
+          try { trackAdivinaBanderaWin(sender, sock, from); } catch (e) {}
           await sock.sendMessage(from, { text: `✅ ¡Correcto! Era *${bandera.pais}*.\n🏆 Total victorias: ${wins[sender]}` });
           sock.ev.off('messages.upsert', listener);
           break;

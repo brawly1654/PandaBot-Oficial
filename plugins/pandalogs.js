@@ -1,5 +1,6 @@
 import { exec } from 'child_process';
-import util from 'util';                                                                                  const execPromise = util.promisify(exec);
+import util from 'util';                                                                                 
+const execPromise = util.promisify(exec);
 
 const personasPermitidas = [
   '56953508566',
@@ -11,7 +12,8 @@ const personasPermitidas = [
 
 export const command = 'pandalogs';
 
-export async function run(sock, msg, args) {                                                                const from = msg.key.remoteJid;
+export async function run(sock, msg, args) {                                                                
+  const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
 
   const senderNumber = sender.split('@')[0];
@@ -39,7 +41,8 @@ export async function run(sock, msg, args) {                                    
       await sock.sendMessage(from, { text: '❌ No se encontraron logs para PandaLove.' });
     }
 
-  } catch (error) {                                                                                           console.error('❌ Error al ejecutar el comando:', error);
+  } catch (error) {                                                                                           
+    console.error('❌ Error al ejecutar el comando:', error);
     await sock.sendMessage(from, { text: '❌ Hubo un error inesperado al obtener los logs.' });
   } finally {
   }

@@ -1,98 +1,60 @@
-export const command = 'megatirar';
+import { ensureCMUser, saveCM } from '../lib/cmManager.js';
+export const command = 'tirar10';
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
   const user = sender.split('@')[0];
-
-  if (!global.cmDB[user]) {
-    global.cmDB[user] = { spins: 5, coins: 300, shields: 1, villageLevel: 1, creditos: 10 };
-  }
-
-  const data = global.cmDB[user];
+  
   const nombre = msg.pushName || 'Usuario';
-  if (data.spins < 30) {
-    await sock.sendMessage(from, { text: `⚠️ *@${nombre}*, necesitas al menos *30 giros* para usar este comando.` }, { quoted: msg, mentions: [sender] });
+  const data = ensureCMUser(user);
+
+  if (data.spins < 10) {
+    await sock.sendMessage(from, { text: `⚠️ *@${nombre}*, necesitas al menos *10 giros* para usar este comando.` }, { quoted: msg });
     return;
   }
 
-  data.spins -= 30;
+  let summary = '';
+  let emojis = '';
+  data.spins -= 10;
 
   const rewards = [
-    { emoji: '🪙', value: 16000, type: 'coins' },
-    { emoji: '🛡', value: 1, type: 'shields' },
-    { emoji: '🎫', value: 30, type: 'creditos' },
-    { emoji: '⚡️', value: 1, type: 'spins' }
+    { emoji: '🪙', action: () => { data.coins += 8000; return 'Ganaste *8,000 monedas* 🪙'; } },
+    { emoji: '🛡', action: () => { if (data.shields >= 1) return '⚠️ Ya tienes *un escudo*, no puedes obtener más 🛡'; data.shields += 1; return 'Obtuviste *1 escudo* 🛡'; } },
+    {
+     emoji: '🎫',
+     action: () => {
+       data.creditos +=15;
+       return '¡+15 Créditos! 🎫';
+     }
+   },
+    { emoji: '⚡', action: () => { data.spins += 2; return '¡+2 giros extra! ⚡'; } }
   ];
 
-  const rewardSummary = {
-    coins: 0,
-    shields: 0,
-    creditos: 0,
-    spins: 0,
-    jackpots: 0
-  };
-
-  let allEmojis = '';
-  const jackpotChance = 0.05;
-
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 10; i++) {
     const reward = rewards[Math.floor(Math.random() * rewards.length)];
-    
-    if (Math.random() < jackpotChance) {
-      const jackpotCoins = Math.floor(Math.random() * 100000) + 40000;
-      data.coins += jackpotCoins;
-      rewardSummary.coins += jackpotCoins;
-      rewardSummary.jackpots += 1;
-      allEmojis += '💎 ';
-    } else {
-      switch (reward.type) {
-        case 'coins':
-          data.coins += reward.value;
-          rewardSummary.coins += reward.value;
-          break;
-        case 'shields':
-          if (data.shields < 1) data.shields += reward.value;
-          rewardSummary.shields += reward.value;
-          break;
-        case 'creditos':
-          data.creditos += reward.value;
-          rewardSummary.creditos += reward.value;
-          break;
-        case 'spins':
-          data.spins += reward.value;
-          rewardSummary.spins += reward.value;
-          break;
-      }
-      allEmojis += `${reward.emoji} `;
-    }
+    emojis += `${reward.emoji} `;
+    summary += `🎁 ${reward.action()}\n`;
   }
 
-  global.guardarCM();
+  saveCM();
 
-  const reply = `
-🎰 *Coin Master - 30 TIRADAS* 🎰
----------------------------------
+  const reply = `🎰 *Coin Master - 10 TIRADAS* 🎰
 
-Hiciste 30 giros y esto es lo que pasó:
+🎲 Resultado:
+${emojis}
 
-🎁 *Resumen de Recompensas:*
-🪙 Monedas: +${rewardSummary.coins.toLocaleString()}
-🛡 Escudos: +${rewardSummary.shields}
-🎫 Créditos: +${rewardSummary.creditos}
-⚡️ Giros extra: +${rewardSummary.spins}
-💎 Jackpots: *${rewardSummary.jackpots}*
+${summary.trim()}
 
-✨ *Tus estadísticas finales:*
 🎯 Giros restantes: ${data.spins}
-💰 Monedas: ${data.coins.toLocaleString()}
+💰 Monedas: ${data.coins}
 🛡 Escudos: ${data.shields}
 🏘 Aldea nivel: ${data.villageLevel}
 🎫 Créditos: ${data.creditos}
-
-> PandaBot System.
-`.trim();
+`;
 
   await sock.sendMessage(from, { text: reply }, { quoted: msg });
 }
+
+
 

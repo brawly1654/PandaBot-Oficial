@@ -32,7 +32,7 @@ export async function run(sock, msg, args) {
     }
 
     await sock.groupParticipantsUpdate(from, adminsToDemote, 'demote');
-    await sock.sendMessage(from, { text: `✅ Todos los administradores han sido degradados.`, mentions: adminsToDemote });
+    await sock.sendMessage(from, { text: `*✅ Todos los administradores han sido degradados.*`, mentions: adminsToDemote });
 
   } catch (e) {
     console.error('❌ Error en demoteall:', e);

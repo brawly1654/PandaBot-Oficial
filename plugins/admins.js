@@ -6,14 +6,14 @@ export async function run(sock, msg, args) {
   try {
     const metadata = await sock.groupMetadata(from);
 
-    // Filtrar admins y superadmins
+
     const admins = metadata.participants.filter(p => p.admin === 'admin' || p.admin === 'superadmin');
 
     if (admins.length === 0) {
       return await sock.sendMessage(from, { text: '❌ Este grupo no tiene administradores visibles.' });
     }
 
-    // Formatear la lista
+
     const lista = admins
       .map((a, i) => `${i + 1}. @${a.id.split('@')[0]} (${a.admin})`)
       .join('\n');

@@ -57,18 +57,18 @@ export function cargarAFKDesdeDB() {
   console.log(`✅ Cargados ${afkUsuarios.size} usuarios AFK activos desde la base de datos`);
 }
 
-// ⚡ NUEVA FUNCIÓN: Desactivar AFK automáticamente cuando el usuario manda mensaje
+
 export async function desactivarAFKAutomatico(sender, from, sock = null) {
   const usuarioAFK = afkUsuarios.get(sender);
   
   if (!usuarioAFK || usuarioAFK.estado !== 'activo') {
-    return false; // No estaba en AFK
+    return false;
   }
 
   const ahora = Date.now();
   const tiempoAFK = ahora - usuarioAFK.inicio;
 
-  // Guardar estadísticas antes de desactivar
+
   const db = cargarDatabase();
   inicializarUsuario(sender, db);
   const user = db.users[sender];
@@ -91,7 +91,7 @@ export async function desactivarAFKAutomatico(sender, from, sock = null) {
     user.afkStats.mejorRacha = horasAFK;
   }
 
-  // Guardar en estadísticas globales
+
   if (!db.afk) {
     db.afk = {
       usuarios: {},
@@ -111,20 +111,20 @@ export async function desactivarAFKAutomatico(sender, from, sock = null) {
   db.afk.estadisticas[sender].sesiones += 1;
   db.afk.estadisticas[sender].robosPrevenidos += usuarioAFK.robosPrevenidos || 0;
 
-  // Eliminar del mapa activo
+
   afkUsuarios.delete(sender);
   
-  // Actualizar base de datos
+
   if (db.afk.usuarios && db.afk.usuarios[sender]) {
     delete db.afk.usuarios[sender];
   }
 
-  // Aplicar cooldown
+
   user.afkCooldown = ahora;
 
   guardarDatabase(db);
 
-  // ⚡ NUEVO: Notificar solo si pasó más de 1 minuto (evitar spam)
+
   const minutosAFK = Math.floor(tiempoAFK / 60000);
   
   if (minutosAFK >= 1 && sock && from) {
@@ -518,7 +518,7 @@ async function estadoAFK(sock, msg, from, sender) {
       mensaje += `• Mejor racha: ${user.afkStats.mejorRacha}h\n\n`;
     }
 
-    // Verificar cooldown
+   
     const ahora = Date.now();
     const cooldownAFK = 5 * 60 * 1000;
 

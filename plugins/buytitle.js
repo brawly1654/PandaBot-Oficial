@@ -45,7 +45,7 @@ export async function run(sock, msg, args) {
   const userCoins = user.pandacoins || 0;
   const userTitles = user.achievements?.titles || [];
 
-  // Verificar si ya tiene el título
+
   if (userTitles.includes(selectedTitle.displayName)) {
     await sock.sendMessage(from, {
       text: `❌ Ya tienes el título *${selectedTitle.name}*.\n\n💡 Puedes seleccionarlo con: .title "${selectedTitle.displayName}"`
@@ -53,7 +53,7 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  // Verificar si tiene suficiente dinero
+
   if (userCoins < selectedTitle.price) {
     await sock.sendMessage(from, {
       text: `❌ No tienes suficientes pandacoins.\n\n${selectedTitle.emoji} *Título:* ${selectedTitle.name}\n💰 Necesitas: ${selectedTitle.price.toLocaleString()} 🐼\n💳 Tienes: ${userCoins.toLocaleString()} 🐼\n🔻 Te faltan: ${(selectedTitle.price - userCoins).toLocaleString()} 🐼`
@@ -61,7 +61,7 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  // CONFIRMAR COMPRA
+
   if (args[1] !== 'confirmar') {
     await sock.sendMessage(from, {
       text: `🛒 *CONFIRMAR COMPRA*\n\n${selectedTitle.emoji} *Título:* ${selectedTitle.name}\n📝 ${selectedTitle.description}\n💰 Precio: ${selectedTitle.price.toLocaleString()} 🐼\n\n💳 *Saldo actual:* ${userCoins.toLocaleString()} 🐼\n💸 *Saldo después:* ${(userCoins - selectedTitle.price).toLocaleString()} 🐼\n\n✅ Para confirmar usa:\n.buytitle ${args[0]} confirmar\n\n❌ Esta acción no se puede deshacer.`
@@ -69,10 +69,10 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  // PROCESAR COMPRA
+
   user.pandacoins = userCoins - selectedTitle.price;
   
-  // Asegurar que achievements existe
+
   if (!user.achievements) {
     user.achievements = {
       unlocked: [],
@@ -84,7 +84,7 @@ export async function run(sock, msg, args) {
     };
   }
 
-  // Añadir título
+
   if (!user.achievements.titles.includes(selectedTitle.displayName)) {
     user.achievements.titles.push(selectedTitle.displayName);
   }

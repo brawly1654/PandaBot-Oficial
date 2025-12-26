@@ -5,17 +5,17 @@ export const command = 'cum';
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
 
-  // Solo funciona en grupos
+
   if (!from.endsWith('@g.us')) {
     await sock.sendMessage(from, { text: '❌ Este comando solo puede usarse en grupos.' });
     return;
   }
 
-  // Sacamos el número de quien ejecuta el comando
+
   const sender = msg.key.participant || msg.key.remoteJid;
   const senderNumber = sender.split('@')[0];
 
-  // Revisamos si es admin o owner
+
   const metadata = await sock.groupMetadata(from);
   const isAdmin = metadata.participants.some(
     p => p.id === sender && (p.admin === 'admin' || p.admin === 'superadmin')
@@ -29,16 +29,16 @@ export async function run(sock, msg, args) {
 
   let targetJid;
 
-  // Si respondió a un mensaje
+
   if (msg.message?.extendedTextMessage?.contextInfo?.participant) {
     targetJid = msg.message.extendedTextMessage.contextInfo.participant;
   }
-  // Si mencionó a alguien
+
   else if (args[0]) {
     const mention = args[0].replace(/[^0-9]/g, '');
     targetJid = mention + '@s.whatsapp.net';
   } else {
-    await sock.sendMessage(from, { text: '❌ Debes mencionar a un usuario o responder a su mensaje: .kick @usuario' });
+    await sock.sendMessage(from, { text: '❌ Debes mencionar a un usuario o responder a su mensaje: .cum @usuario' });
     return;
   }
 

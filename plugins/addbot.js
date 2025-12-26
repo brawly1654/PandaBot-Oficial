@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const CREADOR_JID = '120363420237055271@g.us';
-const owners = ['56953508566', '573023181375', '166164298780822'];
+const owners = ['56953508566', '166164298780822'];
 const requestsFile = path.resolve('./data/joinrequests.json');
 
 function loadRequests() {
@@ -22,7 +22,7 @@ export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
   const senderNumber = sender.split('@')[0];
- 
+  const nombre = msg.pushName || 'Usuario';
   const subCommand = args[0]?.toLowerCase();
   const requestId = parseInt(args[1]);
 
@@ -129,7 +129,7 @@ export async function run(sock, msg, args) {
     groupLink: groupLink,
     status: 'pending',
     timestamp: Date.now(),
-    senderName: msg.pushName || 'Usuario'
+    senderName: nombre
   };
   
   requests.push(newRequest);
@@ -140,7 +140,7 @@ export async function run(sock, msg, args) {
 🔔 *NUEVA SOLICITUD DE GRUPO*
 
 📋 *ID:* #${newRequestId}
-👤 *Usuario:* ${msg.pushName || 'Sin nombre'}
+👤 *Usuario:* ${nombre}
 📞 *Número:* ${senderNumber}
 🔗 *Enlace:* ${groupLink}
 ⏰ *Fecha:* ${new Date().toLocaleString()}

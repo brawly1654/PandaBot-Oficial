@@ -10,8 +10,8 @@ export async function run(sock, msg, args) {
 
   try {
     let totalComprados = 0;
-    let lastResponse = null;      // último intento (puede ser error)
-    let prevResponse = null;      // penúltimo intento válido
+    let lastResponse = null;
+    let prevResponse = null;
     let stopReason = null;
 
     while (true) {
@@ -30,8 +30,8 @@ export async function run(sock, msg, args) {
       }
 
       totalComprados++;
-      prevResponse = lastResponse;   // mover el último válido al "penúltimo"
-      lastResponse = response;       // actualizar el último válido
+      prevResponse = lastResponse;
+      lastResponse = response;
     }
 
     if (totalComprados === 0) {
@@ -39,7 +39,7 @@ export async function run(sock, msg, args) {
       return;
     }
 
-    // Si el último fue error, usamos el penúltimo válido
+
     const finalResponse = lastResponse?.error ? prevResponse : lastResponse;
 
     if (!finalResponse) {

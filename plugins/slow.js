@@ -7,7 +7,7 @@ export const command = 'slow';
 export async function run(sock, msg) {
   const from = msg.key.remoteJid;
 
-  // Obtenemos el mensaje citado real (se adapta a varios tipos)
+
   const quoted = msg.quoted || (msg.message?.extendedTextMessage?.contextInfo?.quotedMessage
     ? { message: msg.message.extendedTextMessage.contextInfo.quotedMessage }
     : null);
@@ -17,13 +17,13 @@ export async function run(sock, msg) {
     return;
   }
 
-  // Detectar el objeto multimedia (audio, ptt, etc)
+
   const quotedMsg = quoted.message || {};
 
-  // Extraemos el objeto multimedia exacto para la descarga
+
   let mediaMessage = quotedMsg.audioMessage || quotedMsg.ptt || quotedMsg.voiceMessage;
 
-  // También revisar si es mensaje efímero o view once y extraer la multimedia de ahí
+
   if (!mediaMessage && quotedMsg.ephemeralMessage) {
     mediaMessage = quotedMsg.ephemeralMessage.message.audioMessage || quotedMsg.ephemeralMessage.message.ptt || quotedMsg.ephemeralMessage.message.voiceMessage;
   }
@@ -37,7 +37,7 @@ export async function run(sock, msg) {
   }
 
   try {
-    // Descargamos sólo el objeto multimedia para que tenga mediaKey
+
     const stream = await downloadContentFromMessage(mediaMessage, 'audio');
 
     const mediaPath = getRandom('.mp3');

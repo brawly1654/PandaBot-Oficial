@@ -1,9 +1,11 @@
 import fg from 'api-dylux';
+import { trackTiktok, trackDownloadsTotal } from '../middleware/trackAchievements.js';
 
 export const command = 'tiktok';
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
+  const sender = msg.key.participant || msg.key.remoteJid;
   const text = args.join(' ');
 
   if (!args[0]) {
@@ -33,6 +35,7 @@ export async function run(sock, msg, args) {
       video: { url: play },
       caption
     });
+    try { trackTiktok(sender, sock, from); trackDownloadsTotal(sender, sock, from); } catch (e) {}
 
     // await sock.sendMessage(from, { react: { text: '✅', key: msg.key } });
   } catch (e) {

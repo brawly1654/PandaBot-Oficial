@@ -21,7 +21,33 @@ function ensureAchievementStats(user) {
       spotify_count: 0,
       paja_count: 0,
       sexo_count: 0,
-      dildear_count: 0
+      dildear_count: 0,
+      granja_count: 0,
+      granja_level: 0,
+      instagram_count: 0,
+      ytmp4_count: 0,
+      tiktok_count: 0,
+      beso_count: 0,
+      sugerencia_count: 0,
+      pregunta_count: 0,
+      reporte_count: 0,
+      contribuciones_count: 0,
+      code_claims: 0,
+      hola_count: 0,
+      impostor_games: 0,
+      impostor_wins: 0,
+      invertir_count: 0,
+      inversiones_count: 0,
+      miinversion_count: 0,
+      retirar_count: 0,
+      kick_count: 0,
+      pokedex_count: 0,
+      pozo_donated: 0,
+      adivinabandera_wins: 0,
+      stickers_created: 0,
+      expediciones_sent: 0,
+      downloads_total: 0,
+      inversion_amount: 0
     };
   }
 
@@ -38,6 +64,7 @@ function ensureAchievementStats(user) {
     }
   }
 }
+
 
 const achievementsFile = './data/achievements.json';
 
@@ -86,7 +113,33 @@ export function initializeAchievements(userJid) {
         spotify_count: 0,
         paja_count: 0,
         sexo_count: 0,
-        dildear_count: 0
+        dildear_count: 0,
+        granja_count: 0,
+        granja_level: 0,
+        instagram_count: 0,
+        ytmp4_count: 0,
+        tiktok_count: 0,
+        beso_count: 0,
+        sugerencia_count: 0,
+        pregunta_count: 0,
+        reporte_count: 0,
+        contribuciones_count: 0,
+        code_claims: 0,
+        hola_count: 0,
+        impostor_games: 0,
+        impostor_wins: 0,
+        invertir_count: 0,
+        inversiones_count: 0,
+        miinversion_count: 0,
+        retirar_count: 0,
+        kick_count: 0,
+        pokedex_count: 0,
+        pozo_donated: 0,
+        adivinabandera_wins: 0,
+        stickers_created: 0,
+        expediciones_sent: 0,
+        downloads_total: 0,
+        inversion_amount: 0
       }
     };
     console.log(`✅ Achievements creados para usuario nuevo: ${userJid}`);
@@ -95,7 +148,33 @@ export function initializeAchievements(userJid) {
     const newStats = {
       paja_count: 0,
       sexo_count: 0,
-      dildear_count: 0
+      dildear_count: 0,
+      granja_count: 0,
+      granja_level: 0,
+      instagram_count: 0,
+      ytmp4_count: 0,
+      tiktok_count: 0,
+      beso_count: 0,
+      sugerencia_count: 0,
+      pregunta_count: 0,
+      reporte_count: 0,
+      contribuciones_count: 0,
+      code_claims: 0,
+      hola_count: 0,
+      impostor_games: 0,
+      impostor_wins: 0,
+      invertir_count: 0,
+      inversiones_count: 0,
+      miinversion_count: 0,
+      retirar_count: 0,
+      kick_count: 0,
+        pokedex_count: 0,
+      pozo_donated: 0,
+      adivinabandera_wins: 0,
+      stickers_created: 0,
+      expediciones_sent: 0,
+      downloads_total: 0,
+      inversion_amount: 0
     };
     
     let updated = false;
@@ -246,8 +325,26 @@ export function trackProgress(userJid, actionType, value = 1, sock = null, from 
   ensureAchievementStats(user);
   const stats = user.achievements.stats;
 
-if (stats[actionType] !== undefined) {
-    stats[actionType] += value;
+  const maxKeys = ['granja_level', 'pizzeria_level'];
+  const sumKeys = ['pozo_donated', 'inversion_amount'];
+
+  if (stats[actionType] !== undefined) {
+    if (maxKeys.includes(actionType)) {
+      stats[actionType] = Math.max(stats[actionType] || 0, value);
+    } else if (sumKeys.includes(actionType)) {
+      stats[actionType] = (stats[actionType] || 0) + value;
+    } else {
+      stats[actionType] = (stats[actionType] || 0) + value;
+    }
+
+
+    if (['sugerencia_count', 'pregunta_count', 'reporte_count'].includes(actionType)) {
+      stats.contribuciones_count = (stats.contribuciones_count || 0) + value;
+    }
+
+    if (['instagram_count', 'ytmp4_count', 'tiktok_count'].includes(actionType)) {
+      stats.downloads_total = (stats.downloads_total || 0) + value;
+    }
   } else {
     console.log(`❌ ${actionType} no existe en stats`);
   }
@@ -268,10 +365,10 @@ export function checkAchievements(userJid, sock = null, from = null) {
     return [];
   }
 
-  // ✅ Asegurar que achievements esté inicializado
+
   if (!user.achievements) {
     initializeAchievements(userJid);
-    // Recargar después de inicializar
+
     const dbUpdated = cargarDatabase();
     user.achievements = dbUpdated.users[userJid].achievements;
   }
@@ -282,7 +379,7 @@ export function checkAchievements(userJid, sock = null, from = null) {
   const unlocked = [];
 
   for (const achievement of achievements) {
-    // Si ya está desbloqueado, skip
+
     if (hasAchievement(userJid, achievement.id)) continue;
 
     const req = achievement.requirement;
@@ -290,7 +387,7 @@ export function checkAchievements(userJid, sock = null, from = null) {
 
     switch (req.type) {
       case 'register':
-        completed = true; // Si existe el usuario, está registrado
+        completed = true;
         break;
 
       case 'total_coins':
@@ -351,6 +448,60 @@ export function checkAchievements(userJid, sock = null, from = null) {
 
       case 'has_toilet_effect':
         completed = user.personajes?.some(p => p.includes('🚽')) || false;
+        break;
+
+
+      case 'granja_count':
+        try {
+          const granjas = JSON.parse(fs.readFileSync('./data/database.json', 'utf8')).granjas || {};
+          completed = (granjas.usuarios?.[userJid]?.length || 0) >= req.value;
+        } catch (e) {
+          completed = (stats.granja_count || 0) >= req.value;
+        }
+        break;
+
+      case 'granja_level':
+
+        try {
+          const granjas = JSON.parse(fs.readFileSync('./data/database.json', 'utf8')).granjas || {};
+          const userGr = granjas.usuarios?.[userJid] || [];
+          completed = userGr.some(g => (g.nivel || 0) >= req.value) || (stats.granja_level || 0) >= req.value;
+        } catch (e) {
+          completed = (stats.granja_level || 0) >= req.value;
+        }
+        break;
+
+      case 'instagram_count':
+      case 'ytmp4_count':
+      case 'tiktok_count':
+      case 'beso_count':
+      case 'sugerencia_count':
+      case 'pregunta_count':
+      case 'reporte_count':
+      case 'contribuciones_count':
+      case 'code_claims':
+      case 'hola_count':
+      case 'impostor_games':
+      case 'impostor_wins':
+      case 'invertir_count':
+      case 'inversiones_count':
+      case 'miinversion_count':
+      case 'retirar_count':
+      case 'kick_count':
+      case 'pokedex_count':
+      case 'adivinabandera_wins':
+      case 'stickers_created':
+      case 'expediciones_sent':
+      case 'downloads_total':
+        completed = (stats[req.type] || 0) >= req.value;
+        break;
+
+      case 'pozo_donated':
+        completed = (stats.pozo_donated || 0) >= req.value;
+        break;
+
+      case 'inversion_amount':
+        completed = (stats.inversion_amount || 0) >= req.value;
         break;
 
       case 'broke':

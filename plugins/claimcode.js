@@ -2,6 +2,7 @@ import fs from 'fs';
 import { canjearFolio } from '../PandaLove/monetizar.js';
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 import { addCoins } from '../PandaLove/pizzeria.js';
+import { ensureCMUser, saveCM } from '../lib/cmManager.js';
 
 const personajesData = JSON.parse(fs.readFileSync('./data/personajes.json', 'utf8'));
 const personajes = personajesData.characters;
@@ -30,15 +31,13 @@ export async function run(sock, msg, args) {
             db.users[sender] = user;
 
             global.cmDB = global.cmDB || {};
-            global.cmDB[userId] = global.cmDB[userId] || { spins: 0, coins: 0 };
-            
-            // --- Lógica para el contador de aportes ---
-            user.adCount = (user.adCount || 0) + 1; // Contador personal
-            db.monetization = db.monetization || {};
-            db.monetization.adCount = (db.monetization.adCount || 0) + 1; // Contador total
-            guardarDatabase(db);
-            // --- Fin de la lógica ---
+            ensureCMUser(userId);
 
+            user.adCount = (user.adCount || 0) + 1;
+            db.monetization = db.monetization || {};
+            db.monetization.adCount = (db.monetization.adCount || 0) + 1;
+            guardarDatabase(db);
+            
             const detalles = response.detalles;
             const recurso = detalles.recurso;
             const cantidad = detalles.cantidad;
@@ -57,16 +56,16 @@ export async function run(sock, msg, args) {
                     mensajeRecompensa = `✅ ¡Código canjeado con éxito! Has ganado *${cantidad} PizzaCoins*`;
                 }
             } else if (recurso === 'giros') {
-                global.cmDB[userId].spins += cantidad;
-                global.guardarCM();
+                 ensureCMUser(userId).spins += cantidad;
+                 saveCM();
                 mensajeRecompensa = `✅ ¡Código canjeado con éxito! Has ganado *${cantidad} ${recurso}* en Coin Master!`;
            } else if (recurso === 'creditos') {
-                global.cmDB[userId].creditos += cantidad;
-                global.guardarCM();
+                 ensureCMUser(userId).creditos += cantidad;
+                 saveCM();
                 mensajeRecompensa = `✅ ¡Código canjeado con éxito! Has ganado *${cantidad} ${recurso}* en Coin Master!`;
             } else if (recurso === 'coins') {
-                global.cmDB[userId].coins += cantidad;
-                global.guardarCM();
+                 ensureCMUser(userId).coins += cantidad;
+                 saveCM();
                 mensajeRecompensa = `✅ ¡Código canjeado con éxito! Has ganado *${cantidad} ${recurso}* en Coin Master!`;
             } else {
                 if (user[recurso] === undefined) {

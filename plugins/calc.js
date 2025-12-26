@@ -14,14 +14,14 @@ export async function run(sock, msg, args) {
     }
 
     try {
-        // Reemplazar constantes matemáticas
+
         let processedExpression = expression
             .replace(/PI/g, Math.PI.toString())
             .replace(/E/g, Math.E.toString())
             .replace(/π/g, Math.PI.toString())
             .replace(/e/g, Math.E.toString());
 
-        // Reemplazar funciones matemáticas
+
         processedExpression = processedExpression
             .replace(/sqrt\(/g, 'Math.sqrt(')
             .replace(/sin\(/g, 'Math.sin(')
@@ -32,16 +32,16 @@ export async function run(sock, msg, args) {
             .replace(/abs\(/g, 'Math.abs(')
             .replace(/\^/g, '**');
 
-        // Validar expresión segura (solo caracteres matemáticos permitidos)
+
         const safeRegex = /^[0-9+\-*/().\sMathPIEsincostanqrtlogb]+$/;
         if (!safeRegex.test(processedExpression.replace(/ /g, ''))) {
             throw new Error('Expresión contiene caracteres no permitidos');
         }
 
-        // Evaluar la expresión
+
         const result = eval(processedExpression);
         
-        // Formatear resultado
+
         let formattedResult;
         if (Number.isInteger(result)) {
             formattedResult = result.toLocaleString();

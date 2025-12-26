@@ -1,5 +1,5 @@
 import fs from 'fs/promises';
-import { limpiarCache } from '../lib/cacheManager.js'; // Ajusta la ruta según tu estructura
+import { limpiarCache } from '../lib/cacheManager.js';
 
 export const command = 'addps';
 
@@ -50,7 +50,7 @@ export async function run(sock, msg, args) {
         personajes.push(nuevoPersonaje);
         await fs.writeFile('./data/personajes.json', JSON.stringify(data, null, 2));
 
-        // 🔥 LIMPIAR LA CACHÉ PARA QUE SE RECARGUE
+
         limpiarCache();
 
         await sock.sendMessage(from, { 

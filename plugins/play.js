@@ -2,6 +2,7 @@ import ytSearch from 'yt-search';
 import { exec } from 'child_process';
 import fs from 'fs';
 import path from 'path';
+import { ensureCMUser, saveCM } from '../lib/cmManager.js';
 
 export const command = 'play';
 
@@ -26,17 +27,8 @@ export async function run(sock, msg, args) {
 
   const creditosCosto = 50;
 
-  if (!global.cmDB[userId]) {
-    global.cmDB[userId] = {
-      spins: 5,
-      coins: 0,
-      shields: 0,
-      villageLevel: 1,
-      creditos: 0
-    };
-  }
-
-  const userCreditos = global.cmDB[userId].creditos;
+  const userData = ensureCMUser(userId);
+  const userCreditos = userData.creditos;
   if (userCreditos < creditosCosto) {
     await sock.sendMessage(from, {
       text: `❌ No tienes suficientes créditos para usar este comando. Cuesta *${creditosCosto} créditos* y tienes *${userCreditos}*.`
@@ -106,8 +98,8 @@ _🐼 Enviando audio, espere un momento..._
 
           fs.unlinkSync(filePath);
 
-          global.cmDB[userId].creditos -= creditosCosto;
-          global.guardarCM();
+          userData.creditos -= creditosCosto;
+          saveCM();
 
         } catch (err) {
           console.error('❌ Error al leer o enviar el archivo:', err);

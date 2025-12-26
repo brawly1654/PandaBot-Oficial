@@ -1,9 +1,11 @@
 import { igdl } from 'ruhend-scraper';
+import { trackInstagram, trackDownloadsTotal } from '../middleware/trackAchievements.js';
 
 export const command = 'instagram';
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
+  const sender = msg.key.participant || msg.key.remoteJid;
 
   if (!args[0]) {
     await sock.sendMessage(from, { text: '🚩 Ingresa un enlace de Instagram.\n\n📌 Ejemplo:\n.instagram https://www.instagram.com/reel/xxxxx/' });
@@ -27,6 +29,7 @@ export async function run(sock, msg, args) {
         video: { url: media.url },
         caption: '🚩 *Video de Instagram.*'
       });
+      try { trackInstagram(sender, sock, from); trackDownloadsTotal(sender, sock, from); } catch (e) {}
     }
   } catch (e) {
     console.error('❌ Error en instagram:', e);

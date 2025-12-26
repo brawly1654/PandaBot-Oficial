@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
+import { ensureCMUser, saveCM } from '../lib/cmManager.js';
 
 const ownersPermitidos = [
   '56953508566',
@@ -59,15 +60,15 @@ export async function run(sock, msg, args) {
   db.users[targetJid] = db.users[targetJid] || { pandacoins: 0, exp: 0, piedra: 0, diamantes: 0, creditos: 0, personajes: [] };
 
   global.cmDB = global.cmDB || {};
-  global.cmDB[targetId] = global.cmDB[targetId] || { spins: 0, coins: 0 };
+  const targetData = ensureCMUser(targetId);
 
   // === Restar recurso ===
   if (recurso === 'giros') {
-    global.cmDB[targetId].spins = Math.max(0, global.cmDB[targetId].spins - cantidad);
-    global.guardarCM();
+    targetData.spins = Math.max(0, targetData.spins - cantidad);
+    saveCM();
   } else if (recurso === 'coins') {
-    global.cmDB[targetId].coins = Math.max(0, global.cmDB[targetId].coins - cantidad);
-    global.guardarCM();
+    targetData.coins = Math.max(0, targetData.coins - cantidad);
+    saveCM();
   } else {
     db.users[targetJid][recurso] = Math.max(0, (db.users[targetJid][recurso] || 0) - cantidad);
     guardarDatabase(db);

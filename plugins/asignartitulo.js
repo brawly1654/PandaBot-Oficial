@@ -9,7 +9,7 @@ export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = (msg.key.participant || msg.key.remoteJid).split('@')[0];
 
-  // Verificar si es owner
+
   if (!ownerNumber.includes(`+${sender}`)) {
     await sock.sendMessage(from, { 
       text: '❌ Solo los owners pueden usar este comando.' 
@@ -36,7 +36,7 @@ export async function run(sock, msg, args) {
 
   const [nombreTitulo, mencionTexto] = parts;
 
-  // Obtener usuario mencionado
+
   const contextInfo = msg.message?.extendedTextMessage?.contextInfo;
   const mencionado = msg.mentionedJid?.[0] || contextInfo?.mentionedJid?.[0];
 
@@ -47,7 +47,7 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  // Verificar que no sea self-assign
+
   if (mencionado === (msg.key.participant || msg.key.remoteJid)) {
     await sock.sendMessage(from, {
       text: '❌ No puedes asignarte títulos a ti mismo con este comando.'
@@ -55,7 +55,7 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  // Buscar el título
+
   const titulos = getAllTitles();
   const tituloEncontrado = titulos.find(t => 
     t.name === nombreTitulo || 
@@ -70,10 +70,10 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  // Asignar título al usuario
+
   const db = cargarDatabase();
   
-  // Inicializar usuario si no existe
+
   if (!db.users) db.users = {};
   if (!db.users[mencionado]) {
     db.users[mencionado] = {
@@ -87,7 +87,7 @@ export async function run(sock, msg, args) {
 
   const user = db.users[mencionado];
 
-  // Inicializar achievements si no existen
+
   if (!user.achievements) {
     user.achievements = {
       titles: [],
@@ -95,12 +95,12 @@ export async function run(sock, msg, args) {
     };
   }
 
-  // Inicializar array de títulos si no existe
+  
   if (!user.achievements.titles) {
     user.achievements.titles = [];
   }
 
-  // Verificar si ya tiene el título
+
   if (user.achievements.titles.includes(tituloEncontrado.displayName)) {
     await sock.sendMessage(from, {
       text: `ℹ️ @${mencionado.split('@')[0]} ya tiene el título "${tituloEncontrado.name}"`,
@@ -109,12 +109,12 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  // Asignar título
+
   user.achievements.titles.push(tituloEncontrado.displayName);
   
   guardarDatabase(db);
 
-  // Mensaje de éxito
+
   const usuarioMencion = mencionado.split('@')[0];
   
   await sock.sendMessage(from, {
@@ -122,7 +122,7 @@ export async function run(sock, msg, args) {
     mentions: [mencionado]
   }, { quoted: msg });
 
-  // Notificar al usuario que recibió el título (opcional)
+
   try {
     await sock.sendMessage(mencionado, {
       text: `🎁 *¡HAS RECIBIDO UN TÍTULO!*\n\n🏷️ *Título:* ${tituloEncontrado.name}\n👤 *Otorgado por:* Owner del bot\n\n💫 Para equipar este título usa:\n.title "${tituloEncontrado.displayName}"\n\n📋 Para ver todos tus títulos:\n.mistitles\n\n¡Disfruta de tu nuevo título! 🎉`
@@ -132,7 +132,7 @@ export async function run(sock, msg, args) {
   }
 }
 
-// Función para obtener lista formateada de títulos
+
 function obtenerListaTitulos() {
   const titulos = getAllTitles();
   
@@ -145,12 +145,12 @@ function obtenerListaTitulos() {
   }).join('\n');
 }
 
-// Comando adicional para ver títulos de un usuario
+
 export async function verTitulosUsuario(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = (msg.key.participant || msg.key.remoteJid).split('@')[0];
 
-  // Verificar si es owner
+
   if (!ownerNumber.includes(`+${sender}`)) {
     await sock.sendMessage(from, { 
       text: '❌ Solo los owners pueden usar este comando.' 
@@ -158,7 +158,7 @@ export async function verTitulosUsuario(sock, msg, args) {
     return;
   }
 
-  // Obtener usuario mencionado
+
   const contextInfo = msg.message?.extendedTextMessage?.contextInfo;
   const mencionado = msg.mentionedJid?.[0] || contextInfo?.mentionedJid?.[0];
 

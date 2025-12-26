@@ -1,4 +1,5 @@
 export const command = 'walletcm';
+import { ensureCMUser } from '../lib/cmManager.js';
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
@@ -8,25 +9,15 @@ export async function run(sock, msg, args) {
   const targetJid = isMention || senderJid;
   const user = targetJid.split('@')[0];
 
-  if (!global.cmDB[user]) {
-    global.cmDB[user] = {
-      name: '',
-      spins: 5,
-      coins: 0,
-      shields: 0,
-      villageLevel: 1,
-      creditos: 0
-    };
-  }
+  const data = ensureCMUser(user);
 
-  const data = global.cmDB[user];
-                                                                                                                                       const rankingAldea = Object.entries(global.cmDB)
-    .sort((a, b) => b[1].villageLevel - a[1].villageLevel)
+  const rankingAldea = Object.entries(global.cmDB)
+    .sort((a, b) => (Number(b[1].villageLevel) || 0) - (Number(a[1].villageLevel) || 0))
     .map(([u]) => u);
   const positionAldea = rankingAldea.indexOf(user) + 1;
 
   const rankingCoins = Object.entries(global.cmDB)
-    .sort((a, b) => b[1].coins - a[1].coins)
+    .sort((a, b) => (Number(b[1].coins) || 0) - (Number(a[1].coins) || 0))
     .map(([u]) => u);
   const positionCoins = rankingCoins.indexOf(user) + 1;
 

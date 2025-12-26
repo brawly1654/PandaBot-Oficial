@@ -10,7 +10,7 @@ export async function run(sock, msg, args) {
   const sender = msg.key.participant || msg.key.remoteJid;
   const COOLDOWN_MS = 1 * 60 * 1000;
 
-  // Validación
+
   if (args.length < 2) {
     await sock.sendMessage(from, { text: '❌ Uso: /apostar <monto> <bajo|medio|alto>' }, { quoted: msg });
     return;
@@ -46,7 +46,7 @@ export async function run(sock, msg, args) {
   db.users = db.users || {};
   db.users[sender] = db.users[sender] || { pandacoins: 0, exp: 0, personajes: [] };
   
-  // ✅ Inicializar achievements si no existen
+
   if (!db.users[sender].achievements) {
     initializeAchievements(sender);
   }
@@ -88,7 +88,7 @@ export async function run(sock, msg, args) {
 
   await sock.sendMessage(from, { text: texto }, { quoted: msg });
 
-  // ✅ Trackear apuesta
+
   trackApostar(sender, sock, from);
   checkSpecialAchievements(sender, sock, from);
 }

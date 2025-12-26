@@ -1,4 +1,4 @@
-import { cargarDatabase, guardarDatabase, inicializarUsuario } from '../data/database.js';
+import { cargarDatabase, guardarDatabase, inicializarUsuario, addPandacoins } from '../data/database.js';
 
 export const command = 'daily';
 export const aliases = ['diario', 'cadadia'];
@@ -116,7 +116,7 @@ export async function run(sock, msg, args) {
   }
 
 
-  user.pandacoins += coinsGanados;
+  addPandacoins(db, sender, coinsGanados, { sharePercent: 0.10 });
   user.exp += expGanada;
   
 
@@ -154,7 +154,7 @@ export async function run(sock, msg, args) {
     
 
     const bonusNivel = 1000 * nivelesSubidos;
-    user.pandacoins += bonusNivel;
+    addPandacoins(db, sender, bonusNivel, { sharePercent: 0.10 });
     coinsGanados += bonusNivel;
   }
   
@@ -232,7 +232,7 @@ export async function run(sock, msg, args) {
 
   respuesta += `\n━━━━━━━━━━━━━━━━━━━\n`;
   respuesta += `🎮 *¡Gracias por usar comandos cada día!*\n`;
-  respuesta += `🏆 La constancia tiene su recompensa`;
+  respuesta += `🏆 ¡La constancia tiene su recompensa!`;
 
   await sock.sendMessage(from, { 
     text: respuesta,

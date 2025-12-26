@@ -1,6 +1,7 @@
 // plugins/watermark.js
 import { downloadMediaMessage } from '@whiskeysockets/baileys';
 import { extractStickerMetadata, createStickerWithNewMetadata, saveTempFile } from '../lib/stickerUtils.js';
+import { trackStickersCreated } from '../middleware/trackAchievements.js';
 import fs from 'fs';
 import path from 'path';
 
@@ -50,6 +51,7 @@ export async function run(sock, msg, args) {
       await sock.sendMessage(from, { 
         sticker: cleanSticker 
       }, { quoted: msg });
+      try { trackStickersCreated(sender, sock, from); } catch (e) {}
       
       await sock.sendMessage(from, {
         text: `✅ *WATERMARK ELIMINADO*\n\n📝 El sticker ahora no muestra ningún texto.\n\n💡 Para añadir texto: \`.wm Mi Pack • por Mi Nombre\``
@@ -82,6 +84,7 @@ export async function run(sock, msg, args) {
       await sock.sendMessage(from, { 
         sticker: newSticker 
       }, { quoted: msg });
+      try { trackStickersCreated(sender, sock, from); } catch (e) {}
       
       await sock.sendMessage(from, {
         text: `🔄 *WATERMARK RESTAURADO*\n\n📝 Texto restaurado a:\n🏷️ Pack: PandaBot 🐼\n👤 Author: by lukas 💻`
@@ -151,6 +154,7 @@ export async function run(sock, msg, args) {
     await sock.sendMessage(from, { 
       sticker: newSticker 
     }, { quoted: msg });
+    try { trackStickersCreated(sender, sock, from); } catch (e) {}
     
     // Enviar mensaje de confirmación
     const confirmacion = `✅ *WATERMARK MODIFICADO*\n\n📝 Nuevo texto del sticker:\n🏷️ *Pack:* ${nuevoPackname}\n👤 *Author:* ${nuevoAuthor}\n\n💡 *Consejos:*\n• Usa "•" para separar pack y autor\n• Ejemplo: \`.wm Mi Pack • por ${userId}\`\n• \`.wm info\` para ver metadata\n• \`.wm\` para quitar texto\n• \`.wm reset\` para defaults`;

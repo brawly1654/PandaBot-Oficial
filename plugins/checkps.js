@@ -9,8 +9,7 @@ export async function run(sock, msg, args) {
   db.users = db.users || {};
   const data = JSON.parse(fs.readFileSync('./data/personajes.json', 'utf8'));
   const allPersonajes = data.characters;
-
-  // Lógica para .checkps <personaje>
+  
   if (args.length > 0 && !msg.message?.extendedTextMessage?.contextInfo?.mentionedJid) {
     const personajeInput = args.join(' ').toLowerCase().replace(/ /g, ' ');
     const personaje = allPersonajes.find(p => p.nombre.toLowerCase() === personajeInput);
@@ -38,8 +37,7 @@ export async function run(sock, msg, args) {
     }
     return;
   }
-
-  // Lógica para .checkps @usuario
+  
   const mentionedJid = msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.[0];
   const targetUser = mentionedJid || args[0];
 

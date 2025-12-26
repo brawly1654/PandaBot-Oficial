@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { cargarDatabase, guardarDatabase, inicializarUsuario } from '../data/database.js';
+import { cargarDatabase, guardarDatabase, inicializarUsuario, addPandacoins } from '../data/database.js';
 
 export const command = 'aventura';
 
@@ -8,14 +8,14 @@ export async function run(sock, msg) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
 
-  // Sistema de cooldown
+
   const cdPath = path.resolve('./data/cooldowns.json');
   if (!fs.existsSync(cdPath)) fs.writeFileSync(cdPath, '{}');
 
   const cooldowns = JSON.parse(fs.readFileSync(cdPath));
   const lastTime = cooldowns[sender]?.aventura || 0;
   const now = Date.now();
-  const cooldownTime = 120 * 60 * 1000; // 2 horas
+  const cooldownTime = 120 * 60 * 1000;
 
   if (now - lastTime < cooldownTime) {
     const hoursLeft = Math.ceil((cooldownTime - (now - lastTime)) / 3600000);
@@ -27,12 +27,12 @@ export async function run(sock, msg) {
 
   const db = cargarDatabase();
   
-  // Inicializar usuario si no existe
+
   inicializarUsuario(sender, db);
   
   const user = db.users[sender];
   
-  // Diferentes tipos de aventuras según nivel
+
   const aventuras = [
     { 
       nombre: '🌲 Bosque Encantado', 
@@ -71,7 +71,7 @@ export async function run(sock, msg) {
     }
   ];
   
-  // Determinar aventura disponible según nivel
+
   let aventuraSeleccionada = aventuras[0];
   for (const aventura of aventuras) {
     if (user.nivel >= aventura.nivelMin && aventura.recompensaBase > aventuraSeleccionada.recompensaBase) {
@@ -79,20 +79,20 @@ export async function run(sock, msg) {
     }
   }
   
-  // Bonus por nivel y herramientas
+
   const nivelBonus = Math.floor(user.nivel * 0.8);
   const tieneArmadura = user.inventario?.herramientas?.armadura > 0;
   const tieneEspada = user.inventario?.herramientas?.espada > 0;
   
-  // Recompensas base
+
   let monedasGanadas = aventuraSeleccionada.recompensaBase + Math.floor(Math.random() * (aventuraSeleccionada.recompensaBase / 2));
   let expGanada = aventuraSeleccionada.expBase + Math.floor(Math.random() * 300);
   
-  // Aplicar bonus de nivel
+
   monedasGanadas += nivelBonus * 200;
   expGanada += nivelBonus * 30;
   
-  // Bonus de herramientas
+
   if (tieneArmadura) {
     monedasGanadas = Math.floor(monedasGanadas * 1.3);
     expGanada = Math.floor(expGanada * 1.2);
@@ -103,12 +103,12 @@ export async function run(sock, msg) {
     expGanada = Math.floor(expGanada * 1.3);
   }
   
-  // Determinar eventos especiales durante la aventura
+
   const suerte = Math.random();
   let eventos = [];
   let recursosExtra = {};
   
-  // Evento 1: Encontrar tesoro (30%)
+
   if (suerte < 0.3) {
     const tesoros = [
       { recurso: 'oro', cantidad: 1 + Math.floor(Math.random() * 3) },
@@ -122,7 +122,7 @@ export async function run(sock, msg) {
     eventos.push(`💎 Encontraste un tesoro con ${tesoro.cantidad} ${tesoro.recurso}`);
   }
   
-  // Evento 2: Derrotar enemigo (40%)
+
   if (suerte < 0.7 && suerte >= 0.3) {
     const enemigos = ['🐺 Lobo', '🐗 Jabalí', '🐍 Serpiente', '🦅 Águila'];
     const enemigo = enemigos[Math.floor(Math.random() * enemigos.length)];
@@ -131,7 +131,7 @@ export async function run(sock, msg) {
     eventos.push(`⚔️ Derrotaste a un ${enemigo} (+${botin} coins)`);
   }
   
-  // Evento 3: Encontrar objeto mágico (20%)
+
   if (suerte < 0.9 && suerte >= 0.7) {
     const objetos = [
       { nombre: '🧪 Poción de Vida', key: 'pocion', cantidad: 1 },
@@ -144,7 +144,7 @@ export async function run(sock, msg) {
     eventos.push(`✨ Encontraste una ${objeto.nombre}`);
   }
   
-  // Evento 4: Descubrir ruinas antiguas (10%)
+
   if (suerte >= 0.9) {
     const descubrimientoBonus = Math.floor(monedasGanadas * 0.5);
     monedasGanadas += descubrimientoBonus;
@@ -152,7 +152,7 @@ export async function run(sock, msg) {
     eventos.push(`🏛️ Descubriste ruinas antiguas (+${descubrimientoBonus} coins, +300 exp)`);
   }
   
-  // Evento 5: Encontrar recursos (50%)
+
   if (Math.random() < 0.5) {
     const recursosPosibles = ['piedras', 'madera', 'hierro', 'carbon'];
     const recursoEncontrado = recursosPosibles[Math.floor(Math.random() * recursosPosibles.length)];
@@ -164,33 +164,33 @@ export async function run(sock, msg) {
     eventos.push(`📦 Encontraste ${cantidadRecurso} ${recursoEncontrado}`);
   }
   
-  // Actualizar recursos del usuario
-  user.pandacoins += monedasGanadas;
+
+  addPandacoins(db, sender, monedasGanadas, { sharePercent: 0.10 });
   user.exp += expGanada;
   
-  // Agregar recursos extra encontrados
+
   for (const [recurso, cantidad] of Object.entries(recursosExtra)) {
     user.inventario.recursos[recurso] = (user.inventario.recursos[recurso] || 0) + cantidad;
   }
   
-  // Registrar estadística
+
   user.stats = user.stats || {};
   user.stats.aventuras = (user.stats.aventuras || 0) + 1;
   
-  // Verificar subida de nivel
+
   const expParaSubir = user.nivel * 100;
   if (user.exp >= expParaSubir) {
     const nivelesSubidos = Math.floor(user.exp / expParaSubir);
     user.nivel += nivelesSubidos;
     user.exp = user.exp % expParaSubir;
     
-    // Bonus por subir nivel en aventura
+
     const bonusNivel = 2000 * nivelesSubidos;
-    user.pandacoins += bonusNivel;
+    addPandacoins(db, sender, bonusNivel, { sharePercent: 0.10 });
     monedasGanadas += bonusNivel;
   }
   
-  // Actualizar clan si existe
+
   if (db.clanes) {
     const clanName = Object.keys(db.clanes).find(nombre => 
       db.clanes[nombre]?.miembros?.includes(sender)
@@ -200,15 +200,15 @@ export async function run(sock, msg) {
     }
   }
   
-  // Guardar cambios
+
   guardarDatabase(db);
   
-  // Actualizar cooldown
+
   cooldowns[sender] = cooldowns[sender] || {};
   cooldowns[sender].aventura = now;
   fs.writeFileSync(cdPath, JSON.stringify(cooldowns, null, 2));
   
-  // Construir mensaje de respuesta
+
   let respuesta = `🗺️ *¡AVENTURA COMPLETADA!*\n\n`;
   respuesta += `${aventuraSeleccionada.nombre}\n`;
   respuesta += `📊 *Dificultad:* Nivel ${aventuraSeleccionada.nivelMin}+\n`;
@@ -218,11 +218,11 @@ export async function run(sock, msg) {
   respuesta += `💰 Pandacoins: +${monedasGanadas.toLocaleString()}\n`;
   respuesta += `⭐ Experiencia: +${expGanada}\n`;
   
-  // Mostrar bonus de herramientas
+
   if (tieneArmadura) respuesta += `🛡️ *Bonus Armadura:* +30% recompensas\n`;
   if (tieneEspada) respuesta += `⚔️ *Bonus Espada:* +20% recompensas\n`;
   
-  // Mostrar recursos extra encontrados
+
   if (Object.keys(recursosExtra).length > 0) {
     respuesta += `\n💎 *TESOROS ENCONTRADOS:*\n`;
     for (const [recurso, cantidad] of Object.entries(recursosExtra)) {
@@ -232,7 +232,7 @@ export async function run(sock, msg) {
     }
   }
   
-  // Mostrar eventos ocurridos
+
   if (eventos.length > 0) {
     respuesta += `\n⚡ *EVENTOS DURANTE LA AVENTURA:*\n`;
     eventos.forEach((evento, index) => {
@@ -245,7 +245,7 @@ export async function run(sock, msg) {
   respuesta += `🗺️ Aventuras completadas: ${user.stats.aventuras || 0}\n`;
   respuesta += `💎 Dinero total: ${user.pandacoins.toLocaleString()} coins\n`;
   
-  // Verificar si subió de nivel
+
   if (user.exp >= expParaSubir) {
     respuesta += `\n🎉 *¡SUBISTE DE NIVEL EN LA AVENTURA!*\n`;
     respuesta += `Nuevo nivel: ${user.nivel}\n`;
@@ -256,7 +256,7 @@ export async function run(sock, msg) {
   respuesta += `💡 *Consejo:* Lleva armadura y espada para mejores recompensas\n`;
   respuesta += `🔧 *Mejora equipamiento:* \`.shop\``;
   
-  // Footer
+
   respuesta += `\n\n━━━━━━━━━━━━━━━━━━━\n`;
   respuesta += `🔗 *Canal Oficial:*\n`;
   respuesta += `https://whatsapp.com/channel/0029Vb6SmfeAojYpZCHYVf0R\n`;

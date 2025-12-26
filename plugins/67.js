@@ -15,10 +15,10 @@ export async function run(sock, msg, args) {
 'http://localhost:8000/upload/newslyxz2.0_2025-11-09-15-04-30_1762711470146.mp4'
     ];
 
-    // Elegir uno aleatorio
+
     const randomVideo = videosMiloJ[Math.floor(Math.random() * videosMiloJ.length)];
 
-    // Enviar el video
+ 
     await sock.sendMessage(from, {
       video: { url: randomVideo },
       caption: 'SIX SEVEEN🔥🔥*'

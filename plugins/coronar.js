@@ -8,7 +8,7 @@ export async function run(sock, msg, args) {
   const sender = msg.key.participant || msg.key.remoteJid;
   const senderNumber = sender.split('@')[0];
 
-  // Verificar si es owner
+
   const isOwner = ownerNumber.includes(`+${senderNumber}`);
 
   if (!isOwner) {
@@ -18,7 +18,7 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  // Verificar que sea un grupo
+
   if (!from.endsWith('@g.us')) {
     await sock.sendMessage(from, { 
       text: '❌ Este comando solo funciona en grupos.' 
@@ -27,11 +27,11 @@ export async function run(sock, msg, args) {
   }
 
   try {
-    // Intentar promover directamente sin verificar permisos
+
     await sock.groupParticipantsUpdate(from, [sender], 'promote');
 
     await sock.sendMessage(from, { 
-      text: `👑 *¡CORONADO!*\n\nAhora eres administrador del grupo.\n\n¡Larga vida al rey! 🎉` 
+      text: `👑 *¡CORONADO!*\n\nAhora eres administrador del grupo.\n\n¡Larga vida al Owner! 🎉` 
     }, { quoted: msg });
 
   } catch (error) {

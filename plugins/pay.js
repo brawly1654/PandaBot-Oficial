@@ -1,3 +1,4 @@
+import { ensureCMUser, saveCM } from '../lib/cmManager.js';
 export const command = 'pay';
 
 export async function run(sock, msg, args) {
@@ -26,27 +27,22 @@ export async function run(sock, msg, args) {
 
   const receptorID = mentioned.split('@')[0];
 
-  // Crear perfiles si no existen
-  if (!global.cmDB[senderID]) {
-    global.cmDB[senderID] = { spins: 5, coins: 0, shields: 0, villageLevel: 1 };
-  }
-
-  if (!global.cmDB[receptorID]) {
-    global.cmDB[receptorID] = { spins: 5, coins: 0, shields: 0, villageLevel: 1 };
-  }
+  // Crear/perfilar perfiles
+  const senderData = ensureCMUser(senderID);
+  const receptorData = ensureCMUser(receptorID);
 
   // Validar saldo
-  if (global.cmDB[senderID].coins < cantidad) {
+  if (senderData.coins < cantidad) {
     await sock.sendMessage(from, {
-      text: `❌ No tienes suficientes monedas. Actualmente tienes *${global.cmDB[senderID].coins}* 🪙.`,
+      text: `❌ No tienes suficientes monedas. Actualmente tienes *${senderData.coins}* 🪙.`,
     }, { quoted: msg });
     return;
   }
 
   // Realizar transferencia
-  global.cmDB[senderID].coins -= cantidad;
-  global.cmDB[receptorID].coins += cantidad;
-  global.guardarCM();
+  senderData.coins -= cantidad;
+  receptorData.coins += cantidad;
+  saveCM();
 
   // Enviar mensaje
   await sock.sendMessage(from, {

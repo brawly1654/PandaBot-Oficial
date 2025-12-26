@@ -31,14 +31,14 @@ export async function run(sock, msg, args) {
             return;
         }
 
-        // Eliminar código
+
         delete codesData.codes[codigo];
 
-        // Guardar cambios
+
         fs.writeFileSync('./data/codes.json', JSON.stringify(codesData, null, 2));
 
         await sock.sendMessage(from, {
-            text: `✅ Código *${codigo}* eliminado exitosamente.`
+            text: `*✅ Código *${codigo}* eliminado exitosamente.*`
         });
 
     } catch (error) {

@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { cargarDatabase, guardarDatabase } from '../data/database.js';
+import { cargarDatabase, guardarDatabase, addPandacoins } from '../data/database.js';
 import { cargarDatos } from '../lib/cacheManager.js'; // Nueva importación
 
 export const command = 'sell2';
@@ -72,9 +72,14 @@ export async function run(sock, msg, args) {
     const index = user.personajes.indexOf(personaje.nombre);
     if (index !== -1) user.personajes.splice(index, 1);
 
-    user.pandacoins = user.pandacoins || 0;
-    user.pandacoins += personaje.precio;
     user.ultimoSell = ahora;
+
+    // Usar helper centralizado para repartir con pareja si aplica
+    let payout = addPandacoins(db, sender, personaje.precio);
+    if (!payout) {
+        db.users[sender].pandacoins = (db.users[sender].pandacoins || 0) + personaje.precio;
+        payout = { userGain: personaje.precio, spouse: null, spouseShare: 0 };
+    }
 
     if (db.clanes) {
         const clanName = Object.keys(db.clanes).find(nombre =>
@@ -87,7 +92,9 @@ export async function run(sock, msg, args) {
 
     guardarDatabase(db);
 
-    await sock.sendMessage(from, {
-        text: `✅ Has vendido a *${personaje.nombre}* por ${personaje.precio.toLocaleString()} pandacoins.`
-    });
+    const text = payout.spouseShare > 0 && payout.spouse
+        ? `✅ Has vendido a *${personaje.nombre}* por ${payout.userGain.toLocaleString()} pandacoins. (${payout.spouseShare.toLocaleString()} para tu pareja)`
+        : `✅ Has vendido a *${personaje.nombre}* por ${payout.userGain.toLocaleString()} pandacoins.`;
+
+    await sock.sendMessage(from, { text });
 }

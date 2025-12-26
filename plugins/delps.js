@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 
 export const command = 'delps';
-const OWNER_ID = '166164298780822'; // reemplaza por tu número sin @
+const OWNER_ID = '166164298780822';
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
@@ -32,7 +32,7 @@ export async function run(sock, msg, args) {
     personajes.splice(index, 1);
     await fs.writeFile('./data/personajes.json', JSON.stringify(data, null, 2));
 
-    await sock.sendMessage(from, { text: `✅ Personaje *${nombre}* eliminado.` });
+    await sock.sendMessage(from, { text: `*✅ Personaje *${nombre}* eliminado.*` });
   } catch (error) {
     console.error('Error al eliminar personaje:', error);
     await sock.sendMessage(from, { text: '❌ Error al eliminar personaje.' });

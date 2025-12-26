@@ -4,8 +4,8 @@ export const command = 'cat';
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
-
-  await sock.sendMessage(from, { text: '🐾 Buscando una imagen de gato aleatorio...' });
+  const nombre = msg.pushName || 'Usuario';
+  await sock.sendMessage(from, { text: `🐾 ${nombre} está buscando una imagen de gato aleatorio...` });
 
   try {
     const res = await fetch('https://api.thecatapi.com/v1/images/search');
@@ -20,7 +20,7 @@ export async function run(sock, msg, args) {
 
     await sock.sendMessage(from, {
       image: { url: catUrl },
-      caption: '🐱 Aquí tienes un gato aleatorio.'
+      caption: `🐱 ¡Aquí tienes un gato aleatorio, ${nombre}!`
     });
   } catch (error) {
     console.error('Error al obtener imagen de gato:', error);

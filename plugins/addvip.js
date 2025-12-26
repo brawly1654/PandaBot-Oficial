@@ -1,16 +1,13 @@
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
-
+import { ownerNumber } from '../config.js'; 
 export const command = 'addvip';
 export const aliases = ['darvip'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
   
-  const owners = ['56953508566', '573023181375', '166164298780822', '5215538830665', '97027992080542', '267232999420158'];
-  const isOwner = owners.includes(sender.split('@')[0]);
-
-  if (!isOwner) {
-    await sock.sendMessage(from, { text: '❌ Este comando es solo para los dueños del bot.' });
+  if (!ownerNumber.includes(`+${sender.split('@')[0]}`)) {
+    await sock.sendMessage(from, { text: '❌ Solo el owner puede usar este comando.' });
     return;
   }
 

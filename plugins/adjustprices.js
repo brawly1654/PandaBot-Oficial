@@ -22,7 +22,7 @@ export async function run(sock, msg, args) {
         const accion = args[0]?.toLowerCase();
 
         if (!accion) {
-            // MOSTRAR AYUDA
+
             await sock.sendMessage(from, {
                 text: `💰 *SISTEMA DE AJUSTE DE PRECIOS* 💰\n\n📝 *Usos disponibles:*\n• .adjustprices apply - Aplicar ajuste actual\n• .adjustprices preview - Vista previa (sin aplicar)\n• .adjustprices config - Ver configuración\n• .adjustprices set multi <valor> - Cambiar multiplicador\n• .adjustprices set min <valor> - Cambiar precio mínimo\n• .adjustprices toggle - Activar/desactivar\n• .adjustprices addexception <nombre> - Agregar excepción\n• .adjustprices removeexception <nombre> - Eliminar excepción\n• .adjustprices resetexceptions - Limpiar excepciones\n\n🔒 *Seguridad:* Multiplicadores > x5 requieren confirmación`
             });
@@ -30,7 +30,7 @@ export async function run(sock, msg, args) {
         }
 
         if (accion === 'apply') {
-            // VERIFICACIÓN DE SEGURIDAD PARA MULTIPLICADORES ALTOS
+
             if (config.multiplicadorGeneral > 5) {
                 await sock.sendMessage(from, {
                     text: `⚠️ *ADVERTENCIA DE SEGURIDAD*\n\nEl multiplicador es muy alto (x${config.multiplicadorGeneral}).\n\n¿Estás seguro de que quieres multiplicar los precios x${config.multiplicadorGeneral}?\n\n✅ Confirma con: .adjustprices confirm\n\n🔍 Usa .adjustprices preview para ver qué se modificaría.`
@@ -48,7 +48,7 @@ export async function run(sock, msg, args) {
             await aplicarAjuste(sock, from, config, personajesData, personajesPath, configPath);
 
         } else if (accion === 'confirm') {
-            // CONFIRMACIÓN PARA MULTIPLICADORES ALTOS
+
             if (!config.activo) {
                 await sock.sendMessage(from, { text: '❌ El sistema está desactivado.' });
                 return;
@@ -57,13 +57,13 @@ export async function run(sock, msg, args) {
             await aplicarAjuste(sock, from, config, personajesData, personajesPath, configPath, true);
 
         } else if (accion === 'config') {
-            // MOSTRAR CONFIGURACIÓN ACTUAL
+
             await sock.sendMessage(from, {
                 text: `⚙️ *Configuración Actual de Precios*\n\n📈 *Multiplicador:* x${config.multiplicadorGeneral}\n💰 *Precio mínimo:* ${config.precioMinimoParaMultiplicar.toLocaleString()} 🐼\n🔧 *Estado:* ${config.activo ? '✅ Activado' : '❌ Desactivado'}\n📅 *Última actualización:* ${new Date(config.ultimaActualizacion).toLocaleString()}\n\n🚫 *Excepciones (${config.excepciones.length}):*\n${config.excepciones.length > 0 ? config.excepciones.map(e => `• ${e}`).join('\n') : 'Ninguna'}\n\n💡 *Usa:*\n• .adjustprices set multi <valor>\n• .adjustprices set min <valor>\n• .adjustprices toggle`
             });
 
         } else if (accion === 'set') {
-            // CONFIGURAR VALORES
+
             const tipo = args[1]?.toLowerCase();
             const valor = parseFloat(args[2]);
 
@@ -102,7 +102,7 @@ export async function run(sock, msg, args) {
             fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
 
         } else if (accion === 'toggle') {
-            // ACTIVAR/DESACTIVAR
+
             config.activo = !config.activo;
             fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
             
@@ -111,7 +111,7 @@ export async function run(sock, msg, args) {
             });
 
         } else if (accion === 'addexception') {
-            // AGREGAR EXCEPCIÓN
+
             const nombreExcepcion = args.slice(1).join(' ');
             if (!nombreExcepcion) {
                 await sock.sendMessage(from, { 
@@ -133,7 +133,7 @@ export async function run(sock, msg, args) {
             }
 
         } else if (accion === 'removeexception') {
-            // ELIMINAR EXCEPCIÓN
+
             const nombreExcepcion = args.slice(1).join(' ');
             if (!nombreExcepcion) {
                 await sock.sendMessage(from, { 
@@ -156,7 +156,7 @@ export async function run(sock, msg, args) {
             }
 
         } else if (accion === 'resetexceptions') {
-            // LIMPIAR TODAS LAS EXCEPCIONES
+
             config.excepciones = [];
             fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
             await sock.sendMessage(from, { 
@@ -164,7 +164,7 @@ export async function run(sock, msg, args) {
             });
 
         } else if (accion === 'preview') {
-            // VISTA PREVIA (sin aplicar)
+
             let mensaje = `👁️ *Vista Previa - Ajuste de Precios*\n\n`;
             mensaje += `📈 *Multiplicador:* x${config.multiplicadorGeneral}\n`;
             mensaje += `💰 *Precio mínimo:* ${config.precioMinimoParaMultiplicar.toLocaleString()} 🐼\n`;
@@ -176,12 +176,12 @@ export async function run(sock, msg, args) {
             const ejemplos = [];
 
             for (const personaje of personajesData.characters) {
-                // Saltar excepciones
+
                 if (config.excepciones.includes(personaje.nombre)) {
                     continue;
                 }
 
-                // SOLO modificar personajes que cuestan MENOS del límite
+
                 if (personaje.precio < config.precioMinimoParaMultiplicar) {
                     const nuevoPrecio = Math.floor(personaje.precio * config.multiplicadorGeneral);
                     
@@ -242,7 +242,7 @@ export async function run(sock, msg, args) {
     }
 }
 
-// FUNCIÓN PARA APLICAR AJUSTE (REUTILIZABLE)
+
 async function aplicarAjuste(sock, from, config, personajesData, personajesPath, configPath, confirmado = false) {
     let personajesModificados = 0;
     let precioTotalAntes = 0;
@@ -250,12 +250,12 @@ async function aplicarAjuste(sock, from, config, personajesData, personajesPath,
     const modificados = [];
 
     for (const personaje of personajesData.characters) {
-        // Saltar excepciones
+
         if (config.excepciones.includes(personaje.nombre)) {
             continue;
         }
 
-        // ✅ SOLO modificar personajes que cuestan MENOS del límite
+
         if (personaje.precio < config.precioMinimoParaMultiplicar) {
             const precioOriginal = personaje.precio;
             const nuevoPrecio = Math.floor(precioOriginal * config.multiplicadorGeneral);
@@ -271,7 +271,7 @@ async function aplicarAjuste(sock, from, config, personajesData, personajesPath,
         }
     }
 
-    // Guardar cambios
+
     fs.writeFileSync(personajesPath, JSON.stringify(personajesData, null, 2));
     config.ultimaActualizacion = new Date().toISOString();
     fs.writeFileSync(configPath, JSON.stringify(config, null, 2));

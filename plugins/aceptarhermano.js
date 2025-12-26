@@ -28,7 +28,7 @@ export async function run(sock, msg) {
   const from = msg.key.remoteJid;
   const user = msg.key.participant || msg.key.remoteJid;
   
-  // ✅ Inicializar achievements si no existen
+
   const db = cargarDatabase();
   if (!db.users[user]?.achievements) {
     initializeAchievements(user);
@@ -47,7 +47,7 @@ export async function run(sock, msg) {
   let hermanosAdquiridos = [];
 
   for (const solicitante of solicitudes) {
-    // ✅ Inicializar achievements del solicitante también
+
     if (!db.users[solicitante]?.achievements) {
       initializeAchievements(solicitante);
     }
@@ -109,7 +109,7 @@ export async function run(sock, msg) {
     mentions: allMentions
   });
 
-  // ✅ Verificar logros de hermandad para TODOS los usuarios involucrados
+  
   const todosLosUsuarios = [user, ...nuevosHermanos, ...hermanosAdquiridosUnicos];
   for (const usuario of todosLosUsuarios) {
     checkAchievements(usuario, sock, from);

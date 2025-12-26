@@ -24,7 +24,7 @@ export async function run(sock, msg, args) {
 
   try {
     await sock.groupParticipantsUpdate(from, mentions, 'demote');
-    await sock.sendMessage(from, { text: `✅ Usuario(s) degradado(s) de admin.`, mentions });
+    await sock.sendMessage(from, { text: `*✅ Usuario(s) degradado(s) de admin.*`, mentions });
   } catch (e) {
     console.error('❌ Error en demote:', e);
     await sock.sendMessage(from, { text: '❌ Error al degradar.' });

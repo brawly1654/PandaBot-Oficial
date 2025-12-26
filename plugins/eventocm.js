@@ -1,3 +1,4 @@
+import { ensureCMUser, saveCM } from '../lib/cmManager.js';
 const ownerNumbers = [
   '+166164298780822', '+56953508566', '+573023181375'
 ];
@@ -24,9 +25,10 @@ export async function run(sock, msg, args) {
   const evento = eventos[Math.floor(Math.random() * eventos.length)];
 
   for (const u in global.cmDB) {
-    evento.efecto(global.cmDB[u]);
+    const user = ensureCMUser(u);
+    evento.efecto(user);
   }
 
-  global.guardarCM();
+  saveCM();
   await sock.sendMessage(from, { text: `🎉 *EVENTO COIN MASTER*\n\n${evento.mensaje}` }, { quoted: msg });
 }

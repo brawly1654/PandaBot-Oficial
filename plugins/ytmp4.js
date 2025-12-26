@@ -1,6 +1,7 @@
 import fs from 'fs';
 import axios from 'axios';
 import fetch from 'node-fetch';
+import { trackYtmp4, trackDownloadsTotal } from '../middleware/trackAchievements.js';
 
 const MAX_FILE_SIZE = 280 * 1024 * 1024;
 const VIDEO_THRESHOLD = 70 * 1024 * 1024;
@@ -117,6 +118,7 @@ export const command = 'ytmp4';
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
+  const sender = msg.key.participant || msg.key.remoteJid;
   const url = args.join(' ');
   const commandName = command;
 
@@ -180,6 +182,7 @@ export async function run(sock, msg, args) {
     }
     
     await sock.sendMessage(from, messageOptions, { quoted: msg });
+    try { trackYtmp4(sender, sock, from); trackDownloadsTotal(sender, sock, from); } catch (e) {}
 
     await react('✅');
     isProcessingHeavy = false;

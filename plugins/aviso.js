@@ -31,7 +31,7 @@ export async function run(sock, msg, args) {
 
       for (const group of groupsToSend) {
         try {
-          await sock.sendMessage(group.id, { text: `📢 *AVISO DE LOS CREADORES*\n\n${messageText}` });
+          await sock.sendMessage(group.id, { text: `📢 *AVISO DE LOS CREADORES (Global)*\n\n${messageText}\n\n*Canal oficial de PandaBot:*\nhttps://whatsapp.com/channel/0029Vb6SmfeAojYpZCHYVf0R` });
           sentCount++;
         } catch (e) {
           console.error(`❌ Error al enviar aviso al grupo ${group.subject}: ${e.message}`);

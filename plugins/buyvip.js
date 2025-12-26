@@ -6,7 +6,7 @@ export const command = 'buyvip';
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
-
+  const nombre = msg.pushName || 'Usuario';
   const db = cargarDatabase();
   db.users = db.users || {};
   const user = db.users[sender] || { pandacoins: 0 };
@@ -25,7 +25,7 @@ export async function run(sock, msg, args) {
     user.vipExpiration = Date.now() + 72 * 60 * 60 * 1000;
     guardarDatabase(db);
     
-    await sock.sendMessage(from, { text: `✅ ¡Felicidades! Has comprado un ticket VIP por 24 horas. Disfruta de los beneficios.` });
+    await sock.sendMessage(from, { text: `✅ ¡Felicidades!, ${nombre}. Has comprado un ticket VIP por 72 horas. Disfruta de los beneficios.` });
     return;
   }
 
@@ -33,30 +33,29 @@ export async function run(sock, msg, args) {
   const message = `
 👑 *COMPRAR MEMBRESÍA VIP* 👑
 
-Para adquirir el estatus VIP, contacta al creador:
+Para adquirir el estatus VIP, contacta al creador de PandaBot:
 📞 *Contacto:* ${creatorContact}
 
 *Precios:*
-- 💰 *1 Semana:* $1 USD
-- 💰 *1 Mes:* $3 USD
-- 💰 *De por vida:* $5 USD
+- 💰 *1 Semana:* $1 USD | 1000$ CLP
+- 💰 *1 Mes:* $2 USD | 2000$ CLP
+- 💰 *De por vida:* $3 USD | 3000$ CLP
+
+*Métodos de pago:*
+
+- PayPal
+- Transferencia bancaria (Chile)
 
 ---------------------------
-🎟️ *TICKET VIP (24 horas)*
-Si no puedes pagar, puedes comprar un ticket VIP por 24 horas con Pandacoins.
+🎟️ *TICKET VIP (72 horas)*
+Si no puedes pagar, puedes comprar un ticket VIP por 72 horas con Pandacoins.
 Costo: *${ticketCost}* Pandacoins
 Tu saldo: *${user.pandacoins || 0}* Pandacoins
 
 Para comprar:
 *.buyvip ticket*
 
----------------------------
-*Otros métodos*💎(Requiere contactar al creador):
-
-- 👾 *Brawl Pass de Brawl Stars*
-- 👾 *Robux en Roblox*
-- 👾 *Brainrots de Steal a Brainrot*
-- 👾 *Pass Royale de Clash Royale* (Más beneficios)`;
+---------------------------`;
 
   await sock.sendMessage(from, { text: message });
 }

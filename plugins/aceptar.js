@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { checkAchievements, initializeAchievements } from '../data/achievementsDB.js';
-import { cargarDatabase } from '../data/database.js';
+import { cargarDatabase, guardarDatabase, setParejaDB } from '../data/database.js';
 
 const file = './data/parejas.json';
 
@@ -19,7 +19,7 @@ export async function run(sock, msg) {
   const from = msg.key.remoteJid;
   const user = msg.key.participant || msg.key.remoteJid;
   
-  // ✅ Inicializar achievements si no existen
+
   const db = cargarDatabase();
   if (!db.users[user]?.achievements) {
     initializeAchievements(user);
@@ -43,7 +43,18 @@ export async function run(sock, msg) {
     mentions: [user, solicitud]
   });
 
-  // ✅ Verificar logros de matrimonio para AMBOS usuarios
+
   checkAchievements(user, sock, from);
   checkAchievements(solicitud, sock, from);
+
+  // Registrar pareja también en la base de datos principal
+  try {
+    const dbMain = cargarDatabase();
+    if (dbMain) {
+      setParejaDB(dbMain, user, solicitud);
+      guardarDatabase(dbMain);
+    }
+  } catch (e) {
+    // ignore
+  }
 }

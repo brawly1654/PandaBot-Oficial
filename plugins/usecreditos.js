@@ -1,3 +1,4 @@
+import { ensureCMUser, saveCM } from '../lib/cmManager.js';
 export const command = 'usecreditos';
 
 export async function run(sock, msg, args) {
@@ -5,17 +6,7 @@ export async function run(sock, msg, args) {
   const sender = msg.key.participant || msg.key.remoteJid;
   const user = sender.split('@')[0];
 
-  if (!global.cmDB[user]) {
-    global.cmDB[user] = {
-      spins: 5,
-      coins: 0,
-      shields: 0,
-      villageLevel: 1,
-      creditos: 0
-    };
-  }
-
-  const data = global.cmDB[user];
+  const data = ensureCMUser(user);
 
   if (!args[0]) {
     const menu = `
@@ -92,6 +83,6 @@ Puedes usar tus créditos para comprar:
       break;
   }
 
-  global.guardarCM();
+  saveCM();
   await sock.sendMessage(from, { text: mensaje }, { quoted: msg });
 }

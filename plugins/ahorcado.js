@@ -7,7 +7,10 @@ const words = [
   'perro', 'pandabot', 'casa', 'comida', 'gato', 'whatsapp', 'ahorcado', 'tren',
   'bicicleta', 'tralalero', 'zorro', 'libro', 'pie', 'termux', 'palabra', 'suerte',
   'espacio', 'tierra', 'saturno', 'jupiter', 'chile', 'argentina', 'meteorito', 'luna',
-  'exportar', 'importar', 'caballo', 'sopa', 'metro', 'kilometro'
+  'exportar', 'importar', 'caballo', 'sopa', 'metro', 'kilometro', 'avion', 'barco',
+  'computadora', 'telefono', 'pantalla', 'teclado', 'raton', 'programacion', 'javascript',
+  'python', 'java', 'ruby', 'html', 'css', 'nodejs', 'react', 'angular', 'vue', 'linux', 'pene', 'windows',
+  'sixseven', 'development', 'function', 'variable', 'constant', 'array', 'object', 'database'
 ];
 
 export async function run(sock, msg, args) {
@@ -20,7 +23,7 @@ export async function run(sock, msg, args) {
 
   const juegoActual = db.juegos.ahorcado[from] || null;
 
-  // 🔹 Iniciar nueva partida
+
   if (args[0] === 'iniciar') {
     if (juegoActual && juegoActual.activo) {
       await sock.sendMessage(from, { text: '❌ Ya hay una partida de ahorcado en curso.' });
@@ -45,7 +48,7 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  // 🔹 Validar si hay partida activa
+
   if (!juegoActual || !juegoActual.activo) {
     await sock.sendMessage(from, {
       text: '❌ No hay una partida de ahorcado activa. Usa *.ahorcado iniciar* para comenzar.'
@@ -53,7 +56,7 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  // 🔹 Validar letra enviada
+
   if (!args[0] || args[0].length !== 1 || !/^[a-zA-Z]$/.test(args[0])) {
     await sock.sendMessage(from, { text: '❌ Solo puedes enviar una letra a la vez.' });
     return;
@@ -69,7 +72,7 @@ export async function run(sock, msg, args) {
 
   letrasUsadas.push(letra);
 
-  // 🔹 Si la letra está en la palabra
+
   if (palabra.includes(letra)) {
     let nuevaPalabraAdivinada = '';
     for (let i = 0; i < palabra.length; i++) {
@@ -89,7 +92,7 @@ export async function run(sock, msg, args) {
       guardarDatabase(db);
     }
   } else {
-    // 🔹 Si la letra no está en la palabra
+
     juegoActual.intentos--;
 
     if (juegoActual.intentos <= 0) {
@@ -105,7 +108,7 @@ export async function run(sock, msg, args) {
   }
 }
 
-// 🔹 Función para mostrar la palabra en formato _ _ _ _
+
 function mostrarPalabra(palabra) {
   return palabra.split('').join(' ');
 }

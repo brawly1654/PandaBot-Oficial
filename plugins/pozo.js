@@ -42,6 +42,7 @@ export async function run(sock, msg, args) {
   user.pandacoins -= cantidad;
 
   guardarDatabase(data, sock);
+  try { (await import('../middleware/trackAchievements.js')).trackPozoDonate(userId, cantidad, sock, from); } catch (e) {}
 
   await sock.sendMessage(from, {
     text:

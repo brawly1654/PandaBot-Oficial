@@ -1,4 +1,5 @@
 import { ownerNumber } from '../config.js';
+import { trackKick } from '../middleware/trackAchievements.js';
 
 export const command = 'kick';
 
@@ -45,6 +46,7 @@ export async function run(sock, msg, args) {
   try {
     await sock.groupParticipantsUpdate(from, [targetJid], 'remove');
     await sock.sendMessage(from, { text: `✅ Usuario expulsado: @${targetJid.split('@')[0]}`, mentions: [targetJid] });
+      try { trackKick(sender, sock, from); } catch (e) {}
   } catch (e) {
     console.error('❌ Error al expulsar:', e);
     await sock.sendMessage(from, { text: '⚠️ No pude expulsar al usuario. Asegúrate de que soy admin.' });

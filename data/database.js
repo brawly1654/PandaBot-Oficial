@@ -367,3 +367,56 @@ export function obtenerInventarioUsuario(data, userId) {
     mascotas: data.users[userId].inventario?.mascotas || {}
   };
 }
+
+// Añade pandacoins a un usuario y reparte un porcentaje al/la cónyuge si existe
+export function addPandacoins(data, userId, amount, options = {}) {
+  if (!data) return null;
+  if (!userId || typeof amount !== 'number' || amount <= 0) return null;
+
+  const sharePercent = typeof options.sharePercent === 'number' ? options.sharePercent : 0.10; // 10% por defecto
+
+  // Asegurar usuario
+  inicializarUsuario(userId, data);
+
+  const parejaId = data.users[userId].pareja || null;
+  const spouseShare = parejaId ? Math.floor(amount * sharePercent) : 0;
+  const userGain = amount - spouseShare;
+
+  data.users[userId].pandacoins = (data.users[userId].pandacoins || 0) + userGain;
+
+  if (spouseShare > 0) {
+    // Asegurar pareja en la DB
+    inicializarUsuario(parejaId, data);
+    data.users[parejaId].pandacoins = (data.users[parejaId].pandacoins || 0) + spouseShare;
+  }
+
+  return {
+    user: userId,
+    userGain,
+    spouse: parejaId,
+    spouseShare
+  };
+}
+
+// Establece pareja en la base de datos (ambos sentidos)
+export function setParejaDB(data, userA, userB) {
+  if (!data) return false;
+  if (!userA || !userB) return false;
+  inicializarUsuario(userA, data);
+  inicializarUsuario(userB, data);
+  data.users[userA].pareja = userB;
+  data.users[userB].pareja = userA;
+  return true;
+}
+
+// Elimina pareja en la base de datos (ambos sentidos)
+export function clearParejaDB(data, userA) {
+  if (!data) return false;
+  if (!userA) return false;
+  const pareja = data.users[userA]?.pareja;
+  if (pareja && data.users[pareja]) {
+    delete data.users[pareja].pareja;
+  }
+  if (data.users[userA]) delete data.users[userA].pareja;
+  return true;
+}

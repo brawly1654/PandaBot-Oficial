@@ -39,7 +39,7 @@ export async function run(sock, msg, args) {
 
   const newList = ownerNumber.filter(num => num !== delOwner);
 
-  // Modificar config.js
+
   const configPath = path.resolve('./config.js');
   let configContent = fs.readFileSync(configPath, 'utf8');
 

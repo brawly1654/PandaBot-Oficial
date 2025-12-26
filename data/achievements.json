@@ -32,6 +32,63 @@
       "name": "🎵 Música",
       "icon": "🎵"
     }
+    ,
+    "granja": {
+      "name": "🌾 Granjas",
+      "icon": "🌾"
+    },
+    "descargas": {
+      "name": "📥 Descargas",
+      "icon": "📥"
+    },
+    "besos": {
+      "name": "💋 Besos",
+      "icon": "💋"
+    },
+    "contribuciones": {
+      "name": "📝 Contribuciones",
+      "icon": "📝"
+    },
+    "codigos": {
+      "name": "🔐 Códigos",
+      "icon": "🔐"
+    },
+    "secretos": {
+      "name": "🔒 Secretos",
+      "icon": "🔒"
+    },
+    "impostor": {
+      "name": "👾 Impostor",
+      "icon": "👾"
+    },
+    "inversiones": {
+      "name": "📈 Inversiones",
+      "icon": "📈"
+    },
+    "moderacion": {
+      "name": "🛡️ Moderación",
+      "icon": "🛡️"
+    },
+    "pokedex": {
+      "name": "📮 Pokedex",
+      "icon": "📮"
+    },
+    "pozo": {
+      "name": "🕳️ Pozo",
+      "icon": "🕳️"
+    },
+    "adivinabandera": {
+      "name": "🏁 AdivinaBandera",
+      "icon": "🏁"
+    },
+    "stickers": {
+      "name": "🔖 Stickers",
+      "icon": "🔖"
+    },
+    "expedicion": {
+      "name": "🗺️ Expedición",
+      "icon": "🗺️"
+    }
   },
   "achievements": [
     {
@@ -1228,6 +1285,319 @@
       "requirement": { "type": "total_coins", "value": 1000000000 },
       "reward": { "coins": 2000000 },
       "points": 1000
+    }
+    ,
+    {
+      "id": "granja_level_5",
+      "name": "Aprendiz de Granja",
+      "description": "Sube una granja al nivel 5",
+      "category": "granja",
+      "icon": "🌱",
+      "requirement": { "type": "granja_level", "value": 5 },
+      "reward": { "coins": 5000 },
+      "points": 10
+    },
+    {
+      "id": "granja_level_10",
+      "name": "Granjero",
+      "description": "Sube una granja al nivel 10",
+      "category": "granja",
+      "icon": "🌿",
+      "requirement": { "type": "granja_level", "value": 10 },
+      "reward": { "coins": 20000 },
+      "points": 30
+    },
+    {
+      "id": "granja_owner_5",
+      "name": "Pequeño Imperio",
+      "description": "Posee 5 granjas",
+      "category": "granja",
+      "icon": "🚜",
+      "requirement": { "type": "granja_count", "value": 5 },
+      "reward": { "coins": 15000 },
+      "points": 25
+    },
+    {
+      "id": "granja_owner_20",
+      "name": "Barón de las Granjas",
+      "description": "Posee 20 granjas",
+      "category": "granja",
+      "icon": "🏵️",
+      "requirement": { "type": "granja_count", "value": 20 },
+      "reward": { "coins": 80000, "title": "Barón Agrícola" },
+      "points": 80
+    },
+    {
+      "id": "download_instagram_1",
+      "name": "Instagramero",
+      "description": "Usa .instagram para descargar 1 vez",
+      "category": "descargas",
+      "icon": "📸",
+      "requirement": { "type": "instagram_count", "value": 1 },
+      "reward": { "coins": 2000 },
+      "points": 10
+    },
+    {
+      "id": "download_ytmp4_10",
+      "name": "Cineasta",
+      "description": "Usa .ytmp4 10 veces",
+      "category": "descargas",
+      "icon": "🎬",
+      "requirement": { "type": "ytmp4_count", "value": 10 },
+      "reward": { "coins": 5000 },
+      "points": 15
+    },
+    {
+      "id": "download_tiktok_50",
+      "name": "Tiktoker",
+      "description": "Usa .tiktok 50 veces",
+      "category": "descargas",
+      "icon": "🎵",
+      "requirement": { "type": "tiktok_count", "value": 50 },
+      "reward": { "coins": 20000 },
+      "points": 35
+    },
+    {
+      "id": "besos_10",
+      "name": "Amorín",
+      "description": "Usa .beso o .kiss 10 veces",
+      "category": "besos",
+      "icon": "💞",
+      "requirement": { "type": "beso_count", "value": 10 },
+      "reward": { "coins": 3000 },
+      "points": 10
+    },
+    {
+      "id": "besos_100",
+      "name": "Romeo",
+      "description": "Usa .beso o .kiss 100 veces",
+      "category": "besos",
+      "icon": "💘",
+      "requirement": { "type": "beso_count", "value": 100 },
+      "reward": { "coins": 25000 },
+      "points": 40
+    },
+    {
+      "id": "contrib_1",
+      "name": "Sugeridor",
+      "description": "Usa .sugerencia 1 vez",
+      "category": "contribuciones",
+      "icon": "✉️",
+      "requirement": { "type": "sugerencia_count", "value": 1 },
+      "reward": { "coins": 1000 },
+      "points": 5
+    },
+    {
+      "id": "contrib_10",
+      "name": "Colaborador",
+      "description": "Usa .sugerencia/.pregunta/.reporte 10 veces en total",
+      "category": "contribuciones",
+      "icon": "🛠️",
+      "requirement": { "type": "contribuciones_count", "value": 10 },
+      "reward": { "coins": 8000 },
+      "points": 20
+    },
+    {
+      "id": "codigos_1",
+      "name": "Cazador de Códigos",
+      "description": "Reclama 1 código con .code",
+      "category": "codigos",
+      "icon": "🎟️",
+      "requirement": { "type": "code_claims", "value": 1 },
+      "reward": { "coins": 500 },
+      "points": 5
+    },
+    {
+      "id": "codigos_50",
+      "name": "Bot de Códigos",
+      "description": "Reclama 50 códigos",
+      "category": "codigos",
+      "icon": "🔐",
+      "requirement": { "type": "code_claims", "value": 50 },
+      "reward": { "coins": 20000 },
+      "points": 50
+    },
+    {
+      "id": "secret_hola_10",
+      "name": "Saludador Secreto",
+      "description": "Usa .hola 10 veces (logro secreto)",
+      "category": "secretos",
+      "icon": "🤫",
+      "requirement": { "type": "hola_count", "value": 10 },
+      "reward": { "coins": 10000, "title": "Saludador" },
+      "points": 40,
+      "hidden": true
+    },
+    {
+      "id": "impostor_play_1",
+      "name": "Impostor Novato",
+      "description": "Juega 1 partida en .impostor",
+      "category": "impostor",
+      "icon": "🔪",
+      "requirement": { "type": "impostor_games", "value": 1 },
+      "reward": { "coins": 2000 },
+      "points": 10
+    },
+    {
+      "id": "impostor_play_20",
+      "name": "Veterano del Sospechoso",
+      "description": "Juega 20 partidas en .impostor",
+      "category": "impostor",
+      "icon": "👥",
+      "requirement": { "type": "impostor_games", "value": 20 },
+      "reward": { "coins": 30000 },
+      "points": 45
+    },
+    {
+      "id": "inversion_1",
+      "name": "Primer Inversor",
+      "description": "Usa .invertir por primera vez",
+      "category": "inversiones",
+      "icon": "💹",
+      "requirement": { "type": "invertir_count", "value": 1 },
+      "reward": { "coins": 2000 },
+      "points": 10
+    },
+    {
+      "id": "inversion_50",
+      "name": "Inversor Activo",
+      "description": "Invierte 50 veces o revisa el mercado 50 veces",
+      "category": "inversiones",
+      "icon": "📊",
+      "requirement": { "type": "inversiones_count", "value": 50 },
+      "reward": { "coins": 25000 },
+      "points": 40
+    },
+    {
+      "id": "moderacion_kick_10",
+      "name": "Mano Firme",
+      "description": "Usa .kick 10 veces",
+      "category": "moderacion",
+      "icon": "👢",
+      "requirement": { "type": "kick_count", "value": 10 },
+      "reward": { "coins": 8000 },
+      "points": 25
+    },
+    {
+      "id": "pokedex_25",
+      "name": "Mensajero",
+      "description": "Usa .pokedex 25 veces",
+      "category": "pokedex",
+      "icon": "📬",
+      "requirement": { "type": "pokedex_count", "value": 25 },
+      "reward": { "coins": 10000 },
+      "points": 20
+    },
+    {
+      "id": "pozo_300m",
+      "name": "Generosidad Extrema",
+      "description": "Arroja 300,000,000 pandacoins al pozo",
+      "category": "pozo",
+      "icon": "💧",
+      "requirement": { "type": "pozo_donated", "value": 300000000 },
+      "reward": { "coins": 50000 },
+      "points": 60
+    },
+    {
+      "id": "adivinabandera_win_10",
+      "name": "Bandero",
+      "description": "Gana 10 veces en .adivinabandera",
+      "category": "adivinabandera",
+      "icon": "🏆",
+      "requirement": { "type": "adivinabandera_wins", "value": 10 },
+      "reward": { "coins": 15000 },
+      "points": 30
+    },
+    {
+      "id": "stickers_100",
+      "name": "Sticker Maker",
+      "description": "Crea 100 stickers con .s/.qc/.wm",
+      "category": "stickers",
+      "icon": "🖼️",
+      "requirement": { "type": "stickers_created", "value": 100 },
+      "reward": { "coins": 20000 },
+      "points": 35
+    },
+    {
+      "id": "exped_50",
+      "name": "Explorador",
+      "description": "Envía personajes a expedición 50 veces",
+      "category": "expedicion",
+      "icon": "🧭",
+      "requirement": { "type": "expediciones_sent", "value": 50 },
+      "reward": { "coins": 20000 },
+      "points": 40
+    },
+    {
+      "id": "downloads_200",
+      "name": "Descargador Voraz",
+      "description": "Usa comandos de descarga 200 veces en total",
+      "category": "descargas",
+      "icon": "📥",
+      "requirement": { "type": "downloads_total", "value": 200 },
+      "reward": { "coins": 60000 },
+      "points": 70
+    },
+    {
+      "id": "besos_1000",
+      "name": "Cupido",
+      "description": "Besa 1,000 veces con .beso/.kiss",
+      "category": "besos",
+      "icon": "💘",
+      "requirement": { "type": "beso_count", "value": 1000 },
+      "reward": { "coins": 150000, "title": "Cupido" },
+      "points": 150
+    },
+    {
+      "id": "contrib_100",
+      "name": "Comunidad Activa",
+      "description": "Realiza 100 sugerencias/preguntas/reportes",
+      "category": "contribuciones",
+      "icon": "📣",
+      "requirement": { "type": "contribuciones_count", "value": 100 },
+      "reward": { "coins": 100000 },
+      "points": 120
+    },
+    {
+      "id": "codigos_500",
+      "name": "Archivista de Códigos",
+      "description": "Reclama 500 códigos",
+      "category": "codigos",
+      "icon": "🏷️",
+      "requirement": { "type": "code_claims", "value": 500 },
+      "reward": { "coins": 400000 },
+      "points": 200
+    },
+    {
+      "id": "secret_impostor_master",
+      "name": "Asesino Silencioso",
+      "description": "Gana 50 partidas como impostor (secreto)",
+      "category": "secretos",
+      "icon": "🕵️",
+      "requirement": { "type": "impostor_wins", "value": 50 },
+      "reward": { "coins": 200000, "title": "Sombra" },
+      "points": 250,
+      "hidden": true
+    },
+    {
+      "id": "inversion_big_1m",
+      "name": "Inversor Millonario",
+      "description": "Invierte o revierte 1,000,000 pandacoins en el mercado",
+      "category": "inversiones",
+      "icon": "💸",
+      "requirement": { "type": "inversion_amount", "value": 1000000 },
+      "reward": { "coins": 50000 },
+      "points": 80
+    },
+    {
+      "id": "moderacion_kick_100",
+      "name": "Expulsor Profesional",
+      "description": "Usa .kick 100 veces",
+      "category": "moderacion",
+      "icon": "🚪",
+      "requirement": { "type": "kick_count", "value": 100 },
+      "reward": { "coins": 100000 },
+      "points": 150
     }
   ]
 }

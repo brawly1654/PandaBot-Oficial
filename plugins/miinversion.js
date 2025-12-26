@@ -1,5 +1,6 @@
 import { cargarDatabase } from '../data/database.js';
 import { actualizarMercado, obtenerPrecioMoneda } from '../lib/cryptoManager.js';
+import { trackMiInversion } from '../middleware/trackAchievements.js';
 
 export const command = 'miinversion';
 export const aliases = ['myinvestment', 'portafolio'];
@@ -78,4 +79,5 @@ export async function run(sock, msg, args) {
     mensaje += `🔄 *Actualización automática cada 5 minutos*`;
 
     await sock.sendMessage(from, { text: mensaje }, { edit: loadingMsg.key });
+    try { trackMiInversion(sender, sock, from); } catch (e) {}
 }

@@ -19,7 +19,7 @@ export async function run(sock, msg, args) {
   const actionText = args.join(' ');
   const quotedNumber = quotedJid.split('@')[0];
   
-  const responseText = `Le diste ${actionText} a @${quotedNumber} 😳`;
+  const responseText = `*Le diste ${actionText} a @${quotedNumber} 😳*`;
   
   await sock.sendMessage(from, { text: responseText, mentions: [quotedJid] });
 }

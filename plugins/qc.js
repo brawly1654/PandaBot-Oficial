@@ -1,6 +1,7 @@
 import { isVip } from '../utils/vip.js';
 import axios from 'axios';
 import { writeExifImg } from '../lib/sticker.js';
+import { trackStickersCreated } from '../middleware/trackAchievements.js';
 
 const flagMap = [
   ['598', '🇺🇾'], ['595', '🇵🇾'], ['593', '🇪🇨'], ['591', '🇧🇴'],
@@ -144,6 +145,7 @@ export async function run(sock, msg, args) {
     });
 
     await sock.sendMessage(chatId, { sticker: sticker }, { quoted: msg });
+    try { trackStickersCreated(sender, sock, from); } catch (e) {}
     await sock.sendMessage(chatId, { react: { text: '✅', key: msg.key } });
 
   } catch (e) {

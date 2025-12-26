@@ -13,7 +13,7 @@ export async function run(sock, msg, args) {
         return;
     }
 
-    // Verificar que se está citando un mensaje
+
     if (!msg.message?.extendedTextMessage?.contextInfo?.quotedMessage) {
         await sock.sendMessage(from, {
             text: '❌ Debes citar el mensaje que contiene el código del comando.\n\n📝 Ejemplo:\nResponde a un mensaje con código usando: .comando buy.js'
@@ -30,7 +30,7 @@ export async function run(sock, msg, args) {
 
     const nombreArchivo = args[0];
     
-    // Validar que sea un archivo .js
+
     if (!nombreArchivo.endsWith('.js')) {
         await sock.sendMessage(from, {
             text: '❌ El archivo debe tener extensión .js\n\n💡 Ejemplo: .comando buy.js'
@@ -38,11 +38,11 @@ export async function run(sock, msg, args) {
         return;
     }
 
-    // Obtener el código citado
+
     const quotedMsg = msg.message.extendedTextMessage.contextInfo.quotedMessage;
     let codigo = '';
 
-    // Extraer texto del mensaje citado
+
     if (quotedMsg.conversation) {
         codigo = quotedMsg.conversation;
     } else if (quotedMsg.extendedTextMessage?.text) {
@@ -58,15 +58,15 @@ export async function run(sock, msg, args) {
         const rutaArchivo = path.join('./plugins', nombreArchivo);
         const directorio = path.dirname(rutaArchivo);
 
-        // Crear directorio si no existe
+
         if (!fs.existsSync(directorio)) {
             fs.mkdirSync(directorio, { recursive: true });
         }
 
-        // Verificar si el archivo ya existe
+
         const existe = fs.existsSync(rutaArchivo);
         
-        // Guardar el código
+
         fs.writeFileSync(rutaArchivo, codigo, 'utf8');
 
         if (existe) {
@@ -79,7 +79,7 @@ export async function run(sock, msg, args) {
             });
         }
 
-        // Log para debugging
+
         console.log(`📝 Comando ${existe ? 'actualizado' : 'creado'}: ${nombreArchivo} por ${sender}`);
 
     } catch (error) {
@@ -90,16 +90,16 @@ export async function run(sock, msg, args) {
     }
 }
 
-// Función para validar código JavaScript básico
+
 function esCodigoValido(codigo) {
     const codigoLimpio = codigo.trim();
     
-    // Validaciones básicas
-    if (codigoLimpio.length < 10) return false; // Muy corto para ser código
-    if (!codigoLimpio.includes('export')) return false; // Debe tener exports
-    if (!codigoLimpio.includes('run') && !codigoLimpio.includes('handler')) return false; // Debe tener función principal
+
+    if (codigoLimpio.length < 10) return false; 
+    if (!codigoLimpio.includes('export')) return false;
+    if (!codigoLimpio.includes('run') && !codigoLimpio.includes('handler')) return false;
     
-    // Buscar patrones de código JavaScript
+
     const patronesValidos = [
         /export\s+(const|let|var|async|function)/,
         /import\s+.*from/,
