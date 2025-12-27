@@ -1318,16 +1318,6 @@
       "points": 25
     },
     {
-      "id": "granja_owner_20",
-      "name": "Barón de las Granjas",
-      "description": "Posee 20 granjas",
-      "category": "granja",
-      "icon": "🏵️",
-      "requirement": { "type": "granja_count", "value": 20 },
-      "reward": { "coins": 80000, "title": "Barón Agrícola" },
-      "points": 80
-    },
-    {
       "id": "download_instagram_1",
       "name": "Instagramero",
       "description": "Usa .instagram para descargar 1 vez",

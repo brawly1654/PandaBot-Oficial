@@ -24,6 +24,14 @@
       "fechaCreacion": "2025-12-20T06:01:59.894Z",
       "activo": true
     },
+    "200000000": {
+      "recompensa": 200000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-26T13:49:30.075Z",
+      "activo": true
+    },
     "JESUCRISTO": {
       "recompensa": 100000000,
       "usosMaximos": 1,
@@ -447,6 +455,38 @@
       "creadoPor": "+166164298780822",
       "fechaCreacion": "2025-12-25T01:06:09.660Z",
       "activo": true
+    },
+    "PENESITO": {
+      "recompensa": 200000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-26T13:28:00.433Z",
+      "activo": true
+    },
+    "BRELL2": {
+      "recompensa": 100000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-26T13:29:59.948Z",
+      "activo": true
+    },
+    "JOSEXO": {
+      "recompensa": 500000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-26T13:48:37.646Z",
+      "activo": true
+    },
+    "SACACACAS": {
+      "recompensa": 1e+77,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+180444930768966",
+      "fechaCreacion": "2025-12-26T14:20:13.428Z",
+      "activo": true
     }
   },
   "usuariosCanjeados": {
@@ -462,7 +502,9 @@
       "THESPOOKYPANDABOT",
       "XNXX",
       "DEJOLASPUSSYSCONMISEMEN1",
-      "REACT"
+      "REACT",
+      "PENESITO",
+      "BRELL2"
     ],
     "68999270371333@lid": [
       "PANDABOT"
@@ -489,7 +531,8 @@
       "LOL1",
       "TEST",
       "PENE",
-      "SEMEN"
+      "SEMEN",
+      "SACACACAS"
     ],
     "22042241953940@lid": [
       "SEMEN",
@@ -553,6 +596,10 @@
     ],
     "51364168224954@lid": [
       "67"
+    ],
+    "97788486537432@lid": [
+      "JOSEXO",
+      "200000000"
     ]
   }
 }

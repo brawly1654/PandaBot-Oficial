@@ -44,6 +44,11 @@
       "id": 24,
       "senderJid": "210015965175820@lid",
       "content": "que le dice un sobrino a un tio"
+    },
+    {
+      "id": 28,
+      "senderJid": "22922760597604@lid",
+      "content": "Hijo: papá, papá en la escuela me dijieron que soy inteligente Papá: que bueno hijo, te felicito. Hijo: gracias, sos el mejor"
     }
   ],
   "acceptedJokes": [
@@ -221,6 +226,11 @@
       "id": 25,
       "senderJid": "157243618136231@lid",
       "content": "Porque no se puede tirar una bomba a África? Porque no hay un punto blanco"
+    },
+    {
+      "id": 26,
+      "senderJid": "188261888712785@lid",
+      "content": "sabes por qué los Estado Unidences son malos jugando al ajedrez porque perdieron dos Torres"
     }
   ]
 }

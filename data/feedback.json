@@ -1592,5 +1592,15 @@
     "content": "ami tampoco me anda el comando .robar desde ayer",
     "timestamp": 1766488172139,
     "status": "pending"
+  },
+  {
+    "id": 177,
+    "type": "sugerencia",
+    "senderJid": "99561821479092@lid",
+    "content": "top grupal",
+    "timestamp": 1766758164236,
+    "status": "replied",
+    "reply": "tal vez",
+    "replyTimestamp": 1766758193632
   }
 ]

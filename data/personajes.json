@@ -18927,6 +18927,146 @@
         "Glitch"
       ],
       "descripcion": "Pokémon oficial: entei"
+    },
+    {
+      "nombre": "Tung Tung Tung Sahur 🛡️",
+      "calidad": "legendario con Efectos",
+      "precio": 7250,
+      "efectos": [
+        "🛡️"
+      ],
+      "base": "Tung Tung Tung Sahur",
+      "creadoEn": "2025-12-26T13:27:42.446Z"
+    },
+    {
+      "nombre": "Brell 💩",
+      "calidad": "OG con Efectos",
+      "precio": 30000000,
+      "efectos": [
+        "💩"
+      ],
+      "base": "Brell",
+      "creadoEn": "2025-12-26T13:31:47.480Z"
+    },
+    {
+      "nombre": "Brell 🌮",
+      "calidad": "OG con Efectos",
+      "precio": 450000000,
+      "efectos": [
+        "🌮"
+      ],
+      "base": "Brell",
+      "creadoEn": "2025-12-26T13:33:18.610Z"
+    },
+    {
+      "nombre": "Brell 🌮 💧",
+      "calidad": "OG con Efectos",
+      "precio": 495000000,
+      "efectos": [
+        "🌮",
+        "💧"
+      ],
+      "base": "Brell",
+      "creadoEn": "2025-12-26T13:33:33.353Z"
+    },
+    {
+      "nombre": "Brell 🎄",
+      "calidad": "OG con Efectos",
+      "precio": 900000000,
+      "efectos": [
+        "🎄"
+      ],
+      "base": "Brell",
+      "creadoEn": "2025-12-26T13:50:29.298Z"
+    },
+    {
+      "nombre": "Jesucristo 🤢",
+      "calidad": "GOD con Efectos",
+      "precio": 150000000,
+      "efectos": [
+        "🤢"
+      ],
+      "base": "Jesucristo",
+      "creadoEn": "2025-12-26T13:52:12.727Z"
+    },
+    {
+      "nombre": "Princess Bubblegum *Araña*",
+      "calidad": "raro",
+      "precio": 3900,
+      "efectos": [
+        "Araña"
+      ]
+    },
+    {
+      "nombre": "Tomi 🇧🇷",
+      "calidad": "NoDisponible. con Efectos",
+      "precio": 0,
+      "efectos": [
+        "🇧🇷"
+      ],
+      "base": "Tomi",
+      "creadoEn": "2025-12-26T15:11:01.998Z"
+    },
+    {
+      "nombre": "Everything 🤢",
+      "calidad": "GOD con Efectos",
+      "precio": 150000,
+      "efectos": [
+        "🤢"
+      ],
+      "base": "Everything",
+      "creadoEn": "2025-12-26T17:09:29.114Z"
+    },
+    {
+      "nombre": "Messi 🌙",
+      "calidad": "Ultra-Legendario con Efectos",
+      "precio": 6750,
+      "efectos": [
+        "🌙"
+      ],
+      "base": "Messi",
+      "creadoEn": "2025-12-26T17:14:44.190Z"
+    },
+    {
+      "nombre": "Messi 🤢",
+      "calidad": "Ultra-Legendario con Efectos",
+      "precio": 1350,
+      "efectos": [
+        "🤢"
+      ],
+      "base": "Messi",
+      "creadoEn": "2025-12-26T17:14:58.179Z"
+    },
+    {
+      "nombre": "Brell 🛡️",
+      "calidad": "OG con Efectos",
+      "precio": 750000000,
+      "efectos": [
+        "🛡️"
+      ],
+      "base": "Brell",
+      "creadoEn": "2025-12-26T17:17:27.897Z"
+    },
+    {
+      "nombre": "Brell 🌮 ❄️",
+      "calidad": "OG con Efectos",
+      "precio": 675000000,
+      "efectos": [
+        "🌮",
+        "❄️"
+      ],
+      "base": "Brell",
+      "creadoEn": "2025-12-26T17:17:50.540Z"
+    },
+    {
+      "nombre": "Brell 🇨🇴",
+      "calidad": "OG con Efectos",
+      "precio": 600000000,
+      "efectos": [
+        "🇨🇴"
+      ],
+      "base": "Brell",
+      "creadoEn": "2025-12-26T17:17:56.365Z"
     }
   ]
 }
